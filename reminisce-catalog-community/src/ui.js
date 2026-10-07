@@ -76,6 +76,8 @@
       if (field) draft[key] = field.type === "checkbox" ? field.checked : field.value;
     }
     draft.startMode = "now";
+    if (![ "limited", "limited-u" ].includes(draft.catalogType)) draft.stock = "0";
+    if (core.HIDDEN_TYPES.includes(draft.catalogType)) draft.price = "0";
     draft.endMode = $("timed-item").checked && !core.HIDDEN_TYPES.includes(draft.catalogType) ? "duration" : "never";
     if (core.isAccessory(draft.itemType)) draft.itemType = draft.accessoryKind === "Hair" ? "Hair" : "Hat";
     else draft.accessoryKind = "";
@@ -130,13 +132,13 @@
     $("asset-id-label").textContent = type === "Face" ? "Texture ID" : type === "BodyPackage" ? "Bundle ID" : "Asset ID";
     $("asset-id").placeholder = type === "Face" ? "Classic face texture/image ID" : type === "BodyPackage" ? "Roblox body bundle ID" : "Roblox asset ID";
     $("availability-hint").textContent = {
-      normal: "Unlimited stock. A price of 0 makes the item free.",
-      limited: "Fixed stock. One catalog purchase per player.",
-      "limited-u": "Fixed stock. Players can buy multiple copies until it sells out. Add a timer only if you want one.",
+      normal: "Unlimited stock. Prices range from 0 to 50,000 pNgs; 0 makes the item free.",
+      limited: "Stock must be 10–500. One catalog purchase per player. Prices range from 0 to 50,000 pNgs.",
+      "limited-u": "Stock must be 10–500. Players can buy multiple copies until it sells out. Prices range from 0 to 50,000 pNgs.",
       event: "An event reward, outside the purchasable catalog.",
       special: "A special reward, outside the purchasable catalog.",
       member: "A membership reward, outside the purchasable catalog.",
-      offsale: "Listed as offsale when the code is run."
+      offsale: "Listed as offsale when published."
     }[catalog];
   }
   function validDraft() {
@@ -196,7 +198,7 @@
     };
   }
   function applyAsset(item, keepName = false) {
-    const draft = readDraft(), mapping = core.assetMapping(item.assetType, item.kind);
+    const draft = readDraft(), mapping = core.assetMapping(item.assetType, item.kind, item.id);
     if (!mapping) throw new Error("This asset type is not supported.");
     fillDraft({
       ...draft,

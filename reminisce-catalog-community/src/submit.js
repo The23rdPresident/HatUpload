@@ -4,10 +4,12 @@
   let kind = "official", lookupMode = "name", lookupVersion = 0, selected = null, verification = null, pending = null, cursor = null, searchQuery = "", busy = false, searchTimer;
   const searchCategory = () => ({ Face: "faces", Tool: "gear", BodyPackage: "bundles", Head: "heads" }[$("item-type").value] || "accessories");
   const receiptStorage = "reminisce.receipts.v2";
+  const receiptLimit = 100;
+  let statusTimer, statusBusy = false, statusReady = false;
   let receipts = [];
   try {
     const saved = JSON.parse(localStorage.getItem(receiptStorage) || "[]");
-    if (Array.isArray(saved)) receipts = saved.filter(item => item && /^[a-f0-9-]{36}$/.test(item.id) && /^[A-Za-z0-9_-]{43}$/.test(item.receiptKey)).slice(0, 30);
+    if (Array.isArray(saved)) receipts = saved.filter(item => item && /^[a-f0-9-]{36}$/.test(item.id) && /^[A-Za-z0-9_-]{43}$/.test(item.receiptKey)).slice(0, receiptLimit);
   } catch {}
   function saveReceipts() {
     try {
@@ -23,9 +25,55 @@
     for (const item of receipts) {
       const row = node("div", undefined, "receipt");
       row.append(node("strong", item.name), node("span", item.status, "tag"), node("small", item.id));
+      if (item.status === "declined") {
+        const feedback = node("div", undefined, "decline-feedback");
+        feedback.append(node("strong", "Decline reason"), node("p", item.declineNote || "Your submission was declined. No reason was provided."));
+        row.append(feedback);
+      }
       $("receipts").append(row);
     }
     $("check-status").hidden = !receipts.length;
+  }
+  function scheduleStatuses(delay = 30000) {
+    clearTimeout(statusTimer);
+    if (statusReady && receipts.length && !document.hidden) statusTimer = setTimeout(() => refreshStatuses(), delay);
+  }
+  async function refreshStatuses(manual = false) {
+    if (statusBusy || !statusReady || !receipts.length) return;
+    clearTimeout(statusTimer);
+    statusBusy = true;
+    $("check-status").disabled = true;
+    let changed = false;
+    try {
+      const checking = receipts.slice();
+      let declines = 0;
+      for (let index = 0; index < checking.length; index += 30) {
+        const result = await api("/status/batch", {
+          method: "POST",
+          data: { receipts: checking.slice(index, index + 30).map(({ id, receiptKey }) => ({ id, receiptKey })) }
+        });
+        for (const item of result.items) {
+          const receipt = receipts.find(receipt => receipt.id === item.id);
+          if (!receipt) continue;
+          const declineNote = item.status === "declined" ? item.declineNote : "";
+          if (item.status === "declined" && (receipt.status !== "declined" || receipt.declineNote !== declineNote)) declines++;
+          if (receipt.status !== item.status || receipt.declineNote !== declineNote || item.name && receipt.name !== item.name) changed = true;
+          Object.assign(receipt, { status: item.status, declineNote, updatedAt: item.updatedAt });
+          if (item.name) receipt.name = item.name;
+        }
+      }
+      notice("receipt-status", "Statuses update automatically every 30 seconds while this page is open. Decline reasons appear here privately.");
+      if (declines) toast(declines === 1 ? "A submission was declined. Read the reason under Your submissions." : "Submissions were declined. Read the reasons under Your submissions.");
+      else if (manual) toast("Submission statuses updated.");
+    } catch (error) {
+      notice("receipt-status", error.message + " Your receipts are saved. Use Refresh status to try again.");
+      if (manual) toast(error.message);
+    } finally {
+      if (changed) saveReceipts();
+      statusBusy = false;
+      $("check-status").disabled = false;
+      scheduleStatuses();
+    }
   }
   function setKind(value) {
     kind = value;
@@ -40,7 +88,7 @@
     $("texture-check-field").hidden = true;
     ui.sync();
     $("texture-check-field").hidden = true;
-    $("edit-state").textContent = kind === "reskin" ? "Use an official base hat and your replacement texture." : "Suggested settings for an official Roblox item.";
+    $("edit-state").textContent = kind === "reskin" ? "Use an official base hat and your replacement texture." : "Suggested settings for a catalog item.";
   }
   for (const type of [ "official", "reskin" ]) $("kind-" + type).addEventListener("click", () => setKind(type));
   async function choose(id, query = null, assetKind = "Asset", category = searchCategory(), version = lookupVersion) {
@@ -53,7 +101,7 @@
     $("kind-reskin").disabled = !supportsReskin;
     if (!supportsReskin) kind = "official";
     setKind(kind);
-    notice("lookup-status", "Verified official Roblox item · " + item.name + (item.assetType === 18 ? ". Enter its classic face texture ID below." : ""));
+    notice("lookup-status", "Verified catalog item · " + item.name + (item.assetType === 18 ? ". Enter its classic face texture ID below." : ""));
     $("search-results").replaceChildren();
   }
   function results(items, append) {
@@ -62,7 +110,7 @@
       const button = node("button", undefined, "result");
       button.type = "button";
       const icon = ui.thumbnail(item), details = node("span", undefined, "result-caption");
-      details.append(node("strong", item.name), node("small", "by Roblox"), node("small", "ID " + item.id));
+      details.append(node("strong", item.name), node("small", "by " + (item.creatorName || "creator " + item.creatorId)), node("small", "ID " + item.id));
       button.append(icon, details);
       button.addEventListener("click", async () => {
         if (busy) return;
@@ -97,7 +145,7 @@
         searchQuery = query;
         cursor = data.nextCursor;
         results(data.items, append);
-        notice("lookup-status", data.items.length ? "Choose a result to copy its details." : "No official Roblox items matched. Try another name, Item type, or item link.");
+        notice("lookup-status", data.items.length ? "Choose a result to copy its details." : "No eligible catalog items matched. Try another name, Item type, or item link.");
         if (!append && data.exactMatchId) await choose(data.exactMatchId, query, category === "bundles" ? "Bundle" : "Asset", category, version);
       }
       $("more-results").hidden = !cursor;
@@ -128,7 +176,7 @@
     $("kind-reskin").disabled = !supportsReskin;
     if (!supportsReskin) kind = "official";
     setKind(kind);
-    notice("lookup-status", "Search for an official Roblox item of this type, or paste its link.");
+    notice("lookup-status", "Search for this item type or paste its link. Heads may be made by any creator; other types must be made by Roblox.");
   });
   for (const mode of [ "name", "link" ]) $("lookup-" + mode).addEventListener("click", () => {
     lookupMode = mode;
@@ -237,11 +285,12 @@
         name: pending.draft.name,
         status: "pending"
       });
-      receipts = receipts.slice(0, 30);
+      receipts = receipts.slice(0, receiptLimit);
       saveReceipts();
+      scheduleStatuses();
       $("review-dialog").close();
       pending = null;
-      toast("Submission received. You can check its status on this device.");
+      toast("Submission received. Its status and any decline reason will appear under Your submissions.");
       ui.fillDraft(core.defaults());
       selected = null;
       $("kind-reskin").disabled = false;
@@ -249,7 +298,7 @@
       setKind(kind);
       clearResults();
       $("search-input").value = "";
-      notice("lookup-status", "Search for your next official Roblox item.");
+      notice("lookup-status", "Search for your next catalog item.");
     } catch (error) {
       notice("submission-error", error.message);
     } finally {
@@ -258,32 +307,10 @@
       $("confirm-submit").disabled = false;
     }
   });
-  $("check-status").addEventListener("click", async () => {
-    $("check-status").disabled = true;
-    try {
-      for (const receipt of receipts) {
-        try {
-          const result = await api("/status", {
-            method: "POST",
-            data: {
-              id: receipt.id,
-              receiptKey: receipt.receiptKey
-            }
-          });
-          receipt.status = result.status;
-          receipt.name = result.name;
-        } catch (error) {
-          if (error.status === 404) receipt.status = "Unavailable"; else throw error;
-        }
-      }
-      saveReceipts();
-      toast("Submission statuses updated.");
-    } catch (error) {
-      toast(error.message);
-    } finally {
-      $("check-status").disabled = false;
-    }
-  });
+  $("check-status").addEventListener("click", () => refreshStatuses(true));
+  document.addEventListener("visibilitychange", () => scheduleStatuses(document.hidden ? 30000 : 0));
+  window.addEventListener("pagehide", () => clearTimeout(statusTimer));
+  window.addEventListener("pageshow", () => scheduleStatuses(0));
   ui.fillDraft(core.defaults());
   $("item-type").querySelector('option[value="TShirt"]').remove();
   setKind(kind);
@@ -292,6 +319,8 @@
   $("search-button").disabled = true;
   const config = await ui.connect();
   if (config) {
+    statusReady = true;
+    scheduleStatuses(0);
     $("daily-limit").textContent = "Daily limit: " + config.dailyLimit + " submissions per network.";
     try {
       verification = await ui.verifier(config, "submit");

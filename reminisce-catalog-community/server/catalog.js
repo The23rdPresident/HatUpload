@@ -1,4 +1,11 @@
-const SUPPORTED_ASSETS = new Set([ 2, 8, 11, 12, 17, 18, 19, 41, 42, 43, 44, 45, 46, 47, 57, 58, 70, 71 ]);
+import "../shared/core.js";
+
+const core = globalThis.CatalogCore;
+const SUPPORTED_ASSETS = new Set([ 2, 8, 11, 12, 17, 18, 19, 41, 42, 43, 44, 45, 46, 47, 57, 58, 70, 71, 79 ]);
+
+function supportedAsset(item) {
+  return SUPPORTED_ASSETS.has(Number(item.assetType));
+}
 
 const SEARCH_CATEGORIES = {
   accessories: {
@@ -13,8 +20,7 @@ const SEARCH_CATEGORIES = {
     Subcategory: "10"
   },
   heads: {
-    Category: "4",
-    Subcategory: "15"
+    Category: "1"
   },
   clothing: {
     Category: "3"
@@ -125,7 +131,7 @@ async function thumbnails(items, kind) {
 async function search(url) {
   const q = (url.searchParams.get("q") || "").trim();
   const category = url.searchParams.get("category") || "accessories";
-  const robloxOnly = url.searchParams.get("robloxOnly") !== "false";
+  const robloxOnly = category !== "heads" && url.searchParams.get("robloxOnly") !== "false";
   const cursor = url.searchParams.get("cursor") || "";
   if (q.length < 2 || q.length > 150) throw new ApiError("Search names must contain 2–150 characters.", 400);
   if (!Object.hasOwn(SEARCH_CATEGORIES, category)) throw new ApiError("Unsupported search category.", 400);
@@ -144,7 +150,9 @@ async function search(url) {
   const raw = await robloxJson(target.href);
   if (!Array.isArray(raw.data)) throw new ApiError("Roblox returned an invalid search response.");
   const kind = category === "bundles" ? "Bundle" : "Asset";
-  const items = raw.data.filter(item => kind === "Bundle" ? item.itemType === "Bundle" && (item.bundleType === "BodyParts" || item.bundleType === 1) : item.itemType === "Asset" && SUPPORTED_ASSETS.has(Number(item.assetType))).map(item => normalizeItem(item, kind));
+  const candidates = category === "heads" ? raw.data.flatMap(item => [ item, ...(item.itemType === "Bundle" && Array.isArray(item.bundledItems) ? item.bundledItems.filter(part => part.type === "Asset").map(part => ({ ...item, ...part, itemType: "Asset", description: "" })) : []) ]) : raw.data;
+  const matches = candidates.filter(item => kind === "Bundle" ? item.itemType === "Bundle" && (item.bundleType === "BodyParts" || item.bundleType === 1) : item.itemType === "Asset" && supportedAsset(item) && (category !== "heads" || core.assetMapping(Number(item.assetType), "Asset", item.id)?.itemType === "Head"));
+  const items = [...new Map(matches.map(item => [ Number(item.id), normalizeItem(item, kind) ])).values()];
   await thumbnails(items, kind);
   const exact = items.filter(item => item.name.toLocaleLowerCase() === q.toLocaleLowerCase());
   return {
@@ -158,6 +166,17 @@ async function details(id, kind) {
   let raw;
   if (kind === "Bundle") {
     raw = await robloxJson("https://catalog.roblox.com/v1/bundles/" + id + "/details");
+    if (raw.bundleType === "DynamicHead" || raw.bundleType === 4) {
+      const assets = [...new Set((raw.items || []).filter(item => item.type === "Asset" && positiveId(item.id)).map(item => Number(item.id)))];
+      if (!assets.length || assets.length > 20) throw new ApiError("This head bundle has an invalid asset list. Use its head asset link instead.", 400);
+      const metadata = await robloxJson("https://catalog.roblox.com/v1/catalog/items/details", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: assets.map(id => ({ itemType: "Asset", id })) })
+      });
+      const heads = (metadata.data || []).filter(item => assets.includes(Number(item.id)) && Number(item.assetType) === 79);
+      if (heads.length !== 1) throw new ApiError("Roblox did not identify a single dynamic head in this bundle. Use its head asset link instead.", 400);
+      return details(Number(heads[0].id), "Asset");
+    }
     if (raw.bundleType !== "BodyParts" && raw.bundleType !== 1) throw new ApiError("This bundle is not a body package supported by your game.", 400);
   } else {
     try {
@@ -181,14 +200,20 @@ async function details(id, kind) {
     }
   }
   const item = normalizeItem(raw, kind);
-  if (kind === "Asset" && !SUPPORTED_ASSETS.has(item.assetType)) throw new ApiError("This asset type is not supported. Use an accessory, gear, classic face, classic head, clothing item, or body package.", 400);
+  if (kind === "Asset" && !supportedAsset(item)) {
+    throw new ApiError("This asset type is not supported. Use an accessory, gear, classic face, head, clothing item, or body package.", 400);
+  }
   await thumbnails([ item ], kind);
   return {
     item: item
   };
 }
 
-const PUBLIC_ASSETS = new Set([ 8, 17, 18, 19, 41, 42, 43, 44, 45, 46, 47, 57, 58, 70, 71 ]);
+const PUBLIC_ASSETS = new Set([ 8, 17, 18, 19, 41, 42, 43, 44, 45, 46, 47, 57, 58, 70, 71, 79 ]);
+
+function isAllowedHead(item) {
+  return item.kind === "Asset" && [17, 79].includes(Number(item.assetType)) && ["User", "Group"].includes(item.creatorType) && Number.isSafeInteger(item.creatorId) && item.creatorId > 0;
+}
 
 function isOfficial(item) {
   return item.creatorType === "User" && item.creatorId === 1 && (item.kind === "Bundle" || PUBLIC_ASSETS.has(item.assetType));
@@ -197,7 +222,7 @@ function isOfficial(item) {
 async function officialAsset(id, kind = "Asset") {
   if (!positiveId(id)) throw new ApiError("Enter a valid base asset ID.", 400);
   const {item: item} = await details(id, kind);
-  if (!isOfficial(item)) throw new ApiError("The item must be an accessory, classic face, gear, classic head, or body package created by the official Roblox user account.", 400);
+  if (!isOfficial(item) && !isAllowedHead(item)) throw new ApiError("Heads may be created by any Roblox user or group. Other item types must be created by the official Roblox user account.", 400);
   return item;
 }
 
@@ -270,4 +295,4 @@ async function textureAsset(id, allowFace = false) {
   }
 }
 
-export { ApiError, search, details, robloxJson, normalizeItem, isOfficial, officialAsset, textureAsset };
+export { ApiError, search, details, robloxJson, normalizeItem, isOfficial, isAllowedHead, officialAsset, textureAsset };

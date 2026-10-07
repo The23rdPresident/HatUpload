@@ -16,6 +16,32 @@ const item = (changes = {}) => ({
   ...changes
 });
 
+test("prices include 0 and 50,000 and reject fractional, negative and excessive values", () => {
+  for (const price of ["0", "50000"]) {
+    assert.deepEqual(core.validate(item({ price })), []);
+    assert.equal(core.buildDefinition(item({ price })).Price, Number(price));
+  }
+  for (const price of ["-1", "1.5", "50001", "9007199254740992", "", "1e4"]) {
+    assert.match(core.validate(item({ price })).join(" "), /0 to 50,000/);
+    assert.throws(() => core.buildDefinition(item({ price })));
+  }
+});
+
+test("both limited types use whole stock from 10 through 500; normal stock is unlimited", () => {
+  for (const catalogType of ["limited", "limited-u"]) {
+    for (const stock of ["10", "500"]) {
+      assert.deepEqual(core.validate(item({ catalogType, stock })), []);
+      assert.equal(core.buildDefinition(item({ catalogType, stock })).Stock, Number(stock));
+    }
+    for (const stock of ["0", "9", "501", "10.5", "-10", "", "Infinity"]) {
+      assert.match(core.validate(item({ catalogType, stock })).join(" "), /10 to 500/);
+      assert.throws(() => core.buildDefinition(item({ catalogType, stock })));
+    }
+  }
+  assert.equal(core.buildDefinition(item({ stock: "500" })).Stock, 0);
+  assert.equal(core.buildDefinition(item({ stock: "10" })).Limited, false);
+});
+
 test("numbered Limited exports stock, custom texture, and the game's actual accessory key", () => {
   const def = core.buildDefinition(item({
     catalogType: "limited",
@@ -212,4 +238,28 @@ test("duplicate keys normalize case, whitespace, smart quotes, and Unicode width
   assert.ok(core.registryKeys(item({ itemType: "BodyPackage", assetId: "201" })).includes("bundle:201"));
   assert.ok(core.registryKeys(item({ assetId: "201" })).includes("asset:201"));
   assert.ok(core.registryKeys(item({ customTexture: true, texture: "200" })).includes("reskin:asset:133559536:200"));
+});
+
+test("all dynamic heads map to Head while known Headless assets keep their special appearance", () => {
+  const parsed = core.parseAssetQuery("https://www.roblox.com/catalog/15093053680/Headless-Head");
+  assert.deepEqual(parsed, { id: 15093053680, kind: "Asset" });
+  assert.equal(core.assetMapping(79, "Asset", parsed.id).itemType, "Head");
+  assert.equal(core.assetMapping(79, "Asset", 205).itemType, "Head");
+  assert.equal(core.assetMapping(79, "Asset").itemType, "Head");
+  for (const assetId of [ "15093053680", "134082579" ]) {
+    const draft = item({ itemType: "Head", assetId, catalogType: "limited-u", stock: "25", endMode: "duration", duration: "1", durationUnit: "hours" });
+    const definition = core.buildDefinition(draft);
+    assert.equal(definition.ItemType, "Head");
+    assert.equal(definition.Headless, true);
+    assert.equal(definition.AssetId, Number(assetId));
+    assert.equal(definition.Price, 500);
+    assert.equal(definition.Stock, 25);
+    assert.equal(definition.LimitedU, true);
+    assert.equal(definition.MaxPerUser, 0);
+    assert.equal(definition.Texture, undefined);
+    assert.equal(definition.OffsaleAt.luaExpression, "os.time() + 3600");
+    assert.match(core.fullScript([ draft ], template), /Headless = true/);
+  }
+  assert.equal(core.buildDefinition(item({ itemType: "Head", assetId: "105" })).Headless, undefined);
+  assert.match(template, /if not definition\.Headless and \(definition\.ItemType/);
 });

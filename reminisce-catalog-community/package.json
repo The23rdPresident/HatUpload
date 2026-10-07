@@ -1,13 +1,14 @@
 {
   "name": "reminisce-catalog-community",
-  "version": "3.2.0",
+  "version": "3.6.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test tests/*.test.mjs",
     "owner-key": "node scripts/create-owner-key.mjs",
-    "deploy": "npx wrangler deploy"
+    "deploy": "npx wrangler deploy",
+    "connect-game": "node scripts/connect-game.mjs"
   },
   "engines": {
     "node": ">=22.13"

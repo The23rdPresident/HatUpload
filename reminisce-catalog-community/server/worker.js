@@ -1,8 +1,10 @@
-import { ApiError, search, details, isOfficial, officialAsset, textureAsset } from "./catalog.js";
+import { ApiError, search, details, isOfficial, isAllowedHead, officialAsset, textureAsset } from "./catalog.js";
 
 import { now, configured, originFor, requireOrigin, json, ipHash, authorize, login } from "./security.js";
 
-import { submit, submissionStatus, listing, review, ownerItem, generate } from "./submissions.js";
+import { submit, submissionStatus, submissionStatuses, listing, review, ownerItem, record } from "./submissions.js";
+import { publishingConfig, testConnection, retryPublication, retryPublications, publishOne, drainPublishing, itemRow } from "./publishing.js";
+import { retryAnnouncement, sendAnnouncement, drainAnnouncements } from "./announcements.js";
 import { body, keys } from "./security.js";
 import { claims, checkKeys, catalogList } from "./registry.js";
 
@@ -35,7 +37,7 @@ async function cached(url, read) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url), path = url.pathname;
     let origin = "";
     if (!path.startsWith("/api/")) {
@@ -71,7 +73,7 @@ export default {
       if (path === "/api/config" && request.method === "GET") return json({
         ready: configured(env),
         siteKey: configured(env) ? env.TURNSTILE_SITE_KEY : "",
-        version: 5,
+        version: 6,
         dailyLimit: Math.min(100, Math.max(1, Number(env.SUBMISSIONS_PER_IP_PER_DAY) || 100))
       }, 200, origin, request);
       if (!configured(env)) throw new ApiError("The service setup is incomplete. Contact the site owner.", 503);
@@ -89,10 +91,10 @@ export default {
         const category = url.searchParams.get("category") || "accessories";
         if (![ "accessories", "gear", "faces", "bundles", "heads" ].includes(category)) throw new ApiError("Unsupported search category.", 400);
         query.searchParams.set("category", category);
-        query.searchParams.set("robloxOnly", "true");
+        query.searchParams.set("robloxOnly", category === "heads" ? "false" : "true");
         result = await cached(query.href, async () => {
           const data = await search(query);
-          data.items = data.items.filter(isOfficial);
+          data.items = data.items.filter(item => isOfficial(item) || category === "heads" && isAllowedHead(item));
           if (!data.items.some(item => item.id === data.exactMatchId)) data.exactMatchId = null;
           return data;
         });
@@ -121,6 +123,8 @@ export default {
         result = { available: true };
       } else if (path === "/api/status" && request.method === "POST") {
         result = await submissionStatus(request, env);
+      } else if (path === "/api/status/batch" && request.method === "POST") {
+        result = await submissionStatuses(request, env);
       } else if (path === "/api/admin/login" && request.method === "POST") {
         result = await login(request, env);
       } else if (path.startsWith("/api/admin/")) {
@@ -132,18 +136,35 @@ export default {
           };
         } else if (path === "/api/admin/submissions" && request.method === "GET") {
           result = await listing(url, env);
+        } else if (path === "/api/admin/publishing" && request.method === "GET") {
+          result = publishingConfig(env);
+        } else if (path === "/api/admin/publishing/test" && request.method === "POST") {
+          result = await testConnection(env);
+        } else if (path === "/api/admin/publish/retry" && request.method === "POST") {
+          result = await retryPublications(request, env);
+          if (result.queued.length && ctx?.waitUntil) ctx.waitUntil(drainPublishing(env));
+        } else if (/^\/api\/admin\/publish\/[a-f0-9-]+$/.test(path) && request.method === "POST") {
+          result = { item: record(await retryPublication(request, env, path.split("/").at(-1))) };
+        } else if (/^\/api\/admin\/webhooks\/[a-f0-9-]+$/.test(path) && request.method === "POST") {
+          const id = path.split("/").at(-1);
+          await retryAnnouncement(request, env, id);
+          result = { item: record(await itemRow(env, id)) };
+          if (ctx?.waitUntil) ctx.waitUntil(sendAnnouncement(env, id));
         } else if (/^\/api\/admin\/submissions\/[a-f0-9-]+$/.test(path) && request.method === "PATCH") {
           result = await review(request, env, path.split("/").at(-1), session);
+        } else if (/^\/api\/admin\/submissions\/[a-f0-9-]+$/.test(path) && request.method === "GET") {
+          const row = await itemRow(env, path.split("/").at(-1));
+          if (!row) throw new ApiError("Submission was not found.", 404);
+          result = { item: record(row) };
         } else if (path === "/api/admin/items" && request.method === "POST") {
           result = await ownerItem(request, env, session);
         } else if (path === "/api/admin/catalog" && request.method === "GET") {
           result = await catalogList(env);
-        } else if (path === "/api/admin/generate" && request.method === "POST") {
-          result = await generate(request, env);
         } else if (/^\/api\/admin\/asset\/\d+$/.test(path) && request.method === "GET") {
           result = await details(path.split("/").at(-1), url.searchParams.get("kind") === "Bundle" ? "Bundle" : "Asset");
         } else throw new ApiError("That route or method is not available.", 404);
       } else throw new ApiError("That route or method is not available.", 404);
+      if (result?.item?.publication?.status === "queued" && ctx?.waitUntil) ctx.waitUntil(publishOne(env, result.item.id));
       return json(result, 200, origin, request);
     } catch (error) {
       return json({
@@ -155,6 +176,18 @@ export default {
   },
   async scheduled(controller, env) {
     if (!env.DB?.prepare) return;
-    await env.DB.batch([ env.DB.prepare("DELETE FROM owner_sessions WHERE expires_at<?1").bind(now()), env.DB.prepare("DELETE FROM rate_windows WHERE window_start<?1").bind(now() - 172800), env.DB.prepare("DELETE FROM review_log WHERE created_at<?1").bind(now() - 15552e3), env.DB.prepare("DELETE FROM submissions WHERE status='declined' AND updated_at<?1").bind(now() - 15552e3) ]);
+    if (controller?.cron === "* * * * *") {
+      await drainPublishing(env);
+      await drainAnnouncements(env);
+      return;
+    }
+    const cutoff = now() - 15552e3;
+    await env.DB.batch([
+      env.DB.prepare("DELETE FROM owner_sessions WHERE expires_at<?1").bind(now()),
+      env.DB.prepare("DELETE FROM rate_windows WHERE window_start<?1").bind(now() - 172800),
+      env.DB.prepare("DELETE FROM review_log WHERE created_at<?1").bind(cutoff),
+      env.DB.prepare("DELETE FROM publish_jobs WHERE status='failed' AND EXISTS(SELECT 1 FROM submissions s WHERE s.id=submission_id AND s.status='declined' AND s.updated_at<?1)").bind(cutoff),
+      env.DB.prepare("DELETE FROM submissions WHERE status='declined' AND updated_at<?1 AND NOT EXISTS(SELECT 1 FROM publish_jobs p WHERE p.submission_id=submissions.id)").bind(cutoff)
+    ]);
   }
 };

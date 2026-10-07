@@ -123,6 +123,9 @@ legend + .form-grid { clear: both; }
 .receipt { border-bottom: 1px solid var(--line); padding: 10px 0; }
 .receipt strong { display: block; font-size: 12px; overflow-wrap: anywhere; margin-bottom: 5px; }
 .receipt small { display: block; color: var(--muted); font-size: 10px; overflow-wrap: anywhere; margin-top: 4px; }
+.decline-feedback { border-left: 3px solid #b9443d; background: #fff5f3; padding: 8px 10px; margin-top: 8px; }
+.decline-feedback strong { color: #8b2b24; }
+.decline-feedback p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
 .receipt-list { max-height: 340px; overflow: auto; margin-bottom: 10px; }
 .tag { padding: 2px 6px; border: 1px solid #aac3d7; background: #eef5fb; color: #205e8c; font-size: 11px; }
 .count { min-width: 23px; padding: 2px 5px; background: #fff; color: #42688c; text-align: center; font-size: 12px; }
@@ -213,3 +216,7 @@ dialog::backdrop { background: #20364b99; }
   .status-tabs button { padding: 7px; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+.publishing-panel{border:1px solid #b4c9dc;background:#f5f9fd;padding:12px 16px;margin-bottom:16px}.publishing-panel p{margin:0 0 8px}.publishing-panel p:last-child{margin:8px 0 0}.publish-actions{padding:0 20px 12px}#publish-status{margin:12px 20px;overflow-wrap:anywhere}
+
+.connection-report {overflow-wrap:anywhere}.connection-report .review-table {width:100%;max-width:720px}.connection-report p {margin:10px 0}

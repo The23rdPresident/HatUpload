@@ -39,6 +39,9 @@
     }
   ],
   "vars": {
+    "ROBLOX_UNIVERSE_ID": "6377498041",
+    "ROBLOX_AUTO_PUBLISH": "true",
+    "NEW_ITEM_PING_ROLE_ID": "1548840892628996106",
     "PUBLIC_ORIGINS": "",
     "TURNSTILE_SITE_KEY": "0x4AAAAAAFQFHkrKWNWt5fGp",
     "SUBMISSIONS_PER_IP_PER_DAY": "100",
@@ -46,7 +49,8 @@
   },
   "triggers": {
     "crons": [
-      "17 4 * * *"
+      "17 4 * * *",
+      "* * * * *"
     ]
   },
   "observability": {

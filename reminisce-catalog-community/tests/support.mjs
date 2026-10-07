@@ -144,6 +144,8 @@ export function upstream() {
         110: 43,
         111: 44,
         112: 47,
+        134082579: 17,
+        15093053680: 79,
         133559536: 8,
         200: 1,
         201: 13,
@@ -157,7 +159,7 @@ export function upstream() {
       });
       return reply({
         AssetId: id,
-        Name: id === 100 ? "Classic Hat" : "Item " + id,
+        Name: id === 100 ? "Classic Hat" : id === 15093053680 || id === 134082579 ? "Headless Head" : "Item " + id,
         Description: "An official catalog description.",
         AssetTypeId: assetType,
         Creator: {
@@ -169,9 +171,9 @@ export function upstream() {
     }
     if (url.hostname === "catalog.roblox.com" && url.pathname.includes("search")) {
       const subcategory = url.searchParams.get("Subcategory"), category = url.searchParams.get("Category");
-      const ids = subcategory === "10" ? [106] : subcategory === "15" ? [105] : category === "5" ? [103] : [100, 101, 102];
+      const ids = subcategory === "10" ? [106] : category === "1" ? [105] : category === "5" ? [103] : [100, 101, 102];
       return reply({
-      data: ids.map(id => ({
+      data: [...ids.map(id => ({
         id: id,
         itemType: "Asset",
         name: id === 100 ? "Classic Hat" : id < 103 ? "Other Hat" : "Item " + id,
@@ -180,7 +182,7 @@ export function upstream() {
         creatorType: id === 102 ? "Group" : "User",
         creatorTargetId: id === 101 ? 12 : 1,
         creatorName: "Roblox"
-      })),
+      })), ...(category === "1" ? [ { id: 201, itemType: "Bundle", bundleType: 1, name: "Headless Horseman", creatorType: "User", creatorTargetId: 1, creatorName: "Roblox", bundledItems: [ { id: 15093053680, name: "Headless Head", type: "Asset", assetType: 79 }, { id: 205, name: "Other Dynamic Head", type: "Asset", assetType: 79 } ] } ] : [])],
       nextPageCursor: null
     });
     }

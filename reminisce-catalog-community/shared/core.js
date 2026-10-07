@@ -19,6 +19,8 @@
     offsale: "Offsale"
   };
   const MAX_BATCH = 500;
+  const LIMITS = Object.freeze({ priceMax: 50000, stockMin: 10, stockMax: 500 });
+  const HEADLESS_ASSETS = new Set([ 134082579, 15093053680 ]);
   const expression = value => ({
     luaExpression: value
   });
@@ -30,6 +32,7 @@
     const namespace = draft.itemType === "BodyPackage" ? "bundle" : "asset";
     const keys = [ "name:" + nameKey(draft.name) ];
     if (id) keys.push(draft.customTexture && texture ? "reskin:" + namespace + ":" + id + ":" + texture : namespace + ":" + id);
+    if (namespace === "asset" && !draft.customTexture && isHeadlessAsset(id)) for (const alias of HEADLESS_ASSETS) keys.push("asset:" + alias);
     if (draft.itemType === "Face" && texture) keys.push("face-texture:" + texture);
     return [...new Set(keys)];
   }
@@ -37,6 +40,9 @@
     if (text(value).trim() === "" || !/^\d+$/.test(text(value).trim())) return null;
     const n = Number(value);
     return Number.isSafeInteger(n) && n >= min ? n : null;
+  }
+  function isHeadlessAsset(id) {
+    return HEADLESS_ASSETS.has(integer(id, 1));
   }
   function assetContent(value) {
     const raw = text(value).trim();
@@ -94,8 +100,9 @@
     if (integer(draft.assetId, 1) === null) errors.push("Enter a positive whole-number asset ID.");
     if (!ITEM_TYPES.includes(draft.itemType)) errors.push("Choose a supported item type.");
     if (!CATALOG_TYPES.includes(draft.catalogType)) errors.push("Choose a supported catalog type.");
-    if (!hidden && integer(draft.price) === null) errors.push("Price must be a whole number of pNgs, 0 or higher.");
-    if ([ "limited", "limited-u" ].includes(draft.catalogType) && integer(draft.stock, 1) === null) errors.push("Limited stock must be a whole number of 1 or more.");
+    const price = integer(draft.price), stock = integer(draft.stock, LIMITS.stockMin);
+    if (!hidden && (price === null || price > LIMITS.priceMax)) errors.push("Price must be a whole number from 0 to 50,000 pNgs.");
+    if ([ "limited", "limited-u" ].includes(draft.catalogType) && (stock === null || stock > LIMITS.stockMax)) errors.push("Limited stock must be a whole number from 10 to 500.");
     if (hidden && !text(draft.rewardSource).trim()) errors.push("Enter the event or reward label.");
     if (text(draft.rewardSource).length > 180) errors.push("Keep the event or reward label to 180 characters or fewer.");
     if (batch.some(item => item.id !== editingId && nameKey(item.name) === nameKey(name))) errors.push("This catalog name is already in the batch. Edit its existing entry.");
@@ -139,6 +146,9 @@
       Limited: limited,
       Stock: limited ? integer(draft.stock, 1) : 0
     };
+    if (draft.itemType === "Head" && isHeadlessAsset(draft.assetId)) {
+      definition.Headless = true;
+    }
     if (draft.catalogType === "limited-u") {
       definition.LimitedU = true;
       definition.MaxPerUser = 0;
@@ -255,9 +265,13 @@
       rainbow: false
     };
   }
-  function assetMapping(assetType, kind) {
+  function assetMapping(assetType, kind, id) {
     if (kind === "Bundle") return {
       itemType: "BodyPackage",
+      accessoryKind: ""
+    };
+    if (assetType === 79) return {
+      itemType: "Head",
       accessoryKind: ""
     };
     const mappings = {
@@ -297,6 +311,7 @@
     nameKey: nameKey,
     registryKeys: registryKeys,
     MAX_BATCH: MAX_BATCH,
+    LIMITS: LIMITS,
     LABELS: LABELS,
     HIDDEN_TYPES: HIDDEN_TYPES,
     defaults: defaults,
@@ -310,6 +325,7 @@
     parseAssetQuery: parseAssetQuery,
     assetMapping: assetMapping,
     isAccessory: isAccessory,
+    isHeadlessAsset: isHeadlessAsset,
     durationSeconds: durationSeconds
   };
 })(globalThis);

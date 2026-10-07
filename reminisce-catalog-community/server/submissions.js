@@ -4,8 +4,8 @@ import { ApiError, officialAsset, textureAsset } from "./catalog.js";
 
 import { body, keys, now, token, digest, ipHash, budget, challenge, equalHash } from "./security.js";
 
-import publisher from "./publisher.js";
 import { claims, checkKeys, registryError } from "./registry.js";
+import { publishingConfig, enqueueStatement, publication, publicationColumns, publicationJoin, itemRow, lockedPublication } from "./publishing.js";
 
 const core = globalThis.CatalogCore;
 
@@ -33,9 +33,10 @@ export function draftInput(value) {
   for (const key of [ "startDate", "endDate" ]) {
     if (draft[key] && !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(draft[key])) throw new ApiError("Dates must include their UTC timezone.", 400);
   }
+  if (![ "limited", "limited-u" ].includes(draft.catalogType)) draft.stock = "0";
+  if (core.HIDDEN_TYPES.includes(draft.catalogType)) draft.price = "0";
   const errors = core.validate(draft);
   if (errors.length) throw new ApiError(errors.join(" "), 400);
-  if (Number(draft.price) > 1e9 || Number(draft.stock) > 1e6) throw new ApiError("Price or stock exceeds the supported limit.", 400);
   draft.name = draft.name.trim();
   draft.assetId = String(Number(draft.assetId));
   if (draft.texture) draft.texture = core.assetContent(draft.texture) || draft.texture;
@@ -55,8 +56,8 @@ async function verifiedDraft(value, kind) {
     texture: null
   };
   const base = await officialAsset(draft.assetId, draft.itemType === "BodyPackage" ? "Bundle" : "Asset");
-  const mapping = core.assetMapping(base.assetType, base.kind);
-  if (!(core.isAccessory(mapping.itemType) && core.isAccessory(draft.itemType)) && draft.itemType !== mapping.itemType) throw new ApiError("Item type must match the verified Roblox item.", 400);
+  const mapping = core.assetMapping(base.assetType, base.kind, base.id);
+  if (!mapping || (!(core.isAccessory(mapping.itemType) && core.isAccessory(draft.itemType)) && draft.itemType !== mapping.itemType)) throw new ApiError("Item type must match the verified Roblox item.", 400);
   if (kind === "official" && draft.customTexture) throw new ApiError("Choose a custom reskin to replace the base texture.", 400);
   if (kind === "reskin" && !draft.customTexture) throw new ApiError("A custom reskin needs a replacement texture.", 400);
   if (kind === "reskin" && !(core.isAccessory(draft.itemType) || draft.itemType === "Face")) throw new ApiError("Reskins require an accessory or classic face base.", 400);
@@ -75,7 +76,7 @@ async function verifiedDraft(value, kind) {
   };
 }
 
-function record(row) {
+export function record(row) {
   return {
     id: row.id,
     kind: row.kind,
@@ -86,9 +87,11 @@ function record(row) {
     base: JSON.parse(row.base_json),
     texture: row.texture_json ? JSON.parse(row.texture_json) : null,
     ownerNote: row.owner_note,
+    declineNote: row.decline_note || "",
     version: row.version,
     createdAt: row.created_at,
-    updatedAt: row.updated_at
+    updatedAt: row.updated_at,
+    publication: publication(row)
   };
 }
 
@@ -99,7 +102,7 @@ function limit(value, fallback, max) {
 
 function uploadSettings(draft) {
   if (!core.UPLOAD_TYPES.includes(draft.catalogType)) throw new ApiError("Choose Non limited, Limited, Limited U, or Event reward.", 400);
-  if (draft.startMode !== "now" || ![ "never", "duration" ].includes(draft.endMode) || draft.startDate || draft.endDate) throw new ApiError("Items go on sale when the code is run. Timed items use a sale duration.", 400);
+  if (draft.startMode !== "now" || ![ "never", "duration" ].includes(draft.endMode) || draft.startDate || draft.endDate) throw new ApiError("Items go on sale when published. Timed items use a sale duration.", 400);
   if (Number(draft.accessoryScale) !== 1 || draft.useOffset || draft.rainbow || [draft.offsetX, draft.offsetY, draft.offsetZ].some(value => Number(value) !== 0)) throw new ApiError("Custom accessory placement settings are no longer accepted.", 400);
 }
 
@@ -155,17 +158,44 @@ export async function submit(request, env) {
   };
 }
 
+function validReceipt(data) {
+  if (!data || typeof data !== "object" || Array.isArray(data)) throw new ApiError("Invalid submission receipt.", 400);
+  keys(data, [ "id", "receiptKey" ]);
+  if (typeof data.id !== "string" || typeof data.receiptKey !== "string" || !uuid.test(data.id) || !/^[A-Za-z0-9_-]{43}$/.test(data.receiptKey)) throw new ApiError("Invalid submission receipt.", 400);
+}
+
+function receiptStatus(row) {
+  return {
+    id: row.id,
+    status: row.status,
+    name: JSON.parse(row.draft_json).name,
+    updatedAt: row.updated_at,
+    declineNote: row.status === "declined" ? row.decline_note || "Your submission was declined. No reason was provided." : ""
+  };
+}
+
 export async function submissionStatus(request, env) {
   const data = await body(request, 2048);
-  keys(data, [ "id", "receiptKey" ]);
-  if (!uuid.test(data.id || "") || !/^[A-Za-z0-9_-]{43}$/.test(data.receiptKey || "")) throw new ApiError("Invalid submission receipt.", 400);
-  const row = await env.DB.prepare("SELECT receipt_hash,status,draft_json FROM submissions WHERE id=?1").bind(data.id).first();
+  validReceipt(data);
+  const row = await env.DB.prepare("SELECT id,receipt_hash,status,draft_json,decline_note,updated_at FROM submissions WHERE id=?1").bind(data.id).first();
   if (!row || !equalHash(row.receipt_hash || "", await digest(data.receiptKey))) throw new ApiError("Submission receipt was not found.", 404);
-  return {
-    id: data.id,
-    status: row.status,
-    name: JSON.parse(row.draft_json).name
-  };
+  return receiptStatus(row);
+}
+
+export async function submissionStatuses(request, env) {
+  const data = await body(request, 8192);
+  keys(data, [ "receipts" ]);
+  if (!Array.isArray(data.receipts) || !data.receipts.length || data.receipts.length > 30) throw new ApiError("Check 1–30 submission receipts at a time.", 400);
+  for (const receipt of data.receipts) validReceipt(receipt);
+  const ids = data.receipts.map(receipt => receipt.id);
+  if (new Set(ids).size !== ids.length) throw new ApiError("Each submission receipt must be unique.", 400);
+  const result = await env.DB.prepare("SELECT id,receipt_hash,status,draft_json,decline_note,updated_at FROM submissions WHERE id IN (" + ids.map((_, index) => "?" + (index + 1)).join(",") + ")").bind(...ids).all();
+  const rows = new Map(result.results.map(row => [row.id, row]));
+  const items = await Promise.all(data.receipts.map(async receipt => {
+    const hash = await digest(receipt.receiptKey), row = rows.get(receipt.id);
+    return row && equalHash(row.receipt_hash || "", hash) ? receiptStatus(row) : { id: receipt.id, status: "Unavailable" };
+  }));
+  return { items };
 }
 
 export async function listing(url, env) {
@@ -182,13 +212,15 @@ export async function listing(url, env) {
       throw new ApiError("Invalid review cursor.", 400);
     }
   }
-  const query = cursor ? env.DB.prepare("SELECT * FROM submissions WHERE status=?1 AND (created_at<?2 OR (created_at=?2 AND id<?3)) ORDER BY created_at DESC,id DESC LIMIT 31").bind(status, cursor.time, cursor.id) : env.DB.prepare("SELECT * FROM submissions WHERE status=?1 ORDER BY created_at DESC,id DESC LIMIT 31").bind(status);
+  const select = "SELECT " + publicationColumns + " FROM submissions s" + publicationJoin;
+  const query = cursor ? env.DB.prepare(select + "WHERE s.status=?1 AND (s.created_at<?2 OR (s.created_at=?2 AND s.id<?3)) ORDER BY s.created_at DESC,s.id DESC LIMIT 31").bind(status, cursor.time, cursor.id) : env.DB.prepare(select + "WHERE s.status=?1 ORDER BY s.created_at DESC,s.id DESC LIMIT 31").bind(status);
   const results = await env.DB.batch([ query, env.DB.prepare("SELECT status,COUNT(*) AS total FROM submissions GROUP BY status"), env.DB.prepare("SELECT COUNT(*) AS total FROM catalog_items") ]);
   const rows = results[0].results, more = rows.length > 30, visible = rows.slice(0, 30), last = visible.at(-1);
   return {
     items: visible.map(record),
     counts: Object.fromEntries(statuses.map(key => [ key, results[1].results.find(row => row.status === key)?.total || 0 ])),
     catalogCount: results[2].results[0].total,
+    publishing: publishingConfig(env),
     nextCursor: more ? btoa(JSON.stringify({
       time: last.created_at,
       id: last.id
@@ -199,13 +231,17 @@ export async function listing(url, env) {
 export async function review(request, env, id, session) {
   if (!uuid.test(id)) throw new ApiError("Submission was not found.", 404);
   const data = await body(request);
-  keys(data, [ "action", "version", "ownerNote", "draft" ]);
+  keys(data, [ "action", "version", "ownerNote", "declineNote", "draft" ]);
   if (![ "approve", "decline" ].includes(data.action) || !Number.isSafeInteger(data.version) || data.version < 1) throw new ApiError("Invalid review action.", 400);
-  const note = text(data.ownerNote || "", 2e3, "Review note");
+  const declineNote = text(data.declineNote ?? "", 2e3, "Decline note");
   const row = await env.DB.prepare("SELECT * FROM submissions WHERE id=?1").bind(id).first();
   if (!row) throw new ApiError("Submission was not found.", 404);
+  const note = data.ownerNote === undefined ? row.owner_note : text(data.ownerNote, 2e3, "Review note");
   if (row.version !== data.version) throw new ApiError("This item changed in another review. Reload the queue.", 409);
-  const verified = data.action === "approve" ? await verifiedDraft(data.draft || JSON.parse(row.draft_json), row.kind) : {
+  if (await lockedPublication(env, id)) throw new ApiError("This item is locked because it has been queued for the game. Use Retry publish for a failed delivery; declining does not remove a published item.", 409);
+  const reviewDraft = data.draft || JSON.parse(row.draft_json);
+  const verifyKind = row.kind === "owner" && publishingConfig(env).enabled ? reviewDraft.customTexture ? "reskin" : "official" : row.kind;
+  const verified = data.action === "approve" ? await verifiedDraft(reviewDraft, verifyKind) : {
     draft: JSON.parse(row.draft_json),
     base: JSON.parse(row.base_json),
     texture: row.texture_json ? JSON.parse(row.texture_json) : null
@@ -215,66 +251,35 @@ export async function review(request, env, id, session) {
   if (status === "approved") await checkKeys(env, claimKeys, id);
   let results;
   try {
-    results = await env.DB.batch([ env.DB.prepare("UPDATE submissions SET status=?1,draft_json=?2,base_json=?3,texture_json=?4,owner_note=?5,updated_at=?6,version=version+1,registry_json=?9 WHERE id=?7 AND version=?8").bind(status, JSON.stringify(verified.draft), JSON.stringify(verified.base), verified.texture ? JSON.stringify(verified.texture) : null, note, stamp, id, data.version, JSON.stringify(claimKeys)), env.DB.prepare("INSERT INTO review_log(submission_id,action,record_version,created_at,session_hash) SELECT id,?1,version,?2,?3 FROM submissions WHERE id=?4 AND version=?5 AND updated_at=?2 AND changes()=1").bind(data.action, stamp, session.token_hash, id, data.version + 1) ]);
+    const statements = [ env.DB.prepare("UPDATE submissions SET status=?1,draft_json=?2,base_json=?3,texture_json=?4,owner_note=?5,updated_at=?6,version=version+1,registry_json=?9,decline_note=?10 WHERE id=?7 AND version=?8 AND NOT EXISTS(SELECT 1 FROM publish_jobs p WHERE p.submission_id=submissions.id)").bind(status, JSON.stringify(verified.draft), JSON.stringify(verified.base), verified.texture ? JSON.stringify(verified.texture) : null, note, stamp, id, data.version, JSON.stringify(claimKeys), status === "declined" ? declineNote : ""), env.DB.prepare("INSERT INTO review_log(submission_id,action,record_version,created_at,session_hash) SELECT id,?1,version,?2,?3 FROM submissions WHERE id=?4 AND version=?5 AND updated_at=?2 AND changes()=1").bind(data.action, stamp, session.token_hash, id, data.version + 1) ];
+    if (status === "approved" && publishingConfig(env).enabled) statements.push(enqueueStatement(env, id, data.version + 1, verified.draft, verified.base, stamp));
+    results = await env.DB.batch(statements);
   } catch (error) {
     throw registryError(error);
   }
   if (!results[0].meta.changes) throw new ApiError("This item changed in another review. Reload the queue.", 409);
   return {
-    item: record(await env.DB.prepare("SELECT * FROM submissions WHERE id=?1").bind(id).first())
+    item: record(await itemRow(env, id))
   };
 }
 
 export async function ownerItem(request, env, session) {
   const data = await body(request);
   keys(data, [ "draft", "ownerNote" ]);
-  const {draft: draft, base: base} = await verifiedDraft(data.draft, "owner");
+  const {draft: draft, base: base} = await verifiedDraft(data.draft, publishingConfig(env).enabled ? data.draft?.customTexture ? "reskin" : "official" : "owner");
   uploadSettings(draft);
   const note = text(data.ownerNote || "", 2000, "Review note");
   const id = crypto.randomUUID(), stamp = now();
   await checkKeys(env, claims(draft, base, "owner"));
   try {
-    await env.DB.batch([ env.DB.prepare("INSERT INTO submissions(id,kind,username,status,draft_json,base_json,created_at,updated_at,owner_note,registry_json) VALUES(?1,'owner','Owner','approved',?2,?3,?4,?4,?5,?6)").bind(id, JSON.stringify(draft), JSON.stringify(base), stamp, note, JSON.stringify(claims(draft, base, "owner"))), env.DB.prepare("INSERT INTO review_log(submission_id,action,record_version,created_at,session_hash) VALUES(?1,'create',1,?2,?3)").bind(id, stamp, session.token_hash) ]);
+    const statements = [ env.DB.prepare("INSERT INTO submissions(id,kind,username,status,draft_json,base_json,created_at,updated_at,owner_note,registry_json) VALUES(?1,'owner','Owner','approved',?2,?3,?4,?4,?5,?6)").bind(id, JSON.stringify(draft), JSON.stringify(base), stamp, note, JSON.stringify(claims(draft, base, "owner"))), env.DB.prepare("INSERT INTO review_log(submission_id,action,record_version,created_at,session_hash) VALUES(?1,'create',1,?2,?3)").bind(id, stamp, session.token_hash) ];
+    if (publishingConfig(env).enabled) statements.push(enqueueStatement(env, id, 1, draft, base, stamp));
+    await env.DB.batch(statements);
   } catch (error) {
     throw registryError(error);
   }
   return {
-    item: record(await env.DB.prepare("SELECT * FROM submissions WHERE id=?1").bind(id).first())
+    item: record(await itemRow(env, id))
   };
 }
 
-export async function generate(request, env) {
-  const data = await body(request, 65536);
-  keys(data, [ "items", "mode" ]);
-  if (![ "full", "items" ].includes(data.mode) || !Array.isArray(data.items) || data.items.length < 1 || data.items.length > 500) throw new ApiError("Select 1–500 approved items and an output format.", 400);
-  const ids = new Set;
-  for (const item of data.items) {
-    if (!item || typeof item !== "object" || Array.isArray(item)) throw new ApiError("Invalid selected item.", 400);
-    keys(item, [ "id", "version" ]);
-    if (!uuid.test(item.id) || ids.has(item.id) || !Number.isSafeInteger(item.version)) throw new ApiError("Invalid selected item.", 400);
-    ids.add(item.id);
-  }
-  const queries = [];
-  for (let offset = 0; offset < data.items.length; offset += 50) {
-    const group = data.items.slice(offset, offset + 50);
-    const placeholders = group.map((item, index) => "?" + (index + 1)).join(",");
-    queries.push(env.DB.prepare("SELECT s.id,s.status,s.version,s.draft_json,s.registry_json,EXISTS(SELECT 1 FROM catalog_keys k,json_each(s.registry_json) j WHERE k.key=j.value AND k.item_id<>s.id UNION ALL SELECT 1 FROM pending_keys k,json_each(s.registry_json) j WHERE k.key=j.value AND k.submission_id<>s.id) AS conflict FROM submissions s WHERE s.id IN (" + placeholders + ")").bind(...group.map(item => item.id)));
-  }
-  const results = await env.DB.batch(queries);
-  const records = new Map(results.flatMap(result => result.results).map(row => [row.id, row]));
-  const drafts = data.items.map(item => {
-    const row = records.get(item.id);
-    if (!row || row.status !== "approved" || row.version !== item.version) throw new ApiError("An item is no longer approved or has changed. Reload the queue before exporting.", 409);
-    if (row.conflict) throw new ApiError("An approved item conflicts with the existing catalog. Review it before exporting.", 409);
-    return JSON.parse(row.draft_json);
-  });
-  try {
-    return {
-      code: data.mode === "full" ? core.fullScript(drafts, publisher) : core.itemsLua(drafts),
-      count: drafts.length,
-      requirements: { heads: drafts.some(draft => draft.itemType === "Head"), fixedStockLimitedU: drafts.some(draft => draft.catalogType === "limited-u"), detailedPlacement: drafts.some(draft => [ "LeftShoulder", "RightShoulder", "Collar", "WaistFront", "WaistCenter", "WaistBack" ].includes(draft.accessoryKind)) }
-    };
-  } catch (error) {
-    throw new ApiError(error.message, 400);
-  }
-}

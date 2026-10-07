@@ -84,6 +84,60 @@ test("official lookups reject UGC and Group 1, accept gear, and filter search re
   assert.match(search.url, /Category=11/);
 });
 
+test("dynamic heads pass lookup for Roblox and other creators", async t => {
+  const h = harness(t);
+  for (const id of [15093053680, 134082579, 205]) {
+    const lookup = await h.request("/api/asset/" + id);
+    assert.equal(lookup.response.status, 200, JSON.stringify(lookup.data));
+    assert.equal(lookup.data.item.creatorId, 1);
+    assert.match(lookup.data.item.thumbnail, /rbxcdn\.com/);
+    assert.equal(core.assetMapping(lookup.data.item.assetType, lookup.data.item.kind, id).itemType, "Head");
+  }
+  const original = globalThis.fetch;
+  globalThis.fetch = async (url, options) => {
+    const response = await original(url, options);
+    if (!String(url).includes("economy.roblox.com/v2/assets/205/")) return response;
+    const item = await response.json();
+    item.Creator.Id = 12;
+    return Response.json(item);
+  };
+  assert.equal((await h.request("/api/asset/205")).response.status, 200);
+});
+
+test("Headless Head keeps its asset identity through approval and duplicate protection", async t => {
+  const h = harness(t), proposal = draft({ name: "Headless Head", assetId: "15093053680", itemType: "Head", accessoryKind: "" });
+  for (const changes of [{ itemType: "Hat" }, { customTexture: true, texture: "200" }, { Headless: true }]) {
+    const result = await h.request("/api/submissions", { data: payload({ draft: { ...proposal, ...changes } }) });
+    assert.equal(result.response.status, 400, JSON.stringify(result.data));
+  }
+  const first = await h.request("/api/submissions", { data: payload({ draft: proposal }) });
+  assert.equal(first.response.status, 200, JSON.stringify(first.data));
+  assert.equal((await h.request("/api/submissions", { data: payload({ receiptKey: "B".repeat(43), draft: { ...proposal, name: "Renamed Headless" } }) })).response.status, 409);
+  assert.equal((await h.request("/api/submissions", { data: payload({ receiptKey: "D".repeat(43), draft: { ...proposal, assetId: "134082579", name: "Classic Headless" } }) })).response.status, 409);
+  const token = await h.login();
+  const approval = await h.request("/api/admin/submissions/" + first.data.id, { token, method: "PATCH", data: { action: "approve", version: 1 } });
+  assert.equal(approval.response.status, 200, JSON.stringify(approval.data));
+  const output = await h.request("/api/admin/submissions/" + first.data.id, { token });
+  assert.equal(output.response.status, 200, JSON.stringify(output.data));
+  const definition = core.buildDefinition(output.data.item.draft);
+  assert.equal(definition.AssetId, 15093053680);
+  assert.equal(definition.ItemType, "Head");
+  assert.equal(definition.Headless, true);
+  assert.equal((await h.request("/api/submissions", { data: payload({ receiptKey: "C".repeat(43), draft: proposal }) })).response.status, 409);
+});
+
+test("head name search finds Headless Head inside its Roblox bundle and excludes unrelated item types", async t => {
+  const h = harness(t), result = await h.request("/api/search?q=Headless%20Head&category=heads");
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.exactMatchId, 15093053680);
+  assert.deepEqual(result.data.items.map(item => item.id), [ 105, 15093053680, 205 ]);
+  assert.equal(result.data.items.find(item => item.id === 15093053680).kind, "Asset");
+  assert.ok(result.data.items.every(item => core.assetMapping(item.assetType, item.kind, item.id)?.itemType === "Head"));
+  const search = h.stub.calls.find(call => call.url.includes("search/items"));
+  assert.equal(new URL(search.url).searchParams.get("Category"), "1");
+  assert.equal(new URL(search.url).searchParams.has("Subcategory"), false);
+});
+
 test("the hundredth submission is allowed and the next verified attempt is rate limited", async t => {
   const h = harness(t);
   delete h.env.SUBMISSIONS_PER_IP_PER_DAY;
@@ -156,6 +210,83 @@ test("public submission is pending, private receipts work, and retrying a receip
   })).response.status, 409);
 });
 
+test("decline reasons reach only the receipt holder and private owner notes stay private", async t => {
+  const h = harness(t), data = payload(), submission = await h.request("/api/submissions", { data });
+  const id = submission.data.id, token = await h.login(), privateNote = "Private owner record", reason = "Please use a different texture.\n<img src=x onerror=alert(1)>";
+  h.env.DB.sqlite.prepare("UPDATE submissions SET owner_note=?,decline_note=? WHERE id=?").run(privateNote, "Old reason", id);
+  const status = () => h.request("/api/status", { data: { id, receiptKey: data.receiptKey } });
+  const pending = await status();
+  assert.equal(pending.data.declineNote, "");
+  assert.doesNotMatch(JSON.stringify(pending.data), /Private owner record|Old reason/);
+  const declined = await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "decline", version: 1, declineNote: reason } });
+  assert.equal(declined.response.status, 200, JSON.stringify(declined.data));
+  assert.equal(declined.data.item.ownerNote, privateNote);
+  assert.equal(declined.data.item.declineNote, reason);
+  const own = await status();
+  assert.equal(own.data.status, "declined");
+  assert.equal(own.data.declineNote, reason);
+  assert.equal(own.data.ownerNote, undefined);
+  assert.doesNotMatch(JSON.stringify(own.data), /Private owner record|receipt_hash|ip_hash/);
+  assert.equal((await h.request("/api/status", { data: { id, receiptKey: "B".repeat(43) } })).response.status, 404);
+  const changed = await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "decline", version: 2, declineNote: "Updated reason" } });
+  assert.equal(changed.response.status, 200);
+  assert.equal((await status()).data.declineNote, "Updated reason");
+  assert.equal((await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "approve", version: 3 } })).response.status, 200);
+  assert.equal((await status()).data.declineNote, "");
+});
+
+test("batch receipts disclose no item information for a missing or incorrect receipt", async t => {
+  const h = harness(t), first = payload(), second = payload({ receiptKey: "B".repeat(43), draft: draft({ name: "Head suggestion", itemType: "Head", assetId: "205", accessoryKind: "" }) });
+  const one = await h.request("/api/submissions", { data: first }), two = await h.request("/api/submissions", { data: second });
+  const id = one.data.id, missing = crypto.randomUUID(), token = await h.login();
+  await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "decline", version: 1, ownerNote: "Owner secret", declineNote: "Not a suitable item" } });
+  const data = { receipts: [{ id, receiptKey: first.receiptKey }, { id: two.data.id, receiptKey: "C".repeat(43) }, { id: missing, receiptKey: "C".repeat(43) }] };
+  const result = await h.request("/api/status/batch", { data });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.items[0].declineNote, "Not a suitable item");
+  assert.deepEqual(result.data.items[1], { id: two.data.id, status: "Unavailable" });
+  assert.deepEqual(result.data.items[2], { id: missing, status: "Unavailable" });
+  assert.doesNotMatch(JSON.stringify(result.data), /Owner secret|Head suggestion|receiptKey|receipt_hash/);
+  const correct = await h.request("/api/status/batch", { data: { receipts: [{ id: two.data.id, receiptKey: second.receiptKey }] } });
+  assert.equal(correct.data.items[0].name, "Head suggestion");
+  for (const receipts of [[], [null], [{ id, receiptKey: first.receiptKey, ownerNote: "forged" }], [data.receipts[0], data.receipts[0]], Array.from({ length: 31 }, () => data.receipts[0])]) {
+    assert.equal((await h.request("/api/status/batch", { data: { receipts } })).response.status, 400);
+  }
+});
+
+test("forged prices and stocks cannot bypass submission, owner creation or approval limits", async t => {
+  const h = harness(t), token = await h.login();
+  const changes = [{ price: "50001" }, { price: "-1" }, { price: "2.5" }, { catalogType: "limited", stock: "9" }, { catalogType: "limited", stock: "501" }, { catalogType: "limited-u", stock: "9" }, { catalogType: "limited-u", stock: "501" }, { catalogType: "limited-u", stock: "10.1" }];
+  for (const change of changes) {
+    const item = draft(change);
+    assert.equal((await h.request("/api/submissions", { data: payload({ draft: item }) })).response.status, 400);
+    assert.equal((await h.request("/api/admin/items", { token, data: { draft: item } })).response.status, 400);
+  }
+  const submission = await h.request("/api/submissions", { data: payload() }), id = submission.data.id;
+  for (const change of changes) {
+    assert.equal((await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "approve", version: 1, draft: draft(change) } })).response.status, 400);
+  }
+  const row = h.env.DB.sqlite.prepare("SELECT status,version FROM submissions WHERE id=?").get(id);
+  assert.equal(row.status, "pending");
+  assert.equal(row.version, 1);
+  assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) n FROM publish_jobs").get().n, 0);
+});
+
+test("server accepts inclusive boundaries and saves non-limited items with unlimited stock", async t => {
+  const h = harness(t), token = await h.login();
+  const cases = [{ price: "0", stock: "500" }, { price: "50000" }, { catalogType: "limited", stock: "10" }, { catalogType: "limited", stock: "500" }, { catalogType: "limited-u", stock: "10" }, { catalogType: "limited-u", stock: "500" }];
+  for (const change of cases) {
+    const response = await h.request("/api/submissions", { data: payload({ draft: draft(change), receiptKey: crypto.randomUUID().replaceAll("-", "").padEnd(43, "A") }) });
+    assert.equal(response.response.status, 200, JSON.stringify(response.data));
+    const id = response.data.id, saved = JSON.parse(h.env.DB.sqlite.prepare("SELECT draft_json FROM submissions WHERE id=?").get(id).draft_json);
+    if (!change.catalogType) {
+      assert.equal(saved.stock, "0");
+      assert.equal(core.buildDefinition(saved).Stock, 0);
+    } else assert.equal(Number(saved.stock), Number(change.stock));
+    assert.equal((await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "decline", version: 1 } })).response.status, 200);
+  }
+});
+
 test("reskins resolve decals to image IDs and reject meshes and off-host redirects", async t => {
   const h = harness(t), data = payload({
     kind: "reskin",
@@ -205,20 +336,20 @@ test("new uploads reject removed rewards, date schedules, and advanced placement
   assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) n FROM submissions").get().n, 0);
 });
 
-test("Limited U keeps finite stock with no mandatory timer through approval and export", async t => {
+test("Limited U keeps finite stock and no mandatory timer through approval", async t => {
   const h = harness(t), proposal = draft({ catalogType: "limited-u", stock: "32" });
   const first = await h.request("/api/submissions", { data: payload({ draft: proposal }) });
   assert.equal(first.response.status, 200, JSON.stringify(first.data));
   const token = await h.login();
   const approval = await h.request("/api/admin/submissions/" + first.data.id, { token, method: "PATCH", data: { action: "approve", version: 1 } });
   assert.equal(approval.response.status, 200, JSON.stringify(approval.data));
-  const output = await h.request("/api/admin/generate", { token, data: { items: [{ id: first.data.id, version: 2 }], mode: "items" } });
-  assert.equal(output.response.status, 200);
-  assert.match(output.data.code, /Stock = 32/);
-  assert.match(output.data.code, /LimitedU = true/);
-  assert.match(output.data.code, /MaxPerUser = 0/);
-  assert.doesNotMatch(output.data.code, /OnsaleAt|OffsaleAt/);
-  assert.equal(output.data.requirements.fixedStockLimitedU, true);
+  const record = await h.request("/api/admin/submissions/" + first.data.id, { token });
+  const definition = core.buildDefinition(record.data.item.draft);
+  assert.equal(definition.Stock, 32);
+  assert.equal(definition.LimitedU, true);
+  assert.equal(definition.MaxPerUser, 0);
+  assert.equal(definition.OnsaleAt, undefined);
+  assert.equal(definition.OffsaleAt, undefined);
 });
 
 test("classic face metadata loads without asset delivery and submitted texture IDs stay authoritative", async t => {
@@ -240,11 +371,12 @@ test("classic face metadata loads without asset delivery and submitted texture I
   assert.equal(approval.response.status, 200, JSON.stringify(approval.data));
   assert.equal(approval.data.item.draft.texture, "rbxassetid://204");
   assert.equal(approval.data.item.draft.assetId, "106");
-  const output = await h.request("/api/admin/generate", { token, data: { items: [{ id: submission.data.id, version: 2 }], mode: "items" } });
-  assert.match(output.data.code, /Texture = "rbxassetid:\/\/204"/);
-  assert.match(output.data.code, /AssetId = 106/);
+  const output = await h.request("/api/admin/submissions/" + submission.data.id, { token });
+  const definition = core.buildDefinition(output.data.item.draft);
+  assert.equal(definition.Texture, "rbxassetid://204");
+  assert.equal(definition.AssetId, 106);
   await assert.rejects(checkKeys(h.env, [ "face-texture:204" ]), error => error.status === 409);
-  assert.equal((await h.request("/api/asset/205")).response.status, 400);
+  assert.equal((await h.request("/api/asset/205")).response.status, 200);
 });
 
 test("submission ownership and custom texture rules are enforced against forged requests", async t => {
@@ -270,81 +402,28 @@ test("submission ownership and custom texture rules are enforced against forged 
   assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) n FROM submissions").get().n, 0);
 });
 
-test("owner routes require a valid session and enforce approved-only versioned exports", async t => {
-  const h = harness(t), submission = await h.request("/api/submissions", {
-    data: payload()
-  }), id = submission.data.id;
-  for (const path of [ "/api/admin/submissions", "/api/admin/generate", "/api/admin/submissions/" + id ]) assert.equal((await h.request(path, {
-    method: path.includes(id) ? "PATCH" : "GET"
-  })).response.status, 401);
+test("owner records require a valid session and review decisions enforce current versions", async t => {
+  const h = harness(t), submission = await h.request("/api/submissions", { data: payload() }), id = submission.data.id;
+  for (const path of ["/api/admin/submissions", "/api/admin/generate", "/api/admin/submissions/" + id]) assert.equal((await h.request(path)).response.status, 401);
   const token = await h.login();
-  let result = await h.request("/api/admin/generate", {
-    token: token,
-    data: {
-      items: [ {
-        id: id,
-        version: 1
-      } ],
-      mode: "items"
-    }
-  });
-  assert.equal(result.response.status, 409);
-  const approve = await h.request("/api/admin/submissions/" + id, {
-    token: token,
-    method: "PATCH",
-    data: {
-      action: "approve",
-      version: 1,
-      draft: draft({
-        name: "Approved Hat",
-        endMode: "duration",
-        duration: "24"
-      }),
-      ownerNote: "Private note"
-    }
-  });
+  const pending = await h.request("/api/admin/submissions/" + id, { token });
+  assert.equal(pending.response.status, 200);
+  assert.equal(pending.data.item.status, "pending");
+  assert.equal(pending.data.item.receipt_hash, undefined);
+  assert.equal(pending.data.item.ip_hash, undefined);
+  assert.equal((await h.request("/api/admin/submissions/" + crypto.randomUUID(), { token })).response.status, 404);
+  const approve = await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: {
+    action: "approve", version: 1, draft: draft({ name: "Approved Hat", endMode: "duration", duration: "24" }), ownerNote: "Private note"
+  } });
   assert.equal(approve.response.status, 200, JSON.stringify(approve.data));
   assert.equal(approve.data.item.version, 2);
-  assert.equal((await h.request("/api/admin/submissions/" + id, {
-    token: token,
-    method: "PATCH",
-    data: {
-      action: "decline",
-      version: 1
-    }
-  })).response.status, 409);
-  result = await h.request("/api/admin/generate", {
-    token: token,
-    data: {
-      items: [ {
-        id: id,
-        version: 2
-      } ],
-      mode: "full"
-    }
-  });
-  assert.equal(result.response.status, 200, JSON.stringify(result.data));
-  assert.match(result.data.code, /Approved Hat/);
-  assert.match(result.data.code, /OffsaleAt = os.time\(\) \+ 86400/);
-  assert.match(result.data.code, /store:UpdateAsync/);
-  await h.request("/api/admin/submissions/" + id, {
-    token: token,
-    method: "PATCH",
-    data: {
-      action: "decline",
-      version: 2
-    }
-  });
-  assert.equal((await h.request("/api/admin/generate", {
-    token: token,
-    data: {
-      items: [ {
-        id: id,
-        version: 2
-      } ],
-      mode: "items"
-    }
-  })).response.status, 409);
+  assert.equal((await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "decline", version: 1 } })).response.status, 409);
+  const result = await h.request("/api/admin/submissions/" + id, { token });
+  assert.equal(result.data.item.draft.name, "Approved Hat");
+  assert.equal(result.data.item.ownerNote, "Private note");
+  assert.equal(core.buildDefinition(result.data.item.draft).OffsaleAt.luaExpression, "os.time() + 86400");
+  assert.equal((await h.request("/api/admin/submissions/" + id, { token, method: "PATCH", data: { action: "decline", version: 2 } })).response.status, 200);
+  assert.equal((await h.request("/api/admin/submissions/" + id, { token })).data.item.status, "declined");
   assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) n FROM review_log").get().n, 2);
 });
 
@@ -442,7 +521,7 @@ test("edge and atomic daily limits fail closed", async t => {
   assert.equal((await h.request("/api/admin/submissions")).response.status, 503);
 });
 
-test("SQL and Lua treat submitted text as data and never expose server secrets", async t => {
+test("submitted text stays data and owner records never expose server secrets", async t => {
   const h = harness(t), description = '"); warn("injected") --\n<svg onload=alert(1)>';
   const result = await h.request("/api/submissions", {
     data: payload({
@@ -467,18 +546,10 @@ test("SQL and Lua treat submitted text as data and never expose server secrets",
       version: 1
     }
   });
-  const output = await h.request("/api/admin/generate", {
-    token: token,
-    data: {
-      items: [ {
-        id: result.data.id,
-        version: 2
-      } ],
-      mode: "items"
-    }
-  });
-  assert.match(output.data.code, /Description = "\\"\); warn\(\\"injected\\"\)/);
-  assert.match(output.data.code, /\\n<svg/);
+  const output = await h.request("/api/admin/submissions/" + result.data.id, { token });
+  assert.equal(output.data.item.draft.description, description);
+  assert.equal(output.data.item.receipt_hash, undefined);
+  assert.equal(output.data.item.ip_hash, undefined);
   assert.equal((await h.request("/api/config")).data.ADMIN_KEY_HASH, undefined);
 });
 
@@ -505,26 +576,17 @@ test("owner-created gear is registered and duplicate names are rejected before a
     }
   });
   assert.equal(second.response.status, 409);
-  const result = await h.request("/api/admin/generate", {
-    token: token,
-    data: {
-      items: [ {
-        id: first.data.item.id,
-        version: 1
-      } ],
-      mode: "items"
-    }
-  });
+  const result = await h.request("/api/admin/submissions/" + first.data.item.id, { token });
   assert.equal(result.response.status, 200);
-  assert.match(result.data.code, /ItemType = "Tool"/);
+  assert.equal(core.buildDefinition(result.data.item.draft).ItemType, "Tool");
 });
 
 test("invalid dates, numeric caps, and object-valued item fields are rejected", async t => {
   const h = harness(t);
   for (const changes of [ {
-    price: "1000000001"
+    price: "50001"
   }, {
-    stock: "1000001"
+    catalogType: "limited-u", stock: "501"
   }, {
     name: {
       luaExpression: "evil()"
@@ -559,14 +621,15 @@ test("static documents have security headers and cannot serve backend source",as
   for(const path of ['/server/publisher.js','/tests/support.mjs','/README.md'])assert.equal((await worker.fetch(new Request('https://catalog.test'+path),h.env)).status,404);
 });
 
-test("the full 500-item export preserves selection order and validates every approved record",async t=>{
-  const h=harness(t),token=await h.login(),items=[];
-  const insert=h.env.DB.sqlite.prepare("INSERT INTO submissions(id,kind,username,status,draft_json,base_json,created_at,updated_at,registry_json) VALUES(?,'owner','Owner','approved',?,'{}',1,1,?)");
-  for(let index=0;index<500;index++){const id=crypto.randomUUID(),item=draft({name:'Batch item '+index,assetId:String(900000+index)});insert.run(id,JSON.stringify(item),JSON.stringify(core.registryKeys(item)));items.push({id,version:1});}
-  const result=await h.request('/api/admin/generate',{token,data:{items,mode:'items'}});assert.equal(result.response.status,200,JSON.stringify(result.data));assert.equal(result.data.count,500);
-  assert.ok(result.data.code.indexOf('Batch item 49"')<result.data.code.indexOf('Batch item 50"'));assert.match(result.data.code,/Batch item 499/);
-  h.env.DB.sqlite.prepare("UPDATE submissions SET status='pending' WHERE id=?").run(items[450].id);
-  assert.equal((await h.request('/api/admin/generate',{token,data:{items,mode:'items'}})).response.status,409);
+test("the removed code export endpoint remains unavailable to signed-in owners", async t => {
+  const h = harness(t), token = await h.login();
+  const item = await h.request("/api/admin/items", { token, data: { draft: draft({ name: "Approved record", assetId: "999" }) } });
+  assert.equal(item.response.status, 200);
+  for (const mode of ["items", "full"]) {
+    const result = await h.request("/api/admin/generate", { token, data: { items: [{ id: item.data.item.id, version: 1 }], mode } });
+    assert.equal(result.response.status, 404);
+    assert.equal(result.data.code, undefined);
+  }
 });
 
 test("all 407 supplied items are registered, including 58 items without IDs", async t => {
@@ -680,4 +743,61 @@ test("upgrading an existing database preserves records and protects old accepted
   } finally {
     sqlite.close();
   }
+});
+
+test("dynamic-head bundle links resolve to the actual Head asset before submission", async t => {
+  const h = harness(t), original = globalThis.fetch;
+  globalThis.fetch = async (url, options = {}) => {
+    const target = new URL(String(url));
+    if (target.pathname === "/v1/bundles/302/details") return Response.json({ id: 302, bundleType: "DynamicHead", items: [{ id: 205, type: "Asset" }, { id: 9999, type: "Asset" }] });
+    if (target.pathname === "/v1/catalog/items/details" && options.method === "POST") {
+      assert.deepEqual(JSON.parse(options.body).items.map(item => item.id), [205, 9999]);
+      return Response.json({ data: [{ id: 205, assetType: 79 }, { id: 9999, assetType: 78 }] });
+    }
+    return original(url, options);
+  };
+  const lookup = await h.request("/api/asset/302?kind=Bundle");
+  assert.equal(lookup.response.status, 200, JSON.stringify(lookup.data));
+  assert.equal(lookup.data.item.id, 205);
+  assert.equal(lookup.data.item.kind, "Asset");
+  assert.equal(core.assetMapping(lookup.data.item.assetType, lookup.data.item.kind).itemType, "Head");
+  assert.match(lookup.data.item.thumbnail, /205\.png$/);
+  const result = await h.request("/api/submissions", { data: payload({ draft: draft({ name: "Bundle Head", itemType: "Head", assetId: "205", accessoryKind: "" }) }) });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(JSON.parse(h.env.DB.sqlite.prepare("SELECT registry_json FROM submissions WHERE id=?").get(result.data.id).registry_json).includes("asset:205"), true);
+});
+
+test("ambiguous dynamic-head bundles fail safely without importing animations as heads", async t => {
+  const h = harness(t);
+  globalThis.fetch = async (url, options = {}) => {
+    const target = new URL(String(url));
+    if (target.pathname.includes("/bundles/302/details")) return Response.json({ id: 302, bundleType: 4, items: [{ id: 205, type: "Asset" }, { id: 15093053680, type: "Asset" }] });
+    if (target.pathname.includes("/catalog/items/details")) return Response.json({ data: [{ id: 205, assetType: 79 }, { id: 15093053680, assetType: 79 }] });
+    return h.stub.fetch(url, options);
+  };
+  const result = await h.request("/api/asset/302?kind=Bundle");
+  assert.equal(result.response.status, 400);
+  assert.match(result.data.error, /single dynamic head/);
+  assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) n FROM submissions").get().n, 0);
+});
+
+test("head search includes other creators without relaxing accessory search", async t => {
+  const h = harness(t), original = globalThis.fetch;
+  globalThis.fetch = async (url, options) => {
+    const target = new URL(String(url));
+    if (target.hostname === "catalog.roblox.com" && target.pathname.includes("search")) {
+      if (target.searchParams.get("Category") === "1") {
+        assert.equal(target.searchParams.has("CreatorTargetId"), false);
+        assert.equal(target.searchParams.has("CreatorType"), false);
+        return Response.json({ data: [{ id: 205, itemType: "Asset", name: "Creator Head", assetType: 79, creatorType: "User", creatorTargetId: 12, creatorName: "Head Creator" }, { id: 105, itemType: "Asset", name: "Group Head", assetType: 17, creatorType: "Group", creatorTargetId: 23, creatorName: "Head Group" }, { id: 101, itemType: "Asset", name: "UGC Hat", assetType: 8, creatorType: "User", creatorTargetId: 12 }], nextPageCursor: null });
+      }
+      assert.equal(target.searchParams.get("CreatorTargetId"), "1");
+    }
+    return original(url, options);
+  };
+  const result = await h.request("/api/search?q=Creator%20Head&category=heads");
+  assert.equal(result.response.status, 200);
+  assert.deepEqual(result.data.items.map(item => item.id), [205, 105]);
+  assert.equal(result.data.exactMatchId, 205);
+  assert.deepEqual((await h.request("/api/search?q=Classic%20Hat&category=accessories")).data.items.map(item => item.id), [100]);
 });
