@@ -1,7 +1,8 @@
 (async function() {
   "use strict";
   const ui = window.CatalogUI, core = window.CatalogCore, {$: $, node: node, notice: notice, toast: toast, api: api} = ui;
-  let kind = "official", selected = null, verification = null, pending = null, cursor = null, searchQuery = "", busy = false, searchTimer;
+  let kind = "official", lookupMode = "name", lookupVersion = 0, selected = null, verification = null, pending = null, cursor = null, searchQuery = "", busy = false, searchTimer;
+  const searchCategory = () => ({ Face: "faces", Tool: "gear", BodyPackage: "bundles", Head: "heads" }[$("item-type").value] || "accessories");
   const receiptStorage = "reminisce.receipts.v2";
   let receipts = [];
   try {
@@ -42,17 +43,17 @@
     $("edit-state").textContent = kind === "reskin" ? "Use an official base hat and your replacement texture." : "Suggested settings for an official Roblox item.";
   }
   for (const type of [ "official", "reskin" ]) $("kind-" + type).addEventListener("click", () => setKind(type));
-  async function choose(id, query = null, assetKind = "Asset", category = $("search-category").value) {
+  async function choose(id, query = null, assetKind = "Asset", category = searchCategory(), version = lookupVersion) {
     const {item: item} = await api("/asset/" + id + "?kind=" + assetKind);
     if (query !== null && query !== $("search-input").value.trim()) return;
-    if (category !== $("search-category").value) return;
+    if (version !== lookupVersion || category !== searchCategory()) return;
     ui.applyAsset(item, kind === "reskin");
     selected = item;
     const supportsReskin = core.isAccessory($("item-type").value) || $("item-type").value === "Face";
     $("kind-reskin").disabled = !supportsReskin;
     if (!supportsReskin) kind = "official";
     setKind(kind);
-    notice("lookup-status", "Verified official Roblox base · " + item.name);
+    notice("lookup-status", "Verified official Roblox item · " + item.name + (item.assetType === 18 ? ". Enter its classic face texture ID below." : ""));
     $("search-results").replaceChildren();
   }
   function results(items, append) {
@@ -83,19 +84,21 @@
     $("search-button").disabled = true;
     notice("lookup-status", "Searching Roblox…");
     try {
-      const query = append ? searchQuery : $("search-input").value.trim(), parsed = core.parseAssetQuery(query), category = $("search-category").value;
+      const query = append ? searchQuery : $("search-input").value.trim(), parsed = core.parseAssetQuery(query), category = searchCategory(), version = lookupVersion;
+      if (lookupMode === "link" && !parsed) throw new Error("Paste a Roblox catalog or bundle link, or enter an item ID.");
       if (parsed) {
         if (!parsed.id) throw new Error("Enter a valid Roblox asset or bundle ID.");
-        await choose(parsed.id, query, parsed.kind === "Bundle" || category === "bundles" ? "Bundle" : "Asset", category);
+        const fromLink = /^https?:\/\//i.test(query);
+        await choose(parsed.id, query, parsed.kind === "Bundle" || !fromLink && category === "bundles" ? "Bundle" : "Asset", category, version);
         cursor = null;
       } else {
         const data = await api("/search?q=" + encodeURIComponent(query) + "&category=" + category + (append && cursor ? "&cursor=" + encodeURIComponent(cursor) : ""));
-        if (query !== $("search-input").value.trim() || category !== $("search-category").value) return;
+        if (version !== lookupVersion || query !== $("search-input").value.trim() || category !== searchCategory()) return;
         searchQuery = query;
         cursor = data.nextCursor;
         results(data.items, append);
-        notice("lookup-status", data.items.length ? "Choose a result to fill its ID and description." : "No official Roblox items matched. Try another name, category, or item ID.");
-        if (!append && data.exactMatchId) await choose(data.exactMatchId, query, category === "bundles" ? "Bundle" : "Asset", category);
+        notice("lookup-status", data.items.length ? "Choose a result to copy its details." : "No official Roblox items matched. Try another name, Item type, or item link.");
+        if (!append && data.exactMatchId) await choose(data.exactMatchId, query, category === "bundles" ? "Bundle" : "Asset", category, version);
       }
       $("more-results").hidden = !cursor;
     } catch (error) {
@@ -111,14 +114,38 @@
     search();
   });
   $("more-results").addEventListener("click", () => search(true));
-  $("search-category").addEventListener("change", () => {
+  function clearResults() {
+    lookupVersion++;
+    clearTimeout(searchTimer);
     cursor = null;
     $("more-results").hidden = true;
     $("search-results").replaceChildren();
-    if ($("search-input").value.trim().length >= 2) search();
+  }
+  $("item-type").addEventListener("change", () => {
+    selected = null;
+    clearResults();
+    const supportsReskin = core.isAccessory($("item-type").value) || $("item-type").value === "Face";
+    $("kind-reskin").disabled = !supportsReskin;
+    if (!supportsReskin) kind = "official";
+    setKind(kind);
+    notice("lookup-status", "Search for an official Roblox item of this type, or paste its link.");
+  });
+  for (const mode of [ "name", "link" ]) $("lookup-" + mode).addEventListener("click", () => {
+    lookupMode = mode;
+    clearResults();
+    for (const value of [ "name", "link" ]) {
+      $("lookup-" + value).classList.toggle("active", value === mode);
+      $("lookup-" + value).setAttribute("aria-pressed", String(value === mode));
+    }
+    $("search-label").textContent = mode === "link" ? "Roblox item link or ID" : "Roblox item name";
+    $("search-input").type = mode === "link" ? "text" : "search";
+    $("search-input").placeholder = mode === "link" ? "https://www.roblox.com/catalog/…" : "e.g. Sinister Zombie";
+    $("search-input").value = "";
+    $("search-button").textContent = mode === "link" ? "Fill details" : "Search";
+    $("search-input").focus();
   });
   $("search-input").addEventListener("input", () => {
-    clearTimeout(searchTimer);
+    clearResults();
     function run() {
       if ($("search-input").value.trim().length < 2) return;
       if (busy) searchTimer = setTimeout(run, 650);
@@ -127,7 +154,7 @@
     if ($("search-input").value.trim().length >= 2) searchTimer = setTimeout(run, 650);
   });
   $("asset-id").addEventListener("change", () => {
-    if (selected && String(selected.id) !== $("asset-id").value) {
+    if ($("item-type").value !== "Face" && selected && String(selected.id) !== $("asset-id").value) {
       selected = null;
       ui.showAsset(null);
     }
@@ -142,6 +169,7 @@
     try {
       let draft = ui.readDraft();
       const assetKind = draft.itemType === "BodyPackage" ? "Bundle" : "Asset";
+      if (draft.itemType === "Face" && !selected) throw new Error("First find the Roblox face by name or paste its item link. Then enter its classic texture ID in Item details.");
       if (!selected || String(selected.id) !== draft.assetId || selected.kind !== assetKind) {
         const {item: item} = await api("/asset/" + encodeURIComponent(draft.assetId) + "?kind=" + assetKind);
         selected = item;
@@ -152,28 +180,28 @@
           accessoryKind: core.isAccessory(mapping.itemType) ? draft.accessoryKind || mapping.accessoryKind : "",
           name: draft.name || item.name,
           description: draft.description || item.description,
-          texture: item.textureId ? "rbxassetid://" + item.textureId : draft.texture
+          texture: mapping.itemType === "Face" ? "" : draft.texture
         };
         ui.fillDraft(draft);
         ui.showAsset(item);
         setKind(kind);
+        if (mapping.itemType === "Face") {
+          $("asset-id").focus();
+          throw new Error("Roblox details copied. Enter the classic face texture ID in Item details.");
+        }
       }
       draft = ui.validDraft();
       draft.customTexture = kind === "reskin";
       if (kind === "reskin" && !(core.isAccessory(draft.itemType) || draft.itemType === "Face")) throw new Error("Choose an accessory or classic face for a reskin.");
-      const username = $("username").value.trim();
-      if (!/^[A-Za-z0-9_]{3,20}$/.test(username)) throw new Error("Enter your Roblox username below.");
-      if (kind === "reskin") {
+      if (kind === "reskin" || draft.itemType === "Face") {
         const {item: item} = await api("/texture/" + core.assetContent(draft.texture).split("//")[1]);
         draft.texture = "rbxassetid://" + item.id;
-        $("texture").value = draft.texture;
+        ui.fillDraft(draft);
       }
       await api("/check-item", { method: "POST", data: { kind, draft: Object.fromEntries([ "name", "itemType", "assetId", "customTexture", "texture" ].map(key => [key, draft[key]])) } });
       if (!verification?.value) throw new Error("Complete the verification check below before submitting.");
       pending = {
         kind: kind,
-        username: username,
-        notes: $("submission-notes").value.trim(),
         draft: draft,
         receiptKey: ui.randomKey()
       };
@@ -219,7 +247,7 @@
       $("kind-reskin").disabled = false;
       ui.showAsset(null);
       setKind(kind);
-      $("submission-notes").value = "";
+      clearResults();
       $("search-input").value = "";
       notice("lookup-status", "Search for your next official Roblox item.");
     } catch (error) {

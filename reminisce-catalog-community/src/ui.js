@@ -1,7 +1,7 @@
 (function(root) {
   "use strict";
   const core = root.CatalogCore, $ = id => document.getElementById(id), form = $("item-form");
-  let base = "", toastTimer;
+  let base = "", faceBaseId = "", toastTimer;
   const node = (tag, text, className) => {
     const element = document.createElement(tag);
     if (text !== undefined) element.textContent = text;
@@ -75,60 +75,69 @@
       const field = form.elements.namedItem(key);
       if (field) draft[key] = field.type === "checkbox" ? field.checked : field.value;
     }
-    for (const key of [ "startDate", "endDate" ]) {
-      if (draft[key]) {
-        const date = new Date(draft[key]);
-        if (!Number.isFinite(date.getTime())) throw new Error("Choose a valid date and time.");
-        draft[key] = date.toISOString();
-      }
+    draft.startMode = "now";
+    draft.endMode = $("timed-item").checked && !core.HIDDEN_TYPES.includes(draft.catalogType) ? "duration" : "never";
+    if (core.isAccessory(draft.itemType)) draft.itemType = draft.accessoryKind === "Hair" ? "Hair" : "Hat";
+    else draft.accessoryKind = "";
+    if (draft.itemType === "Face") {
+      draft.texture = core.assetContent($("asset-id").value) || $("asset-id").value;
+      draft.assetId = faceBaseId || $("asset-id").value;
     }
     return draft;
   }
   function fillDraft(draft) {
+    faceBaseId = draft.itemType === "Face" ? String(draft.assetId || "") : "";
     for (const [key, value] of Object.entries({
       ...core.defaults(),
       ...draft
     })) {
       const field = form.elements.namedItem(key);
       if (!field) continue;
-      if (field.type === "checkbox") field.checked = value; else if ([ "startDate", "endDate" ].includes(key) && value) {
-        const date = new Date(value);
-        field.value = Number.isFinite(date.getTime()) ? new Date(date.getTime() - date.getTimezoneOffset() * 6e4).toISOString().slice(0, 16) : "";
-      } else field.value = value;
+      if (field.type === "checkbox") field.checked = value;
+      else field.value = key === "itemType" && value === "Hair" ? "Hat" : value;
     }
+    if (draft.itemType === "Face") $("asset-id").value = core.assetContent(draft.texture)?.split("//")[1] || "";
+    if (draft.itemType === "Hair") $("accessory-kind").value = "Hair";
+    $("timed-item").checked = draft.endMode === "duration";
     sync();
     notice("form-errors", "");
   }
   function sync() {
     const get = name => form.elements.namedItem(name), type = get("itemType").value, catalog = get("catalogType").value;
-    const hidden = core.HIDDEN_TYPES.includes(catalog), accessory = core.isAccessory(type), original = [ "BodyPackage", "Head" ].includes(type), texture = (get("customTexture").checked || type === "Face") && !original;
-    if (original) get("customTexture").checked = false;
-    $("stock-field").hidden = catalog !== "limited";
+    const hidden = core.HIDDEN_TYPES.includes(catalog), accessory = core.isAccessory(type), texture = get("customTexture").checked && accessory;
+    if (!accessory && ![ "Face", "TShirt" ].includes(type)) get("customTexture").checked = false;
+    const stocked = [ "limited", "limited-u" ].includes(catalog);
+    $("stock-field").hidden = !stocked;
+    get("stock").disabled = !stocked;
+    get("stock").required = stocked;
     $("reward-field").hidden = !hidden;
     get("price").disabled = hidden;
-    $("schedule-section").hidden = hidden || catalog === "offsale";
-    $("start-date-field").hidden = get("startMode").value !== "date";
-    $("end-date-field").hidden = get("endMode").value !== "date";
-    $("duration-field").hidden = get("endMode").value !== "duration";
+    $("schedule-section").hidden = hidden;
+    if (hidden) $("timed-item").checked = false;
+    const timed = $("timed-item").checked && !hidden;
+    $("duration-field").hidden = !timed;
+    get("duration").disabled = !timed;
+    get("duration").required = timed;
+    get("durationUnit").disabled = !timed;
     $("accessory-kind-field").hidden = !accessory;
     $("gear-field").hidden = type !== "Tool";
     $("clothing-class-field").hidden = type !== "TShirt";
     $("template-field").hidden = type !== "TShirt";
-    $("texture-check-field").hidden = type === "Face" || original;
+    $("texture-check-field").hidden = !accessory || get("customTexture").disabled;
     $("texture-field").hidden = !texture;
     $("texture-hint").hidden = !texture;
-    $("offset-fields").hidden = !get("useOffset").checked;
-    form.querySelector("details.advanced").hidden = !accessory;
+    $("face-texture-hint").hidden = type !== "Face";
+    $("asset-id-label").textContent = type === "Face" ? "Texture ID" : type === "BodyPackage" ? "Bundle ID" : "Asset ID";
+    $("asset-id").placeholder = type === "Face" ? "Classic face texture/image ID" : type === "BodyPackage" ? "Roblox body bundle ID" : "Roblox asset ID";
     $("availability-hint").textContent = {
       normal: "Unlimited stock. A price of 0 makes the item free.",
-      limited: "Numbered Limited with a fixed stock count.",
-      "limited-u": "Timed Limited U with unlimited stock. Choose a sale duration or end date.",
+      limited: "Fixed stock. One catalog purchase per player.",
+      "limited-u": "Fixed stock. Players can buy multiple copies until it sells out. Add a timer only if you want one.",
       event: "An event reward, outside the purchasable catalog.",
       special: "A special reward, outside the purchasable catalog.",
       member: "A membership reward, outside the purchasable catalog.",
       offsale: "Listed as offsale when the code is run."
     }[catalog];
-    $("timezone-label").textContent = Intl.DateTimeFormat().resolvedOptions().timeZone || "your local timezone";
   }
   function validDraft() {
     const draft = readDraft(), errors = core.validate(draft);
@@ -164,7 +173,12 @@
   }
   function showAsset(item) {
     $("selected-item").hidden = !item;
-    if (!item) return;
+    if (!item) {
+      $("selected-name").textContent = "";
+      $("selected-meta").textContent = "";
+      $("selected-image").removeAttribute("src");
+      return;
+    }
     $("selected-name").textContent = item.name;
     $("selected-meta").textContent = "ID " + item.id + (item.creatorName ? " · " + item.creatorName : "");
     $("selected-link").href = "https://www.roblox.com/" + (item.kind === "Bundle" ? "bundles/" : "catalog/") + item.id;
@@ -190,14 +204,22 @@
       assetId: String(item.id),
       name: keepName && draft.name ? draft.name : item.name,
       description: item.description || "",
-      texture: item.textureId ? "rbxassetid://" + item.textureId : draft.texture
+      texture: mapping.itemType === "Face" ? "" : draft.texture
     });
     showAsset(item);
+    if (mapping.itemType === "Face") {
+      toast("Roblox details copied. Enter the classic face texture ID in Item details.");
+      $("asset-id").focus({ preventScroll: true });
+    }
   }
   function summary(draft, target) {
     target.replaceChildren();
     const table = node("table", undefined, "review-table");
-    const rows = [ [ "Name", draft.name ], [ "Asset / bundle ID", draft.assetId ], [ "Item type", core.TYPE_LABELS[draft.itemType] ], [ "Catalog type", core.LABELS[draft.catalogType] ], [ "Price", core.HIDDEN_TYPES.includes(draft.catalogType) ? "Reward" : draft.price + " pNgs" ], [ "Stock", draft.catalogType === "limited" ? draft.stock : "Unlimited" ], [ "Texture", draft.customTexture || draft.itemType === "Face" ? draft.texture : "Original texture" ], [ "Accessory category", core.isAccessory(draft.itemType) ? core.KIND_LABELS[draft.accessoryKind] : "—" ], [ "On sale", draft.startMode === "date" ? new Date(draft.startDate).toLocaleString() : "When code is run" ], [ "Off sale", draft.catalogType === "offsale" ? "Immediately" : draft.endMode === "duration" ? draft.duration + " " + draft.durationUnit + " after sale start" : draft.endMode === "date" ? new Date(draft.endDate).toLocaleString() : "No end date" ], [ "Description", draft.description || "—" ] ];
+    const rows = [ [ "Name", draft.name ], [ draft.itemType === "Face" ? "Texture ID" : "Asset / bundle ID", draft.itemType === "Face" ? core.assetContent(draft.texture)?.split("//")[1] : draft.assetId ], [ "Item type", core.TYPE_LABELS[draft.itemType] ], [ "Catalog type", core.LABELS[draft.catalogType] ], [ "Price", core.HIDDEN_TYPES.includes(draft.catalogType) ? "Reward" : draft.price + " pNgs" ], [ "Stock", [ "limited", "limited-u" ].includes(draft.catalogType) ? draft.stock : "Unlimited" ] ];
+    if (draft.customTexture && draft.itemType !== "Face") rows.push([ "Custom texture", draft.texture ]);
+    if (core.isAccessory(draft.itemType)) rows.push([ "Accessory type", core.KIND_LABELS[draft.accessoryKind] ]);
+    if (draft.endMode === "duration" && !core.HIDDEN_TYPES.includes(draft.catalogType)) rows.push([ "Goes off sale after", draft.duration + " " + draft.durationUnit ]);
+    rows.push([ "Description", draft.description || "—" ]);
     for (const [label, value] of rows) {
       const row = node("tr");
       row.append(node("th", label), node("td", value));
@@ -250,12 +272,12 @@
       option.value = kind;
       $("accessory-kind").append(option);
     }
-    $("accessory-kind").addEventListener("change", () => {
-      if (core.isAccessory($("item-type").value)) $("item-type").value = $("accessory-kind").value === "Hair" ? "Hair" : "Hat";
-    });
     $("item-type").addEventListener("change", () => {
-      if ($("item-type").value === "Hair") $("accessory-kind").value = "Hair";
-      else if ($("item-type").value === "Hat" && $("accessory-kind").value === "Hair") $("accessory-kind").value = "Hat";
+      faceBaseId = "";
+      $("asset-id").value = "";
+      $("texture").value = "";
+      $("custom-texture").checked = false;
+      showAsset(null);
     });
   }
   form?.addEventListener("change", sync);

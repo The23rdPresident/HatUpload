@@ -2,14 +2,15 @@
   "use strict";
   const ITEM_TYPES = [ "Hat", "Hair", "Face", "Tool", "TShirt", "BodyPackage", "Head" ];
   const CATALOG_TYPES = [ "normal", "limited", "limited-u", "event", "special", "member", "offsale" ];
+  const UPLOAD_TYPES = [ "normal", "limited", "limited-u", "event" ];
   const KINDS = [ "", "Hat", "Hair", "Face", "Neck", "Shoulder", "LeftShoulder", "RightShoulder", "Collar", "Front", "Back", "Waist", "WaistFront", "WaistCenter", "WaistBack", "Ear", "Torso", "LeftShoe", "RightShoe" ];
   const KIND_LABELS = { "": "Auto · use asset attachments", Hat: "Hat", Hair: "Hair", Face: "Face accessory", Neck: "Neck", Shoulder: "Shoulders · use asset attachments", LeftShoulder: "Left shoulder", RightShoulder: "Right shoulder", Collar: "Collar", Front: "Front", Back: "Back", Waist: "Waist · use asset attachments", WaistFront: "Waist · front", WaistCenter: "Waist · center", WaistBack: "Waist · back", Ear: "Ears", Torso: "Torso", LeftShoe: "Left foot", RightShoe: "Right foot" };
-  const TYPE_LABELS = { Hat: "Accessory", Hair: "Hair", Face: "Classic face", Tool: "Tool / gear", TShirt: "Classic clothing", BodyPackage: "Body package", Head: "Head" };
+  const TYPE_LABELS = { Hat: "Accessory", Hair: "Accessory", Face: "Face", Tool: "Tools", TShirt: "Classic clothing", BodyPackage: "Body package", Head: "Head" };
   const PLACEMENTS = { LeftShoulder: [ "Shoulder", "LeftShoulderAttachment", "Left" ], RightShoulder: [ "Shoulder", "RightShoulderAttachment", "Right" ], Collar: [ "Shoulder", "", "" ], WaistFront: [ "Waist", "WaistFrontAttachment", "" ], WaistCenter: [ "Waist", "WaistCenterAttachment", "" ], WaistBack: [ "Waist", "WaistBackAttachment", "" ] };
   const GEARS = [ "", "Melee", "Ranged", "Explosives", "Power Ups", "Navigation Enhancers", "Musical Instruments", "Social Items", "Building Tools", "Personal Transport" ];
   const HIDDEN_TYPES = [ "event", "special", "member" ];
   const LABELS = {
-    normal: "Normal",
+    normal: "Non limited",
     limited: "Limited",
     "limited-u": "Limited U",
     event: "Event reward",
@@ -55,7 +56,7 @@
     };
     try {
       const url = new URL(raw);
-      if (!(url.hostname === "roblox.com" || url.hostname.endsWith(".roblox.com"))) return null;
+      if (![ "https:", "http:" ].includes(url.protocol) || url.username || url.password || url.port || !(url.hostname === "roblox.com" || url.hostname.endsWith(".roblox.com"))) return null;
       const match = url.pathname.match(/^\/(catalog|bundles|library)\/(\d+)(?:\/|$)/i);
       if (match) return {
         id: integer(match[2], 1),
@@ -94,8 +95,7 @@
     if (!ITEM_TYPES.includes(draft.itemType)) errors.push("Choose a supported item type.");
     if (!CATALOG_TYPES.includes(draft.catalogType)) errors.push("Choose a supported catalog type.");
     if (!hidden && integer(draft.price) === null) errors.push("Price must be a whole number of pNgs, 0 or higher.");
-    if (draft.catalogType === "limited" && integer(draft.stock, 1) === null) errors.push("Numbered Limited stock must be a whole number of 1 or more.");
-    if (draft.catalogType === "limited-u" && draft.endMode === "never") errors.push("Limited U needs an end date or sale duration.");
+    if ([ "limited", "limited-u" ].includes(draft.catalogType) && integer(draft.stock, 1) === null) errors.push("Limited stock must be a whole number of 1 or more.");
     if (hidden && !text(draft.rewardSource).trim()) errors.push("Enter the event or reward label.");
     if (text(draft.rewardSource).length > 180) errors.push("Keep the event or reward label to 180 characters or fewer.");
     if (batch.some(item => item.id !== editingId && nameKey(item.name) === nameKey(name))) errors.push("This catalog name is already in the batch. Edit its existing entry.");
@@ -137,9 +137,12 @@
       ItemType: draft.itemType,
       Price: hidden ? 0 : integer(draft.price),
       Limited: limited,
-      Stock: draft.catalogType === "limited" ? integer(draft.stock, 1) : 0
+      Stock: limited ? integer(draft.stock, 1) : 0
     };
-    if (draft.catalogType === "limited-u") definition.LimitedU = true;
+    if (draft.catalogType === "limited-u") {
+      definition.LimitedU = true;
+      definition.MaxPerUser = 0;
+    }
     if (hidden) {
       definition.Catalog = false;
       if (draft.catalogType === "event") definition.Event = true;
@@ -287,6 +290,7 @@
   root.CatalogCore = {
     ITEM_TYPES: ITEM_TYPES,
     CATALOG_TYPES: CATALOG_TYPES,
+    UPLOAD_TYPES: UPLOAD_TYPES,
     KINDS: KINDS,
     KIND_LABELS: KIND_LABELS,
     TYPE_LABELS: TYPE_LABELS,

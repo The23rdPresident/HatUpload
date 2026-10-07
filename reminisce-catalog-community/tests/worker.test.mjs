@@ -26,8 +26,6 @@ const draft = (changes = {}) => ({
 
 const payload = (changes = {}) => ({
   kind: "official",
-  username: "HatMaker",
-  notes: "For the next drop",
   draft: draft(),
   turnstileToken: "submit-ok",
   receiptKey: "A".repeat(43),
@@ -153,7 +151,7 @@ test("public submission is pending, private receipts work, and retrying a receip
   assert.equal((await h.request("/api/submissions", {
     data: {
       ...data,
-      notes: "changed"
+      draft: { ...data.draft, price: "501" }
     }
   })).response.status, 409);
 });
@@ -175,6 +173,78 @@ test("reskins resolve decals to image IDs and reject meshes and off-host redirec
   assert.equal(stored.texture, "rbxassetid://200");
   for (const id of [ 202, 203 ]) assert.equal((await h.request("/api/texture/" + id)).response.status, 400);
   assert.ok(!h.stub.calls.some(call => call.url.includes("evil.test")));
+});
+
+test("submissions need no claimed username or message, and removed fields are rejected", async t => {
+  const h = harness(t);
+  for (const field of [ "username", "notes" ]) {
+    assert.equal((await h.request("/api/submissions", { data: payload({ [field]: "Unverified identity" }) })).response.status, 400);
+  }
+  const first = await h.request("/api/submissions", { data: payload() });
+  assert.equal(first.response.status, 200, JSON.stringify(first.data));
+  const row = h.env.DB.sqlite.prepare("SELECT username,notes FROM submissions WHERE id=?").get(first.data.id);
+  assert.equal(row.username, "Community");
+  assert.equal(row.notes, "");
+});
+
+test("new uploads reject removed rewards, date schedules, and advanced placement", async t => {
+  const h = harness(t);
+  for (const changes of [
+    { catalogType: "special", rewardSource: "Special" },
+    { catalogType: "member", rewardSource: "Member" },
+    { catalogType: "offsale" },
+    { startMode: "date", startDate: "2036-10-31T12:00:00.000Z" },
+    { endMode: "date", endDate: "2036-10-31T12:00:00.000Z" },
+    { accessoryScale: "1.1" },
+    { useOffset: true, offsetY: "1" },
+    { rainbow: true }
+  ]) {
+    const result = await h.request("/api/submissions", { data: payload({ draft: draft(changes) }) });
+    assert.equal(result.response.status, 400, JSON.stringify(changes));
+  }
+  assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) n FROM submissions").get().n, 0);
+});
+
+test("Limited U keeps finite stock with no mandatory timer through approval and export", async t => {
+  const h = harness(t), proposal = draft({ catalogType: "limited-u", stock: "32" });
+  const first = await h.request("/api/submissions", { data: payload({ draft: proposal }) });
+  assert.equal(first.response.status, 200, JSON.stringify(first.data));
+  const token = await h.login();
+  const approval = await h.request("/api/admin/submissions/" + first.data.id, { token, method: "PATCH", data: { action: "approve", version: 1 } });
+  assert.equal(approval.response.status, 200, JSON.stringify(approval.data));
+  const output = await h.request("/api/admin/generate", { token, data: { items: [{ id: first.data.id, version: 2 }], mode: "items" } });
+  assert.equal(output.response.status, 200);
+  assert.match(output.data.code, /Stock = 32/);
+  assert.match(output.data.code, /LimitedU = true/);
+  assert.match(output.data.code, /MaxPerUser = 0/);
+  assert.doesNotMatch(output.data.code, /OnsaleAt|OffsaleAt/);
+  assert.equal(output.data.requirements.fixedStockLimitedU, true);
+});
+
+test("classic face metadata loads without asset delivery and submitted texture IDs stay authoritative", async t => {
+  const h = harness(t);
+  const lookup = await h.request("/api/asset/106");
+  assert.equal(lookup.response.status, 200);
+  assert.equal(lookup.data.item.name, "Item 106");
+  assert.equal(lookup.data.item.textureId, undefined);
+  assert.ok(!h.stub.calls.some(call => call.url.includes("assetdelivery")));
+  for (const texture of [ "", "106", "202", "205" ]) {
+    const result = await h.request("/api/submissions", { data: payload({ draft: draft({ itemType: "Face", assetId: "106", texture }) }) });
+    assert.equal(result.response.status, 400, texture);
+  }
+  const proposal = draft({ name: "Manual classic face", itemType: "Face", assetId: "106", texture: "204" });
+  const submission = await h.request("/api/submissions", { data: payload({ draft: proposal }) });
+  assert.equal(submission.response.status, 200, JSON.stringify(submission.data));
+  const token = await h.login();
+  const approval = await h.request("/api/admin/submissions/" + submission.data.id, { token, method: "PATCH", data: { action: "approve", version: 1 } });
+  assert.equal(approval.response.status, 200, JSON.stringify(approval.data));
+  assert.equal(approval.data.item.draft.texture, "rbxassetid://204");
+  assert.equal(approval.data.item.draft.assetId, "106");
+  const output = await h.request("/api/admin/generate", { token, data: { items: [{ id: submission.data.id, version: 2 }], mode: "items" } });
+  assert.match(output.data.code, /Texture = "rbxassetid:\/\/204"/);
+  assert.match(output.data.code, /AssetId = 106/);
+  await assert.rejects(checkKeys(h.env, [ "face-texture:204" ]), error => error.status === 409);
+  assert.equal((await h.request("/api/asset/205")).response.status, 400);
 });
 
 test("submission ownership and custom texture rules are enforced against forged requests", async t => {
@@ -376,7 +446,6 @@ test("SQL and Lua treat submitted text as data and never expose server secrets",
   const h = harness(t), description = '"); warn("injected") --\n<svg onload=alert(1)>';
   const result = await h.request("/api/submissions", {
     data: payload({
-      notes: "'; DROP TABLE submissions; --",
       draft: draft({
         description: description
       })
@@ -386,7 +455,8 @@ test("SQL and Lua treat submitted text as data and never expose server secrets",
   const token = await h.login(), list = await h.request("/api/admin/submissions", {
     token: token
   });
-  assert.equal(list.data.items[0].notes, "'; DROP TABLE submissions; --");
+  assert.equal(list.data.items[0].username, "Community");
+  assert.equal(list.data.items[0].notes, "");
   assert.equal(list.data.items[0].receipt_hash, undefined);
   assert.equal(list.data.items[0].ip_hash, undefined);
   await h.request("/api/admin/submissions/" + result.data.id, {
@@ -573,7 +643,7 @@ test("public gear, classic heads, faces, shoes, and body packages verify their r
     const result = await h.request("/api/submissions", { data: payload({ receiptKey: String.fromCharCode(70 + index).repeat(43), draft: draft({ assetId, itemType, accessoryKind, texture, name: "New " + itemType + " " + index }) }) });
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
   }
-  assert.equal((await h.request("/api/asset/106")).data.item.textureId, 200);
+  assert.equal((await h.request("/api/asset/106")).data.item.textureId, undefined);
   assert.equal((await h.request("/api/asset/301?kind=Bundle")).response.status, 400);
   assert.equal((await h.request("/api/submissions", { data: payload({ receiptKey: "Z".repeat(43), draft: draft({ assetId: "103", itemType: "Head", name: "Forged head" }) }) })).response.status, 400);
 });

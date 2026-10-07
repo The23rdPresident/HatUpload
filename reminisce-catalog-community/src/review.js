@@ -51,8 +51,7 @@
     $("detail-kind").textContent = item.kind === "reskin" ? "CUSTOM RESKIN" : item.kind === "owner" ? "OWNER ITEM" : "OFFICIAL ROBLOX ITEM";
     $("detail-title").textContent = item.draft.name;
     $("detail-status").textContent = item.status;
-    $("detail-author").textContent = (item.kind === "owner" ? "Created by you" : "Submitted as " + item.username + " · username unverified") + " · " + new Date(item.createdAt * 1e3).toLocaleString();
-    $("detail-notes").textContent = item.notes || "No contributor message.";
+    $("detail-author").textContent = (item.kind === "owner" ? "Created by you" : "Community submission") + " · " + new Date(item.createdAt * 1e3).toLocaleString();
     $("owner-note").value = item.ownerNote || "";
     $("texture-link").hidden = !item.texture;
     if (item.texture) $("texture-link").href = "https://www.roblox.com/catalog/" + (item.texture.sourceId || item.texture.id);
@@ -89,7 +88,7 @@
       }
       const button = node("button", undefined, "queue-item");
       const caption = node("span", undefined, "queue-caption");
-      caption.append(node("strong", item.draft.name), node("small", item.kind === "reskin" ? "Custom reskin · " + item.username : item.kind === "owner" ? "Owner item" : "Official item · " + item.username), node("span", core.LABELS[item.draft.catalogType] + " · " + item.draft.price + " pNgs", "batch-meta"));
+      caption.append(node("strong", item.draft.name), node("small", item.kind === "reskin" ? "Custom reskin" : item.kind === "owner" ? "Owner item" : "Official item"), node("span", core.LABELS[item.draft.catalogType] + " · " + item.draft.price + " pNgs", "batch-meta"));
       button.append(ui.thumbnail(item.base, "queue-thumbnail"), caption);
       button.addEventListener("click", () => {
         if (!busy) openItem(item);
@@ -180,7 +179,7 @@
         if (item.itemType === "TShirt") continue;
         const details = item.details;
         const price = item.source === "accepted" && core.HIDDEN_TYPES.includes(details.catalogType) ? "0" : details.price || "0";
-        const stock = item.source === "accepted" && details.catalogType !== "limited" ? "0" : details.stock || "0";
+        const stock = item.source === "accepted" && ![ "limited", "limited-u" ].includes(details.catalogType) ? "0" : details.stock || "0";
         const fields = [ String(++index).padStart(3, "0") + ". [" + item.itemType + "] " + item.name, "AssetId " + item.assetId, details.flags || core.LABELS[details.catalogType] || "Accepted", "Price " + price, "Stock " + stock ];
         if (item.texture) fields.push("Texture " + item.texture);
         if (item.accessoryKind) fields.push("Accessory " + core.KIND_LABELS[item.accessoryKind]);
@@ -371,6 +370,7 @@
       $("output-code").value = data.code;
       const requirements = [];
       if (data.requirements.heads) requirements.push("Heads require the updated head system in your game before publishing.");
+      if (data.requirements.fixedStockLimitedU) requirements.push("Your game must support fixed-stock Limited U and repeat purchases. Older HatDefinitions versions reject this combination; update the game's Limited U handling before publishing it.");
       if (data.requirements.detailedPlacement) requirements.push("Exact shoulder, collar, and waist choices require the game to read the exported placement fields.");
       notice("export-requirements", requirements.join(" "));
       $("output-summary").textContent = data.count + " approved item" + (data.count === 1 ? "" : "s");

@@ -52,7 +52,7 @@ await writeFile("docs/config.js", "window.SITE_CONFIG=" + JSON.stringify({
   apiUrl: apiUrl
 }) + ";\n");
 
-await copyFile("src/favicon.svg", "docs/favicon.svg");
+await copyFile("src/favicon.png", "docs/favicon.png");
 
 await writeFile("docs/.nojekyll", "");
 

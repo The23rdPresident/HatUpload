@@ -43,7 +43,7 @@ export default {
         status: 404,
         headers: staticHeaders(request)
       });
-      if (!/^\/(?:index(?:\.html)?|review(?:\.html|\/)?|config\.js|favicon\.svg|assets\/[a-z0-9.-]+)?$/.test(path)) return new Response("Not found", {
+      if (!/^\/(?:index(?:\.html)?|review(?:\.html|\/)?|config\.js|favicon\.png|assets\/[a-z0-9.-]+)?$/.test(path)) return new Response("Not found", {
         status: 404,
         headers: staticHeaders(request)
       });
@@ -71,7 +71,7 @@ export default {
       if (path === "/api/config" && request.method === "GET") return json({
         ready: configured(env),
         siteKey: configured(env) ? env.TURNSTILE_SITE_KEY : "",
-        version: 4,
+        version: 5,
         dailyLimit: Math.min(100, Math.max(1, Number(env.SUBMISSIONS_PER_IP_PER_DAY) || 100))
       }, 200, origin, request);
       if (!configured(env)) throw new ApiError("The service setup is incomplete. Contact the site owner.", 503);
@@ -102,7 +102,6 @@ export default {
         lookupUrl.searchParams.set("kind", kind);
         result = await cached(lookupUrl.href, async () => {
           const item = await officialAsset(path.split("/").at(-1), kind);
-          if (item.assetType === 18) item.textureId = (await textureAsset(item.id, true)).id;
           return { item };
         });
       } else if (/^\/api\/texture\/\d+$/.test(path) && request.method === "GET") {

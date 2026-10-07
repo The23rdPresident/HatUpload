@@ -1,28 +1,26 @@
 # Updating a deployed catalog
 
-## October 7, version 3.1
+## October 7, version 3.2
 
-Upload the new `Reminisce_Community_Catalog_GitHub_20261007.zip` to the top level of your HatUpload Codespace. Extract the update into a separate temporary directory, then run the included installer against your deployed project:
+Upload the updated Reminisce_Community_Catalog_GitHub_20261007.zip to the top level of your HatUpload Codespace. Run these commands in order, stopping if any command fails:
 
 ```sh
-cd /workspaces/HatUpload
-unzip -o Reminisce_Community_Catalog_GitHub_20261007.zip -d /tmp/reminisce-catalog-update-v4
-node /tmp/reminisce-catalog-update-v4/install-catalog-update.mjs /workspaces/HatUpload/reminisce-catalog-community
-cd /workspaces/HatUpload/reminisce-catalog-community
-npm ci && npm test && npm run build
+cd /workspaces/HatUpload && unzip -o Reminisce_Community_Catalog_GitHub_20261007.zip -d /tmp/reminisce-catalog-update-v5
+node /tmp/reminisce-catalog-update-v5/install-catalog-update.mjs /workspaces/HatUpload/reminisce-catalog-community
+cd /workspaces/HatUpload/reminisce-catalog-community && npm ci && npm test && npm run build
 npx wrangler deploy
 git add .
-git commit -m "Fix catalog lookup and review routes; simplify layout"
+git commit -m "Simplify item uploader and correct Limited U exports"
 git push
 ```
 
-Run one block at a time and stop if a command fails. This update preserves your Worker name, D1 database ID and binding, Turnstile site key, service URL, and ignore rules. It does not recreate the database, delete submissions, or replace Cloudflare secrets. The source configuration uses valid JSON; keep that format when editing it before running the installer.
+The installer preserves your Worker name, D1 database ID/binding, Turnstile site key, service URL, private development secrets, and ignore patterns. It keeps the per-network quota at 100 and preserves your configured global quota. It does not recreate the database or reset Cloudflare secrets. No new schema migration is needed when updating version 3.1.
 
-The per-network daily limit increases to 100 verified submission attempts. The site-wide limit remains whatever you already configured (200 by default). Roblox API and Turnstile requests use a redirect mode supported by Cloudflare. HTML handling is explicitly disabled so the owner page works at `/review.html`; `/review` also works and `/review/` redirects to the HTML document.
+This release adds the supplied icon and Reminisce Item Uploader title, removes redundant categories and advanced placement, limits new catalog options to Non limited / Limited / Limited U / Event reward, replaces date schedules with an optional timed-item duration, and removes contributor usernames/messages. Item search has Search by name and Paste item link modes. Faces ask for their classic Texture ID in Item details while retaining the verified original Roblox item internally.
 
-The blue and white interface follows the supplied classic Roblox games-page reference. Search results, the selected item, and the review queue show Roblox-generated thumbnails. A reskin shows its original base; this update does not render a new model with your replacement texture.
+Limited U now has fixed stock with repeat purchases and no mandatory timer. Its export sets LimitedU, Stock, and MaxPerUser accordingly. The older Roblox game reference uses different Limited U rules: update the game's HatDefinitions and buying logic to honor this definition before publishing such items. The owner export warns about this requirement; this package updates only the website. Older zero-stock Limited U submissions need a stock count before export.
 
-After deployment, open the root submission page and `/review.html`. Hard refresh with Ctrl+Shift+R if the previous page is cached. The owner key remains the one associated with your current Cloudflare `ADMIN_KEY_HASH`.
+After deployment, open your submission page or /review.html and hard refresh with Ctrl+Shift+R. Sign in with your current owner key. The existing-item registry continues to grow atomically on approval, and accepted or pending duplicates remain blocked.
 
 ## Older installations
 

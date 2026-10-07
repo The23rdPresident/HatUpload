@@ -72,7 +72,7 @@ test("owner documents and relative assets are served correctly in the Cloudflare
         const path = new URL(request.url).pathname;
         const html = path.endsWith(".html");
         const bytes = await readFile(new URL("../docs" + path, import.meta.url));
-        return new Response(bytes, { headers: { "Content-Type": html ? "text/html" : "application/javascript" } });
+        return new Response(bytes, { headers: { "Content-Type": html ? "text/html" : path.endsWith(".png") ? "image/png" : "application/javascript" } });
       }
     }
   }));
@@ -90,6 +90,10 @@ test("owner documents and relative assets are served correctly in the Cloudflare
   assert.equal(hidden.status, 404);
   const script = await mf.dispatchFetch("https://catalog.test/assets/review.min.js");
   assert.equal(script.status, 200);
+  const icon = await mf.dispatchFetch("https://catalog.test/favicon.png");
+  assert.equal(icon.status, 200);
+  assert.equal(icon.headers.get("Content-Type"), "image/png");
+  assert.deepEqual(new Uint8Array(await icon.arrayBuffer()), new Uint8Array(await readFile(new URL("../src/favicon.png", import.meta.url))));
   const config = JSON.parse(await readFile(new URL("../wrangler.jsonc", import.meta.url), "utf8"));
   assert.equal(config.assets.html_handling, "none");
 });

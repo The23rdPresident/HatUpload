@@ -62,11 +62,8 @@ async function verifiedDraft(value, kind) {
   if (kind === "reskin" && !(core.isAccessory(draft.itemType) || draft.itemType === "Face")) throw new ApiError("Reskins require an accessory or classic face base.", 400);
   if (kind === "reskin" && core.nameKey(draft.name) === core.nameKey(base.name)) throw new ApiError("Give your reskin its own catalog name.", 400);
   let texture = null;
-  if (kind === "reskin") {
+  if (kind === "reskin" || draft.itemType === "Face") {
     texture = await textureAsset(core.assetContent(draft.texture)?.split("//")[1]);
-    draft.texture = "rbxassetid://" + texture.id;
-  } else if (draft.itemType === "Face") {
-    texture = await textureAsset(base.id, true);
     draft.texture = "rbxassetid://" + texture.id;
   } else {
     draft.texture = "";
@@ -100,19 +97,22 @@ function limit(value, fallback, max) {
   return Number.isSafeInteger(n) && n > 0 && n <= max ? n : fallback;
 }
 
+function uploadSettings(draft) {
+  if (!core.UPLOAD_TYPES.includes(draft.catalogType)) throw new ApiError("Choose Non limited, Limited, Limited U, or Event reward.", 400);
+  if (draft.startMode !== "now" || ![ "never", "duration" ].includes(draft.endMode) || draft.startDate || draft.endDate) throw new ApiError("Items go on sale when the code is run. Timed items use a sale duration.", 400);
+  if (Number(draft.accessoryScale) !== 1 || draft.useOffset || draft.rainbow || [draft.offsetX, draft.offsetY, draft.offsetZ].some(value => Number(value) !== 0)) throw new ApiError("Custom accessory placement settings are no longer accepted.", 400);
+}
+
 export async function submit(request, env) {
   const data = await body(request);
-  keys(data, [ "kind", "username", "notes", "draft", "turnstileToken", "receiptKey" ]);
+  keys(data, [ "kind", "draft", "turnstileToken", "receiptKey" ]);
   if (![ "official", "reskin" ].includes(data.kind)) throw new ApiError("Choose a catalog item or a custom reskin.", 400);
-  const username = text(data.username, 20, "Roblox username");
-  if (!/^[A-Za-z0-9_]{3,20}$/.test(username)) throw new ApiError("Enter a Roblox username of 3–20 letters, numbers, or underscores.", 400);
-  const notes = text(data.notes || "", 2e3, "Submission message");
+  const username = "Community", notes = "";
   if (typeof data.receiptKey !== "string" || !/^[A-Za-z0-9_-]{43}$/.test(data.receiptKey)) throw new ApiError("Invalid submission receipt.", 400);
   const draft = draftInput(data.draft), ip = await ipHash(request, env), receiptHash = await digest(data.receiptKey);
+  uploadSettings(draft);
   const fingerprint = await digest(JSON.stringify({
     kind: data.kind,
-    username: username,
-    notes: notes,
     draft: draft
   }));
   const existing = await env.DB.prepare("SELECT id,fingerprint,ip_hash FROM submissions WHERE receipt_hash=?1").bind(receiptHash).first();
@@ -229,6 +229,7 @@ export async function ownerItem(request, env, session) {
   const data = await body(request);
   keys(data, [ "draft", "ownerNote" ]);
   const {draft: draft, base: base} = await verifiedDraft(data.draft, "owner");
+  uploadSettings(draft);
   const note = text(data.ownerNote || "", 2000, "Review note");
   const id = crypto.randomUUID(), stamp = now();
   await checkKeys(env, claims(draft, base, "owner"));
@@ -271,7 +272,7 @@ export async function generate(request, env) {
     return {
       code: data.mode === "full" ? core.fullScript(drafts, publisher) : core.itemsLua(drafts),
       count: drafts.length,
-      requirements: { heads: drafts.some(draft => draft.itemType === "Head"), detailedPlacement: drafts.some(draft => [ "LeftShoulder", "RightShoulder", "Collar", "WaistFront", "WaistCenter", "WaistBack" ].includes(draft.accessoryKind)) }
+      requirements: { heads: drafts.some(draft => draft.itemType === "Head"), fixedStockLimitedU: drafts.some(draft => draft.catalogType === "limited-u"), detailedPlacement: drafts.some(draft => [ "LeftShoulder", "RightShoulder", "Collar", "WaistFront", "WaistCenter", "WaistBack" ].includes(draft.accessoryKind)) }
     };
   } catch (error) {
     throw new ApiError(error.message, 400);

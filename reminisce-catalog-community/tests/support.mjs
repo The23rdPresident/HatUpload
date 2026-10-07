@@ -148,7 +148,9 @@ export function upstream() {
         200: 1,
         201: 13,
         202: 4,
-        203: 13
+        203: 13,
+        204: 1,
+        205: 79
       }[id];
       if (!assetType) return new Response("missing", {
         status: 404
@@ -165,19 +167,23 @@ export function upstream() {
         }
       });
     }
-    if (url.hostname === "catalog.roblox.com" && url.pathname.includes("search")) return reply({
-      data: [ 100, 101, 102 ].map(id => ({
+    if (url.hostname === "catalog.roblox.com" && url.pathname.includes("search")) {
+      const subcategory = url.searchParams.get("Subcategory"), category = url.searchParams.get("Category");
+      const ids = subcategory === "10" ? [106] : subcategory === "15" ? [105] : category === "5" ? [103] : [100, 101, 102];
+      return reply({
+      data: ids.map(id => ({
         id: id,
         itemType: "Asset",
-        name: id === 100 ? "Classic Hat" : "Other Hat",
+        name: id === 100 ? "Classic Hat" : id < 103 ? "Other Hat" : "Item " + id,
         description: "Original description",
-        assetType: 8,
+        assetType: id === 106 ? 18 : id === 105 ? 17 : id === 103 ? 19 : 8,
         creatorType: id === 102 ? "Group" : "User",
         creatorTargetId: id === 101 ? 12 : 1,
         creatorName: "Roblox"
       })),
       nextPageCursor: null
     });
+    }
     if (url.hostname === "catalog.roblox.com" && /\/bundles\/\d+\/details/.test(url.pathname)) {
       const id = Number(url.pathname.split("/")[3]);
       return reply({ id, name: "Bundle " + id, description: "A body package.", bundleType: "BodyParts", creator: { id: id === 301 ? 2 : 1, type: "User", name: "Roblox" } });

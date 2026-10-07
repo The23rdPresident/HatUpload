@@ -35,14 +35,25 @@ test("numbered Limited exports stock, custom texture, and the game's actual acce
   assert.deepEqual(def.AccessoryOffset, [ -1, .25, 2 ]);
 });
 
-test("timed unlimited Limited U starts when run and passes the game's sale-base requirement", () => {
+test("Limited U exports fixed stock and repeat purchases without requiring a timer", () => {
+  const def = core.buildDefinition(item({ catalogType: "limited-u", stock: "75" }));
+  assert.equal(def.Stock, 75);
+  assert.equal(def.Limited, true);
+  assert.equal(def.LimitedU, true);
+  assert.equal(def.MaxPerUser, 0);
+  assert.equal(def.OnsaleAt, undefined);
+  assert.equal(def.OffsaleAt, undefined);
+  assert.deepEqual(core.validate(item({ catalogType: "limited-u", stock: "75" })), []);
+});
+
+test("a Limited U timer is optional and starts when publishing code runs", () => {
   const def = core.buildDefinition(item({
     catalogType: "limited-u",
     endMode: "duration",
     duration: "7",
     durationUnit: "days"
   }));
-  assert.equal(def.Stock, 0);
+  assert.equal(def.Stock, 100);
   assert.equal(def.LimitedU, true);
   assert.equal(def.OnsaleAt.luaExpression, "os.time()");
   assert.equal(def.OffsaleAt.luaExpression, "os.time() + 604800");
@@ -87,7 +98,7 @@ test("unsupported or incompatible catalog combinations are rejected", () => {
     stock: "0"
   }), item({
     catalogType: "limited-u",
-    endMode: "never"
+    stock: "0"
   }), item({
     price: "-5"
   }), item({
