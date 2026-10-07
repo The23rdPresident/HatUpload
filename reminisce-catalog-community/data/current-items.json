@@ -1,0 +1,3665 @@
+[
+  {
+    "id": "existing:001",
+    "name": "Headless Horseman Body",
+    "itemType": "BodyPackage",
+    "assetId": "201",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:002",
+    "name": "Korblox Deathspeaker",
+    "itemType": "BodyPackage",
+    "assetId": "192",
+    "flags": "Normal",
+    "price": "10000",
+    "stock": "0"
+  },
+  {
+    "id": "existing:003",
+    "name": "Mr Roboto",
+    "itemType": "BodyPackage",
+    "assetId": "310",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:004",
+    "name": "Reminisce 2.0",
+    "itemType": "BodyPackage",
+    "assetId": "311",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:005",
+    "name": "Reminisce Girl",
+    "itemType": "BodyPackage",
+    "assetId": "282",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:006",
+    "name": "Skeleton",
+    "itemType": "BodyPackage",
+    "assetId": "295",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:007",
+    "name": "Superhero",
+    "itemType": "BodyPackage",
+    "assetId": "299",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:008",
+    "name": "Tentacled Alien",
+    "itemType": "BodyPackage",
+    "assetId": "307",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:009",
+    "name": "Zombie",
+    "itemType": "BodyPackage",
+    "assetId": "291",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:010",
+    "name": ":3",
+    "itemType": "Face",
+    "assetId": "3112638914",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:011",
+    "name": "Alien Ambassador",
+    "itemType": "Face",
+    "assetId": "11913700",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:012",
+    "name": "Awesome Face",
+    "itemType": "Face",
+    "assetId": "155286312",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:013",
+    "name": "Bandage Face",
+    "itemType": "Face",
+    "assetId": "90514173",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:014",
+    "name": "Emotionally Distressed Zombie",
+    "itemType": "Face",
+    "assetId": "155217504",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:015",
+    "name": "Epic Face",
+    "itemType": "Face",
+    "assetId": "155217770",
+    "flags": "Normal",
+    "price": "120",
+    "stock": "0"
+  },
+  {
+    "id": "existing:016",
+    "name": "Err...",
+    "itemType": "Face",
+    "assetId": "155195215",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:017",
+    "name": "Ghostface",
+    "itemType": "Face",
+    "assetId": "36544324",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:018",
+    "name": "Golden Shiny Teeth",
+    "itemType": "Face",
+    "assetId": "155287964",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:019",
+    "name": "Green Drool Angry Zombie",
+    "itemType": "Face",
+    "assetId": "1208306677",
+    "flags": "Normal",
+    "price": "1600",
+    "stock": "0"
+  },
+  {
+    "id": "existing:020",
+    "name": "Poisoned Beast Mode",
+    "itemType": "Face",
+    "assetId": "1068585919",
+    "flags": "Limited",
+    "price": "12000",
+    "stock": "22"
+  },
+  {
+    "id": "existing:021",
+    "name": "Prankster",
+    "itemType": "Face",
+    "assetId": "155287609",
+    "flags": "Normal",
+    "price": "2100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:022",
+    "name": "Rainbow Overload",
+    "itemType": "Face",
+    "assetId": "141447419",
+    "flags": "Limited",
+    "price": "3500",
+    "stock": "25"
+  },
+  {
+    "id": "existing:023",
+    "name": "Red Glowing Eyes",
+    "itemType": "Face",
+    "assetId": "893052425",
+    "flags": "Limited",
+    "price": "32000",
+    "stock": "9"
+  },
+  {
+    "id": "existing:024",
+    "name": "Red Rawr",
+    "itemType": "Face",
+    "assetId": "90515594",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:025",
+    "name": "Robot",
+    "itemType": "Face",
+    "assetId": "90272119",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:026",
+    "name": "Sad Clown",
+    "itemType": "Face",
+    "assetId": "253588864",
+    "flags": "Limited",
+    "price": "2000",
+    "stock": "18"
+  },
+  {
+    "id": "existing:027",
+    "name": "Sapphire Drool",
+    "itemType": "Face",
+    "assetId": "51747642",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:028",
+    "name": "Shocked Face",
+    "itemType": "Face",
+    "assetId": "147322185",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:029",
+    "name": "Slick Fang",
+    "itemType": "Face",
+    "assetId": "133632349364930",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:030",
+    "name": "Super Super Happy Face",
+    "itemType": "Face",
+    "assetId": "130564231750760",
+    "flags": "Limited",
+    "price": "3000",
+    "stock": "65"
+  },
+  {
+    "id": "existing:031",
+    "name": "Trouble maker",
+    "itemType": "Face",
+    "assetId": "90272224",
+    "flags": "Normal",
+    "price": "130",
+    "stock": "0"
+  },
+  {
+    "id": "existing:032",
+    "name": "Zombie face",
+    "itemType": "Face",
+    "assetId": "991219580",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:033",
+    "name": "8-Bit Hair for Beautiful People",
+    "itemType": "Hair",
+    "assetId": "542159374",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:034",
+    "name": "America's Sweetheart",
+    "itemType": "Hair",
+    "assetId": "29952810",
+    "flags": "Normal",
+    "price": "185",
+    "stock": "0"
+  },
+  {
+    "id": "existing:035",
+    "name": "Beautiful Brown Hair for Beautiful People",
+    "itemType": "Hair",
+    "assetId": "17877340",
+    "flags": "Normal",
+    "price": "80",
+    "stock": "0"
+  },
+  {
+    "id": "existing:036",
+    "name": "Beautiful Hair for Beautiful People",
+    "itemType": "Hair",
+    "assetId": "16630147",
+    "flags": "Normal",
+    "price": "1000",
+    "stock": "0"
+  },
+  {
+    "id": "existing:037",
+    "name": "Belle Of Belfast Long Red Hair",
+    "itemType": "Hair",
+    "assetId": "2956239660",
+    "flags": "Normal",
+    "price": "65",
+    "stock": "0"
+  },
+  {
+    "id": "existing:038",
+    "name": "Black Action Ponytail",
+    "itemType": "Hair",
+    "assetId": "1708329071",
+    "flags": "Normal",
+    "price": "120",
+    "stock": "0"
+  },
+  {
+    "id": "existing:039",
+    "name": "Black and Red",
+    "itemType": "Hair",
+    "assetId": "14815761",
+    "flags": "Normal",
+    "price": "65",
+    "stock": "0"
+  },
+  {
+    "id": "existing:040",
+    "name": "Black Long and Straight Hair",
+    "itemType": "Hair",
+    "assetId": "1772372988",
+    "flags": "Normal",
+    "price": "19",
+    "stock": "0"
+  },
+  {
+    "id": "existing:041",
+    "name": "Black Pigtails",
+    "itemType": "Hair",
+    "assetId": "11913660",
+    "flags": "Normal",
+    "price": "890",
+    "stock": "0"
+  },
+  {
+    "id": "existing:042",
+    "name": "Black Ponytail",
+    "itemType": "Hair",
+    "assetId": "376527350",
+    "flags": "Normal",
+    "price": "340",
+    "stock": "0"
+  },
+  {
+    "id": "existing:043",
+    "name": "Blonde Action Ponytail",
+    "itemType": "Hair",
+    "assetId": "398673196",
+    "flags": "Normal",
+    "price": "255",
+    "stock": "0"
+  },
+  {
+    "id": "existing:044",
+    "name": "Blonde beautiful hair for beautiful people",
+    "itemType": "Hair",
+    "assetId": "233615637",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:045",
+    "name": "Blonde Charmer",
+    "itemType": "Hair",
+    "assetId": "80921949",
+    "flags": "Normal",
+    "price": "13",
+    "stock": "0"
+  },
+  {
+    "id": "existing:046",
+    "name": "Blonde Roblohunk",
+    "itemType": "Hair",
+    "assetId": "16157972",
+    "flags": "Normal",
+    "price": "43",
+    "stock": "0"
+  },
+  {
+    "id": "existing:047",
+    "name": "Blonde Spiked Hair",
+    "itemType": "Hair",
+    "assetId": "376524487",
+    "flags": "Normal",
+    "price": "430",
+    "stock": "0"
+  },
+  {
+    "id": "existing:048",
+    "name": "Bozo the Clown",
+    "itemType": "Hair",
+    "assetId": "15469944",
+    "flags": "Normal",
+    "price": "22",
+    "stock": "0"
+  },
+  {
+    "id": "existing:049",
+    "name": "Bride of Frankenstein Hair",
+    "itemType": "Hair",
+    "assetId": "315548432",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:050",
+    "name": "Brilliant Bombastique",
+    "itemType": "Hair",
+    "assetId": "136803077",
+    "flags": "Limited",
+    "price": "150",
+    "stock": "100"
+  },
+  {
+    "id": "existing:051",
+    "name": "Brown Charmer Hair",
+    "itemType": "Hair",
+    "assetId": "376548738",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:052",
+    "name": "Brown Hair",
+    "itemType": "Hair",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "45",
+    "stock": "0"
+  },
+  {
+    "id": "existing:053",
+    "name": "Brown Hair Dude",
+    "itemType": "Hair",
+    "assetId": "188003563",
+    "flags": "Normal",
+    "price": "13",
+    "stock": "0"
+  },
+  {
+    "id": "existing:054",
+    "name": "Burning Hair for Fiery People",
+    "itemType": "Hair",
+    "assetId": "2566043868",
+    "flags": "Normal",
+    "price": "3680",
+    "stock": "0"
+  },
+  {
+    "id": "existing:055",
+    "name": "Cinnamon Hair",
+    "itemType": "Hair",
+    "assetId": "13745548",
+    "flags": "Normal",
+    "price": "940",
+    "stock": "0"
+  },
+  {
+    "id": "existing:056",
+    "name": "Cotton Candy Hair",
+    "itemType": "Hair",
+    "assetId": "293316608",
+    "flags": "Normal",
+    "price": "12",
+    "stock": "0"
+  },
+  {
+    "id": "existing:057",
+    "name": "Cyan Equinox",
+    "itemType": "Hair",
+    "assetId": "135470884",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:058",
+    "name": "Dreadblox",
+    "itemType": "Hair",
+    "assetId": "13477470",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:059",
+    "name": "Dreadlocks",
+    "itemType": "Hair",
+    "assetId": "26778066",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:060",
+    "name": "Equinox",
+    "itemType": "Hair",
+    "assetId": "19327469",
+    "flags": "Limited",
+    "price": "6000",
+    "stock": "22"
+  },
+  {
+    "id": "existing:061",
+    "name": "Father Time",
+    "itemType": "Hair",
+    "assetId": "15913848",
+    "flags": "Limited",
+    "price": "2000",
+    "stock": "45"
+  },
+  {
+    "id": "existing:062",
+    "name": "Frobow the Sad Clown",
+    "itemType": "Hair",
+    "assetId": "11721197",
+    "flags": "Limited",
+    "price": "500",
+    "stock": "60"
+  },
+  {
+    "id": "existing:063",
+    "name": "Frop",
+    "itemType": "Hair",
+    "assetId": "12270336",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:064",
+    "name": "Head Wound",
+    "itemType": "Hair",
+    "assetId": "30380659",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:065",
+    "name": "Long Pastel Hair",
+    "itemType": "Hair",
+    "assetId": "727320877",
+    "flags": "Normal",
+    "price": "32",
+    "stock": "0"
+  },
+  {
+    "id": "existing:066",
+    "name": "Mad Scientist Hair",
+    "itemType": "Hair",
+    "assetId": "12730109",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:067",
+    "name": "Messy Hair",
+    "itemType": "Hair",
+    "assetId": "26658141",
+    "flags": "Normal",
+    "price": "65",
+    "stock": "0"
+  },
+  {
+    "id": "existing:068",
+    "name": "Moonflower",
+    "itemType": "Hair",
+    "assetId": "21392455",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:069",
+    "name": "Neon Green Equinox",
+    "itemType": "Hair",
+    "assetId": "212971414",
+    "flags": "Limited",
+    "price": "11200",
+    "stock": "20"
+  },
+  {
+    "id": "existing:070",
+    "name": "Orange Beanie with Black Hair",
+    "itemType": "Hair",
+    "assetId": "1103003368",
+    "flags": "Normal",
+    "price": "165",
+    "stock": "0"
+  },
+  {
+    "id": "existing:071",
+    "name": "Pal Hair",
+    "itemType": "Hair",
+    "assetId": "63690008",
+    "flags": "Normal",
+    "price": "470",
+    "stock": "0"
+  },
+  {
+    "id": "existing:072",
+    "name": "Rainbow Equinox",
+    "itemType": "Hair",
+    "assetId": "82332313",
+    "flags": "Limited",
+    "price": "30700",
+    "stock": "10"
+  },
+  {
+    "id": "existing:073",
+    "name": "Rainbow Shaggy",
+    "itemType": "Hair",
+    "assetId": "64082730",
+    "flags": "Limited",
+    "price": "36800",
+    "stock": "7"
+  },
+  {
+    "id": "existing:074",
+    "name": "Roblohunk Hair",
+    "itemType": "Hair",
+    "assetId": "15913837",
+    "flags": "Normal",
+    "price": "12",
+    "stock": "0"
+  },
+  {
+    "id": "existing:075",
+    "name": "Rock Star with Side Swept Bangs",
+    "itemType": "Hair",
+    "assetId": "20010032",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:076",
+    "name": "Shaggy",
+    "itemType": "Hair",
+    "assetId": "20573078",
+    "flags": "Normal",
+    "price": "250",
+    "stock": "0"
+  },
+  {
+    "id": "existing:077",
+    "name": "Stickmasterluke's Peanut Butter Sparkle Time",
+    "itemType": "Hair",
+    "assetId": "169444294",
+    "flags": "Limited",
+    "price": "8000",
+    "stock": "33"
+  },
+  {
+    "id": "existing:078",
+    "name": "Straight Blonde Hair",
+    "itemType": "Hair",
+    "assetId": "376526888",
+    "flags": "Normal",
+    "price": "385",
+    "stock": "0"
+  },
+  {
+    "id": "existing:079",
+    "name": "Strawberry Ice Cream Hair",
+    "itemType": "Hair",
+    "assetId": "430063008",
+    "flags": "Normal",
+    "price": "400",
+    "stock": "0"
+  },
+  {
+    "id": "existing:080",
+    "name": "Sweetheart",
+    "itemType": "Hair",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "60",
+    "stock": "0"
+  },
+  {
+    "id": "existing:081",
+    "name": "Trecky Hair",
+    "itemType": "Hair",
+    "assetId": "32278814",
+    "flags": "Normal",
+    "price": "22",
+    "stock": "0"
+  },
+  {
+    "id": "existing:082",
+    "name": "True Blue Hair",
+    "itemType": "Hair",
+    "assetId": "451221329",
+    "flags": "Normal",
+    "price": "210",
+    "stock": "0"
+  },
+  {
+    "id": "existing:083",
+    "name": "Violet Equinox",
+    "itemType": "Hair",
+    "assetId": "153474594",
+    "flags": "Limited",
+    "price": "19300",
+    "stock": "15"
+  },
+  {
+    "id": "existing:084",
+    "name": "Zeus Beard",
+    "itemType": "Hair",
+    "assetId": "1492205990",
+    "flags": "Limited",
+    "price": "112",
+    "stock": "68"
+  },
+  {
+    "id": "existing:085",
+    "name": "'R' Cap",
+    "itemType": "Hat",
+    "assetId": "34901393",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:086",
+    "name": "1337 Cyber Assassin",
+    "itemType": "Hat",
+    "assetId": "81688937",
+    "flags": "Limited",
+    "price": "30",
+    "stock": "80"
+  },
+  {
+    "id": "existing:087",
+    "name": "2015 Party Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "150",
+    "stock": "0"
+  },
+  {
+    "id": "existing:088",
+    "name": "2015 ROBLOX Visor",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "160",
+    "stock": "0"
+  },
+  {
+    "id": "existing:089",
+    "name": "2015 Top Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:090",
+    "name": "2016 New Years Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "180",
+    "stock": "0"
+  },
+  {
+    "id": "existing:091",
+    "name": "2016 ROBLOX Visor",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "140",
+    "stock": "0"
+  },
+  {
+    "id": "existing:092",
+    "name": "2018 Roblox Visor",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "120",
+    "stock": "0"
+  },
+  {
+    "id": "existing:093",
+    "name": "8-Bit Clockwork Shades",
+    "itemType": "Hat",
+    "assetId": "450557238",
+    "flags": "Limited",
+    "price": "180",
+    "stock": "18"
+  },
+  {
+    "id": "existing:094",
+    "name": "A Darker Presence",
+    "itemType": "Hat",
+    "assetId": "87714679176829",
+    "flags": "Limited",
+    "price": "300",
+    "stock": "100"
+  },
+  {
+    "id": "existing:095",
+    "name": "Agonizingly White Bucket of Ultimate Doom",
+    "itemType": "Hat",
+    "assetId": "1402433072",
+    "flags": "Limited",
+    "price": "31000",
+    "stock": "8"
+  },
+  {
+    "id": "existing:096",
+    "name": "Al Capwn",
+    "itemType": "Hat",
+    "assetId": "24123795",
+    "flags": "Limited",
+    "price": "1111",
+    "stock": "111"
+  },
+  {
+    "id": "existing:097",
+    "name": "Archfiend's Trophy Shoulders",
+    "itemType": "Hat",
+    "assetId": "183325398",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:098",
+    "name": "ASCII Chrome",
+    "itemType": "Hat",
+    "assetId": "12001199",
+    "flags": "Limited",
+    "price": "15000",
+    "stock": "10"
+  },
+  {
+    "id": "existing:099",
+    "name": "Azurewrath's Additional Head Horns",
+    "itemType": "Hat",
+    "assetId": "501960925",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:100",
+    "name": "Azurewrath, Lord of the Void",
+    "itemType": "Hat",
+    "assetId": "17109706",
+    "flags": "Limited",
+    "price": "45000",
+    "stock": "7"
+  },
+  {
+    "id": "existing:101",
+    "name": "Backwards 'R' Cap",
+    "itemType": "Hat",
+    "assetId": "17903982",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:102",
+    "name": "Batty Scarf of Affordable Style",
+    "itemType": "Hat",
+    "assetId": "181206559",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:103",
+    "name": "Bear Face Mask",
+    "itemType": "Hat",
+    "assetId": "1192464705",
+    "flags": "Normal",
+    "price": "80",
+    "stock": "0"
+  },
+  {
+    "id": "existing:104",
+    "name": "Binary Banded Boss White Hat",
+    "itemType": "Hat",
+    "assetId": "173624561",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:105",
+    "name": "Black Banded Orange Top Hat",
+    "itemType": "Hat",
+    "assetId": "2445212495",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:106",
+    "name": "Black Iron Antlers",
+    "itemType": "Hat",
+    "assetId": "398674411",
+    "flags": "Normal",
+    "price": "85",
+    "stock": "0"
+  },
+  {
+    "id": "existing:107",
+    "name": "Black Iron Bathelm",
+    "itemType": "Hat",
+    "assetId": "183468929",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:108",
+    "name": "Black Iron Branches",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "1080",
+    "stock": "0"
+  },
+  {
+    "id": "existing:109",
+    "name": "Black Iron Commando",
+    "itemType": "Hat",
+    "assetId": "928908332",
+    "flags": "Limited",
+    "price": "600",
+    "stock": "90"
+  },
+  {
+    "id": "existing:110",
+    "name": "Black Iron Crown of Pwnage",
+    "itemType": "Hat",
+    "assetId": "1078202",
+    "flags": "Limited",
+    "price": "5000",
+    "stock": "35"
+  },
+  {
+    "id": "existing:111",
+    "name": "Black Iron Horns",
+    "itemType": "Hat",
+    "assetId": "628771505",
+    "flags": "Limited",
+    "price": "1000",
+    "stock": "30"
+  },
+  {
+    "id": "existing:112",
+    "name": "Black Paintball Mask",
+    "itemType": "Hat",
+    "assetId": "9254521",
+    "flags": "Limited",
+    "price": "80",
+    "stock": "350"
+  },
+  {
+    "id": "existing:113",
+    "name": "Black Sparkle Time Fedora",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "4000",
+    "stock": "13"
+  },
+  {
+    "id": "existing:114",
+    "name": "Black Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846246685",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:115",
+    "name": "Black Winter Cap",
+    "itemType": "Hat",
+    "assetId": "192565417",
+    "flags": "Normal",
+    "price": "222",
+    "stock": "0"
+  },
+  {
+    "id": "existing:116",
+    "name": "Blind Rogue",
+    "itemType": "Hat",
+    "assetId": "22160652",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:117",
+    "name": "Blue 8-Bit Headphones",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "720",
+    "stock": "0"
+  },
+  {
+    "id": "existing:118",
+    "name": "Blue Banded Boss White Hat",
+    "itemType": "Hat",
+    "assetId": "173624602",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:119",
+    "name": "Blue Queen of the Night",
+    "itemType": "Hat",
+    "assetId": "553970606",
+    "flags": "Limited",
+    "price": "750",
+    "stock": "25"
+  },
+  {
+    "id": "existing:120",
+    "name": "Blue Sniper Visor",
+    "itemType": "Hat",
+    "assetId": "1086814",
+    "flags": "Limited",
+    "price": "30",
+    "stock": "400"
+  },
+  {
+    "id": "existing:121",
+    "name": "Blue Top Hat with White Band",
+    "itemType": "Hat",
+    "assetId": "327318670",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:122",
+    "name": "Bluesteel Viking Helm of Infinite Pillage",
+    "itemType": "Hat",
+    "assetId": "1483632",
+    "flags": "Limited",
+    "price": "150",
+    "stock": "200"
+  },
+  {
+    "id": "existing:123",
+    "name": "Boo Visor",
+    "itemType": "Hat",
+    "assetId": "16899436",
+    "flags": "Limited",
+    "price": "1000",
+    "stock": "30"
+  },
+  {
+    "id": "existing:124",
+    "name": "Boss White Hat",
+    "itemType": "Hat",
+    "assetId": "89171071",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:125",
+    "name": "Brain Power Top Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "1200",
+    "stock": "40"
+  },
+  {
+    "id": "existing:126",
+    "name": "BreezeKreig Adventurer",
+    "itemType": "Hat",
+    "assetId": "144302847",
+    "flags": "Limited",
+    "price": "55",
+    "stock": "160"
+  },
+  {
+    "id": "existing:127",
+    "name": "Brighteyes' Witches Brew Hat",
+    "itemType": "Hat",
+    "assetId": "305888394",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:128",
+    "name": "Broken Tee Vee",
+    "itemType": "Hat",
+    "assetId": "241670187",
+    "flags": "Limited",
+    "price": "700",
+    "stock": "50"
+  },
+  {
+    "id": "existing:129",
+    "name": "Bucket",
+    "itemType": "Hat",
+    "assetId": "1081239",
+    "flags": "Limited",
+    "price": "250",
+    "stock": "100"
+  },
+  {
+    "id": "existing:130",
+    "name": "Bunny Ears",
+    "itemType": "Hat",
+    "assetId": "709229469",
+    "flags": "Normal",
+    "price": "250",
+    "stock": "0"
+  },
+  {
+    "id": "existing:131",
+    "name": "Burger Bob",
+    "itemType": "Hat",
+    "assetId": "90819252",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:132",
+    "name": "Burning Visor",
+    "itemType": "Hat",
+    "assetId": "169286913",
+    "flags": "Limited",
+    "price": "550",
+    "stock": "150"
+  },
+  {
+    "id": "existing:133",
+    "name": "Canada Styles",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "6550",
+    "stock": "23"
+  },
+  {
+    "id": "existing:134",
+    "name": "Cheese Hat",
+    "itemType": "Hat",
+    "assetId": "1097026",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:135",
+    "name": "Chessboard",
+    "itemType": "Hat",
+    "assetId": "1098275",
+    "flags": "Normal",
+    "price": "64",
+    "stock": "0"
+  },
+  {
+    "id": "existing:136",
+    "name": "Chicken Sim 360VR",
+    "itemType": "Hat",
+    "assetId": "1856116997",
+    "flags": "Normal",
+    "price": "150",
+    "stock": "0"
+  },
+  {
+    "id": "existing:137",
+    "name": "Clockwork's Headphones",
+    "itemType": "Hat",
+    "assetId": "1235488",
+    "flags": "Limited",
+    "price": "14000",
+    "stock": "12"
+  },
+  {
+    "id": "existing:138",
+    "name": "Clown Hat",
+    "itemType": "Hat",
+    "assetId": "16984840",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:139",
+    "name": "Coif of Glory",
+    "itemType": "Hat",
+    "assetId": "1091572",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:140",
+    "name": "Creepy Bunny",
+    "itemType": "Hat",
+    "assetId": "64560007",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:141",
+    "name": "Crown of Autumn Laurels",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "1300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:142",
+    "name": "CW Ultimate: Amethyst Addiction",
+    "itemType": "Hat",
+    "assetId": "188004500",
+    "flags": "Limited",
+    "price": "43000",
+    "stock": "12"
+  },
+  {
+    "id": "existing:143",
+    "name": "CW Ultimate: Ruby Rapture",
+    "itemType": "Hat",
+    "assetId": "583635712",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:144",
+    "name": "Cyborg Face Gear 2.0",
+    "itemType": "Hat",
+    "assetId": "1033121346",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:145",
+    "name": "Darkslide",
+    "itemType": "Hat",
+    "assetId": "95923968549961",
+    "flags": "Limited",
+    "price": "12000",
+    "stock": "10"
+  },
+  {
+    "id": "existing:146",
+    "name": "Death Metal Headphones",
+    "itemType": "Hat",
+    "assetId": "182509980",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:147",
+    "name": "Dethroned Ruler of the Universe",
+    "itemType": "Hat",
+    "assetId": "298084718",
+    "flags": "Limited",
+    "price": "22000",
+    "stock": "3"
+  },
+  {
+    "id": "existing:148",
+    "name": "Devilled Egg Hat",
+    "itemType": "Hat",
+    "assetId": "7243905642",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:149",
+    "name": "Diamond Crystal Circlet",
+    "itemType": "Hat",
+    "assetId": "4390875496",
+    "flags": "Limited",
+    "price": "300",
+    "stock": "80"
+  },
+  {
+    "id": "existing:150",
+    "name": "DIY Arctic Commando",
+    "itemType": "Hat",
+    "assetId": "553868229",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:151",
+    "name": "DIY Azurewrath Lord of the Bag",
+    "itemType": "Hat",
+    "assetId": "207207614",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:152",
+    "name": "DIY Bathelm",
+    "itemType": "Hat",
+    "assetId": "1560614784",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:153",
+    "name": "DIY Bluesteel Bathysphere",
+    "itemType": "Hat",
+    "assetId": "146083039",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:154",
+    "name": "DIY Deadly Dark Dominus",
+    "itemType": "Hat",
+    "assetId": "391934091",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:155",
+    "name": "DIY Dominus Empyreus",
+    "itemType": "Hat",
+    "assetId": "151789690",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:156",
+    "name": "DIY Narwhal",
+    "itemType": "Hat",
+    "assetId": "1016163758",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:157",
+    "name": "DIY Rainbow Shaggy",
+    "itemType": "Hat",
+    "assetId": "493482011",
+    "flags": "Limited",
+    "price": "110",
+    "stock": "35"
+  },
+  {
+    "id": "existing:158",
+    "name": "DIY Wanwood Crown",
+    "itemType": "Hat",
+    "assetId": "1665533709",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:159",
+    "name": "Doge Row",
+    "itemType": "Hat",
+    "assetId": "2846112824",
+    "flags": "Normal",
+    "price": "78",
+    "stock": "0"
+  },
+  {
+    "id": "existing:160",
+    "name": "Domino Crown",
+    "itemType": "Hat",
+    "assetId": "1031429",
+    "flags": "Limited",
+    "price": "17000",
+    "stock": "5"
+  },
+  {
+    "id": "existing:161",
+    "name": "Dominus Empyreus",
+    "itemType": "Hat",
+    "assetId": "21070012",
+    "flags": "Limited",
+    "price": "20000",
+    "stock": "7"
+  },
+  {
+    "id": "existing:162",
+    "name": "Doomsekkar",
+    "itemType": "Hat",
+    "assetId": "132809431",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:163",
+    "name": "Dr Future",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:164",
+    "name": "Eerie Pumpkin Head",
+    "itemType": "Hat",
+    "assetId": "1158416",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:165",
+    "name": "Electro Hood",
+    "itemType": "Hat",
+    "assetId": "151679909",
+    "flags": "Normal",
+    "price": "75",
+    "stock": "0"
+  },
+  {
+    "id": "existing:166",
+    "name": "Elephant Accoutrements",
+    "itemType": "Hat",
+    "assetId": "32661311",
+    "flags": "Normal",
+    "price": "140",
+    "stock": "0"
+  },
+  {
+    "id": "existing:167",
+    "name": "Emerald Eye",
+    "itemType": "Hat",
+    "assetId": "1185264",
+    "flags": "Limited",
+    "price": "300",
+    "stock": "150"
+  },
+  {
+    "id": "existing:168",
+    "name": "Empyrean Reignment",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "5050",
+    "stock": "33"
+  },
+  {
+    "id": "existing:169",
+    "name": "Enraged Templar Helmet",
+    "itemType": "Hat",
+    "assetId": "6532629501",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:170",
+    "name": "Enthroned Ruler of the Universe",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "6500",
+    "stock": "21"
+  },
+  {
+    "id": "existing:171",
+    "name": "Epic Failosaurus",
+    "itemType": "Hat",
+    "assetId": "61893436",
+    "flags": "Normal",
+    "price": "12",
+    "stock": "0"
+  },
+  {
+    "id": "existing:172",
+    "name": "Evil Hatbot",
+    "itemType": "Hat",
+    "assetId": "1016144971",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:173",
+    "name": "Exoflex Spax Helmex",
+    "itemType": "Hat",
+    "assetId": "17735403",
+    "flags": "Normal",
+    "price": "75",
+    "stock": "0"
+  },
+  {
+    "id": "existing:174",
+    "name": "Eye Poppers",
+    "itemType": "Hat",
+    "assetId": "15727015",
+    "flags": "Normal",
+    "price": "17",
+    "stock": "0"
+  },
+  {
+    "id": "existing:175",
+    "name": "Eyepatch",
+    "itemType": "Hat",
+    "assetId": "74970669",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:176",
+    "name": "Fiery Horns",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "14500",
+    "stock": "30"
+  },
+  {
+    "id": "existing:177",
+    "name": "Final Reaper",
+    "itemType": "Hat",
+    "assetId": "182259991",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:178",
+    "name": "Football Helmet",
+    "itemType": "Hat",
+    "assetId": "1590045",
+    "flags": "Normal",
+    "price": "75",
+    "stock": "0"
+  },
+  {
+    "id": "existing:179",
+    "name": "Frosty Fedora",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "6400",
+    "stock": "35"
+  },
+  {
+    "id": "existing:180",
+    "name": "Furry Hood",
+    "itemType": "Hat",
+    "assetId": "136777031",
+    "flags": "Limited",
+    "price": "200",
+    "stock": "54"
+  },
+  {
+    "id": "existing:181",
+    "name": "Gearpunk Bucket",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "1170",
+    "stock": "0"
+  },
+  {
+    "id": "existing:182",
+    "name": "Ghost Fedora",
+    "itemType": "Hat",
+    "assetId": "181434601",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:183",
+    "name": "Gift of Hidden Worlds",
+    "itemType": "Hat",
+    "assetId": "181651473",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:184",
+    "name": "Gift of Nocturnal Visitors",
+    "itemType": "Hat",
+    "assetId": "180629036",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:185",
+    "name": "Gift of Restless Graves",
+    "itemType": "Hat",
+    "assetId": "181206733",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:186",
+    "name": "Gift of the Archfiend",
+    "itemType": "Hat",
+    "assetId": "181672755",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:187",
+    "name": "Gift of the First Fright",
+    "itemType": "Hat",
+    "assetId": "180428447",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:188",
+    "name": "Gift of the Locked Manor",
+    "itemType": "Hat",
+    "assetId": "181354707",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:189",
+    "name": "Gift of the Sinister Harvest",
+    "itemType": "Hat",
+    "assetId": "181586975",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:190",
+    "name": "Gift of Winged Fright",
+    "itemType": "Hat",
+    "assetId": "181672835",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:191",
+    "name": "Gladiator Helmet",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "2000",
+    "stock": "25"
+  },
+  {
+    "id": "existing:192",
+    "name": "Gold Crown of Telamon",
+    "itemType": "Hat",
+    "assetId": "1078076",
+    "flags": "Limited",
+    "price": "13000",
+    "stock": "10"
+  },
+  {
+    "id": "existing:193",
+    "name": "Gold Flash Shades",
+    "itemType": "Hat",
+    "assetId": "138248066",
+    "flags": "Normal",
+    "price": "150",
+    "stock": "0"
+  },
+  {
+    "id": "existing:194",
+    "name": "Gold ROBLOX Music Video Award",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "5700",
+    "stock": "41"
+  },
+  {
+    "id": "existing:195",
+    "name": "Gold Shutter Shades",
+    "itemType": "Hat",
+    "assetId": "253489000",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:196",
+    "name": "Gold Sparkle Time Banded Boss White Hat",
+    "itemType": "Hat",
+    "assetId": "173624651",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:197",
+    "name": "Golden Chrome Shades",
+    "itemType": "Hat",
+    "assetId": "556821517",
+    "flags": "Normal",
+    "price": "25",
+    "stock": "0"
+  },
+  {
+    "id": "existing:198",
+    "name": "Golden Cloak Of Heroic Adventures",
+    "itemType": "Hat",
+    "assetId": "153689274",
+    "flags": "Limited",
+    "price": "90",
+    "stock": "115"
+  },
+  {
+    "id": "existing:199",
+    "name": "Golden Ring of Olympia",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "630",
+    "stock": "0"
+  },
+  {
+    "id": "existing:200",
+    "name": "Gorillaface",
+    "itemType": "Hat",
+    "assetId": "18484353",
+    "flags": "Limited",
+    "price": "345",
+    "stock": "128"
+  },
+  {
+    "id": "existing:201",
+    "name": "Graffiti Cap",
+    "itemType": "Hat",
+    "assetId": "108829464",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:202",
+    "name": "Green Banded Top Hat",
+    "itemType": "Hat",
+    "assetId": "1563352",
+    "flags": "Limited",
+    "price": "100",
+    "stock": "130"
+  },
+  {
+    "id": "existing:203",
+    "name": "Green Flash Shades",
+    "itemType": "Hat",
+    "assetId": "60675871",
+    "flags": "Limited",
+    "price": "180",
+    "stock": "99"
+  },
+  {
+    "id": "existing:204",
+    "name": "Green Laurel Wreath",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "520",
+    "stock": "0"
+  },
+  {
+    "id": "existing:205",
+    "name": "Halloween Baseball Cap",
+    "itemType": "Hat",
+    "assetId": "1165312",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:206",
+    "name": "Halloween Beanie",
+    "itemType": "Hat",
+    "assetId": "16641209",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:207",
+    "name": "Halloween Headrow",
+    "itemType": "Hat",
+    "assetId": "63994465",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:208",
+    "name": "Hammerhead",
+    "itemType": "Hat",
+    "assetId": "1098276",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:209",
+    "name": "Headrow",
+    "itemType": "Hat",
+    "assetId": "1082935",
+    "flags": "Limited",
+    "price": "200",
+    "stock": "34"
+  },
+  {
+    "id": "existing:210",
+    "name": "Heat Vision Goggles",
+    "itemType": "Hat",
+    "assetId": "10748238",
+    "flags": "Limited",
+    "price": "130",
+    "stock": "290"
+  },
+  {
+    "id": "existing:211",
+    "name": "Helm of the Great Tree",
+    "itemType": "Hat",
+    "assetId": "9910420",
+    "flags": "Normal",
+    "price": "500",
+    "stock": "0"
+  },
+  {
+    "id": "existing:212",
+    "name": "Helm of the Secret Fire",
+    "itemType": "Hat",
+    "assetId": "1272715",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:213",
+    "name": "Holiday crown",
+    "itemType": "Hat",
+    "assetId": "139152472",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:214",
+    "name": "Hungry Dino",
+    "itemType": "Hat",
+    "assetId": "89615321",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:215",
+    "name": "I <3 Hats 2014",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "190",
+    "stock": "0"
+  },
+  {
+    "id": "existing:216",
+    "name": "Icelord: The Unredeemed",
+    "itemType": "Hat",
+    "assetId": "102626000",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:217",
+    "name": "Icy Blue Viking Helm of Frozen Victory",
+    "itemType": "Hat",
+    "assetId": "327318111",
+    "flags": "Limited",
+    "price": "300",
+    "stock": "50"
+  },
+  {
+    "id": "existing:218",
+    "name": "Imperial Shako",
+    "itemType": "Hat",
+    "assetId": "13477121",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:219",
+    "name": "Inventor Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "4850",
+    "stock": "35"
+  },
+  {
+    "id": "existing:220",
+    "name": "Irish Gentleman Cap",
+    "itemType": "Hat",
+    "assetId": "60662813",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:221",
+    "name": "IT",
+    "itemType": "Hat",
+    "assetId": "15012271",
+    "flags": "Normal",
+    "price": "90",
+    "stock": "0"
+  },
+  {
+    "id": "existing:222",
+    "name": "Jack O Bandit",
+    "itemType": "Hat",
+    "assetId": "64560336",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:223",
+    "name": "Jester's Cap",
+    "itemType": "Hat",
+    "assetId": "1037673",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:224",
+    "name": "Kleos Phóteinos",
+    "itemType": "Hat",
+    "assetId": "135470904",
+    "flags": "Limited",
+    "price": "25000",
+    "stock": "5"
+  },
+  {
+    "id": "existing:225",
+    "name": "Knight of the Stygian Abyss",
+    "itemType": "Hat",
+    "assetId": "49048671",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:226",
+    "name": "Knights of the Splintered Skies: Helmet",
+    "itemType": "Hat",
+    "assetId": "98450287",
+    "flags": "Normal",
+    "price": "80",
+    "stock": "0"
+  },
+  {
+    "id": "existing:227",
+    "name": "Koala E Koala",
+    "itemType": "Hat",
+    "assetId": "44113968",
+    "flags": "Limited",
+    "price": "330",
+    "stock": "66"
+  },
+  {
+    "id": "existing:228",
+    "name": "Korblox Ice Zombie",
+    "itemType": "Hat",
+    "assetId": "33097647",
+    "flags": "Limited",
+    "price": "30",
+    "stock": "40"
+  },
+  {
+    "id": "existing:229",
+    "name": "Lightning Crown",
+    "itemType": "Hat",
+    "assetId": "32857966",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:230",
+    "name": "Living Art: Starry Night",
+    "itemType": "Hat",
+    "assetId": "97078419",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:231",
+    "name": "LOLHOO",
+    "itemType": "Hat",
+    "assetId": "25306182",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:232",
+    "name": "Louie",
+    "itemType": "Hat",
+    "assetId": "21070037",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:233",
+    "name": "Macabre Milliner",
+    "itemType": "Hat",
+    "assetId": "182399787",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:234",
+    "name": "Masked Hood of the Overseeker",
+    "itemType": "Hat",
+    "assetId": "182774658",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:235",
+    "name": "Medieval Hood of Mystery",
+    "itemType": "Hat",
+    "assetId": "617605556",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:236",
+    "name": "Miami Maker Top Hat 2014",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "260",
+    "stock": "0"
+  },
+  {
+    "id": "existing:237",
+    "name": "Mildly Disturbing Mask",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "4850",
+    "stock": "40"
+  },
+  {
+    "id": "existing:238",
+    "name": "Moai",
+    "itemType": "Hat",
+    "assetId": "15967519",
+    "flags": "Normal",
+    "price": "120",
+    "stock": "0"
+  },
+  {
+    "id": "existing:239",
+    "name": "Monster Hat",
+    "itemType": "Hat",
+    "assetId": "96079316",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:240",
+    "name": "Mosquito Balloon Hat",
+    "itemType": "Hat",
+    "assetId": "15470143",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:241",
+    "name": "Mr. Golden Robot",
+    "itemType": "Hat",
+    "assetId": "6653080721",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:242",
+    "name": "Mr. Robot",
+    "itemType": "Hat",
+    "assetId": "16179349",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:243",
+    "name": "Mrs. Tentacles",
+    "itemType": "Hat",
+    "assetId": "13416321",
+    "flags": "Limited",
+    "price": "400",
+    "stock": "50"
+  },
+  {
+    "id": "existing:244",
+    "name": "Musica Frigidus Dominator",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "7850",
+    "stock": "14"
+  },
+  {
+    "id": "existing:245",
+    "name": "Musical Gift from the Grave",
+    "itemType": "Hat",
+    "assetId": "181435318",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:246",
+    "name": "Need MORE",
+    "itemType": "Hat",
+    "assetId": "1037450",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:247",
+    "name": "Nerf Dart Crown",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "190",
+    "stock": "0"
+  },
+  {
+    "id": "existing:248",
+    "name": "Nice Red Bandana",
+    "itemType": "Hat",
+    "assetId": "134822978",
+    "flags": "Limited",
+    "price": "150",
+    "stock": "75"
+  },
+  {
+    "id": "existing:249",
+    "name": "Ninja Mask of Awesome",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "8450",
+    "stock": "8"
+  },
+  {
+    "id": "existing:250",
+    "name": "Ninja Mask of Shadows",
+    "itemType": "Hat",
+    "assetId": "1309911",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:251",
+    "name": "Ninja Strike Cap",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "170",
+    "stock": "0"
+  },
+  {
+    "id": "existing:252",
+    "name": "O NOES",
+    "itemType": "Hat",
+    "assetId": "1039432",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:253",
+    "name": "Oozing Oscar",
+    "itemType": "Hat",
+    "assetId": "20011925",
+    "flags": "Limited",
+    "price": "2400",
+    "stock": "45"
+  },
+  {
+    "id": "existing:254",
+    "name": "Orange Sparkle Time Fedora",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "3200",
+    "stock": "16"
+  },
+  {
+    "id": "existing:255",
+    "name": "Orange Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846245131",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:256",
+    "name": "paper hat",
+    "itemType": "Hat",
+    "assetId": "10476359",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:257",
+    "name": "Party Cap",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "25",
+    "stock": "0"
+  },
+  {
+    "id": "existing:258",
+    "name": "Party Hat",
+    "itemType": "Hat",
+    "assetId": "1779045",
+    "flags": "Limited",
+    "price": "1000000",
+    "stock": "10"
+  },
+  {
+    "id": "existing:259",
+    "name": "Perfectly Legitimate Business Hat",
+    "itemType": "Hat",
+    "assetId": "19027209",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:260",
+    "name": "Pink Eye",
+    "itemType": "Hat",
+    "assetId": "250395444",
+    "flags": "Limited",
+    "price": "225",
+    "stock": "35"
+  },
+  {
+    "id": "existing:261",
+    "name": "Poisoned Horns of the Toxic Wasteland",
+    "itemType": "Hat",
+    "assetId": "1744060292",
+    "flags": "Limited",
+    "price": "38000",
+    "stock": "9"
+  },
+  {
+    "id": "existing:262",
+    "name": "Possessive Mask",
+    "itemType": "Hat",
+    "assetId": "6590391129",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:263",
+    "name": "Princess Hat",
+    "itemType": "Hat",
+    "assetId": "1032641",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:264",
+    "name": "Purple Banded Boss White Hat",
+    "itemType": "Hat",
+    "assetId": "173624697",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:265",
+    "name": "Purple Crystal Circlet",
+    "itemType": "Hat",
+    "assetId": "151327351",
+    "flags": "Limited",
+    "price": "200",
+    "stock": "200"
+  },
+  {
+    "id": "existing:266",
+    "name": "Purple Elephant Accoutrements",
+    "itemType": "Hat",
+    "assetId": "14524185326",
+    "flags": "Normal",
+    "price": "200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:267",
+    "name": "Purple Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846244645",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:268",
+    "name": "Rainbow Omega Antlers",
+    "itemType": "Hat",
+    "assetId": "232489854",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:269",
+    "name": "RBX Neon Cap",
+    "itemType": "Hat",
+    "assetId": "16412791",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:270",
+    "name": "Red Banded Boss White Hat",
+    "itemType": "Hat",
+    "assetId": "173624749",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:271",
+    "name": "Red Crown of Ozymandias",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "5600",
+    "stock": "30"
+  },
+  {
+    "id": "existing:272",
+    "name": "Red Ice Crown",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "2200",
+    "stock": "26"
+  },
+  {
+    "id": "existing:273",
+    "name": "Red Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846245544",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:274",
+    "name": "Red Void Star",
+    "itemType": "Hat",
+    "assetId": "1191135761",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:275",
+    "name": "Reminisce Teapot",
+    "itemType": "Hat",
+    "assetId": "1594180",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:276",
+    "name": "Reminisce Visor",
+    "itemType": "Hat",
+    "assetId": "1459035",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:277",
+    "name": "Retro 3D Glasses",
+    "itemType": "Hat",
+    "assetId": "15726947",
+    "flags": "Normal",
+    "price": "30",
+    "stock": "0"
+  },
+  {
+    "id": "existing:278",
+    "name": "ROBLOX 'R' Baseball Cap",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "5700",
+    "stock": "22"
+  },
+  {
+    "id": "existing:279",
+    "name": "Roblox Classic",
+    "itemType": "Hat",
+    "assetId": "46839304",
+    "flags": "Normal",
+    "price": "75",
+    "stock": "0"
+  },
+  {
+    "id": "existing:280",
+    "name": "ROBLOX Europe Meetup '16 Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:281",
+    "name": "ROBLOX Summer Visor",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "110",
+    "stock": "0"
+  },
+  {
+    "id": "existing:282",
+    "name": "Roblox Visor",
+    "itemType": "Hat",
+    "assetId": "2646473721",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:283",
+    "name": "Rock Golem",
+    "itemType": "Hat",
+    "assetId": "21635614",
+    "flags": "Normal",
+    "price": "72",
+    "stock": "0"
+  },
+  {
+    "id": "existing:284",
+    "name": "Rubber Duckie",
+    "itemType": "Hat",
+    "assetId": "9254254",
+    "flags": "Limited",
+    "price": "55",
+    "stock": "210"
+  },
+  {
+    "id": "existing:285",
+    "name": "Ruler of Light",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "1900",
+    "stock": "36"
+  },
+  {
+    "id": "existing:286",
+    "name": "Shamrock Styles",
+    "itemType": "Hat",
+    "assetId": "74941352",
+    "flags": "Normal",
+    "price": "90",
+    "stock": "0"
+  },
+  {
+    "id": "existing:287",
+    "name": "Sheikh",
+    "itemType": "Hat",
+    "assetId": "12436480",
+    "flags": "Normal",
+    "price": "1300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:288",
+    "name": "Sheriff Winston",
+    "itemType": "Hat",
+    "assetId": "62332732",
+    "flags": "Limited",
+    "price": "20000",
+    "stock": "13"
+  },
+  {
+    "id": "existing:289",
+    "name": "Sickly's White Top Hat",
+    "itemType": "Hat",
+    "assetId": "1073690",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:290",
+    "name": "Silly Alien",
+    "itemType": "Hat",
+    "assetId": "35631086",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:291",
+    "name": "Silly Monkey",
+    "itemType": "Hat",
+    "assetId": "13700820",
+    "flags": "Normal",
+    "price": "78",
+    "stock": "0"
+  },
+  {
+    "id": "existing:292",
+    "name": "Silverthorn Antlers",
+    "itemType": "Hat",
+    "assetId": "9255011",
+    "flags": "Limited",
+    "price": "2000",
+    "stock": "25"
+  },
+  {
+    "id": "existing:293",
+    "name": "Sinister E.",
+    "itemType": "Hat",
+    "assetId": "1090028211",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:294",
+    "name": "Sinister P.",
+    "itemType": "Hat",
+    "assetId": "17450053",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:295",
+    "name": "Sinister Q.",
+    "itemType": "Hat",
+    "assetId": "182640918",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:296",
+    "name": "Sinister Zombie",
+    "itemType": "Hat",
+    "assetId": "133559536",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:297",
+    "name": "Sizlack Eater of Heads",
+    "itemType": "Hat",
+    "assetId": "12314270",
+    "flags": "Normal",
+    "price": "80",
+    "stock": "0"
+  },
+  {
+    "id": "existing:298",
+    "name": "Sk11r",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "1250",
+    "stock": "0"
+  },
+  {
+    "id": "existing:299",
+    "name": "Skull Bandit",
+    "itemType": "Hat",
+    "assetId": "31252891",
+    "flags": "Normal",
+    "price": "38",
+    "stock": "0"
+  },
+  {
+    "id": "existing:300",
+    "name": "Skull of Reminisce's Past",
+    "itemType": "Hat",
+    "assetId": "181354245",
+    "flags": "Normal",
+    "price": "800",
+    "stock": "0"
+  },
+  {
+    "id": "existing:301",
+    "name": "Sky Blue Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846249860",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:302",
+    "name": "Smaug",
+    "itemType": "Hat",
+    "assetId": "73793689",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:303",
+    "name": "Sparkle Time Fedora",
+    "itemType": "Hat",
+    "assetId": "1285307",
+    "flags": "Limited",
+    "price": "18000",
+    "stock": "14"
+  },
+  {
+    "id": "existing:304",
+    "name": "Sparkle Time Wizard",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "2600",
+    "stock": "12"
+  },
+  {
+    "id": "existing:305",
+    "name": "Spooky Tie",
+    "itemType": "Hat",
+    "assetId": "129533465",
+    "flags": "Normal, Event",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:306",
+    "name": "Springtime 2010 R&R&R",
+    "itemType": "Hat",
+    "assetId": "25609890",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:307",
+    "name": "Stage Prop",
+    "itemType": "Hat",
+    "assetId": "1098285",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:308",
+    "name": "Starslide",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:309",
+    "name": "Steampunk Aetherspectacles",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "850",
+    "stock": "0"
+  },
+  {
+    "id": "existing:310",
+    "name": "SteamPunk Elephant",
+    "itemType": "Hat",
+    "assetId": "53037798",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:311",
+    "name": "Straw Demon",
+    "itemType": "Hat",
+    "assetId": "16356930",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:312",
+    "name": "Striped Hat",
+    "itemType": "Hat",
+    "assetId": "1031492",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:313",
+    "name": "Stylish Aviators",
+    "itemType": "Hat",
+    "assetId": "376526673",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:314",
+    "name": "Stylish Sailor",
+    "itemType": "Hat",
+    "assetId": "63642258",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:315",
+    "name": "Summertime R&R&R 2010",
+    "itemType": "Hat",
+    "assetId": "29294506",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:316",
+    "name": "Supa Dupa Fly Cap",
+    "itemType": "Hat",
+    "assetId": "1609401184",
+    "flags": "Limited",
+    "price": "300",
+    "stock": "100"
+  },
+  {
+    "id": "existing:317",
+    "name": "Take a Chance",
+    "itemType": "Hat",
+    "assetId": "11188705",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:318",
+    "name": "Tasteless Baseball Cap",
+    "itemType": "Hat",
+    "assetId": "33337041",
+    "flags": "Normal",
+    "price": "126",
+    "stock": "0"
+  },
+  {
+    "id": "existing:319",
+    "name": "Teal Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846249029",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:320",
+    "name": "Teapot Turret",
+    "itemType": "Hat",
+    "assetId": "1055299",
+    "flags": "Limited",
+    "price": "1000",
+    "stock": "50"
+  },
+  {
+    "id": "existing:321",
+    "name": "Temple Challenger Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "240",
+    "stock": "0"
+  },
+  {
+    "id": "existing:322",
+    "name": "Thanksgiving Turkey Cap",
+    "itemType": "Hat",
+    "assetId": "66367279",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:323",
+    "name": "The Agonizingly Ugly Bucket of Doom",
+    "itemType": "Hat",
+    "assetId": "1286490",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:324",
+    "name": "The Blind Seer",
+    "itemType": "Hat",
+    "assetId": "52512136",
+    "flags": "Normal",
+    "price": "76",
+    "stock": "0"
+  },
+  {
+    "id": "existing:325",
+    "name": "The Bluesteel Bathelm",
+    "itemType": "Hat",
+    "assetId": "1172161",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:326",
+    "name": "The Classic ROBLOX Fedora",
+    "itemType": "Hat",
+    "assetId": "1029025",
+    "flags": "Limited",
+    "price": "10000",
+    "stock": "22"
+  },
+  {
+    "id": "existing:327",
+    "name": "The Dusekkar",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "5950",
+    "stock": "34"
+  },
+  {
+    "id": "existing:328",
+    "name": "The Fire Skull Of Evermoor",
+    "itemType": "Hat",
+    "assetId": "102622991",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:329",
+    "name": "The Ice Skull of Nevermoor",
+    "itemType": "Hat",
+    "assetId": "6552254",
+    "flags": "Limited",
+    "price": "1000",
+    "stock": "100"
+  },
+  {
+    "id": "existing:330",
+    "name": "The Kleos Aphthiton",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "1070",
+    "stock": "0"
+  },
+  {
+    "id": "existing:331",
+    "name": "The Ochre Eye",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "5000",
+    "stock": "44"
+  },
+  {
+    "id": "existing:332",
+    "name": "The Riddling Skull",
+    "itemType": "Hat",
+    "assetId": "4765718",
+    "flags": "Normal",
+    "price": "60",
+    "stock": "0"
+  },
+  {
+    "id": "existing:333",
+    "name": "The Scariest Hood",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "1600",
+    "stock": "27"
+  },
+  {
+    "id": "existing:334",
+    "name": "The Void Star",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "6450",
+    "stock": "30"
+  },
+  {
+    "id": "existing:335",
+    "name": "Tix Baseball Cap",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "350",
+    "stock": "0"
+  },
+  {
+    "id": "existing:336",
+    "name": "Toothy Deer Man Antlers",
+    "itemType": "Hat",
+    "assetId": "2846112424",
+    "flags": "Normal",
+    "price": "80",
+    "stock": "0"
+  },
+  {
+    "id": "existing:337",
+    "name": "Touched by Lightning",
+    "itemType": "Hat",
+    "assetId": "22960112",
+    "flags": "Limited",
+    "price": "1500",
+    "stock": "55"
+  },
+  {
+    "id": "existing:338",
+    "name": "Toxic Nemesis",
+    "itemType": "Hat",
+    "assetId": "55032087",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:339",
+    "name": "Traffic Cone",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "470",
+    "stock": "0"
+  },
+  {
+    "id": "existing:340",
+    "name": "Tubamaphone",
+    "itemType": "Hat",
+    "assetId": "15729125",
+    "flags": "Normal",
+    "price": "152",
+    "stock": "0"
+  },
+  {
+    "id": "existing:341",
+    "name": "Turbo Miners Cap",
+    "itemType": "Hat",
+    "assetId": "11844853",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:342",
+    "name": "Ultimate Victory",
+    "itemType": "Hat",
+    "assetId": "91675439",
+    "flags": "Normal",
+    "price": "425",
+    "stock": "0"
+  },
+  {
+    "id": "existing:343",
+    "name": "Uncle Zom's Hat",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "4750",
+    "stock": "45"
+  },
+  {
+    "id": "existing:344",
+    "name": "Valiant Valkyrie of Testing",
+    "itemType": "Hat",
+    "assetId": "7781687598",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:345",
+    "name": "Valkyrie Helm",
+    "itemType": "Hat",
+    "assetId": "1365767",
+    "flags": "Limited",
+    "price": "16000",
+    "stock": "30"
+  },
+  {
+    "id": "existing:346",
+    "name": "Vampire Sunglasses",
+    "itemType": "Hat",
+    "assetId": "306969564",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:347",
+    "name": "Vancouver Maker Top Hat 2014",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "260",
+    "stock": "0"
+  },
+  {
+    "id": "existing:348",
+    "name": "Vegetable Hat",
+    "itemType": "Hat",
+    "assetId": "1098273",
+    "flags": "Limited",
+    "price": "175",
+    "stock": "100"
+  },
+  {
+    "id": "existing:349",
+    "name": "Viridian Antlers",
+    "itemType": "Hat",
+    "assetId": "227694941",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:350",
+    "name": "Viridian Hood",
+    "itemType": "Hat",
+    "assetId": "16954107",
+    "flags": "Limited",
+    "price": "15000",
+    "stock": "17"
+  },
+  {
+    "id": "existing:351",
+    "name": "Viridian Shutter Shades",
+    "itemType": "Hat",
+    "assetId": "192459324",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:352",
+    "name": "Visage of Rao",
+    "itemType": "Hat",
+    "assetId": "14128939",
+    "flags": "Normal",
+    "price": "500",
+    "stock": "0"
+  },
+  {
+    "id": "existing:353",
+    "name": "Viscount of the Federation",
+    "itemType": "Hat",
+    "assetId": "4390896732",
+    "flags": "Limited",
+    "price": "1500",
+    "stock": "25"
+  },
+  {
+    "id": "existing:354",
+    "name": "Vlad the Impaler, IX",
+    "itemType": "Hat",
+    "assetId": "181435746",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:355",
+    "name": "Wanwood Antlers",
+    "itemType": "Hat",
+    "assetId": "1272714",
+    "flags": "Limited",
+    "price": "350",
+    "stock": "25"
+  },
+  {
+    "id": "existing:356",
+    "name": "Wanwood Visor",
+    "itemType": "Hat",
+    "assetId": "168167114",
+    "flags": "Normal",
+    "price": "125",
+    "stock": "0"
+  },
+  {
+    "id": "existing:357",
+    "name": "White Ninja Headband of the Unimpeachable Soul",
+    "itemType": "Hat",
+    "assetId": "11297746",
+    "flags": "Normal",
+    "price": "1200",
+    "stock": "0"
+  },
+  {
+    "id": "existing:358",
+    "name": "White Sparkle Time Popcollar",
+    "itemType": "Hat",
+    "assetId": "2846249458",
+    "flags": "Normal",
+    "price": "50",
+    "stock": "0"
+  },
+  {
+    "id": "existing:359",
+    "name": "Wild’s Chicken Suit",
+    "itemType": "Hat",
+    "assetId": "24112667",
+    "flags": "Normal",
+    "price": "2500",
+    "stock": "0"
+  },
+  {
+    "id": "existing:360",
+    "name": "Wintertime R&R&R",
+    "itemType": "Hat",
+    "assetId": "21025037",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:361",
+    "name": "Wizard's Hat",
+    "itemType": "Hat",
+    "assetId": "1049198",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:362",
+    "name": "Worst. Halloween Costume. Ever.",
+    "itemType": "Hat",
+    "assetId": "16678095",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:363",
+    "name": "Zombie Doge",
+    "itemType": "Hat",
+    "assetId": "0",
+    "flags": "Limited",
+    "price": "1400",
+    "stock": "38"
+  },
+  {
+    "id": "existing:364",
+    "name": "Zombie Headrow",
+    "itemType": "Hat",
+    "assetId": "133360542",
+    "flags": "Limited",
+    "price": "1000",
+    "stock": "20"
+  },
+  {
+    "id": "existing:365",
+    "name": "Zombie Teapot",
+    "itemType": "Hat",
+    "assetId": "184750773",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:366",
+    "name": "Zulaja",
+    "itemType": "Hat",
+    "assetId": "28626176",
+    "flags": "Limited",
+    "price": "5600",
+    "stock": "23"
+  },
+  {
+    "id": "existing:367",
+    "name": "Azure Dragon's Magic Slayer",
+    "itemType": "Tool",
+    "assetId": "268586231",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:368",
+    "name": "Ban Hammer",
+    "itemType": "Tool",
+    "assetId": "10468797",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:369",
+    "name": "Banana Peel",
+    "itemType": "Tool",
+    "assetId": "29100449",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:370",
+    "name": "Basketball",
+    "itemType": "Tool",
+    "assetId": "52627419",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:371",
+    "name": "Bloxy Cola",
+    "itemType": "Tool",
+    "assetId": "10472779",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:372",
+    "name": "Body Swap Potion",
+    "itemType": "Tool",
+    "assetId": "78730532",
+    "flags": "Normal",
+    "price": "250",
+    "stock": "0"
+  },
+  {
+    "id": "existing:373",
+    "name": "Breakfast Gun",
+    "itemType": "Tool",
+    "assetId": "163353363",
+    "flags": "Limited",
+    "price": "300",
+    "stock": "200"
+  },
+  {
+    "id": "existing:374",
+    "name": "Cake",
+    "itemType": "Tool",
+    "assetId": "16214845",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:375",
+    "name": "Cheezburger",
+    "itemType": "Tool",
+    "assetId": "16726030",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:376",
+    "name": "Chocolate Milk",
+    "itemType": "Tool",
+    "assetId": "21392199",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:377",
+    "name": "ClassicTrowel",
+    "itemType": "Tool",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "15",
+    "stock": "0"
+  },
+  {
+    "id": "existing:378",
+    "name": "Dodgeball",
+    "itemType": "Tool",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "15",
+    "stock": "0"
+  },
+  {
+    "id": "existing:379",
+    "name": "Epicsauce",
+    "itemType": "Tool",
+    "assetId": "31314931",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:380",
+    "name": "Goala Cola",
+    "itemType": "Tool",
+    "assetId": "28672001",
+    "flags": "Normal",
+    "price": "30",
+    "stock": "0"
+  },
+  {
+    "id": "existing:381",
+    "name": "Gork, Your Caveman Shoulder Friend",
+    "itemType": "Tool",
+    "assetId": "33732371",
+    "flags": "Limited",
+    "price": "540",
+    "stock": "80"
+  },
+  {
+    "id": "existing:382",
+    "name": "Green Balloon",
+    "itemType": "Tool",
+    "assetId": "27494652",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:383",
+    "name": "Headless Horseman's New Head",
+    "itemType": "Tool",
+    "assetId": "131592085",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:384",
+    "name": "Healing Potion",
+    "itemType": "Tool",
+    "assetId": "11419319",
+    "flags": "Normal",
+    "price": "500",
+    "stock": "0"
+  },
+  {
+    "id": "existing:385",
+    "name": "Hot Chocolate",
+    "itemType": "Tool",
+    "assetId": "42321801",
+    "flags": "Normal",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:386",
+    "name": "Illumina",
+    "itemType": "Tool",
+    "assetId": "16641274",
+    "flags": "Limited",
+    "price": "30000",
+    "stock": "10"
+  },
+  {
+    "id": "existing:387",
+    "name": "Linked Sword",
+    "itemType": "Tool",
+    "assetId": "125013769",
+    "flags": "Normal",
+    "price": "100",
+    "stock": "0"
+  },
+  {
+    "id": "existing:388",
+    "name": "Medusa Head",
+    "itemType": "Tool",
+    "assetId": "89487934",
+    "flags": "Limited",
+    "price": "400",
+    "stock": "120"
+  },
+  {
+    "id": "existing:389",
+    "name": "Moonwalk Dance Potion",
+    "itemType": "Tool",
+    "assetId": "32353654",
+    "flags": "Normal",
+    "price": "70",
+    "stock": "0"
+  },
+  {
+    "id": "existing:390",
+    "name": "Pepperoni Pizza",
+    "itemType": "Tool",
+    "assetId": "22596452",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:391",
+    "name": "Pumpkin Bucket",
+    "itemType": "Tool",
+    "assetId": "17527923",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:392",
+    "name": "Red Hyperlaser Gun",
+    "itemType": "Tool",
+    "assetId": "212296936",
+    "flags": "Limited",
+    "price": "5600",
+    "stock": "45"
+  },
+  {
+    "id": "existing:393",
+    "name": "Regeneration Coil",
+    "itemType": "Tool",
+    "assetId": "119101539",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:394",
+    "name": "ROBAR eXtreme Chocolate Crunch",
+    "itemType": "Tool",
+    "assetId": "39258329",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:395",
+    "name": "RocketLauncher",
+    "itemType": "Tool",
+    "assetId": "0",
+    "flags": "Normal",
+    "price": "15",
+    "stock": "0"
+  },
+  {
+    "id": "existing:396",
+    "name": "SkeleFriend",
+    "itemType": "Tool",
+    "assetId": "63253701",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:397",
+    "name": "Slateskin Potion",
+    "itemType": "Tool",
+    "assetId": "11450664",
+    "flags": "Normal",
+    "price": "500",
+    "stock": "0"
+  },
+  {
+    "id": "existing:398",
+    "name": "Space Sandwich",
+    "itemType": "Tool",
+    "assetId": "12547976",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:399",
+    "name": "Speed Coil",
+    "itemType": "Tool",
+    "assetId": "99119158",
+    "flags": "Normal",
+    "price": "300",
+    "stock": "0"
+  },
+  {
+    "id": "existing:400",
+    "name": "Subspace Tripmine",
+    "itemType": "Tool",
+    "assetId": "11999247",
+    "flags": "Limited",
+    "price": "13000",
+    "stock": "20"
+  },
+  {
+    "id": "existing:401",
+    "name": "Sword of Darkness",
+    "itemType": "Tool",
+    "assetId": "77443491",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  },
+  {
+    "id": "existing:402",
+    "name": "Taco",
+    "itemType": "Tool",
+    "assetId": "15177716",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:403",
+    "name": "Teddy Bloxpin",
+    "itemType": "Tool",
+    "assetId": "12848902",
+    "flags": "Normal",
+    "price": "1000",
+    "stock": "0"
+  },
+  {
+    "id": "existing:404",
+    "name": "Teddy Trap",
+    "itemType": "Tool",
+    "assetId": "12890798",
+    "flags": "Normal",
+    "price": "1000",
+    "stock": "0"
+  },
+  {
+    "id": "existing:405",
+    "name": "Turkey Leg",
+    "itemType": "Tool",
+    "assetId": "13745494",
+    "flags": "Normal",
+    "price": "10",
+    "stock": "0"
+  },
+  {
+    "id": "existing:406",
+    "name": "Vine Staff",
+    "itemType": "Tool",
+    "assetId": "30847733",
+    "flags": "Normal",
+    "price": "700",
+    "stock": "0"
+  },
+  {
+    "id": "existing:407",
+    "name": "Zombie Protest Sign",
+    "itemType": "Tool",
+    "assetId": "304721834",
+    "flags": "Normal, Event, Hidden/Reward",
+    "price": "0",
+    "stock": "0"
+  }
+]

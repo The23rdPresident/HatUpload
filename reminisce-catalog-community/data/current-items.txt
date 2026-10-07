@@ -1,0 +1,414 @@
+REMINISCE CURRENT NON-CLOTHING ITEM LIST
+Generated 2026-10-07
+Total embedded authored/event non-clothing items: 407
+Included types: BodyPackage (9), Face (23), Hair (52), Hat (282), Tool (41)
+Excluded clothing types: TShirt / Shirt / Pants / Clothing
+Note: external live-published DataStore-only items cannot be enumerated offline from an RBXL; runtime duplicate filtering still applies to them.
+
+001. [BodyPackage] Headless Horseman Body | AssetId 201 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+002. [BodyPackage] Korblox Deathspeaker | AssetId 192 | Normal | Price 10000 | Stock 0
+003. [BodyPackage] Mr Roboto | AssetId 310 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+004. [BodyPackage] Reminisce 2.0 | AssetId 311 | Normal | Price 0 | Stock 0
+005. [BodyPackage] Reminisce Girl | AssetId 282 | Normal | Price 0 | Stock 0
+006. [BodyPackage] Skeleton | AssetId 295 | Normal | Price 200 | Stock 0
+007. [BodyPackage] Superhero | AssetId 299 | Normal | Price 100 | Stock 0
+008. [BodyPackage] Tentacled Alien | AssetId 307 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+009. [BodyPackage] Zombie | AssetId 291 | Normal | Price 50 | Stock 0
+010. [Face] :3 | AssetId 3112638914 | Normal | Price 0 | Stock 0
+011. [Face] Alien Ambassador | AssetId 11913700 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+012. [Face] Awesome Face | AssetId 155286312 | Normal | Price 0 | Stock 0
+013. [Face] Bandage Face | AssetId 90514173 | Normal | Price 0 | Stock 0
+014. [Face] Emotionally Distressed Zombie | AssetId 155217504 | Normal | Price 200 | Stock 0
+015. [Face] Epic Face | AssetId 155217770 | Normal | Price 120 | Stock 0
+016. [Face] Err... | AssetId 155195215 | Normal | Price 0 | Stock 0
+017. [Face] Ghostface | AssetId 36544324 | Normal | Price 0 | Stock 0
+018. [Face] Golden Shiny Teeth | AssetId 155287964 | Normal | Price 0 | Stock 0
+019. [Face] Green Drool Angry Zombie | AssetId 1208306677 | Normal | Price 1600 | Stock 0
+020. [Face] Poisoned Beast Mode | AssetId 1068585919 | Limited | Price 12000 | Stock 22
+021. [Face] Prankster | AssetId 155287609 | Normal | Price 2100 | Stock 0
+022. [Face] Rainbow Overload | AssetId 141447419 | Limited | Price 3500 | Stock 25
+023. [Face] Red Glowing Eyes | AssetId 893052425 | Limited | Price 32000 | Stock 9
+024. [Face] Red Rawr | AssetId 90515594 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+025. [Face] Robot | AssetId 90272119 | Normal | Price 0 | Stock 0
+026. [Face] Sad Clown | AssetId 253588864 | Limited | Price 2000 | Stock 18
+027. [Face] Sapphire Drool | AssetId 51747642 | Normal | Price 0 | Stock 0
+028. [Face] Shocked Face | AssetId 147322185 | Normal | Price 0 | Stock 0
+029. [Face] Slick Fang | AssetId 133632349364930 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+030. [Face] Super Super Happy Face | AssetId 130564231750760 | Limited | Price 3000 | Stock 65
+031. [Face] Trouble maker | AssetId 90272224 | Normal | Price 130 | Stock 0
+032. [Face] Zombie face | AssetId 991219580 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+033. [Hair] 8-Bit Hair for Beautiful People | AssetId 542159374 | Normal | Price 0 | Stock 0
+034. [Hair] America's Sweetheart | AssetId 29952810 | Normal | Price 185 | Stock 0
+035. [Hair] Beautiful Brown Hair for Beautiful People | AssetId 17877340 | Normal | Price 80 | Stock 0
+036. [Hair] Beautiful Hair for Beautiful People | AssetId 16630147 | Normal | Price 1000 | Stock 0
+037. [Hair] Belle Of Belfast Long Red Hair | AssetId 2956239660 | Normal | Price 65 | Stock 0
+038. [Hair] Black Action Ponytail | AssetId 1708329071 | Normal | Price 120 | Stock 0
+039. [Hair] Black and Red | AssetId 14815761 | Normal | Price 65 | Stock 0
+040. [Hair] Black Long and Straight Hair | AssetId 1772372988 | Normal | Price 19 | Stock 0
+041. [Hair] Black Pigtails | AssetId 11913660 | Normal | Price 890 | Stock 0
+042. [Hair] Black Ponytail | AssetId 376527350 | Normal | Price 340 | Stock 0
+043. [Hair] Blonde Action Ponytail | AssetId 398673196 | Normal | Price 255 | Stock 0
+044. [Hair] Blonde beautiful hair for beautiful people | AssetId 233615637 | Normal | Price 50 | Stock 0
+045. [Hair] Blonde Charmer | AssetId 80921949 | Normal | Price 13 | Stock 0
+046. [Hair] Blonde Roblohunk | AssetId 16157972 | Normal | Price 43 | Stock 0
+047. [Hair] Blonde Spiked Hair | AssetId 376524487 | Normal | Price 430 | Stock 0
+048. [Hair] Bozo the Clown | AssetId 15469944 | Normal | Price 22 | Stock 0
+049. [Hair] Bride of Frankenstein Hair | AssetId 315548432 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+050. [Hair] Brilliant Bombastique | AssetId 136803077 | Limited | Price 150 | Stock 100
+051. [Hair] Brown Charmer Hair | AssetId 376548738 | Normal | Price 300 | Stock 0
+052. [Hair] Brown Hair | AssetId 0 | Normal | Price 45 | Stock 0
+053. [Hair] Brown Hair Dude | AssetId 188003563 | Normal | Price 13 | Stock 0
+054. [Hair] Burning Hair for Fiery People | AssetId 2566043868 | Normal | Price 3680 | Stock 0
+055. [Hair] Cinnamon Hair | AssetId 13745548 | Normal | Price 940 | Stock 0
+056. [Hair] Cotton Candy Hair | AssetId 293316608 | Normal | Price 12 | Stock 0
+057. [Hair] Cyan Equinox | AssetId 135470884 | Normal | Price 200 | Stock 0
+058. [Hair] Dreadblox | AssetId 13477470 | Normal | Price 0 | Stock 0
+059. [Hair] Dreadlocks | AssetId 26778066 | Normal | Price 0 | Stock 0
+060. [Hair] Equinox | AssetId 19327469 | Limited | Price 6000 | Stock 22
+061. [Hair] Father Time | AssetId 15913848 | Limited | Price 2000 | Stock 45
+062. [Hair] Frobow the Sad Clown | AssetId 11721197 | Limited | Price 500 | Stock 60
+063. [Hair] Frop | AssetId 12270336 | Normal | Price 0 | Stock 0
+064. [Hair] Head Wound | AssetId 30380659 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+065. [Hair] Long Pastel Hair | AssetId 727320877 | Normal | Price 32 | Stock 0
+066. [Hair] Mad Scientist Hair | AssetId 12730109 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+067. [Hair] Messy Hair | AssetId 26658141 | Normal | Price 65 | Stock 0
+068. [Hair] Moonflower | AssetId 21392455 | Normal | Price 0 | Stock 0
+069. [Hair] Neon Green Equinox | AssetId 212971414 | Limited | Price 11200 | Stock 20
+070. [Hair] Orange Beanie with Black Hair | AssetId 1103003368 | Normal | Price 165 | Stock 0
+071. [Hair] Pal Hair | AssetId 63690008 | Normal | Price 470 | Stock 0
+072. [Hair] Rainbow Equinox | AssetId 82332313 | Limited | Price 30700 | Stock 10
+073. [Hair] Rainbow Shaggy | AssetId 64082730 | Limited | Price 36800 | Stock 7
+074. [Hair] Roblohunk Hair | AssetId 15913837 | Normal | Price 12 | Stock 0
+075. [Hair] Rock Star with Side Swept Bangs | AssetId 20010032 | Normal | Price 0 | Stock 0
+076. [Hair] Shaggy | AssetId 20573078 | Normal | Price 250 | Stock 0
+077. [Hair] Stickmasterluke's Peanut Butter Sparkle Time | AssetId 169444294 | Limited | Price 8000 | Stock 33
+078. [Hair] Straight Blonde Hair | AssetId 376526888 | Normal | Price 385 | Stock 0
+079. [Hair] Strawberry Ice Cream Hair | AssetId 430063008 | Normal | Price 400 | Stock 0
+080. [Hair] Sweetheart | AssetId 0 | Normal | Price 60 | Stock 0
+081. [Hair] Trecky Hair | AssetId 32278814 | Normal | Price 22 | Stock 0
+082. [Hair] True Blue Hair | AssetId 451221329 | Normal | Price 210 | Stock 0
+083. [Hair] Violet Equinox | AssetId 153474594 | Limited | Price 19300 | Stock 15
+084. [Hair] Zeus Beard | AssetId 1492205990 | Limited | Price 112 | Stock 68
+085. [Hat] 'R' Cap | AssetId 34901393 | Normal | Price 76 | Stock 0
+086. [Hat] 1337 Cyber Assassin | AssetId 81688937 | Limited | Price 30 | Stock 80
+087. [Hat] 2015 Party Hat | AssetId 0 | Normal | Price 150 | Stock 0
+088. [Hat] 2015 ROBLOX Visor | AssetId 0 | Normal | Price 160 | Stock 0
+089. [Hat] 2015 Top Hat | AssetId 0 | Normal | Price 200 | Stock 0
+090. [Hat] 2016 New Years Hat | AssetId 0 | Normal | Price 180 | Stock 0
+091. [Hat] 2016 ROBLOX Visor | AssetId 0 | Normal | Price 140 | Stock 0
+092. [Hat] 2018 Roblox Visor | AssetId 0 | Normal | Price 120 | Stock 0
+093. [Hat] 8-Bit Clockwork Shades | AssetId 450557238 | Limited | Price 180 | Stock 18
+094. [Hat] A Darker Presence | AssetId 87714679176829 | Limited | Price 300 | Stock 100
+095. [Hat] Agonizingly White Bucket of Ultimate Doom | AssetId 1402433072 | Limited | Price 31000 | Stock 8
+096. [Hat] Al Capwn | AssetId 24123795 | Limited | Price 1111 | Stock 111
+097. [Hat] Archfiend's Trophy Shoulders | AssetId 183325398 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+098. [Hat] ASCII Chrome | AssetId 12001199 | Limited | Price 15000 | Stock 10
+099. [Hat] Azurewrath's Additional Head Horns | AssetId 501960925 | Normal | Price 100 | Stock 0
+100. [Hat] Azurewrath, Lord of the Void | AssetId 17109706 | Limited | Price 45000 | Stock 7
+101. [Hat] Backwards 'R' Cap | AssetId 17903982 | Normal | Price 100 | Stock 0
+102. [Hat] Batty Scarf of Affordable Style | AssetId 181206559 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+103. [Hat] Bear Face Mask | AssetId 1192464705 | Normal | Price 80 | Stock 0
+104. [Hat] Binary Banded Boss White Hat | AssetId 173624561 | Normal | Price 0 | Stock 0
+105. [Hat] Black Banded Orange Top Hat | AssetId 2445212495 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+106. [Hat] Black Iron Antlers | AssetId 398674411 | Normal | Price 85 | Stock 0
+107. [Hat] Black Iron Bathelm | AssetId 183468929 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+108. [Hat] Black Iron Branches | AssetId 0 | Normal | Price 1080 | Stock 0
+109. [Hat] Black Iron Commando | AssetId 928908332 | Limited | Price 600 | Stock 90
+110. [Hat] Black Iron Crown of Pwnage | AssetId 1078202 | Limited | Price 5000 | Stock 35
+111. [Hat] Black Iron Horns | AssetId 628771505 | Limited | Price 1000 | Stock 30
+112. [Hat] Black Paintball Mask | AssetId 9254521 | Limited | Price 80 | Stock 350
+113. [Hat] Black Sparkle Time Fedora | AssetId 0 | Limited | Price 4000 | Stock 13
+114. [Hat] Black Sparkle Time Popcollar | AssetId 2846246685 | Normal | Price 50 | Stock 0
+115. [Hat] Black Winter Cap | AssetId 192565417 | Normal | Price 222 | Stock 0
+116. [Hat] Blind Rogue | AssetId 22160652 | Normal | Price 76 | Stock 0
+117. [Hat] Blue 8-Bit Headphones | AssetId 0 | Normal | Price 720 | Stock 0
+118. [Hat] Blue Banded Boss White Hat | AssetId 173624602 | Normal | Price 0 | Stock 0
+119. [Hat] Blue Queen of the Night | AssetId 553970606 | Limited | Price 750 | Stock 25
+120. [Hat] Blue Sniper Visor | AssetId 1086814 | Limited | Price 30 | Stock 400
+121. [Hat] Blue Top Hat with White Band | AssetId 327318670 | Normal | Price 0 | Stock 0
+122. [Hat] Bluesteel Viking Helm of Infinite Pillage | AssetId 1483632 | Limited | Price 150 | Stock 200
+123. [Hat] Boo Visor | AssetId 16899436 | Limited | Price 1000 | Stock 30
+124. [Hat] Boss White Hat | AssetId 89171071 | Normal | Price 0 | Stock 0
+125. [Hat] Brain Power Top Hat | AssetId 0 | Limited | Price 1200 | Stock 40
+126. [Hat] BreezeKreig Adventurer | AssetId 144302847 | Limited | Price 55 | Stock 160
+127. [Hat] Brighteyes' Witches Brew Hat | AssetId 305888394 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+128. [Hat] Broken Tee Vee | AssetId 241670187 | Limited | Price 700 | Stock 50
+129. [Hat] Bucket | AssetId 1081239 | Limited | Price 250 | Stock 100
+130. [Hat] Bunny Ears | AssetId 709229469 | Normal | Price 250 | Stock 0
+131. [Hat] Burger Bob | AssetId 90819252 | Normal | Price 76 | Stock 0
+132. [Hat] Burning Visor | AssetId 169286913 | Limited | Price 550 | Stock 150
+133. [Hat] Canada Styles | AssetId 0 | Limited | Price 6550 | Stock 23
+134. [Hat] Cheese Hat | AssetId 1097026 | Normal | Price 0 | Stock 0
+135. [Hat] Chessboard | AssetId 1098275 | Normal | Price 64 | Stock 0
+136. [Hat] Chicken Sim 360VR | AssetId 1856116997 | Normal | Price 150 | Stock 0
+137. [Hat] Clockwork's Headphones | AssetId 1235488 | Limited | Price 14000 | Stock 12
+138. [Hat] Clown Hat | AssetId 16984840 | Normal | Price 76 | Stock 0
+139. [Hat] Coif of Glory | AssetId 1091572 | Normal | Price 50 | Stock 0
+140. [Hat] Creepy Bunny | AssetId 64560007 | Normal | Price 76 | Stock 0
+141. [Hat] Crown of Autumn Laurels | AssetId 0 | Normal | Price 1300 | Stock 0
+142. [Hat] CW Ultimate: Amethyst Addiction | AssetId 188004500 | Limited | Price 43000 | Stock 12
+143. [Hat] CW Ultimate: Ruby Rapture | AssetId 583635712 | Normal | Price 0 | Stock 0
+144. [Hat] Cyborg Face Gear 2.0 | AssetId 1033121346 | Normal | Price 0 | Stock 0
+145. [Hat] Darkslide | AssetId 95923968549961 | Limited | Price 12000 | Stock 10
+146. [Hat] Death Metal Headphones | AssetId 182509980 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+147. [Hat] Dethroned Ruler of the Universe | AssetId 298084718 | Limited | Price 22000 | Stock 3
+148. [Hat] Devilled Egg Hat | AssetId 7243905642 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+149. [Hat] Diamond Crystal Circlet | AssetId 4390875496 | Limited | Price 300 | Stock 80
+150. [Hat] DIY Arctic Commando | AssetId 553868229 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+151. [Hat] DIY Azurewrath Lord of the Bag | AssetId 207207614 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+152. [Hat] DIY Bathelm | AssetId 1560614784 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+153. [Hat] DIY Bluesteel Bathysphere | AssetId 146083039 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+154. [Hat] DIY Deadly Dark Dominus | AssetId 391934091 | Normal | Price 0 | Stock 0
+155. [Hat] DIY Dominus Empyreus | AssetId 151789690 | Normal | Price 100 | Stock 0
+156. [Hat] DIY Narwhal | AssetId 1016163758 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+157. [Hat] DIY Rainbow Shaggy | AssetId 493482011 | Limited | Price 110 | Stock 35
+158. [Hat] DIY Wanwood Crown | AssetId 1665533709 | Normal | Price 100 | Stock 0
+159. [Hat] Doge Row | AssetId 2846112824 | Normal | Price 78 | Stock 0
+160. [Hat] Domino Crown | AssetId 1031429 | Limited | Price 17000 | Stock 5
+161. [Hat] Dominus Empyreus | AssetId 21070012 | Limited | Price 20000 | Stock 7
+162. [Hat] Doomsekkar | AssetId 132809431 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+163. [Hat] Dr Future | AssetId 0 | Normal, Hidden/Reward | Price 0 | Stock 0
+164. [Hat] Eerie Pumpkin Head | AssetId 1158416 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+165. [Hat] Electro Hood | AssetId 151679909 | Normal | Price 75 | Stock 0
+166. [Hat] Elephant Accoutrements | AssetId 32661311 | Normal | Price 140 | Stock 0
+167. [Hat] Emerald Eye | AssetId 1185264 | Limited | Price 300 | Stock 150
+168. [Hat] Empyrean Reignment | AssetId 0 | Limited | Price 5050 | Stock 33
+169. [Hat] Enraged Templar Helmet | AssetId 6532629501 | Normal | Price 76 | Stock 0
+170. [Hat] Enthroned Ruler of the Universe | AssetId 0 | Limited | Price 6500 | Stock 21
+171. [Hat] Epic Failosaurus | AssetId 61893436 | Normal | Price 12 | Stock 0
+172. [Hat] Evil Hatbot | AssetId 1016144971 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+173. [Hat] Exoflex Spax Helmex | AssetId 17735403 | Normal | Price 75 | Stock 0
+174. [Hat] Eye Poppers | AssetId 15727015 | Normal | Price 17 | Stock 0
+175. [Hat] Eyepatch | AssetId 74970669 | Normal | Price 0 | Stock 0
+176. [Hat] Fiery Horns | AssetId 0 | Limited | Price 14500 | Stock 30
+177. [Hat] Final Reaper | AssetId 182259991 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+178. [Hat] Football Helmet | AssetId 1590045 | Normal | Price 75 | Stock 0
+179. [Hat] Frosty Fedora | AssetId 0 | Limited | Price 6400 | Stock 35
+180. [Hat] Furry Hood | AssetId 136777031 | Limited | Price 200 | Stock 54
+181. [Hat] Gearpunk Bucket | AssetId 0 | Normal | Price 1170 | Stock 0
+182. [Hat] Ghost Fedora | AssetId 181434601 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+183. [Hat] Gift of Hidden Worlds | AssetId 181651473 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+184. [Hat] Gift of Nocturnal Visitors | AssetId 180629036 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+185. [Hat] Gift of Restless Graves | AssetId 181206733 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+186. [Hat] Gift of the Archfiend | AssetId 181672755 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+187. [Hat] Gift of the First Fright | AssetId 180428447 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+188. [Hat] Gift of the Locked Manor | AssetId 181354707 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+189. [Hat] Gift of the Sinister Harvest | AssetId 181586975 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+190. [Hat] Gift of Winged Fright | AssetId 181672835 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+191. [Hat] Gladiator Helmet | AssetId 0 | Limited | Price 2000 | Stock 25
+192. [Hat] Gold Crown of Telamon | AssetId 1078076 | Limited | Price 13000 | Stock 10
+193. [Hat] Gold Flash Shades | AssetId 138248066 | Normal | Price 150 | Stock 0
+194. [Hat] Gold ROBLOX Music Video Award | AssetId 0 | Limited | Price 5700 | Stock 41
+195. [Hat] Gold Shutter Shades | AssetId 253489000 | Normal | Price 100 | Stock 0
+196. [Hat] Gold Sparkle Time Banded Boss White Hat | AssetId 173624651 | Normal | Price 0 | Stock 0
+197. [Hat] Golden Chrome Shades | AssetId 556821517 | Normal | Price 25 | Stock 0
+198. [Hat] Golden Cloak Of Heroic Adventures | AssetId 153689274 | Limited | Price 90 | Stock 115
+199. [Hat] Golden Ring of Olympia | AssetId 0 | Normal | Price 630 | Stock 0
+200. [Hat] Gorillaface | AssetId 18484353 | Limited | Price 345 | Stock 128
+201. [Hat] Graffiti Cap | AssetId 108829464 | Normal | Price 76 | Stock 0
+202. [Hat] Green Banded Top Hat | AssetId 1563352 | Limited | Price 100 | Stock 130
+203. [Hat] Green Flash Shades | AssetId 60675871 | Limited | Price 180 | Stock 99
+204. [Hat] Green Laurel Wreath | AssetId 0 | Normal | Price 520 | Stock 0
+205. [Hat] Halloween Baseball Cap | AssetId 1165312 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+206. [Hat] Halloween Beanie | AssetId 16641209 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+207. [Hat] Halloween Headrow | AssetId 63994465 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+208. [Hat] Hammerhead | AssetId 1098276 | Normal | Price 100 | Stock 0
+209. [Hat] Headrow | AssetId 1082935 | Limited | Price 200 | Stock 34
+210. [Hat] Heat Vision Goggles | AssetId 10748238 | Limited | Price 130 | Stock 290
+211. [Hat] Helm of the Great Tree | AssetId 9910420 | Normal | Price 500 | Stock 0
+212. [Hat] Helm of the Secret Fire | AssetId 1272715 | Normal | Price 0 | Stock 0
+213. [Hat] Holiday crown | AssetId 139152472 | Normal | Price 76 | Stock 0
+214. [Hat] Hungry Dino | AssetId 89615321 | Normal | Price 76 | Stock 0
+215. [Hat] I <3 Hats 2014 | AssetId 0 | Normal | Price 190 | Stock 0
+216. [Hat] Icelord: The Unredeemed | AssetId 102626000 | Normal | Price 100 | Stock 0
+217. [Hat] Icy Blue Viking Helm of Frozen Victory | AssetId 327318111 | Limited | Price 300 | Stock 50
+218. [Hat] Imperial Shako | AssetId 13477121 | Normal | Price 76 | Stock 0
+219. [Hat] Inventor Hat | AssetId 0 | Limited | Price 4850 | Stock 35
+220. [Hat] Irish Gentleman Cap | AssetId 60662813 | Normal | Price 76 | Stock 0
+221. [Hat] IT | AssetId 15012271 | Normal | Price 90 | Stock 0
+222. [Hat] Jack O Bandit | AssetId 64560336 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+223. [Hat] Jester's Cap | AssetId 1037673 | Normal | Price 0 | Stock 0
+224. [Hat] Kleos Phóteinos | AssetId 135470904 | Limited | Price 25000 | Stock 5
+225. [Hat] Knight of the Stygian Abyss | AssetId 49048671 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+226. [Hat] Knights of the Splintered Skies: Helmet | AssetId 98450287 | Normal | Price 80 | Stock 0
+227. [Hat] Koala E Koala | AssetId 44113968 | Limited | Price 330 | Stock 66
+228. [Hat] Korblox Ice Zombie | AssetId 33097647 | Limited | Price 30 | Stock 40
+229. [Hat] Lightning Crown | AssetId 32857966 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+230. [Hat] Living Art: Starry Night | AssetId 97078419 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+231. [Hat] LOLHOO | AssetId 25306182 | Normal | Price 200 | Stock 0
+232. [Hat] Louie | AssetId 21070037 | Normal | Price 76 | Stock 0
+233. [Hat] Macabre Milliner | AssetId 182399787 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+234. [Hat] Masked Hood of the Overseeker | AssetId 182774658 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+235. [Hat] Medieval Hood of Mystery | AssetId 617605556 | Normal | Price 0 | Stock 0
+236. [Hat] Miami Maker Top Hat 2014 | AssetId 0 | Normal | Price 260 | Stock 0
+237. [Hat] Mildly Disturbing Mask | AssetId 0 | Limited | Price 4850 | Stock 40
+238. [Hat] Moai | AssetId 15967519 | Normal | Price 120 | Stock 0
+239. [Hat] Monster Hat | AssetId 96079316 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+240. [Hat] Mosquito Balloon Hat | AssetId 15470143 | Normal | Price 200 | Stock 0
+241. [Hat] Mr. Golden Robot | AssetId 6653080721 | Normal | Price 100 | Stock 0
+242. [Hat] Mr. Robot | AssetId 16179349 | Normal | Price 76 | Stock 0
+243. [Hat] Mrs. Tentacles | AssetId 13416321 | Limited | Price 400 | Stock 50
+244. [Hat] Musica Frigidus Dominator | AssetId 0 | Limited | Price 7850 | Stock 14
+245. [Hat] Musical Gift from the Grave | AssetId 181435318 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+246. [Hat] Need MORE | AssetId 1037450 | Normal | Price 0 | Stock 0
+247. [Hat] Nerf Dart Crown | AssetId 0 | Normal | Price 190 | Stock 0
+248. [Hat] Nice Red Bandana | AssetId 134822978 | Limited | Price 150 | Stock 75
+249. [Hat] Ninja Mask of Awesome | AssetId 0 | Limited | Price 8450 | Stock 8
+250. [Hat] Ninja Mask of Shadows | AssetId 1309911 | Normal | Price 76 | Stock 0
+251. [Hat] Ninja Strike Cap | AssetId 0 | Normal | Price 170 | Stock 0
+252. [Hat] O NOES | AssetId 1039432 | Normal | Price 0 | Stock 0
+253. [Hat] Oozing Oscar | AssetId 20011925 | Limited | Price 2400 | Stock 45
+254. [Hat] Orange Sparkle Time Fedora | AssetId 0 | Limited | Price 3200 | Stock 16
+255. [Hat] Orange Sparkle Time Popcollar | AssetId 2846245131 | Normal | Price 50 | Stock 0
+256. [Hat] paper hat | AssetId 10476359 | Normal | Price 76 | Stock 0
+257. [Hat] Party Cap | AssetId 0 | Normal | Price 25 | Stock 0
+258. [Hat] Party Hat | AssetId 1779045 | Limited | Price 1000000 | Stock 10
+259. [Hat] Perfectly Legitimate Business Hat | AssetId 19027209 | Normal | Price 0 | Stock 0
+260. [Hat] Pink Eye | AssetId 250395444 | Limited | Price 225 | Stock 35
+261. [Hat] Poisoned Horns of the Toxic Wasteland | AssetId 1744060292 | Limited | Price 38000 | Stock 9
+262. [Hat] Possessive Mask | AssetId 6590391129 | Normal | Price 76 | Stock 0
+263. [Hat] Princess Hat | AssetId 1032641 | Normal | Price 0 | Stock 0
+264. [Hat] Purple Banded Boss White Hat | AssetId 173624697 | Normal | Price 0 | Stock 0
+265. [Hat] Purple Crystal Circlet | AssetId 151327351 | Limited | Price 200 | Stock 200
+266. [Hat] Purple Elephant Accoutrements | AssetId 14524185326 | Normal | Price 200 | Stock 0
+267. [Hat] Purple Sparkle Time Popcollar | AssetId 2846244645 | Normal | Price 50 | Stock 0
+268. [Hat] Rainbow Omega Antlers | AssetId 232489854 | Normal | Price 100 | Stock 0
+269. [Hat] RBX Neon Cap | AssetId 16412791 | Normal | Price 76 | Stock 0
+270. [Hat] Red Banded Boss White Hat | AssetId 173624749 | Normal | Price 0 | Stock 0
+271. [Hat] Red Crown of Ozymandias | AssetId 0 | Limited | Price 5600 | Stock 30
+272. [Hat] Red Ice Crown | AssetId 0 | Limited | Price 2200 | Stock 26
+273. [Hat] Red Sparkle Time Popcollar | AssetId 2846245544 | Normal | Price 50 | Stock 0
+274. [Hat] Red Void Star | AssetId 1191135761 | Normal | Price 0 | Stock 0
+275. [Hat] Reminisce Teapot | AssetId 1594180 | Normal | Price 0 | Stock 0
+276. [Hat] Reminisce Visor | AssetId 1459035 | Normal | Price 0 | Stock 0
+277. [Hat] Retro 3D Glasses | AssetId 15726947 | Normal | Price 30 | Stock 0
+278. [Hat] ROBLOX 'R' Baseball Cap | AssetId 0 | Limited | Price 5700 | Stock 22
+279. [Hat] Roblox Classic | AssetId 46839304 | Normal | Price 75 | Stock 0
+280. [Hat] ROBLOX Europe Meetup '16 Hat | AssetId 0 | Normal | Price 300 | Stock 0
+281. [Hat] ROBLOX Summer Visor | AssetId 0 | Normal | Price 110 | Stock 0
+282. [Hat] Roblox Visor | AssetId 2646473721 | Normal | Price 0 | Stock 0
+283. [Hat] Rock Golem | AssetId 21635614 | Normal | Price 72 | Stock 0
+284. [Hat] Rubber Duckie | AssetId 9254254 | Limited | Price 55 | Stock 210
+285. [Hat] Ruler of Light | AssetId 0 | Limited | Price 1900 | Stock 36
+286. [Hat] Shamrock Styles | AssetId 74941352 | Normal | Price 90 | Stock 0
+287. [Hat] Sheikh | AssetId 12436480 | Normal | Price 1300 | Stock 0
+288. [Hat] Sheriff Winston | AssetId 62332732 | Limited | Price 20000 | Stock 13
+289. [Hat] Sickly's White Top Hat | AssetId 1073690 | Normal | Price 0 | Stock 0
+290. [Hat] Silly Alien | AssetId 35631086 | Normal | Price 76 | Stock 0
+291. [Hat] Silly Monkey | AssetId 13700820 | Normal | Price 78 | Stock 0
+292. [Hat] Silverthorn Antlers | AssetId 9255011 | Limited | Price 2000 | Stock 25
+293. [Hat] Sinister E. | AssetId 1090028211 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+294. [Hat] Sinister P. | AssetId 17450053 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+295. [Hat] Sinister Q. | AssetId 182640918 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+296. [Hat] Sinister Zombie | AssetId 133559536 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+297. [Hat] Sizlack Eater of Heads | AssetId 12314270 | Normal | Price 80 | Stock 0
+298. [Hat] Sk11r | AssetId 0 | Normal | Price 1250 | Stock 0
+299. [Hat] Skull Bandit | AssetId 31252891 | Normal | Price 38 | Stock 0
+300. [Hat] Skull of Reminisce's Past | AssetId 181354245 | Normal | Price 800 | Stock 0
+301. [Hat] Sky Blue Sparkle Time Popcollar | AssetId 2846249860 | Normal | Price 50 | Stock 0
+302. [Hat] Smaug | AssetId 73793689 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+303. [Hat] Sparkle Time Fedora | AssetId 1285307 | Limited | Price 18000 | Stock 14
+304. [Hat] Sparkle Time Wizard | AssetId 0 | Limited | Price 2600 | Stock 12
+305. [Hat] Spooky Tie | AssetId 129533465 | Normal, Event | Price 0 | Stock 0
+306. [Hat] Springtime 2010 R&R&R | AssetId 25609890 | Normal | Price 300 | Stock 0
+307. [Hat] Stage Prop | AssetId 1098285 | Normal | Price 50 | Stock 0
+308. [Hat] Starslide | AssetId 0 | Normal, Hidden/Reward | Price 0 | Stock 0
+309. [Hat] Steampunk Aetherspectacles | AssetId 0 | Normal | Price 850 | Stock 0
+310. [Hat] SteamPunk Elephant | AssetId 53037798 | Normal | Price 100 | Stock 0
+311. [Hat] Straw Demon | AssetId 16356930 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+312. [Hat] Striped Hat | AssetId 1031492 | Normal | Price 0 | Stock 0
+313. [Hat] Stylish Aviators | AssetId 376526673 | Normal | Price 0 | Stock 0
+314. [Hat] Stylish Sailor | AssetId 63642258 | Normal | Price 76 | Stock 0
+315. [Hat] Summertime R&R&R 2010 | AssetId 29294506 | Normal | Price 300 | Stock 0
+316. [Hat] Supa Dupa Fly Cap | AssetId 1609401184 | Limited | Price 300 | Stock 100
+317. [Hat] Take a Chance | AssetId 11188705 | Normal | Price 100 | Stock 0
+318. [Hat] Tasteless Baseball Cap | AssetId 33337041 | Normal | Price 126 | Stock 0
+319. [Hat] Teal Sparkle Time Popcollar | AssetId 2846249029 | Normal | Price 50 | Stock 0
+320. [Hat] Teapot Turret | AssetId 1055299 | Limited | Price 1000 | Stock 50
+321. [Hat] Temple Challenger Hat | AssetId 0 | Normal | Price 240 | Stock 0
+322. [Hat] Thanksgiving Turkey Cap | AssetId 66367279 | Normal | Price 100 | Stock 0
+323. [Hat] The Agonizingly Ugly Bucket of Doom | AssetId 1286490 | Normal | Price 0 | Stock 0
+324. [Hat] The Blind Seer | AssetId 52512136 | Normal | Price 76 | Stock 0
+325. [Hat] The Bluesteel Bathelm | AssetId 1172161 | Normal | Price 0 | Stock 0
+326. [Hat] The Classic ROBLOX Fedora | AssetId 1029025 | Limited | Price 10000 | Stock 22
+327. [Hat] The Dusekkar | AssetId 0 | Limited | Price 5950 | Stock 34
+328. [Hat] The Fire Skull Of Evermoor | AssetId 102622991 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+329. [Hat] The Ice Skull of Nevermoor | AssetId 6552254 | Limited | Price 1000 | Stock 100
+330. [Hat] The Kleos Aphthiton | AssetId 0 | Normal | Price 1070 | Stock 0
+331. [Hat] The Ochre Eye | AssetId 0 | Limited | Price 5000 | Stock 44
+332. [Hat] The Riddling Skull | AssetId 4765718 | Normal | Price 60 | Stock 0
+333. [Hat] The Scariest Hood | AssetId 0 | Limited | Price 1600 | Stock 27
+334. [Hat] The Void Star | AssetId 0 | Limited | Price 6450 | Stock 30
+335. [Hat] Tix Baseball Cap | AssetId 0 | Normal | Price 350 | Stock 0
+336. [Hat] Toothy Deer Man Antlers | AssetId 2846112424 | Normal | Price 80 | Stock 0
+337. [Hat] Touched by Lightning | AssetId 22960112 | Limited | Price 1500 | Stock 55
+338. [Hat] Toxic Nemesis | AssetId 55032087 | Normal | Price 100 | Stock 0
+339. [Hat] Traffic Cone | AssetId 0 | Normal | Price 470 | Stock 0
+340. [Hat] Tubamaphone | AssetId 15729125 | Normal | Price 152 | Stock 0
+341. [Hat] Turbo Miners Cap | AssetId 11844853 | Normal | Price 0 | Stock 0
+342. [Hat] Ultimate Victory | AssetId 91675439 | Normal | Price 425 | Stock 0
+343. [Hat] Uncle Zom's Hat | AssetId 0 | Limited | Price 4750 | Stock 45
+344. [Hat] Valiant Valkyrie of Testing | AssetId 7781687598 | Normal | Price 0 | Stock 0
+345. [Hat] Valkyrie Helm | AssetId 1365767 | Limited | Price 16000 | Stock 30
+346. [Hat] Vampire Sunglasses | AssetId 306969564 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+347. [Hat] Vancouver Maker Top Hat 2014 | AssetId 0 | Normal | Price 260 | Stock 0
+348. [Hat] Vegetable Hat | AssetId 1098273 | Limited | Price 175 | Stock 100
+349. [Hat] Viridian Antlers | AssetId 227694941 | Normal | Price 100 | Stock 0
+350. [Hat] Viridian Hood | AssetId 16954107 | Limited | Price 15000 | Stock 17
+351. [Hat] Viridian Shutter Shades | AssetId 192459324 | Normal | Price 50 | Stock 0
+352. [Hat] Visage of Rao | AssetId 14128939 | Normal | Price 500 | Stock 0
+353. [Hat] Viscount of the Federation | AssetId 4390896732 | Limited | Price 1500 | Stock 25
+354. [Hat] Vlad the Impaler, IX | AssetId 181435746 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+355. [Hat] Wanwood Antlers | AssetId 1272714 | Limited | Price 350 | Stock 25
+356. [Hat] Wanwood Visor | AssetId 168167114 | Normal | Price 125 | Stock 0
+357. [Hat] White Ninja Headband of the Unimpeachable Soul | AssetId 11297746 | Normal | Price 1200 | Stock 0
+358. [Hat] White Sparkle Time Popcollar | AssetId 2846249458 | Normal | Price 50 | Stock 0
+359. [Hat] Wild’s Chicken Suit | AssetId 24112667 | Normal | Price 2500 | Stock 0
+360. [Hat] Wintertime R&R&R | AssetId 21025037 | Normal | Price 300 | Stock 0
+361. [Hat] Wizard's Hat | AssetId 1049198 | Normal | Price 0 | Stock 0
+362. [Hat] Worst. Halloween Costume. Ever. | AssetId 16678095 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+363. [Hat] Zombie Doge | AssetId 0 | Limited | Price 1400 | Stock 38
+364. [Hat] Zombie Headrow | AssetId 133360542 | Limited | Price 1000 | Stock 20
+365. [Hat] Zombie Teapot | AssetId 184750773 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+366. [Hat] Zulaja | AssetId 28626176 | Limited | Price 5600 | Stock 23
+367. [Tool] Azure Dragon's Magic Slayer | AssetId 268586231 | Normal | Price 0 | Stock 0
+368. [Tool] Ban Hammer | AssetId 10468797 | Normal | Price 0 | Stock 0
+369. [Tool] Banana Peel | AssetId 29100449 | Normal | Price 0 | Stock 0
+370. [Tool] Basketball | AssetId 52627419 | Normal | Price 100 | Stock 0
+371. [Tool] Bloxy Cola | AssetId 10472779 | Normal | Price 10 | Stock 0
+372. [Tool] Body Swap Potion | AssetId 78730532 | Normal | Price 250 | Stock 0
+373. [Tool] Breakfast Gun | AssetId 163353363 | Limited | Price 300 | Stock 200
+374. [Tool] Cake | AssetId 16214845 | Normal | Price 10 | Stock 0
+375. [Tool] Cheezburger | AssetId 16726030 | Normal | Price 10 | Stock 0
+376. [Tool] Chocolate Milk | AssetId 21392199 | Normal | Price 10 | Stock 0
+377. [Tool] ClassicTrowel | AssetId 0 | Normal | Price 15 | Stock 0
+378. [Tool] Dodgeball | AssetId 0 | Normal | Price 15 | Stock 0
+379. [Tool] Epicsauce | AssetId 31314931 | Normal | Price 100 | Stock 0
+380. [Tool] Goala Cola | AssetId 28672001 | Normal | Price 30 | Stock 0
+381. [Tool] Gork, Your Caveman Shoulder Friend | AssetId 33732371 | Limited | Price 540 | Stock 80
+382. [Tool] Green Balloon | AssetId 27494652 | Normal | Price 10 | Stock 0
+383. [Tool] Headless Horseman's New Head | AssetId 131592085 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+384. [Tool] Healing Potion | AssetId 11419319 | Normal | Price 500 | Stock 0
+385. [Tool] Hot Chocolate | AssetId 42321801 | Normal | Price 0 | Stock 0
+386. [Tool] Illumina | AssetId 16641274 | Limited | Price 30000 | Stock 10
+387. [Tool] Linked Sword | AssetId 125013769 | Normal | Price 100 | Stock 0
+388. [Tool] Medusa Head | AssetId 89487934 | Limited | Price 400 | Stock 120
+389. [Tool] Moonwalk Dance Potion | AssetId 32353654 | Normal | Price 70 | Stock 0
+390. [Tool] Pepperoni Pizza | AssetId 22596452 | Normal | Price 10 | Stock 0
+391. [Tool] Pumpkin Bucket | AssetId 17527923 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+392. [Tool] Red Hyperlaser Gun | AssetId 212296936 | Limited | Price 5600 | Stock 45
+393. [Tool] Regeneration Coil | AssetId 119101539 | Normal | Price 300 | Stock 0
+394. [Tool] ROBAR eXtreme Chocolate Crunch | AssetId 39258329 | Normal | Price 10 | Stock 0
+395. [Tool] RocketLauncher | AssetId 0 | Normal | Price 15 | Stock 0
+396. [Tool] SkeleFriend | AssetId 63253701 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+397. [Tool] Slateskin Potion | AssetId 11450664 | Normal | Price 500 | Stock 0
+398. [Tool] Space Sandwich | AssetId 12547976 | Normal | Price 10 | Stock 0
+399. [Tool] Speed Coil | AssetId 99119158 | Normal | Price 300 | Stock 0
+400. [Tool] Subspace Tripmine | AssetId 11999247 | Limited | Price 13000 | Stock 20
+401. [Tool] Sword of Darkness | AssetId 77443491 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
+402. [Tool] Taco | AssetId 15177716 | Normal | Price 10 | Stock 0
+403. [Tool] Teddy Bloxpin | AssetId 12848902 | Normal | Price 1000 | Stock 0
+404. [Tool] Teddy Trap | AssetId 12890798 | Normal | Price 1000 | Stock 0
+405. [Tool] Turkey Leg | AssetId 13745494 | Normal | Price 10 | Stock 0
+406. [Tool] Vine Staff | AssetId 30847733 | Normal | Price 700 | Stock 0
+407. [Tool] Zombie Protest Sign | AssetId 304721834 | Normal, Event, Hidden/Reward | Price 0 | Stock 0
