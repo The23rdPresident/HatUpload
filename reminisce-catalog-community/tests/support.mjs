@@ -106,7 +106,7 @@ export function environment() {
     TURNSTILE_SITE_KEY: "production-site-key-fixture",
     TURNSTILE_SECRET: "production-secret-fixture",
     PUBLIC_ORIGINS: "",
-    SUBMISSIONS_PER_IP_PER_DAY: "5",
+    SUBMISSIONS_PER_IP_PER_DAY: "100",
     SUBMISSIONS_PER_DAY: "200"
   };
 }

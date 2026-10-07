@@ -135,6 +135,33 @@
     if (errors.length) throw new Error(errors.join(" "));
     return draft;
   }
+  function safeThumbnail(value) {
+    try {
+      const url = new URL(value);
+      if (url.protocol === "https:" && !url.username && !url.password && !url.port && (url.hostname === "rbxcdn.com" || url.hostname.endsWith(".rbxcdn.com"))) return url.href;
+    } catch {}
+    return "";
+  }
+  function thumbnail(item, className = "item-thumbnail") {
+    const box = node("span", undefined, className);
+    const fallback = node("span", "No image", "thumbnail-fallback");
+    const url = safeThumbnail(item?.thumbnail);
+    box.append(fallback);
+    if (url) {
+      const image = node("img");
+      image.alt = item.name || "Roblox item";
+      image.loading = "lazy";
+      image.decoding = "async";
+      image.referrerPolicy = "no-referrer";
+      image.width = 150;
+      image.height = 150;
+      image.onerror = () => { image.hidden = true; fallback.hidden = false; };
+      image.src = url;
+      fallback.hidden = true;
+      box.append(image);
+    }
+    return box;
+  }
   function showAsset(item) {
     $("selected-item").hidden = !item;
     if (!item) return;
@@ -142,14 +169,12 @@
     $("selected-meta").textContent = "ID " + item.id + (item.creatorName ? " · " + item.creatorName : "");
     $("selected-link").href = "https://www.roblox.com/" + (item.kind === "Bundle" ? "bundles/" : "catalog/") + item.id;
     const image = $("selected-image");
-    let safe = "";
-    try {
-      const url = new URL(item.thumbnail);
-      if (url.protocol === "https:" && url.hostname.endsWith(".rbxcdn.com")) safe = url.href;
-    } catch {}
+    const safe = safeThumbnail(item.thumbnail);
     image.hidden = !safe;
     $("preview-fallback").hidden = Boolean(safe);
     image.removeAttribute("src");
+    image.alt = item.name || "Original Roblox item";
+    image.referrerPolicy = "no-referrer";
     if (safe) image.src = safe;
     image.onerror = () => {
       image.hidden = true;
@@ -207,7 +232,7 @@
     state.id = root.turnstile.render($("verification"), {
       sitekey: config.siteKey,
       action: action,
-      theme: "dark",
+      theme: "light",
       size: "flexible",
       callback: value => state.value = value,
       "expired-callback": () => state.value = "",
@@ -246,6 +271,7 @@
     sync: sync,
     validDraft: validDraft,
     showAsset: showAsset,
+    thumbnail: thumbnail,
     applyAsset: applyAsset,
     summary: summary,
     randomKey: randomKey,

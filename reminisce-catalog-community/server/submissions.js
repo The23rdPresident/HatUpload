@@ -125,7 +125,7 @@ export async function submit(request, env) {
     };
   }
   await challenge(request, env, data.turnstileToken, "submit");
-  await budget(env, "submit:" + ip, 86400, limit(env.SUBMISSIONS_PER_IP_PER_DAY, 5, 100));
+  await budget(env, "submit:" + ip, 86400, limit(env.SUBMISSIONS_PER_IP_PER_DAY, 100, 100));
   await budget(env, "submit:all", 86400, limit(env.SUBMISSIONS_PER_DAY, 200, 1e4));
   const verified = await verifiedDraft(draft, data.kind);
   const id = crypto.randomUUID(), stamp = now();

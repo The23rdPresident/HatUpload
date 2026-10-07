@@ -142,7 +142,7 @@ export async function challenge(request, env, response, action) {
   try {
     const result = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
       method: "POST",
-      redirect: "error",
+      redirect: "manual",
       signal: controller.signal,
       headers: {
         "Content-Type": "application/json"

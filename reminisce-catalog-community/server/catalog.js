@@ -56,14 +56,14 @@ async function robloxJson(url, init = {}) {
     const options = {
       ...init,
       signal: controller.signal,
-      redirect: "error",
+      redirect: "manual",
       headers: {
         Accept: "application/json",
         ...init.headers
       }
     };
-    let response = await fetch(url, options);
-    if (response.status === 403 && init.method === "POST" && response.headers.get("x-csrf-token")) response = await fetch(url, {
+    let response = await fetchRoblox(url, options);
+    if (response.status === 403 && init.method === "POST" && response.headers.get("x-csrf-token")) response = await fetchRoblox(url, {
       ...options,
       headers: {
         ...options.headers,
@@ -84,6 +84,22 @@ async function robloxJson(url, init = {}) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function fetchRoblox(input, options) {
+  const original = new URL(input);
+  let url = original;
+  for (let hop = 0; hop < 4; hop++) {
+    const response = await fetch(url.href, options);
+    if (![301, 302, 303, 307, 308].includes(response.status)) return response;
+    const location = response.headers.get("Location");
+    await response.body?.cancel();
+    if (!location || options.method === "POST") throw new ApiError("Roblox redirected this lookup unexpectedly. Try another item ID.");
+    const next = new URL(location, url);
+    if (next.protocol !== "https:" || next.hostname !== original.hostname || next.port || next.username || next.password) throw new ApiError("Roblox returned an unsafe lookup redirect.");
+    url = next;
+  }
+  throw new ApiError("Roblox returned too many lookup redirects.");
 }
 
 async function thumbnails(items, kind) {
@@ -147,7 +163,7 @@ async function details(id, kind) {
     try {
       raw = await robloxJson("https://economy.roblox.com/v2/assets/" + id + "/details");
     } catch (error) {
-      if (error.status === 429 || error.status === 504) throw error;
+      if (error.status === 429) throw error;
       const data = await robloxJson("https://catalog.roblox.com/v1/catalog/items/details", {
         method: "POST",
         headers: {

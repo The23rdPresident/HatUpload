@@ -2,20 +2,54 @@
   "name": "reminisce-catalog-community",
   "main": "server/worker.js",
   "compatibility_date": "2026-10-07",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "minify": true,
-  "assets": {"directory":"./docs","binding":"ASSETS","run_worker_first":true},
-  "d1_databases": [{"binding":"DB","database_name":"reminisce-catalog-v3","database_id":"8e3e3061-aca9-4002-a8cf-8b8459efa962","migrations_dir":"migrations"}],
+  "assets": {
+    "directory": "./docs",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "reminisce-catalog-v3",
+      "database_id": "8e3e3061-aca9-4002-a8cf-8b8459efa962",
+      "migrations_dir": "migrations"
+    }
+  ],
   "ratelimits": [
-    {"name":"REQUEST_LIMITER","namespace_id":"2001","simple":{"limit":60,"period":60}},
-    {"name":"LOGIN_LIMITER","namespace_id":"2002","simple":{"limit":5,"period":60}}
+    {
+      "name": "REQUEST_LIMITER",
+      "namespace_id": "2001",
+      "simple": {
+        "limit": 60,
+        "period": 60
+      }
+    },
+    {
+      "name": "LOGIN_LIMITER",
+      "namespace_id": "2002",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    }
   ],
   "vars": {
-    "PUBLIC_ORIGINS":"",
-    "TURNSTILE_SITE_KEY":"0x4AAAAAAFQFHkrKWNWt5fGp",
-    "SUBMISSIONS_PER_IP_PER_DAY":"5",
-    "SUBMISSIONS_PER_DAY":"200"
+    "PUBLIC_ORIGINS": "",
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAFQFHkrKWNWt5fGp",
+    "SUBMISSIONS_PER_IP_PER_DAY": "100",
+    "SUBMISSIONS_PER_DAY": "200"
   },
-  "triggers":{"crons":["17 4 * * *"]},
-  "observability":{"enabled":false}
+  "triggers": {
+    "crons": [
+      "17 4 * * *"
+    ]
+  },
+  "observability": {
+    "enabled": false
+  }
 }

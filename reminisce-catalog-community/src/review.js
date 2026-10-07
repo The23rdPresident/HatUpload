@@ -88,7 +88,9 @@
         row.append(label);
       }
       const button = node("button", undefined, "queue-item");
-      button.append(node("strong", item.draft.name), node("small", item.kind === "reskin" ? "Custom reskin · " + item.username : item.kind === "owner" ? "Owner item" : "Official item · " + item.username), node("span", core.LABELS[item.draft.catalogType] + " · " + item.draft.price + " pNgs", "batch-meta"));
+      const caption = node("span", undefined, "queue-caption");
+      caption.append(node("strong", item.draft.name), node("small", item.kind === "reskin" ? "Custom reskin · " + item.username : item.kind === "owner" ? "Owner item" : "Official item · " + item.username), node("span", core.LABELS[item.draft.catalogType] + " · " + item.draft.price + " pNgs", "batch-meta"));
+      button.append(ui.thumbnail(item.base, "queue-thumbnail"), caption);
       button.addEventListener("click", () => {
         if (!busy) openItem(item);
       });

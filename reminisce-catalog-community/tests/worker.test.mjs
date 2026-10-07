@@ -10,6 +10,8 @@ import { environment, upstream, ownerKey } from "./support.mjs";
 import { checkKeys } from "../server/registry.js";
 import { readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
+import { ipHash, now } from "../server/security.js";
+import { robloxJson } from "../server/catalog.js";
 
 const core = globalThis.CatalogCore;
 
@@ -82,6 +84,44 @@ test("official lookups reject UGC and Group 1, accept gear, and filter search re
   const search = h.stub.calls.find(call => call.url.includes("search/items"));
   assert.match(search.url, /CreatorType=User/);
   assert.match(search.url, /Category=11/);
+});
+
+test("the hundredth submission is allowed and the next verified attempt is rate limited", async t => {
+  const h = harness(t);
+  delete h.env.SUBMISSIONS_PER_IP_PER_DAY;
+  const ip = await ipHash(new Request("https://catalog.test", { headers: { "CF-Connecting-IP": "192.0.2.10" } }), h.env);
+  h.env.DB.sqlite.prepare("INSERT INTO rate_windows(scope,window_start,hits) VALUES(?,?,99)").run("submit:" + ip, Math.floor(now() / 86400) * 86400);
+  assert.equal((await h.request("/api/config")).data.dailyLimit, 100);
+  assert.equal((await h.request("/api/submissions", { data: payload() })).response.status, 200);
+  assert.equal((await h.request("/api/submissions", { data: payload({ receiptKey: "B".repeat(43) }) })).response.status, 429);
+});
+
+test("Roblox redirects stay on their original HTTPS host and off-host redirects are rejected", async t => {
+  const h = harness(t);
+  let calls = 0;
+  globalThis.fetch = async () => ++calls === 1 ? new Response(null, { status: 307, headers: { Location: "/new-path" } }) : Response.json({ ok: true });
+  assert.deepEqual(await robloxJson("https://economy.roblox.com/old-path"), { ok: true });
+  globalThis.fetch = async () => new Response(null, { status: 302, headers: { Location: "https://evil.test/private" } });
+  await assert.rejects(() => robloxJson("https://economy.roblox.com/old-path"), /unsafe lookup redirect/);
+  assert.equal(h.env.DB.sqlite.prepare("SELECT COUNT(*) count FROM submissions").get().count, 0);
+});
+
+test("review aliases resolve to the document and static HEAD responses have no body", async t => {
+  const h = harness(t);
+  h.env.ASSETS = { fetch: async request => {
+    assert.match(new URL(request.url).pathname, /\/(index|review)\.html$/);
+    return new Response(request.method === "HEAD" ? null : "<!doctype html>", { headers: { "Content-Type": "text/html" } });
+  } };
+  for (const path of ["/", "/index", "/index.html", "/review", "/review.html"]) {
+    const response = await worker.fetch(new Request("https://catalog.test" + path), h.env);
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("Cache-Control"), "no-cache");
+  }
+  const slash = await worker.fetch(new Request("https://catalog.test/review/"), h.env);
+  assert.equal(slash.status, 308);
+  assert.equal(slash.headers.get("Location"), "/review.html");
+  const head = await worker.fetch(new Request("https://catalog.test/review.html", { method: "HEAD" }), h.env);
+  assert.equal(await head.text(), "");
 });
 
 test("public submission is pending, private receipts work, and retrying a receipt is idempotent", async t => {

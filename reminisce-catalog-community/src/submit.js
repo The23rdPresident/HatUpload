@@ -60,8 +60,8 @@
     for (const item of items) {
       const button = node("button", undefined, "result");
       button.type = "button";
-      const icon = node("span", "R", "result-placeholder"), details = node("span");
-      details.append(node("strong", item.name), node("small", "Roblox · " + item.id));
+      const icon = ui.thumbnail(item), details = node("span", undefined, "result-caption");
+      details.append(node("strong", item.name), node("small", "by Roblox"), node("small", "ID " + item.id));
       button.append(icon, details);
       button.addEventListener("click", async () => {
         if (busy) return;
@@ -264,6 +264,7 @@
   $("search-button").disabled = true;
   const config = await ui.connect();
   if (config) {
+    $("daily-limit").textContent = "Daily limit: " + config.dailyLimit + " submissions per network.";
     try {
       verification = await ui.verifier(config, "submit");
       $("primary-action").disabled = false;

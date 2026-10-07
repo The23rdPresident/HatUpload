@@ -43,13 +43,20 @@ export default {
         status: 404,
         headers: staticHeaders(request)
       });
-      if (!/^\/(?:index\.html|review\.html|config\.js|favicon\.svg|assets\/[a-z0-9.-]+)?$/.test(path)) return new Response("Not found", {
+      if (!/^\/(?:index(?:\.html)?|review(?:\.html|\/)?|config\.js|favicon\.svg|assets\/[a-z0-9.-]+)?$/.test(path)) return new Response("Not found", {
         status: 404,
         headers: staticHeaders(request)
       });
-      const response = await env.ASSETS.fetch(request), headers = new Headers(response.headers);
+      if (path === "/review/") return new Response(null, {
+        status: 308,
+        headers: { ...staticHeaders(request), Location: "/review.html", "Cache-Control": "no-cache" }
+      });
+      const assetUrl = new URL(url);
+      if (["/", "/index"].includes(path)) assetUrl.pathname = "/index.html";
+      if (["/review", "/review/"].includes(path)) assetUrl.pathname = "/review.html";
+      const response = await env.ASSETS.fetch(new Request(assetUrl, request)), headers = new Headers(response.headers);
       for (const [key, value] of Object.entries(staticHeaders(request))) headers.set(key, value);
-      if (path.endsWith(".html") || path === "/" || path === "/config.js") headers.set("Cache-Control", "no-cache");
+      if (assetUrl.pathname.endsWith(".html") || path === "/config.js") headers.set("Cache-Control", "no-cache");
       return new Response(response.body, {
         status: response.status,
         headers: headers
@@ -64,7 +71,8 @@ export default {
       if (path === "/api/config" && request.method === "GET") return json({
         ready: configured(env),
         siteKey: configured(env) ? env.TURNSTILE_SITE_KEY : "",
-        version: 3
+        version: 4,
+        dailyLimit: Math.min(100, Math.max(1, Number(env.SUBMISSIONS_PER_IP_PER_DAY) || 100))
       }, 200, origin, request);
       if (!configured(env)) throw new ApiError("The service setup is incomplete. Contact the site owner.", 503);
       const ip = await ipHash(request, env);
