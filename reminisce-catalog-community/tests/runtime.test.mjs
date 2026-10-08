@@ -1,11 +1,22 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { build } from "esbuild";
-import { Miniflare, convertV4MiniflareOptions } from "miniflare";
+import { build as esbuild } from "esbuild";
+import { Miniflare, convertV4MiniflareOptions as convert } from "miniflare";
 import { upstream } from "./support.mjs";
 import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import "../shared/core.js";
+
+const wasm = await readFile(new URL("../server/vendor/draco-decoder.wasm", import.meta.url));
+const runtimeRoot = new URL("../", import.meta.url).pathname;
+const build = options => esbuild({ ...options, plugins: [{ name: "runtime-wasm", setup(builder) { builder.onResolve({ filter: /\.wasm$/ }, () => ({ path: "./draco-decoder.wasm", external: true })); } }] });
+function convertV4MiniflareOptions(options) {
+  const { script, ...rest } = options;
+  return convert({ ...rest, modulesRoot: runtimeRoot, modules: [
+    { type: "ESModule", path: runtimeRoot + "runtime-test.js", contents: script },
+    { type: "CompiledWasm", path: runtimeRoot + "draco-decoder.wasm", contents: wasm }
+  ] });
+}
 
 test("Cloudflare D1 returns batch decline feedback only for matching private receipts", async t => {
   const bundled = await build({ stdin: { contents: `import { submissionStatuses } from "./server/submissions.js";
@@ -30,6 +41,7 @@ test("Roblox metadata, thumbnails, decal resolution, and verification work in th
   const bundled = await build({
     stdin: {
       contents: `import { search, officialAsset, textureAsset } from "./server/catalog.js";
+import { resolveFace, searchFaces } from "./server/faces.js";
 import { challenge } from "./server/security.js";
 export default { async fetch(request, env) {
   const url = new URL(request.url);
@@ -38,6 +50,10 @@ export default { async fetch(request, env) {
     if (url.pathname === "/texture") return Response.json(await textureAsset(201));
     if (url.pathname === "/verify") { await challenge(request, env, "login-ok", "owner-login"); return Response.json({ verified: true }); }
     if (url.pathname === "/headless") return Response.json(await officialAsset(15093053680));
+    if (url.pathname === "/classic-face") return Response.json(await resolveFace(106));
+    if (url.pathname === "/dynamic-face") return Response.json(await resolveFace(15938951781));
+    if (url.pathname === "/face-bundle") return Response.json(await resolveFace(299652, "Bundle"));
+    if (url.pathname === "/face-search") return Response.json(await searchFaces(url));
     return Response.json(await officialAsset(100));
   } catch (error) { return Response.json({ error: error.message }, { status: error.status || 500 }); }
 } };`,
@@ -50,6 +66,7 @@ export default { async fetch(request, env) {
     external: ["node:crypto"]
   });
   const stub = upstream();
+  const classicBinary = await readFile(new URL("./fixtures/classic-face.rbxm", import.meta.url));
   const mf = new Miniflare(convertV4MiniflareOptions({
     name: "catalog-runtime",
     modules: true,
@@ -57,7 +74,7 @@ export default { async fetch(request, env) {
     compatibilityDate: "2026-10-07",
     compatibilityFlags: ["nodejs_compat"],
     bindings: { TURNSTILE_SECRET: "production-fixture", PUBLIC_ORIGINS: "" },
-    outboundService: async request => stub.fetch(request.url, {
+    outboundService: async request => new URL(request.url).hostname === "assetdelivery.roblox.com" && new URL(request.url).searchParams.get("id") === "106" ? new Response(classicBinary) : stub.fetch(request.url, {
       method: request.method,
       body: request.method === "POST" ? await request.text() : undefined,
       headers: request.headers
@@ -70,7 +87,11 @@ export default { async fetch(request, env) {
     ["/search?q=Headless%20Head&category=heads", data => assert.equal(data.exactMatchId, 15093053680)],
     ["/texture", data => { assert.equal(data.id, 200); assert.equal(data.sourceId, 201); }],
     ["/verify", data => assert.equal(data.verified, true)],
-    ["/headless", data => { assert.equal(data.id, 15093053680); assert.equal(data.assetType, 79); assert.equal(data.creatorId, 1); assert.match(data.thumbnail, /rbxcdn\.com/); }]
+    ["/headless", data => { assert.equal(data.id, 15093053680); assert.equal(data.assetType, 79); assert.equal(data.creatorId, 1); assert.match(data.thumbnail, /rbxcdn\.com/); }],
+    ["/classic-face", data => { assert.equal(data.item.id, 106); assert.equal(data.item.textureId, 83017053); assert.equal(data.texture.assetType, 1); }],
+    ["/dynamic-face", data => { assert.equal(data.item.id, 7699174); assert.equal(data.item.assetType, 18); assert.equal(data.item.textureId, 7699086); }],
+    ["/face-bundle", data => assert.equal(data.item.textureId, 7699086)],
+    ["/face-search?q=Man%20Face", data => assert.equal(data.exactMatchId, 86487700)]
   ]) {
     const response = await mf.dispatchFetch("https://catalog.test" + path, { headers: { Origin: "https://catalog.test" } });
     const data = await response.json();
@@ -145,6 +166,38 @@ export default { async fetch(request, env) { await publishOne(env, "runtime-item
   assert.equal(catalog.items["Runtime Headless"].PublisherAnnouncement, "worker");
   assert.equal(catalog.items["Runtime Headless"].Stock, 25);
   assert.equal(catalog.items["Runtime Headless"].OffsaleAt - catalog.items["Runtime Headless"].OnsaleAt, 3600);
+});
+
+test("Cloudflare decodes compressed head meshes and binary model metadata without dynamic WebAssembly compilation", async t => {
+  const bundled = await build({ stdin: { contents: `import { assetBytes } from "./server/catalog.js";
+import { meshPositions, isDefaultHead } from "./server/head-shape.js";
+import { extractHeadModel } from "./server/asset-content.js";
+export default { async fetch(request) {
+  const id = Number(new URL(request.url).searchParams.get("id"));
+  const bytes = await assetBytes(id, id === 8003 ? 65536 : 1048576);
+  if (id === 8003) return Response.json(extractHeadModel(bytes));
+  const points = await meshPositions(bytes);
+  return Response.json({ standard: isDefaultHead(points), vertices: points.length / 3 });
+} };`, resolveDir: runtimeRoot }, bundle: true, write: false, format: "esm", platform: "browser", external: ["node:crypto"] });
+  const fixtures = new Map(await Promise.all([[8001,"default-head.mesh"],[8002,"round-head.mesh"],[8003,"dynamic-head.rbxm"]].map(async ([id,name]) => [id,await readFile(new URL("./fixtures/" + name, import.meta.url))])));
+  const mf = new Miniflare(convertV4MiniflareOptions({
+    name: "catalog-head-geometry-runtime", modules: true, script: bundled.outputFiles[0].text,
+    compatibilityDate: "2026-10-07", compatibilityFlags: ["nodejs_compat"],
+    outboundService: async request => {
+      const url = new URL(request.url);
+      assert.equal(url.hostname, "assetdelivery.roblox.com");
+      assert.equal(request.headers.get("x-api-key"), null);
+      return new Response(fixtures.get(Number(url.searchParams.get("id"))));
+    }
+  }));
+  t.after(() => mf.dispose());
+  for (const id of [8001,8002,8003,8001]) {
+    const response = await mf.dispatchFetch("https://catalog.test/mesh?id=" + id);
+    assert.equal(response.status, 200, await response.clone().text());
+    const data = await response.json();
+    if (id === 8003) { assert.equal(data.meshId, 133902161072571);assert.deepEqual(data.scale, [1,1,1]); }
+    else { assert.equal(data.standard, id === 8001);assert.ok(data.vertices > 300); }
+  }
 });
 
 test("owner documents and relative assets are served correctly in the Cloudflare runtime", async t => {

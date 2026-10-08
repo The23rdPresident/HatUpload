@@ -1,4 +1,5 @@
 import "../shared/core.js";
+import { extractTextureId } from "./asset-content.js";
 
 const core = globalThis.CatalogCore;
 const SUPPORTED_ASSETS = new Set([ 2, 8, 11, 12, 17, 18, 19, 41, 42, 43, 44, 45, 46, 47, 57, 58, 70, 71, 79 ]);
@@ -215,6 +216,10 @@ function isAllowedHead(item) {
   return item.kind === "Asset" && [17, 79].includes(Number(item.assetType)) && ["User", "Group"].includes(item.creatorType) && Number.isSafeInteger(item.creatorId) && item.creatorId > 0;
 }
 
+function isAllowedFace(item) {
+  return item.kind === "Asset" && item.assetType === 18 && ["User", "Group"].includes(item.creatorType) && Number.isSafeInteger(item.creatorId) && item.creatorId > 0;
+}
+
 function isOfficial(item) {
   return item.creatorType === "User" && item.creatorId === 1 && (item.kind === "Bundle" || PUBLIC_ASSETS.has(item.assetType));
 }
@@ -222,7 +227,7 @@ function isOfficial(item) {
 async function officialAsset(id, kind = "Asset") {
   if (!positiveId(id)) throw new ApiError("Enter a valid base asset ID.", 400);
   const {item: item} = await details(id, kind);
-  if (!isOfficial(item) && !isAllowedHead(item)) throw new ApiError("Heads may be created by any Roblox user or group. Other item types must be created by the official Roblox user account.", 400);
+  if (!isOfficial(item) && !isAllowedHead(item) && !isAllowedFace(item)) throw new ApiError("Heads and faces may be created by any Roblox user or group. Other item types must be created by the official Roblox user account.", 400);
   return item;
 }
 
@@ -237,20 +242,25 @@ async function textureAsset(id, allowFace = false) {
     };
   }
   if (item.assetType !== 13 && !(allowFace && item.assetType === 18)) throw new ApiError("The texture must be an image asset or a decal that contains an image.", 400);
-  let url = "https://assetdelivery.roblox.com/v1/asset/?id=" + id;
+  let url = "https://assetdelivery.roblox.com/v1/asset/?id=" + id + (item.assetType === 18 ? "&version=1" : "");
   const controller = new AbortController, timer = setTimeout(() => controller.abort(), 12e3);
   try {
     for (let hop = 0; hop < 4; hop++) {
       const parsed = new URL(url);
-      if (parsed.protocol !== "https:" || !(parsed.hostname === "assetdelivery.roblox.com" || parsed.hostname.endsWith(".rbxcdn.com"))) throw new Error;
+      if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || !(parsed.hostname === "assetdelivery.roblox.com" || parsed.hostname.endsWith(".rbxcdn.com"))) throw new Error;
       const response = await fetch(url, {
         redirect: "manual",
         signal: controller.signal
       });
       if ([ 301, 302, 303, 307, 308 ].includes(response.status)) {
-        url = new URL(response.headers.get("Location"), url).href;
+        const location = response.headers.get("Location");
+        await response.body?.cancel();
+        if (!location) throw new Error;
+        url = new URL(location, url).href;
         continue;
       }
+      if (response.status === 429) throw new ApiError("Roblox is rate-limiting texture lookups. Wait a moment and try again.", 429);
+      if (response.status >= 500) throw new ApiError("Roblox could not serve this texture. Try again later.", 502);
       if (!response.ok || Number(response.headers.get("Content-Length") || 0) > 65536) throw new Error;
       const reader = response.body.getReader();
       let size = 0;
@@ -275,9 +285,7 @@ async function textureAsset(id, allowFace = false) {
         bytes.set(chunk, offset);
         offset += chunk.length;
       }
-      const xml = (new TextDecoder).decode(bytes);
-      const content = xml.match(/<Content\s+name=["']Texture["'][^>]*>\s*<url>([^<]+)<\/url>/i)?.[1];
-      const imageId = content?.match(/(?:rbxassetid:\/\/|[?&]id=)(\d+)/i)?.[1];
+      const imageId = extractTextureId(bytes);
       if (!positiveId(imageId) || Number(imageId) === Number(id)) throw new Error;
       const image = normalizeItem(await robloxJson("https://economy.roblox.com/v2/assets/" + imageId + "/details"));
       if (image.assetType !== 1) throw new Error;
@@ -288,11 +296,61 @@ async function textureAsset(id, allowFace = false) {
       };
     }
     throw new Error;
-  } catch {
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    if (error.name === "AbortError") throw new ApiError("The texture lookup timed out. Try again.", 504);
     throw new ApiError("This decal's image could not be read. Enter the actual texture image ID instead.", 400);
   } finally {
     clearTimeout(timer);
   }
 }
 
-export { ApiError, search, details, robloxJson, normalizeItem, isOfficial, isAllowedHead, officialAsset, textureAsset };
+async function assetBytes(id, max = 65536) {
+  if (!positiveId(id) || ![65536, 1048576].includes(max)) throw new ApiError("Invalid asset content request.", 400);
+  let url = "https://assetdelivery.roblox.com/v1/asset/?id=" + id;
+  const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 12000);
+  try {
+    for (let hop = 0; hop < 4; hop++) {
+      const parsed = new URL(url);
+      if (parsed.protocol !== "https:" || parsed.username || parsed.password || parsed.port || !(parsed.hostname === "assetdelivery.roblox.com" || parsed.hostname.endsWith(".rbxcdn.com"))) throw new ApiError("Roblox returned an invalid content link.", 502);
+      const response = await fetch(url, { redirect: "manual", signal: controller.signal });
+      if ([301, 302, 303, 307, 308].includes(response.status)) {
+        const location = response.headers.get("Location");
+        await response.body?.cancel();
+        if (!location) throw new ApiError("Roblox returned an empty content link.", 502);
+        url = new URL(location, url).href;
+        continue;
+      }
+      if (response.status === 429) throw new ApiError("Roblox is rate-limiting head lookups. Wait a moment and try again.", 429);
+      if (response.status >= 500) throw new ApiError("Roblox could not serve this head. Try again later.", 502);
+      if (!response.ok) throw new ApiError("Roblox has not made this head's content available for inspection.", 400);
+      if (Number(response.headers.get("Content-Length") || 0) > max) { await response.body?.cancel(); throw new ApiError("This head is too large to inspect safely.", 400); }
+      async function read(stream) {
+        const reader = stream.getReader(), parts = [];
+        let total = 0;
+        try {
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            total += value.length;
+            if (total > max) { await reader.cancel(); throw new ApiError("This head is too large to inspect safely.", 400); }
+            parts.push(value);
+          }
+        } finally { reader.releaseLock(); }
+        const result = new Uint8Array(total);
+        let offset = 0;
+        for (const part of parts) { result.set(part, offset); offset += part.length; }
+        return result;
+      }
+      const bytes = await read(response.body);
+      return bytes[0] === 31 && bytes[1] === 139 ? await read(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))) : bytes;
+    }
+    throw new ApiError("Roblox returned too many content redirects.", 502);
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    if (error.name === "AbortError") throw new ApiError("The head lookup timed out. Try again.", 504);
+    throw new ApiError("The head content could not be read. Try again later.", 502);
+  } finally { clearTimeout(timer); }
+}
+
+export { ApiError, search, details, robloxJson, normalizeItem, isOfficial, isAllowedHead, isAllowedFace, officialAsset, textureAsset, thumbnails, assetBytes };

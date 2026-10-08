@@ -426,7 +426,7 @@ test("connection reports game identity and distinguishes missing place build fro
   assert.equal(result.protocolVersion, 1);
   assert.equal(result.catalogVersion, 0);
   assert.equal(result.liveItemCount, 0);
-  assert.equal(result.uploaderVersion, "3.6.0");
+  assert.equal(result.uploaderVersion, "3.8.0");
   h.state.ready.placeVersion = 42;
   assert.equal((await testConnection(h.env)).placeVersion, 42);
   assert.equal(h.state.writes, 0);
@@ -748,6 +748,31 @@ for (const assetId of ["205", "105"]) for (const creatorType of ["User", "Group"
   assert.equal(h.state.catalog.items["Creator Head"].AssetId, Number(assetId));
   assert.equal((await h.request("/api/submissions", { kind: "official", draft: draft({ assetId: "101", name: "UGC Hat" }), receiptKey: "Z".repeat(43), turnstileToken: "submit-ok" })).response.status, 400);
   assert.equal((await h.request("/api/submissions", { kind: "official", draft: draft({ assetId, name: "Forged Hat", itemType: "Hat" }), receiptKey: "Y".repeat(43), turnstileToken: "submit-ok" })).response.status, 400);
+});
+
+for (const assetType of [18,79]) for (const creatorType of ["User","Group"]) test("UGC " + creatorType + " face type " + assetType + " publishes a standalone image without a head mesh", async t => {
+  const h = harness(t), original = globalThis.fetch;
+  globalThis.fetch = async (input, options) => {
+    const url = new URL(String(input));
+    if (url.hostname === "economy.roblox.com" && url.pathname.includes("/9101/")) return Response.json({ AssetId:9101,Name:"Creator Face",AssetTypeId:assetType,Description:"Creator face description",Creator:{Id:12,CreatorTargetId:12,CreatorType:creatorType,Name:"Face Creator"} });
+    if (url.hostname === "assetdelivery.roblox.com" && url.searchParams.get("id") === "9101") return new Response('<roblox>' + (assetType === 79 ? '<Item class="SpecialMesh"><Properties><token name="MeshType">0</token><Content name="TextureId"><url>rbxassetid://205</url></Content></Properties></Item>' : '') + '<Item class="Decal"><Properties><token name="Face">5</token><Content name="Texture"><url>rbxassetid://204</url></Content></Properties></Item></roblox>');
+    return original(input, options);
+  };
+  const session = await h.login(), id = await h.submit({ name:"Creator Face",assetId:"9101",itemType:"Face",accessoryKind:"",texture:"200" });
+  if (assetType === 79) h.env.ROBLOX_AUTO_PUBLISH = "false";
+  assert.equal((await h.approve(id,session)).response.status,200);
+  if (assetType === 79) {
+    assert.equal(h.job(id),undefined);
+    h.env.ROBLOX_AUTO_PUBLISH = "true";
+    assert.equal((await h.retry(id,session)).response.status,200);
+  }
+  await publishOne(h.env,id);
+  assert.equal(h.job(id).status,"published",h.job(id).error);
+  const item = h.state.catalog.items["Creator Face"];
+  assert.equal(item.ItemType,"Face");assert.equal(item.AssetId,9101);assert.equal(item.Texture,"rbxassetid://204");
+  assert.equal(item.Headless,undefined);assert.equal(item.DynamicHead,undefined);
+  assert.equal(h.state.writes,1);
+  await publishOne(h.env,id);assert.equal(h.state.writes,1);
 });
 
 test("acceptance sends one recorded announcement without a player or game-server callback", async t => {

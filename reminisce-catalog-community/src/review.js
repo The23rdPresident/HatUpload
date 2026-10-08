@@ -332,7 +332,8 @@
     try {
       const parsed = core.parseAssetQuery($("owner-asset").value);
       if (!parsed?.id) throw new Error("Enter an asset ID or a Roblox catalog / bundle link.");
-      const {item: item} = await api("/admin/asset/" + parsed.id + "?kind=" + parsed.kind);
+      const route = $("item-type").value === "Face" ? "/face/" : "/admin/asset/";
+      const {item: item} = await api(route + parsed.id + "?kind=" + parsed.kind);
       ui.applyAsset(item);
       notice("owner-lookup-status", "Filled details for " + item.name);
     } catch (error) {

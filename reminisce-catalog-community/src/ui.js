@@ -1,7 +1,7 @@
 (function(root) {
   "use strict";
   const core = root.CatalogCore, $ = id => document.getElementById(id), form = $("item-form");
-  let base = "", faceBaseId = "", toastTimer;
+  let base = "", faceBaseId = "", faceTextureRequired = false, toastTimer;
   const node = (tag, text, className) => {
     const element = document.createElement(tag);
     if (text !== undefined) element.textContent = text;
@@ -131,6 +131,8 @@
     $("face-texture-hint").hidden = type !== "Face";
     $("asset-id-label").textContent = type === "Face" ? "Texture ID" : type === "BodyPackage" ? "Bundle ID" : "Asset ID";
     $("asset-id").placeholder = type === "Face" ? "Classic face texture/image ID" : type === "BodyPackage" ? "Roblox body bundle ID" : "Roblox asset ID";
+    $("asset-id").readOnly = type === "Face" && !get("customTexture").checked && !faceTextureRequired;
+    $("face-texture-hint").textContent = get("customTexture").checked ? "The base face is verified. Enter a replacement image or decal ID for your reskin." : faceTextureRequired ? "Face detected on a standard head, but no standalone classic image was found. Enter its classic face image or decal ID. A full head texture cannot be used as a face." : "Search for a face or paste its Roblox link. Its classic texture ID fills automatically.";
     $("availability-hint").textContent = {
       normal: "Unlimited stock. Prices range from 0 to 50,000 pNgs; 0 makes the item free.",
       limited: "Stock must be 10–500. One catalog purchase per player. Prices range from 0 to 50,000 pNgs.",
@@ -174,6 +176,8 @@
     return box;
   }
   function showAsset(item) {
+    faceTextureRequired = Boolean(item?.faceTextureRequired);
+    sync();
     $("selected-item").hidden = !item;
     if (!item) {
       $("selected-name").textContent = "";
@@ -200,18 +204,18 @@
   function applyAsset(item, keepName = false) {
     const draft = readDraft(), mapping = core.assetMapping(item.assetType, item.kind, item.id);
     if (!mapping) throw new Error("This asset type is not supported.");
+    if (mapping.itemType === "Face" && !item.faceTextureRequired && !core.assetContent(String(item.textureId || ""))) throw new Error("The classic face texture could not be found. Try the face lookup again.");
     fillDraft({
       ...draft,
       ...mapping,
       assetId: String(item.id),
       name: keepName && draft.name ? draft.name : item.name,
       description: item.description || "",
-      texture: mapping.itemType === "Face" ? "" : draft.texture
+      texture: mapping.itemType === "Face" && item.textureId ? "rbxassetid://" + item.textureId : ""
     });
     showAsset(item);
     if (mapping.itemType === "Face") {
-      toast("Roblox details copied. Enter the classic face texture ID in Item details.");
-      $("asset-id").focus({ preventScroll: true });
+      toast(item.faceTextureRequired ? "Face detected. Enter its standalone classic image ID before submitting." : "Classic face found. Texture ID " + item.textureId + " filled automatically.");
     }
   }
   function summary(draft, target) {

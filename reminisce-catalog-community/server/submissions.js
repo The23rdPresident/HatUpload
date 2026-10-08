@@ -1,6 +1,7 @@
 import "../shared/core.js";
 
-import { ApiError, officialAsset, textureAsset } from "./catalog.js";
+import { ApiError, textureAsset } from "./catalog.js";
+import { resolveFace, resolveItem } from "./faces.js";
 
 import { body, keys, now, token, digest, ipHash, budget, challenge, equalHash } from "./security.js";
 
@@ -55,7 +56,8 @@ async function verifiedDraft(value, kind) {
     },
     texture: null
   };
-  const base = await officialAsset(draft.assetId, draft.itemType === "BodyPackage" ? "Bundle" : "Asset");
+  const face = draft.itemType === "Face" ? await resolveFace(draft.assetId) : null;
+  const base = face ? face.item : (await resolveItem(draft.assetId, draft.itemType === "BodyPackage" ? "Bundle" : "Asset")).item;
   const mapping = core.assetMapping(base.assetType, base.kind, base.id);
   if (!mapping || (!(core.isAccessory(mapping.itemType) && core.isAccessory(draft.itemType)) && draft.itemType !== mapping.itemType)) throw new ApiError("Item type must match the verified Roblox item.", 400);
   if (kind === "official" && draft.customTexture) throw new ApiError("Choose a custom reskin to replace the base texture.", 400);
@@ -64,8 +66,9 @@ async function verifiedDraft(value, kind) {
   if (kind === "reskin" && core.nameKey(draft.name) === core.nameKey(base.name)) throw new ApiError("Give your reskin its own catalog name.", 400);
   let texture = null;
   if (kind === "reskin" || draft.itemType === "Face") {
-    texture = await textureAsset(core.assetContent(draft.texture)?.split("//")[1]);
+    texture = kind === "reskin" || face?.item.faceTextureRequired ? await textureAsset(core.assetContent(draft.texture)?.split("//")[1]) : face.texture;
     draft.texture = "rbxassetid://" + texture.id;
+    if (face) draft.assetId = String(base.id);
   } else {
     draft.texture = "";
   }

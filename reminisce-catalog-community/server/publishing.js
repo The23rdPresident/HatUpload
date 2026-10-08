@@ -1,6 +1,7 @@
 import "../shared/core.js";
 import { createHash } from "node:crypto";
-import { ApiError, isOfficial, isAllowedHead, officialAsset } from "./catalog.js";
+import { ApiError, isOfficial, isAllowedHead, isAllowedFace } from "./catalog.js";
+import { resolveItem } from "./faces.js";
 import { now, body, keys } from "./security.js";
 import { apiKey, inspectKey } from "./roblox-key.js";
 import { announcementConfig, announcementStatement, sendAnnouncement } from "./announcements.js";
@@ -94,7 +95,7 @@ async function experienceDetails(universeId) {
 
 export async function testConnection(env) {
   const config = publishingConfig(env);
-  const report = { ...config, uploaderVersion: "3.6.0", checkedAt: now(), experience: null, key: null };
+  const report = { ...config, uploaderVersion: "3.8.0", checkedAt: now(), experience: null, key: null };
   if (!config.configured) return { ...report, connected: false, error: /\s/.test(apiKey(env)) ? "The stored ROBLOX_API_KEY contains spaces or line breaks. Replace it with the complete key copied as one line." : "Add ROBLOX_UNIVERSE_ID and the ROBLOX_API_KEY Worker secret first." };
   const metadata = experienceDetails(config.universeId);
   const keyCheck = inspectKey(env, config.universeId, storeName);
@@ -154,7 +155,7 @@ async function queueRetry(env, id, version, failedOnly = false) {
   if (existing && existing.universe_id !== config.universeId) throw new ApiError("This item belongs to a different Roblox experience. Restore its original Universe ID before retrying.", 409);
   if (!existing) {
     const draft = JSON.parse(row.draft_json);
-    const base = await officialAsset(draft.assetId, draft.itemType === "BodyPackage" ? "Bundle" : "Asset");
+    const base = (await resolveItem(draft.assetId, draft.itemType === "BodyPackage" ? "Bundle" : "Asset")).item;
     await env.DB.prepare("INSERT INTO publish_jobs(submission_id,job_id,record_version,universe_id,draft_json,base_json,next_attempt,created_at,updated_at,announcement_source) SELECT id,?1,version,?2,draft_json,?6,?3,?3,?3,'worker' FROM submissions WHERE id=?4 AND status='approved' AND version=?5 ON CONFLICT(submission_id) DO NOTHING").bind(crypto.randomUUID(), config.universeId, stamp, id, version, JSON.stringify(base)).run();
   }
   else if (existing.status === "failed") await env.DB.prepare("UPDATE publish_jobs SET status='queued',next_attempt=?1,error='',updated_at=?1 WHERE submission_id=?2 AND status='failed' AND EXISTS(SELECT 1 FROM submissions s WHERE s.id=submission_id AND s.status='approved' AND s.version=record_version AND s.version=?3)").bind(stamp, id, version).run();
@@ -229,9 +230,9 @@ async function writeItem(env, job) {
   try { draft = JSON.parse(job.draft_json); base = JSON.parse(job.base_json); }
   catch { throw rejectedItem("This item's saved publication data is invalid and cannot be published."); }
   if (!object(draft) || !object(base)) throw rejectedItem("This item's saved publication data is invalid and cannot be published.");
-  if ((!isOfficial(base) && !isAllowedHead(base)) || Number(base.id) !== Number(draft.assetId)) throw rejectedItem("Automatic publishing requires a verified catalog head or a Roblox-created base item of another type.");
+  if ((!isOfficial(base) && !isAllowedHead(base) && !isAllowedFace(base)) || Number(base.id) !== Number(draft.assetId)) throw rejectedItem("Automatic publishing requires a verified catalog head or face, or a Roblox-created base item of another type.");
   const mapping = core.assetMapping(base.assetType, base.kind, base.id);
-  if (!mapping || (!(core.isAccessory(mapping.itemType) && core.isAccessory(draft.itemType)) && draft.itemType !== mapping.itemType)) throw rejectedItem("Automatic publishing requires a matching Roblox-created base item.");
+  if (!mapping || (!(core.isAccessory(mapping.itemType) && core.isAccessory(draft.itemType)) && draft.itemType !== mapping.itemType)) throw rejectedItem("Automatic publishing requires a matching verified catalog item.");
   const itemType = definition(draft, now()).ItemType;
   const ready = await readyGame(env);
   if (ready.types[itemType] !== true) throw new ApiError("The game does not support " + draft.itemType + " items yet. Install the supplied game update, publish the place, start a new server and retry.", 503);

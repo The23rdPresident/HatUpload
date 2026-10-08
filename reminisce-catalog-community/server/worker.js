@@ -1,4 +1,5 @@
-import { ApiError, search, details, isOfficial, isAllowedHead, officialAsset, textureAsset } from "./catalog.js";
+import { ApiError, search, details, isOfficial, isAllowedHead, isAllowedFace, textureAsset } from "./catalog.js";
+import { resolveItem, searchFaces } from "./faces.js";
 
 import { now, configured, originFor, requireOrigin, json, ipHash, authorize, login } from "./security.js";
 
@@ -23,7 +24,9 @@ function staticHeaders(request) {
 
 async function cached(url, read) {
   const cache = globalThis.caches?.default;
-  const key = new Request(url);
+  const cacheUrl = new URL(url);
+  cacheUrl.searchParams.set("lookupVersion", "8");
+  const key = new Request(cacheUrl);
   const hit = cache ? await cache.match(key) : null;
   if (hit) return hit.json();
   const result = await read();
@@ -73,7 +76,7 @@ export default {
       if (path === "/api/config" && request.method === "GET") return json({
         ready: configured(env),
         siteKey: configured(env) ? env.TURNSTILE_SITE_KEY : "",
-        version: 6,
+        version: 8,
         dailyLimit: Math.min(100, Math.max(1, Number(env.SUBMISSIONS_PER_IP_PER_DAY) || 100))
       }, 200, origin, request);
       if (!configured(env)) throw new ApiError("The service setup is incomplete. Contact the site owner.", 503);
@@ -91,10 +94,10 @@ export default {
         const category = url.searchParams.get("category") || "accessories";
         if (![ "accessories", "gear", "faces", "bundles", "heads" ].includes(category)) throw new ApiError("Unsupported search category.", 400);
         query.searchParams.set("category", category);
-        query.searchParams.set("robloxOnly", category === "heads" ? "false" : "true");
+        query.searchParams.set("robloxOnly", ["heads", "faces"].includes(category) ? "false" : "true");
         result = await cached(query.href, async () => {
-          const data = await search(query);
-          data.items = data.items.filter(item => isOfficial(item) || category === "heads" && isAllowedHead(item));
+          const data = category === "faces" ? await searchFaces(query) : await search(query);
+          data.items = data.items.filter(item => isOfficial(item) || ["heads", "faces"].includes(category) && (isAllowedHead(item) || isAllowedFace(item) || item.kind === "Bundle" && item.assetType === 79 && ["User", "Group"].includes(item.creatorType) && item.creatorId > 0));
           if (!data.items.some(item => item.id === data.exactMatchId)) data.exactMatchId = null;
           return data;
         });
@@ -102,9 +105,15 @@ export default {
         const kind = url.searchParams.get("kind") === "Bundle" ? "Bundle" : "Asset";
         const lookupUrl = new URL(path, url);
         lookupUrl.searchParams.set("kind", kind);
+        result = await cached(lookupUrl.href, () => resolveItem(path.split("/").at(-1), kind));
+      } else if (/^\/api\/face\/\d+$/.test(path) && request.method === "GET") {
+        const kind = url.searchParams.get("kind") === "Bundle" ? "Bundle" : "Asset";
+        const lookupUrl = new URL(path, url);
+        lookupUrl.searchParams.set("kind", kind);
         result = await cached(lookupUrl.href, async () => {
-          const item = await officialAsset(path.split("/").at(-1), kind);
-          return { item };
+          const data = await resolveItem(path.split("/").at(-1), kind);
+          if (![17, 18, 79].includes(data.item.assetType)) throw new ApiError("Choose a classic face or a Roblox head link.", 400);
+          return data;
         });
       } else if (/^\/api\/texture\/\d+$/.test(path) && request.method === "GET") {
         result = await cached(new URL(path, url).href, async () => ({
@@ -161,7 +170,9 @@ export default {
         } else if (path === "/api/admin/catalog" && request.method === "GET") {
           result = await catalogList(env);
         } else if (/^\/api\/admin\/asset\/\d+$/.test(path) && request.method === "GET") {
-          result = await details(path.split("/").at(-1), url.searchParams.get("kind") === "Bundle" ? "Bundle" : "Asset");
+          const id = path.split("/").at(-1), kind = url.searchParams.get("kind") === "Bundle" ? "Bundle" : "Asset";
+          result = kind === "Bundle" ? await resolveItem(id, kind) : await details(id, kind);
+          if (kind === "Asset" && [18, 79].includes(result.item.assetType)) result = await resolveItem(result.item.id, kind, result.item);
         } else throw new ApiError("That route or method is not available.", 404);
       } else throw new ApiError("That route or method is not available.", 404);
       if (result?.item?.publication?.status === "queued" && ctx?.waitUntil) ctx.waitUntil(publishOne(env, result.item.id));

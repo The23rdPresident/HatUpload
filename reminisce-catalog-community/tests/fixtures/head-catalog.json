@@ -1,0 +1,630 @@
+{
+  "bundles": [
+    {
+      "id": 119419790090149,
+      "name": "O_o",
+      "description": "I don't get it?",
+      "bundleType": "DynamicHead",
+      "isRecolorable": false,
+      "items": [
+        {
+          "id": 90451873203405,
+          "name": "O_o - Head",
+          "type": "Asset",
+          "supportsHeadShapes": true,
+          "assetType": 79
+        },
+        {
+          "id": 6462110807962942,
+          "name": "O_o",
+          "type": "UserOutfit"
+        },
+        {
+          "id": 126431603201618,
+          "name": "O_o - Mood",
+          "type": "Asset",
+          "assetType": 78
+        }
+      ],
+      "creator": {
+        "id": 1,
+        "name": "Roblox",
+        "type": "User",
+        "hasVerifiedBadge": true
+      },
+      "product": {
+        "id": 613403816402056,
+        "type": "productType",
+        "isPublicDomain": false,
+        "isForSale": true,
+        "priceInRobux": 75,
+        "isFree": false,
+        "noPriceText": null
+      },
+      "itemRestrictions": [
+        "Live"
+      ],
+      "collectibleItemDetail": {
+        "collectibleItemId": "c0cf65a5-8ce3-4de3-ba64-848815d48bbb",
+        "collectibleProductId": "5049ecf1-614e-4ce7-85a4-ab8afdda09ac",
+        "price": 75,
+        "lowestPrice": 75,
+        "lowestResalePrice": 0,
+        "totalQuantity": 0,
+        "unitsAvailable": 0,
+        "saleLocation": {
+          "saleLocationType": "ShopAndAllExperiences",
+          "saleLocationTypeId": 5,
+          "universeIds": [],
+          "enabledUniverseIds": []
+        },
+        "hasResellers": false,
+        "saleStatus": "OnSale",
+        "quantityLimitPerUser": null,
+        "offSaleDeadline": null,
+        "collectibleItemType": "NonLimited",
+        "lowestAvailableResaleProductId": null,
+        "lowestAvailableResaleItemInstanceId": null,
+        "resaleRestriction": "Disabled"
+      }
+    },
+    {
+      "id": 43761506463462,
+      "name": "Epic Face",
+      "description": "SO EPIK!\n\nWorks with both R6 and R15.\nAnimated in-game. Best used with animations disabled.",
+      "bundleType": "DynamicHead",
+      "isRecolorable": false,
+      "items": [
+        {
+          "id": 95240587613909,
+          "name": "Epic Face - Dynamic Head",
+          "type": "Asset",
+          "supportsHeadShapes": false,
+          "assetType": 79
+        },
+        {
+          "id": 14618207727,
+          "name": "Default Mood",
+          "type": "Asset",
+          "assetType": 78
+        },
+        {
+          "id": 4975013226682176,
+          "name": "Epic Face",
+          "type": "UserOutfit"
+        }
+      ],
+      "creator": {
+        "id": 166533394,
+        "name": "infchris",
+        "type": "User",
+        "hasVerifiedBadge": true
+      },
+      "product": {
+        "id": 6660176806617033,
+        "type": "productType",
+        "isPublicDomain": false,
+        "isForSale": true,
+        "priceInRobux": 75,
+        "isFree": false,
+        "noPriceText": null
+      },
+      "itemRestrictions": [
+        "Live"
+      ],
+      "collectibleItemDetail": {
+        "collectibleItemId": "bd8a5f39-72be-476c-97e7-522da497b1c3",
+        "collectibleProductId": "daba909b-ce6f-4e54-813a-e618554daf53",
+        "price": 75,
+        "lowestPrice": 75,
+        "lowestResalePrice": 0,
+        "totalQuantity": 0,
+        "unitsAvailable": 0,
+        "saleLocation": {
+          "saleLocationType": "ShopAndAllExperiences",
+          "saleLocationTypeId": 5,
+          "universeIds": [],
+          "enabledUniverseIds": []
+        },
+        "hasResellers": false,
+        "saleStatus": "OnSale",
+        "quantityLimitPerUser": null,
+        "offSaleDeadline": null,
+        "collectibleItemType": "NonLimited",
+        "lowestAvailableResaleProductId": null,
+        "lowestAvailableResaleItemInstanceId": null,
+        "resaleRestriction": "Disabled"
+      }
+    },
+    {
+      "id": 265852627205962,
+      "name": "I Am Not Amused",
+      "description": "\u2b50 FAVORITE FOR FREE\n\ud83e\udd1d Works in R6 and R15, refunds available!\n\nOther faces: https://www.roblox.com/catalog?Category=1&CreatorName=Face+Galaxy&CreatorType=Group",
+      "bundleType": "DynamicHead",
+      "isRecolorable": false,
+      "items": [
+        {
+          "id": 138449291541015,
+          "name": "I Am Not Amused - Dynamic Head",
+          "type": "Asset",
+          "supportsHeadShapes": false,
+          "assetType": 79
+        },
+        {
+          "id": 14618207727,
+          "name": "Default Mood",
+          "type": "Asset",
+          "assetType": 78
+        },
+        {
+          "id": 3570235313113495,
+          "name": "I Am Not Amused",
+          "type": "UserOutfit"
+        }
+      ],
+      "creator": {
+        "id": 359586999,
+        "name": "Face Galaxy",
+        "type": "Group",
+        "hasVerifiedBadge": false
+      },
+      "product": {
+        "id": 8723795223710394,
+        "type": "productType",
+        "isPublicDomain": false,
+        "isForSale": true,
+        "priceInRobux": 75,
+        "isFree": false,
+        "noPriceText": null
+      },
+      "itemRestrictions": [
+        "Live"
+      ],
+      "collectibleItemDetail": {
+        "collectibleItemId": "1f0c0ef7-8895-4fdc-ad88-97f76e051b55",
+        "collectibleProductId": "fd057efa-e493-4839-8cfd-e4d07dcbeda2",
+        "price": 75,
+        "lowestPrice": 75,
+        "lowestResalePrice": 0,
+        "totalQuantity": 0,
+        "unitsAvailable": 0,
+        "saleLocation": {
+          "saleLocationType": "ShopAndAllExperiences",
+          "saleLocationTypeId": 5,
+          "universeIds": [],
+          "enabledUniverseIds": []
+        },
+        "hasResellers": false,
+        "saleStatus": "OnSale",
+        "quantityLimitPerUser": null,
+        "offSaleDeadline": null,
+        "collectibleItemType": "NonLimited",
+        "lowestAvailableResaleProductId": null,
+        "lowestAvailableResaleItemInstanceId": null,
+        "resaleRestriction": "Disabled"
+      }
+    },
+    {
+      "id": 4110,
+      "name": "Angry Diamond",
+      "description": "Best used with facial animations disabled.\nWorks with both R6 and R15 and supports skin tones.",
+      "bundleType": "DynamicHead",
+      "isRecolorable": false,
+      "items": [
+        {
+          "id": 10647852134,
+          "name": "DefaultFallBackMood",
+          "type": "Asset",
+          "assetType": 78
+        },
+        {
+          "id": 14629530741,
+          "name": "Angry Diamond - Dynamic Head",
+          "type": "Asset",
+          "supportsHeadShapes": false,
+          "assetType": 79
+        },
+        {
+          "id": 18809954196,
+          "name": "Angry Diamond",
+          "type": "UserOutfit"
+        }
+      ],
+      "creator": {
+        "id": 166533394,
+        "name": "infchris",
+        "type": "User",
+        "hasVerifiedBadge": true
+      },
+      "product": {
+        "id": 6335484654246680,
+        "type": "productType",
+        "isPublicDomain": false,
+        "isForSale": true,
+        "priceInRobux": 75,
+        "isFree": false,
+        "noPriceText": null
+      },
+      "itemRestrictions": [
+        "Live"
+      ],
+      "collectibleItemDetail": {
+        "collectibleItemId": "5d69f562-9797-49a9-b66c-91b9c4aee6f2",
+        "collectibleProductId": "4576f88a-d41a-41b7-bce5-170573327695",
+        "price": 75,
+        "lowestPrice": 75,
+        "lowestResalePrice": 0,
+        "totalQuantity": 0,
+        "unitsAvailable": 0,
+        "saleLocation": {
+          "saleLocationType": "ShopAndAllExperiences",
+          "saleLocationTypeId": 5,
+          "universeIds": [],
+          "enabledUniverseIds": []
+        },
+        "hasResellers": false,
+        "saleStatus": "OnSale",
+        "quantityLimitPerUser": null,
+        "offSaleDeadline": null,
+        "collectibleItemType": "NonLimited",
+        "lowestAvailableResaleProductId": null,
+        "lowestAvailableResaleItemInstanceId": null,
+        "resaleRestriction": "Disabled"
+      }
+    },
+    {
+      "id": 3935,
+      "name": "Perfectly Round and Content",
+      "description": "Works with both R6 and R15 and supports skin tones.",
+      "bundleType": "DynamicHead",
+      "isRecolorable": false,
+      "items": [
+        {
+          "id": 14619697404,
+          "name": "Perfectly Round and Content - Dynamic Head",
+          "type": "Asset",
+          "supportsHeadShapes": false,
+          "assetType": 79
+        },
+        {
+          "id": 10647852134,
+          "name": "DefaultFallBackMood",
+          "type": "Asset",
+          "assetType": 78
+        },
+        {
+          "id": 18758710059,
+          "name": "Perfectly Round and Content",
+          "type": "UserOutfit"
+        }
+      ],
+      "creator": {
+        "id": 166533394,
+        "name": "infchris",
+        "type": "User",
+        "hasVerifiedBadge": true
+      },
+      "product": {
+        "id": 8040682551673764,
+        "type": "productType",
+        "isPublicDomain": false,
+        "isForSale": true,
+        "priceInRobux": 75,
+        "isFree": false,
+        "noPriceText": null
+      },
+      "itemRestrictions": [
+        "Live"
+      ],
+      "collectibleItemDetail": {
+        "collectibleItemId": "4e66e3b6-54f4-4dcc-828e-a72c22ffe1ed",
+        "collectibleProductId": "18c0c6de-7c77-4bb5-a7ba-503c6f1b6fec",
+        "price": 75,
+        "lowestPrice": 75,
+        "lowestResalePrice": 0,
+        "totalQuantity": 0,
+        "unitsAvailable": 0,
+        "saleLocation": {
+          "saleLocationType": "ShopAndAllExperiences",
+          "saleLocationTypeId": 5,
+          "universeIds": [],
+          "enabledUniverseIds": []
+        },
+        "hasResellers": false,
+        "saleStatus": "OnSale",
+        "quantityLimitPerUser": null,
+        "offSaleDeadline": null,
+        "collectibleItemType": "NonLimited",
+        "lowestAvailableResaleProductId": null,
+        "lowestAvailableResaleItemInstanceId": null,
+        "resaleRestriction": "Disabled"
+      }
+    },
+    {
+      "id": 51370,
+      "name": "Rectangle",
+      "description": "Rectangle Rectangle more heads \u2b07\ufe0fMore Dynamic heads azohead https://www.roblox.com/catalog?Category=4&Subcategory=66&CreatorName=Az0te&salesTypeFilter=1&SortType=2&SortAggregation=3 - - - - - - - - - - - - - - - - - - - - - \u2b07\ufe0fMore cute stuffs\ud83d\ude0a https://www.roblox.com/catalog?Category=1&CreatorName=Exclusive%20UGC&CreatorType=Group&salesTypeFilter=1&SortType=2&SortAggregation=1",
+      "bundleType": "DynamicHead",
+      "isRecolorable": false,
+      "items": [
+        {
+          "id": 15054261012,
+          "name": "Rectangle - Dynamic Head",
+          "type": "Asset",
+          "supportsHeadShapes": false,
+          "assetType": 79
+        },
+        {
+          "id": 14618207727,
+          "name": "Default Mood",
+          "type": "Asset",
+          "assetType": 78
+        },
+        {
+          "id": 22143506965,
+          "name": "Rectangle",
+          "type": "UserOutfit"
+        }
+      ],
+      "creator": {
+        "id": 80269991,
+        "name": "Az0te",
+        "type": "User",
+        "hasVerifiedBadge": true
+      },
+      "product": {
+        "id": 4674239773575880,
+        "type": "productType",
+        "isPublicDomain": false,
+        "isForSale": true,
+        "priceInRobux": 75,
+        "isFree": false,
+        "noPriceText": null
+      },
+      "itemRestrictions": [
+        "Live"
+      ],
+      "collectibleItemDetail": {
+        "collectibleItemId": "74bf25a8-5b9f-4796-902c-39767aaed070",
+        "collectibleProductId": "27a8fec4-f8b0-47e7-a68c-5e0264b24e92",
+        "price": 75,
+        "lowestPrice": 75,
+        "lowestResalePrice": 0,
+        "totalQuantity": 0,
+        "unitsAvailable": 0,
+        "saleLocation": {
+          "saleLocationType": "ShopAndAllExperiences",
+          "saleLocationTypeId": 5,
+          "universeIds": [],
+          "enabledUniverseIds": []
+        },
+        "hasResellers": false,
+        "saleStatus": "OnSale",
+        "quantityLimitPerUser": null,
+        "offSaleDeadline": null,
+        "collectibleItemType": "NonLimited",
+        "lowestAvailableResaleProductId": null,
+        "lowestAvailableResaleItemInstanceId": null,
+        "resaleRestriction": "Disabled"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "TargetId": 0,
+      "ProductType": null,
+      "AssetId": 90451873203405,
+      "ProductId": 0,
+      "Name": "O_o - Head",
+      "Description": "",
+      "AssetTypeId": 79,
+      "Creator": {
+        "Id": 1,
+        "Name": "Roblox",
+        "CreatorType": "User",
+        "CreatorTargetId": 1,
+        "HasVerifiedBadge": true
+      },
+      "IconImageAssetId": 0,
+      "Created": "2026-01-17T07:33:07.257Z",
+      "Updated": "2026-04-01T20:00:26.689Z",
+      "PriceInRobux": null,
+      "PriceInTickets": null,
+      "Sales": 0,
+      "IsNew": false,
+      "IsForSale": false,
+      "IsPublicDomain": false,
+      "IsLimited": false,
+      "IsLimitedUnique": false,
+      "Remaining": null,
+      "MinimumMembershipLevel": 0,
+      "ContentRatingTypeId": 0,
+      "SaleAvailabilityLocations": null,
+      "SaleLocation": null,
+      "CollectibleItemId": null,
+      "CollectibleProductId": null,
+      "CollectiblesItemDetails": null,
+      "TimedOptions": null
+    },
+    {
+      "TargetId": 0,
+      "ProductType": null,
+      "AssetId": 95240587613909,
+      "ProductId": 0,
+      "Name": "Epic Face - Dynamic Head",
+      "Description": "TBD",
+      "AssetTypeId": 79,
+      "Creator": {
+        "Id": 166533394,
+        "Name": "infchris",
+        "CreatorType": "User",
+        "CreatorTargetId": 166533394,
+        "HasVerifiedBadge": true
+      },
+      "IconImageAssetId": 0,
+      "Created": "2026-03-27T11:47:22.417Z",
+      "Updated": "2026-03-27T12:02:18.082Z",
+      "PriceInRobux": null,
+      "PriceInTickets": null,
+      "Sales": 0,
+      "IsNew": false,
+      "IsForSale": false,
+      "IsPublicDomain": false,
+      "IsLimited": false,
+      "IsLimitedUnique": false,
+      "Remaining": null,
+      "MinimumMembershipLevel": 0,
+      "ContentRatingTypeId": 0,
+      "SaleAvailabilityLocations": null,
+      "SaleLocation": null,
+      "CollectibleItemId": null,
+      "CollectibleProductId": null,
+      "CollectiblesItemDetails": null,
+      "TimedOptions": null
+    },
+    {
+      "TargetId": 0,
+      "ProductType": null,
+      "AssetId": 138449291541015,
+      "ProductId": 0,
+      "Name": "I Am Not Amused - Dynamic Head",
+      "Description": "\u2b50 FAVORITE FOR FREE\n\ud83e\udd1d Works in R6 and R15, refunds available!\n\nOther faces: https://www.roblox.com/catalog?Category=1&CreatorName=Face+Galaxy&CreatorType=Group",
+      "AssetTypeId": 79,
+      "Creator": {
+        "Id": 10087885985,
+        "Name": "Face Galaxy",
+        "CreatorType": "Group",
+        "CreatorTargetId": 359586999,
+        "HasVerifiedBadge": false
+      },
+      "IconImageAssetId": 0,
+      "Created": "2025-12-12T21:36:03.037Z",
+      "Updated": "2025-12-12T21:36:03.083Z",
+      "PriceInRobux": null,
+      "PriceInTickets": null,
+      "Sales": 0,
+      "IsNew": false,
+      "IsForSale": false,
+      "IsPublicDomain": false,
+      "IsLimited": false,
+      "IsLimitedUnique": false,
+      "Remaining": null,
+      "MinimumMembershipLevel": 0,
+      "ContentRatingTypeId": 0,
+      "SaleAvailabilityLocations": null,
+      "SaleLocation": null,
+      "CollectibleItemId": null,
+      "CollectibleProductId": null,
+      "CollectiblesItemDetails": null,
+      "TimedOptions": null
+    },
+    {
+      "TargetId": 0,
+      "ProductType": null,
+      "AssetId": 14629530741,
+      "ProductId": 0,
+      "Name": "Angry Diamond - Dynamic Head",
+      "Description": "TBD",
+      "AssetTypeId": 79,
+      "Creator": {
+        "Id": 166533394,
+        "Name": "infchris",
+        "CreatorType": "User",
+        "CreatorTargetId": 166533394,
+        "HasVerifiedBadge": true
+      },
+      "IconImageAssetId": 0,
+      "Created": "2023-08-30T23:08:11.097Z",
+      "Updated": "2026-08-15T06:47:43.208Z",
+      "PriceInRobux": null,
+      "PriceInTickets": null,
+      "Sales": 0,
+      "IsNew": false,
+      "IsForSale": false,
+      "IsPublicDomain": false,
+      "IsLimited": false,
+      "IsLimitedUnique": false,
+      "Remaining": null,
+      "MinimumMembershipLevel": 0,
+      "ContentRatingTypeId": 0,
+      "SaleAvailabilityLocations": null,
+      "SaleLocation": null,
+      "CollectibleItemId": null,
+      "CollectibleProductId": null,
+      "CollectiblesItemDetails": null,
+      "TimedOptions": null
+    },
+    {
+      "TargetId": 0,
+      "ProductType": null,
+      "AssetId": 14619697404,
+      "ProductId": 0,
+      "Name": "Perfectly Round and Content - Dynamic Head",
+      "Description": "Test",
+      "AssetTypeId": 79,
+      "Creator": {
+        "Id": 166533394,
+        "Name": "infchris",
+        "CreatorType": "User",
+        "CreatorTargetId": 166533394,
+        "HasVerifiedBadge": true
+      },
+      "IconImageAssetId": 0,
+      "Created": "2023-08-30T01:05:44.503Z",
+      "Updated": "2023-08-30T01:05:44.503Z",
+      "PriceInRobux": null,
+      "PriceInTickets": null,
+      "Sales": 0,
+      "IsNew": false,
+      "IsForSale": false,
+      "IsPublicDomain": false,
+      "IsLimited": false,
+      "IsLimitedUnique": false,
+      "Remaining": null,
+      "MinimumMembershipLevel": 0,
+      "ContentRatingTypeId": 0,
+      "SaleAvailabilityLocations": null,
+      "SaleLocation": null,
+      "CollectibleItemId": null,
+      "CollectibleProductId": null,
+      "CollectiblesItemDetails": null,
+      "TimedOptions": null
+    },
+    {
+      "TargetId": 0,
+      "ProductType": null,
+      "AssetId": 15054261012,
+      "ProductId": 0,
+      "Name": "Rectangle - Dynamic Head",
+      "Description": "Rectangle",
+      "AssetTypeId": 79,
+      "Creator": {
+        "Id": 80269991,
+        "Name": "Az0te",
+        "CreatorType": "User",
+        "CreatorTargetId": 80269991,
+        "HasVerifiedBadge": true
+      },
+      "IconImageAssetId": 0,
+      "Created": "2023-10-13T17:18:00.857Z",
+      "Updated": "2026-07-03T07:01:50.736Z",
+      "PriceInRobux": null,
+      "PriceInTickets": null,
+      "Sales": 0,
+      "IsNew": false,
+      "IsForSale": false,
+      "IsPublicDomain": false,
+      "IsLimited": false,
+      "IsLimitedUnique": false,
+      "Remaining": null,
+      "MinimumMembershipLevel": 0,
+      "ContentRatingTypeId": 0,
+      "SaleAvailabilityLocations": null,
+      "SaleLocation": null,
+      "CollectibleItemId": null,
+      "CollectibleProductId": null,
+      "CollectiblesItemDetails": null,
+      "TimedOptions": null
+    }
+  ]
+}

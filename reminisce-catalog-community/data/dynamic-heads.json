@@ -1,0 +1,13 @@
+{
+  "faces": [
+    { "assetId": 90451873203405, "bundleId": 119419790090149, "creatorType": "User", "creatorId": 1, "classicFaceId": 7074595 },
+    { "assetId": 95240587613909, "bundleId": 43761506463462, "creatorType": "User", "creatorId": 166533394, "classicFaceId": 42070576 },
+    { "assetId": 138449291541015, "bundleId": 265852627205962, "creatorType": "Group", "creatorId": 359586999, "classicFaceId": 7131886 }
+  ],
+  "heads": [
+    { "assetId": 14629530741, "bundleId": 4110, "creatorType": "User", "creatorId": 166533394 },
+    { "assetId": 14619697404, "bundleId": 3935, "creatorType": "User", "creatorId": 166533394 },
+    { "assetId": 15054261012, "bundleId": 51370, "creatorType": "User", "creatorId": 80269991 }
+  ],
+  "defaultMeshes": [95796291785765, 133902161072571]
+}

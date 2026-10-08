@@ -1,12 +1,12 @@
 # Reminisce Item Uploader
 
-Share the submission page with your community. Contributors suggest heads from any Roblox user or group, Roblox-created accessories, gear, classic faces, body packages, and accessory or face reskins. You review each submission at `/review.html`, edit its settings, then approve it for automatic publishing or decline it.
+Share the submission page with your community. Contributors suggest heads and faces from any Roblox user or group, Roblox-created accessories, gear, body packages, and accessory or face reskins. You review each submission at `/review.html`, edit its settings, then approve it for automatic publishing or decline it.
 
 Accepted definitions are written to your game's shared live catalog through Roblox Open Cloud. Timed sales begin when that write succeeds. Individual and selected failed publications have retry buttons; code export has been removed. Duplicates and permanent item errors are automatically declined with their reason recorded. Credential problems, missing game support, network outages and concurrent catalog writes remain approved and retryable. See `AUTO_PUBLISH.md` for setup and `UPGRADE.md` for this update.
 
 Prices must be whole pNgs from 0 to 50,000. Limited and Limited U stock must be whole quantities from 10 to 500; Non limited stock is unlimited. These limits apply to public submissions, owner-created items, approval edits and new publication definitions.
 
-The owner's Decline dialog has a separate reason field. That reason is delivered to the submitter's private receipt under Your submissions on this device. The public page refreshes statuses every 30 seconds while visible and keeps the latest 100 receipts in the same browser. Automatic duplicate and permanent-error declines also include their safe reason. Private owner review notes are never shared, including historical notes. The site does not collect contact details or send email/direct messages. Migration 0006 adds the separate decline field; follow UPGRADE.md before deploying.
+The owner's Decline dialog has a separate reason field. That reason is delivered to the submitter's private receipt under Your submissions on this device. The public page refreshes statuses every 30 seconds while visible and keeps the latest 100 receipts in the same browser. Automatic duplicate and permanent-error declines also include their safe reason. Private owner review notes are never shared, including historical notes. The site does not collect contact details or send email/direct messages. Migration 0006 adds the separate decline field for installations older than version 3.6.
 
 ## Existing items and categories
 
@@ -18,9 +18,11 @@ Approval and owner-created entries add to the shared existing-item list in the s
 
 The accessory selector includes Hat, Hair, Face, Neck, Left shoulder, Right shoulder, Collar, Front, Back, Waist front, Waist center, Waist back, Torso, Ears, Left foot, and Right foot. Automatic shoulder and waist placement remain available. One Item type selector offers Accessory, Face, Tools, Body package, and Head. Its subtype selector appears immediately below it. Hair uses the Accessory type with the Hair subtype; classic clothing remains available to the owner.
 
-Classic and dynamic heads are sent as ItemType Head with their original asset ID. Dynamic-head bundle links resolve to the actual head asset. Both Headless IDs remain invisible. The 3.5.0 game update gives imported heads the default Smile, removes original face textures and animation controls, uses SmoothPlastic without material overrides, follows the selected head color, and preserves normal in-game face selection.
+Classic heads and dynamic heads with a custom shape are sent as ItemType Head with their original asset ID. Dynamic-head bundle links resolve to the actual head asset. A face on the standard Roblox head is treated as Face instead. Both Headless IDs remain invisible. The existing game head handling gives imported heads the default Smile, removes original face textures and animation controls, uses SmoothPlastic without material overrides, follows the selected head color, and preserves normal in-game face selection.
 
-Announcements now come from the Worker after a confirmed publication, even while the game is empty. The game suppresses those website-managed entries to avoid duplicate posts. Add NEW_ITEM_WEBHOOK_URL as a Worker secret and apply migration 0005 to enable delivery tracking. Follow UPGRADE.md to update the game places and website in order.
+Announcements come from the Worker after a confirmed publication, even while the game is empty. The game suppresses those website-managed entries to avoid duplicate posts. The initial announcement setup uses NEW_ITEM_WEBHOOK_URL and migration 0005. Existing announcement settings remain in place when installing this update.
+
+Face lookup searches the bundled classic-face archive and the live Roblox catalog, including UGC dynamic heads. Paste a classic face, dynamic head asset, or bundle link. The Item type changes automatically: faces on a standard head become Face, while distinct mesh shapes stay Head. The site prefers the original classic face and its image texture. A standard head with a separate front decal can use that image. If no standalone classic image is available, the existing Texture ID field becomes editable and requires a verified image or decal before submission. Full mesh textures are never submitted as face images. Ambiguous classic matches require a specific classic face link. The game receives its existing ItemType Face and image Texture format; it never receives the dynamic head mesh for a Face.
 
 ## Hosting from GitHub
 
@@ -28,7 +30,7 @@ GitHub Pages hosts the browser files. Shared submissions and private owner revie
 
 ### 1. Add the project to GitHub
 
-Extract this archive and upload the contents of `reminisce-catalog-community` to a new repository. Include `docs`, `src`, `shared`, `server`, `scripts`, `migrations`, and the files at the project root. Do not upload owner keys, secrets, `.dev.vars`, or `node_modules`.
+Extract this archive and upload the contents of `reminisce-catalog-community` to a new repository. Include `docs`, `src`, `shared`, `server`, `data`, `scripts`, `migrations`, `tests`, and the files at the project root. Do not upload owner keys, secrets, `.dev.vars`, or `node_modules`.
 
 Install Node.js 22.13 or newer, then run in the project folder:
 
@@ -95,12 +97,12 @@ GitHub Pages cannot apply all the HTTP security headers supplied by the Worker. 
 
 ## Using the site
 
-- Official item: select Item type, then search by Roblox name or choose Paste item link for a catalog / bundle link or ID. Choose a result if the name has several matches. Classic and dynamic heads may be made by any Roblox user or group. Accessories, gear, classic faces and body packages must still be made by Roblox's **User account 1**. Selecting Head cannot disguise an asset of another type. For faces, the name and description fill from Roblox and the main ID field becomes Texture ID. Enter a classic face image/texture ID there; dynamic head IDs are rejected. The original Roblox item ID stays attached to the submission for ownership and duplicate verification.
+- Catalog item: select Item type, then search by Roblox name or choose Paste item link for a catalog / bundle link or ID. Choose a result if the name has several matches. Heads and faces may be made by any Roblox user or group. Accessories, gear and body packages must still be made by Roblox's **User account 1**. Dynamic head links are classified automatically. A Face uses its original classic counterpart when found; otherwise a standard-shaped head requires a standalone face image. Choosing a different Item type cannot bypass that classification during submission or approval.
 - Custom reskin: choose an official Roblox base, name your variant, and supply the replacement image, texture, or decal asset ID. A readable decal is resolved to its actual image ID. The owner should check that the image is appropriate and accessible to the game. Restricted or private Roblox assets may be unavailable to the lookup service.
 - Contributors can propose Non limited, Limited, Limited U, or Event reward, a pNgs price, stock for either Limited type, and an accessory/tool subtype. Checking Timed item reveals a time-on-sale duration and unit. There are no on-sale dates, off-sale dates, advanced placement controls, username requests, or contributor messages. This site does not authenticate Roblox accounts or upload image files to Roblox.
 - Each submission receives a private receipt saved on that device. It can check Pending, Approved, or Declined without exposing the review queue. Clearing browser storage removes those receipts. Private review notes stay visible only to you.
 - Sign in with your owner key to inspect the queue. Approval rechecks the base and texture, then queues the item for your game. Publishing must be configured before approving through the owner page. Queued and published definitions are locked.
-- **Create my own item** uses the same creator rules: heads from any creator, other base types from Roblox. All entries pass field validation and shared duplicate checks.
+- **Create my own item** uses the same creator rules: heads and faces from any creator, other base types from Roblox. All entries pass field validation and shared duplicate checks.
 - A failed, still-approved item has **Retry publish**. Select up to 30 failed items to use **Retry selected publications**. Both keep the original job identity, preventing duplicate writes and avoiding sale-timer resets.
 - A duplicate found in the actual game's catalog moves to Declined and remains blocked from resubmission. A permanently invalid, unpublished item moves to Declined and releases its reservation so a corrected submission can be reviewed. The reason stays visible on the owner page. Declining does not remove existing game items.
 
@@ -108,7 +110,7 @@ GitHub Pages cannot apply all the HTTP security headers supplied by the Worker. 
 
 Owner sessions last 30 minutes. Session tokens remain in page memory, are stored hashed on the server, and are invalidated by sign-out, expiry, or key rotation. All owner endpoints check authorization. The Roblox API key stays in Worker secrets and is never returned to the browser. Catalog data is validated and serialized as JSON; submitted text is never executed as code. Code-export routes are unavailable.
 
-Public forms require server-verified Turnstile checks, JSON-only requests, body limits, exact allowed origins, and rate limits. SQL statements use bound values. Daily quotas are stored atomically in D1: 100 submission attempts after verification per IP per UTC day, and 200 site-wide by default. Change `SUBMISSIONS_PER_IP_PER_DAY` and `SUBMISSIONS_PER_DAY` as needed. The edge limit is 60 API requests per minute per IP and 5 sign-in attempts per minute; edge counters are regional, with a database-backed 15 sign-in attempts per hour limit as well. Shared networks also share IP limits. Ordinary Roblox lookups are cached for three minutes; submission and approval checks fetch fresh metadata.
+Public forms require server-verified Turnstile checks, JSON-only requests, body limits, exact allowed origins, and rate limits. SQL statements use bound values. Daily quotas are stored atomically in D1: 100 submission attempts after verification per IP per UTC day, and 200 site-wide by default. Change `SUBMISSIONS_PER_IP_PER_DAY` and `SUBMISSIONS_PER_DAY` as needed. The edge limit is 60 API requests per minute per IP and 5 sign-in attempts per minute; edge counters are regional, with a database-backed 15 sign-in attempts per hour limit as well. Shared networks also share IP limits. Ordinary Roblox lookups are cached for three minutes. Face ownership comes from verified original metadata or a fresh Roblox check; each submission and approval verifies its texture as an image. Other base items use fresh metadata checks.
 
 The database stores submissions, the existing-item registry, hashed IP identifiers, hashed receipts, and review history. A scheduled cleanup removes expired sessions, old rate counters, review logs older than 180 days, and declined submissions older than 180 days. Pending and approved entries remain until the owner removes them from the database. Backup and billing settings are managed through your Cloudflare account.
 
@@ -143,3 +145,13 @@ For the head appearance correction on an already updated game, run game-updates/
 ## Version 3.6
 
 Version 3.6 adds private decline reasons, automatic status refresh, 100 locally saved receipts, price limits of 0–50,000 pNgs and limited stock limits of 10–500. Non limited items publish with unlimited stock. Private owner notes are stored separately from the reason shared with the submitter. Only a matching private receipt can read that feedback. Existing game support, publication retries and announcement delivery are retained.
+
+## Version 3.7
+
+Version 3.7 adds automatic classic-face texture lookup, original face name search, dynamic asset and bundle conversion, bounded XML and binary decal reading, and server-side canonical face textures. Converted links reserve the classic face identity and its image texture, so changing links or renaming a face cannot bypass duplicate checks. No new game upload, database migration, API key, or API permission is needed when upgrading from version 3.6. Follow UPGRADE.md to replace the website files while preserving the existing deployment.
+
+## Version 3.8
+
+Version 3.8 accepts UGC faces and distinguishes standard head faces from custom head meshes. O_o, Epic Face and I Am Not Amused resolve to their original classic images; Angry Diamond, Perfectly Round and Content and Rectangle remain Heads. The same checks apply to public lookup, owner lookup, submission and approval. Existing faces remain protected against duplicate dynamic links.
+
+Unknown head assets are inspected using bounded model and mesh reads. Known default mesh IDs are recognized directly; other supported meshes are compared with the default head's proportions and silhouette. This comparison is conservative and cannot identify every possible mesh. Unreadable or unsupported meshes remain Heads with a visible message instead of being guessed from their name. Compressed mesh geometry uses a bundled, precompiled Google Draco decoder; no third-party code is downloaded or executed from submissions. See CLASSIC_FACES.md for data sources and limits. Upgrading from version 3.7 needs no game upload, database migration or API key change.

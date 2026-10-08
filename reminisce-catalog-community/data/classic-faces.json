@@ -1,0 +1,5099 @@
+{
+  "faces": [
+    {
+      "id": 7074595,
+      "name": "O.o",
+      "description": "O.o",
+      "textureId": 7046277,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7074661,
+      "name": "Classic Goof",
+      "description": "Definition of Goof: A Stupid Fool.",
+      "textureId": 7046286,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7074729,
+      "name": "Glee",
+      "description": "Hehe!",
+      "textureId": 7074712,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7074764,
+      "name": "Chill",
+      "description": "It's time to chillax.",
+      "textureId": 7074749,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7074786,
+      "name": "Check It",
+      "description": "I'm hip. I'm with it. I'm a whole new me!",
+      "textureId": 7074780,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7074814,
+      "name": "Existential Angst",
+      "description": "Oh man, I feel so bad about everything.",
+      "textureId": 417334857,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7074836,
+      "name": "Classic Vampire",
+      "description": "\"What is that stuff?\" \"Oh. Nothing. Just raspberry jam.\"",
+      "textureId": 7074827,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7074864,
+      "name": "Winky",
+      "description": ";-)",
+      "textureId": 7074856,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7074893,
+      "name": "Drool",
+      "description": "Nom Nom Nom Nom",
+      "textureId": 7074882,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7074944,
+      "name": "Uh Oh",
+      "description": "Perfect for when a meteor is about to hit your house, or it's raining acid and you don't have an umbrella, or for when you're surrounded by flames, or when an army of several thousand armed horsemen is about to crush you, or for when an avalanche of boulders is about to crush you, or for when you're facing anything worse than any of those things. Yes, \"Uh Oh\" indeed.",
+      "textureId": 7074932,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7074991,
+      "name": "Fearless",
+      "description": "Whatcha' Got?!",
+      "textureId": 7074972,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7075089,
+      "name": "Whatchoo Talkin Bout",
+      "description": "Stop talkin' crazy! I ain't even foolin'",
+      "textureId": 7075077,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7075142,
+      "name": "Fang",
+      "description": "My teeth are pointy!",
+      "textureId": 7075130,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7075434,
+      "name": "Toothy Grin",
+      "description": "He wants you to be his friend. Or maybe his next meal.",
+      "textureId": 7075412,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7075469,
+      "name": ":-/",
+      "description": ":-/",
+      "textureId": 7075459,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7075502,
+      "name": "Lazy Eye",
+      "description": "Nah, it's cool. I just got back from the eye doctor.",
+      "textureId": 7075492,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7076076,
+      "name": "Hmmm...",
+      "description": "You have given me much to ponder!",
+      "textureId": 7076053,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7076110,
+      "name": "Chubs",
+      "description": "You party animal!",
+      "textureId": 7076096,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7076159,
+      "name": "Shhh...",
+      "description": "It's a secret.",
+      "textureId": 629925953,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7076224,
+      "name": "RAWR!",
+      "description": "For when you are feeling RAWRful!",
+      "textureId": 7076211,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7131361,
+      "name": "Sad Zombie",
+      "description": "I mean, how would you feel if all the brains were gone?",
+      "textureId": 7131308,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7131541,
+      "name": "Alright",
+      "description": "The kids are alright.",
+      "textureId": 7131482,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7131886,
+      "name": "I Am Not Amused",
+      "description": "Remember, you ARE on teh internets. LOL!",
+      "textureId": 7131857,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7132035,
+      "name": "Mysterious",
+      "description": "\"Be extremely subtle, even to the point of formlessness. Be extremely mysterious, even to the point of soundlessness. Thereby you can be the director of the opponent's fate.\" -\r\nSun-tzu (~400 BC), The Art of War. Emptiness and Fullness \r\n",
+      "textureId": 7132019,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7317765,
+      "name": "Slickfang",
+      "description": "So cool.",
+      "textureId": 7317591,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7317769,
+      "name": "Chippy McTooth",
+      "description": "Call me Chippy McTooth O'Chompers. Or just Chip for short.",
+      "textureId": 7317697,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7317773,
+      "name": ":-o",
+      "description": "He was all like :-/ Then I was like :-( Then he was like >:O Then I was like Q.Q But then he was like T.T but then this other guy came in and was like ~>>:000 so then we were both sortof like :-o",
+      "textureId": 7317691,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7317793,
+      "name": "Good Intentioned",
+      "description": "I baked you a caek! But I ated it.",
+      "textureId": 7317606,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7506135,
+      "name": "Blinky",
+      "description": "Blinky the Fish (or simply Blinky) is a three-eyed orange fish, found in the ponds and lakes of Springfield.",
+      "textureId": 7506008,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7506136,
+      "name": "Emotionally Distressed Zombie",
+      "description": "I mean, how would you feel if all the brains were gone and the villagers were chasing you around town with pitchforks?",
+      "textureId": 629906620,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7506141,
+      "name": "It's Go Time!",
+      "description": "American neologism that translates roughly as \"Let's do this thing\".",
+      "textureId": 7506025,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7506144,
+      "name": "I Lack Personal Confidence",
+      "description": "This face is for people who lack personal confidence. Of course, none of those people will have the confidence required to wear this face. So for the most part, it will sit unused in your inventory forever. Still, would you rather be yourself, or hide behind a different, cooler face that doesn't reflect who you are? Now I know what you are thinking: \"this is a videogame, don't ask me to think about deep introspective issues.\" Well, I refuse. Videogames can be art and one of the purposes of art is to ask uncomfortable questions. WE are the music makers. WE are the dreamers of dreams. Don't wake me.",
+      "textureId": 7505989,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7699174,
+      "name": "Silly Fun",
+      "description": "Super Silly Fun Face?",
+      "textureId": 7699086,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7699177,
+      "name": "Sad",
+      "description": ":-(",
+      "textureId": 7699115,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7699183,
+      "name": "Poor Man",
+      "description": "He looks sad because he spent all his money on this face. I don't know why you would do that, so it's really his own fault, don't you think?",
+      "textureId": 478719512,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7699193,
+      "name": "Frightful",
+      "description": "\"There is nothing more frightful than imagination without taste.\"",
+      "textureId": 7699096,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8329679,
+      "name": "Stitchface",
+      "description": "Snitches get stitches.",
+      "textureId": 8329438,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 8329682,
+      "name": "ZOMG",
+      "description": "zOMG is a varient of the all-too-popular acronym \"OMG\", meaning \"Oh My God\". \r\n\r\nThe \"z\" was originally a mistake while attempting to hit the shift key with the left hand, and type \"OMG\" \r\n\r\nAlso used in all-caps, 'ZOMG' is generally used in a sarcastic manner, more often than not a humiliating fasion. It is also used as a device for stating the obvious. \r\n\"zOMG! you r teh winz!!one!!eleven!\"",
+      "textureId": 8329421,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8329686,
+      "name": "Sinister",
+      "description": "This guy uses Napster.",
+      "textureId": 8329434,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8329690,
+      "name": "Daring",
+      "description": "Fortune favors the bold.",
+      "textureId": 8329410,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8560971,
+      "name": "Stare",
+      "description": ":|",
+      "textureId": 8560915,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 8560975,
+      "name": "Anguished",
+      "description": "You know that feeling you get when you find out that your video card is too old to play a new computer game?",
+      "textureId": 8560912,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8560980,
+      "name": "Toothy Drool",
+      "description": "He'd like to meat you for dinner.",
+      "textureId": 8560901,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8560985,
+      "name": "Frightening Unibrow",
+      "description": "Yikes!",
+      "textureId": 417335778,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9250633,
+      "name": "Aghast",
+      "description": "What's a ghast? Wikipedia claims they are a relatively recent invention, first appearing in H.P. Lovecraft's Dreamlands. But we all know how unreliable Wikipedia is...",
+      "textureId": 629923753,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9250643,
+      "name": "Meanie",
+      "description": "He eats blocks like you for breakfast.",
+      "textureId": 508490451,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9250654,
+      "name": "Mischievous",
+      "description": "WARNING: Do not play poker against this man.",
+      "textureId": 9250081,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 9250660,
+      "name": "Concerned",
+      "description": "Concerned Parent Writes: I'm worried that ROBLOX doesn't have a wide enough variety of faces to adequately express what I am feeling right now.",
+      "textureId": 9250431,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10527010,
+      "name": "Commando",
+      "description": "\"I ain't got time to bleed!\" - Former US Governor Jesse Ventura",
+      "textureId": 10526794,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10678407,
+      "name": "Sly Cat",
+      "description": "Sly cat knows a funny joke. But Sly Cat is not telling.",
+      "textureId": 10678193,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 10678414,
+      "name": "Serious Cat",
+      "description": "Serious Cat is too serious for a flippant blurb.",
+      "textureId": 10678215,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 10678418,
+      "name": "Serious Dog",
+      "description": "Serious Dog doesn't care what you think.",
+      "textureId": 10678225,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10678423,
+      "name": "Bad Dog",
+      "description": "If you've ever played Apples to Apples you know \"Bad Dogs\" is the trump card.",
+      "textureId": 10678229,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10678427,
+      "name": "RAWR Bear",
+      "description": "RAWR Bear is just like the Carebears, only he eats Carebears.",
+      "textureId": 10678240,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10770395,
+      "name": "Skeletar",
+      "description": "Skeletar will destroy you, puny weakling.",
+      "textureId": 10747452,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10770432,
+      "name": "Retro Smiley",
+      "description": "Remember when 512 KB was enough for anybody?",
+      "textureId": 10747911,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10770436,
+      "name": "Hypnoface",
+      "description": "If you can find a better face, you buy it.",
+      "textureId": 10747392,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10831390,
+      "name": "Sir Rich McMoneyston, III",
+      "description": "\"Jeeves, get this hooligan out of my sight! And bring me my Wall Street Journal!\"",
+      "textureId": 629914851,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10831438,
+      "name": "Shy Lady",
+      "description": "She gets nervous when you look at her.",
+      "textureId": 10749431,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 10831454,
+      "name": "eXtreme",
+      "description": "\"That's nothing! When I go skiing, I get dropped out of an airplane over the mountain and parachute down 45,000 feet, then I put on ONE ski and go down the mountain backward - while juggling knives. Plus, the ski is on fire AND the mountain is haunted\"",
+      "textureId": 10747652,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10831558,
+      "name": "$.$",
+      "description": "Ok. For the sake of argument, let's say you're wrong and money IS everything.",
+      "textureId": 10747371,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 10860384,
+      "name": "The Big Dog",
+      "description": "You're the man nao, dawg.",
+      "textureId": 10749405,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10860391,
+      "name": "Pumpkin Face",
+      "description": "No, we couldn't save it until Halloween. That's, like, months away. You'll just have to deal.",
+      "textureId": 10747387,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10860397,
+      "name": "Silence",
+      "description": "Silence!",
+      "textureId": 10749546,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907529,
+      "name": "Meow?",
+      "description": "Sometimes cats want to cuddle up. Sometimes they want to claw your face off. This is why I don't like cats.",
+      "textureId": 10749222,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907531,
+      "name": "Yuck!",
+      "description": "He eated a tofu. QQ!",
+      "textureId": 629907657,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907532,
+      "name": "Quijibo",
+      "description": "A fat, balding, North American ape with no chin.",
+      "textureId": 508485561,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 10907534,
+      "name": "Redonkulous",
+      "description": "1. significantly more absurd than ridiculous to an almost impossible extreme; without possibility of serious consideration. ",
+      "textureId": 10747492,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907536,
+      "name": "Slobbery Villain",
+      "description": "Take my money, but don't drool on me!",
+      "textureId": 508484319,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907541,
+      "name": "Mr. Chuckles",
+      "description": "Don't let his disarming grin fool you. This man is dangerous.",
+      "textureId": 10747810,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907545,
+      "name": "I wuv u",
+      "description": "But I WUV U!",
+      "textureId": 10749449,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907546,
+      "name": "Crazy Abstract Artist",
+      "description": "This guy is fired.",
+      "textureId": 620866423,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 10907547,
+      "name": "Bird of Prey",
+      "description": "Tastes like chicken. Fights like raptor.",
+      "textureId": 629949468,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907549,
+      "name": "Finn McCool",
+      "description": "Finn McCool is lookin' good.",
+      "textureId": 10749456,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 10907551,
+      "name": "Dizzy Face",
+      "description": "You're cynical and beautiful / You always make a scene / You're monochrome delirious / You're nothing that you seem",
+      "textureId": 10749463,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 11123805,
+      "name": "Owl",
+      "description": "I don't give a hoot.",
+      "textureId": 620869273,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 11123827,
+      "name": "Mr. Oinkers",
+      "description": "Mr. Oinkers is full of delicious bacon. Let's get him.",
+      "textureId": 629919997,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11389372,
+      "name": "Adorable Puppy",
+      "description": "Awww! Look at the adorable puppy! He needs a home!",
+      "textureId": 5492600700,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 11389441,
+      "name": "Cute Kitty",
+      "description": "Awwww! You're so cute! You can has cheezburger!",
+      "textureId": 10747401,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11453609,
+      "name": "Ninja",
+      "description": "He'll ninja you with all his mighty ninjaness.",
+      "textureId": 10749503,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 11611321,
+      "name": "Love",
+      "description": "Maria:\r\nOh my hero, so far away now.\r\nWill I ever see your smile?\r\nLove goes away, like night into day.\r\nIt's just a fading dream. \r\n\r\nI'm the darkness, you're the stars.\r\nOur love is brighter than the sun.\r\nFor eternity, for me there can be,\r\nOnly you, my chosen one... \r\n\r\nMust I forget you? Our solemn promise?\r\nWill autumn take the place of spring?\r\nWhat shall I do? I'm lost without you.\r\nSpeak to me once more! ",
+      "textureId": 10749488,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11647296,
+      "name": "Quackface McGraw",
+      "description": "Quack quack, watch ur back.",
+      "textureId": 478719853,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11647324,
+      "name": "Muttdawg",
+      "description": "Word.",
+      "textureId": 478731659,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11913668,
+      "name": "Distaught Alien Invader",
+      "description": "\"What do you mean there's a nuke on the ship?\"",
+      "textureId": 11913422,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11913700,
+      "name": "Alien Ambassador",
+      "description": "Careful. He only LOOKS friendly.",
+      "textureId": 11913449,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11913734,
+      "name": "Nibbles, Devourer of Worlds",
+      "description": "QBasic Nibbles. Copyright (C) Microsoft Corporation 1990.",
+      "textureId": 629912441,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 11956548,
+      "name": "Lion",
+      "description": "“They say Aslan is on the move - perhaps has already landed.”",
+      "textureId": 11956455,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12145328,
+      "name": "Oh Deer",
+      "description": "Why hello deery!",
+      "textureId": 12145229,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12145366,
+      "name": "Freckles",
+      "description": "People with freckles are more sensitive to the sun. Except in ROBLOX where people are generally made out of plastic.",
+      "textureId": 12145059,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12188176,
+      "name": "Demented Mouse",
+      "description": "Bad artist! Bad!",
+      "textureId": 12188129,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12467118,
+      "name": "Koala",
+      "description": "\"Now you're endangered!\"",
+      "textureId": 629901607,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12467159,
+      "name": "Ghostface",
+      "description": "\"Sometimes I look up at the stars and analyze the sky\r\nAnd ask myself was I meant to be here... why?\"",
+      "textureId": 12466911,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 12732366,
+      "name": "And then we'll take over the world!",
+      "description": "If only I could find my glasses.",
+      "textureId": 12732236,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12777646,
+      "name": "Blerg!",
+      "description": "Blerg.",
+      "textureId": 12777582,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 12908359,
+      "name": "Dragonface",
+      "description": "The face of a dragon brings luck to all.",
+      "textureId": 629903805,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 13038375,
+      "name": "¬_¬",
+      "description": "¬_¬",
+      "textureId": 13038247,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 13038397,
+      "name": "Oh Noes Another Dog",
+      "description": "What? You don't have room in your heart for two?",
+      "textureId": 13038224,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 13335647,
+      "name": "Old Man Jenkins",
+      "description": "Old Man Jenkins is the angriest, crustiest, curmudgeonliest, most cantankerous bit of plastic to ever walk on two legs.",
+      "textureId": 629927480,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 13478124,
+      "name": "Walk the Plank You Scurvy Dogs!",
+      "description": "He's understandably upset.",
+      "textureId": 13478066,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 13656095,
+      "name": "Pony Face",
+      "description": "Why the long face?  Because I'm a pony! That's why!",
+      "textureId": 13655958,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14030577,
+      "name": "I Hate Noobs",
+      "description": "Everyone on the internet is a noob but me.",
+      "textureId": 14030506,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14083380,
+      "name": "Visual Studio Seized Up For 45 Seconds... Again",
+      "description": "*SIGH* Dear Visual Studio GUI Team: please look up \"Multithreading\" on Wikipedia, and then implement.",
+      "textureId": 14083319,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14127171,
+      "name": "Two Guys on a Boat",
+      "description": "IM ON A BOAT",
+      "textureId": 14123364,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 14127194,
+      "name": "WHAAAaaa!",
+      "description": "\"But Timmy's parents bought him Builders Club! NO FAIR!\"",
+      "textureId": 14123340,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14405720,
+      "name": "No Z",
+      "description": "Do you want to know why the slow kids still don't get it? Mind your own business.",
+      "textureId": 14405631,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14516578,
+      "name": "Sniffles",
+      "description": "Ewwww...",
+      "textureId": 14516479,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 14721869,
+      "name": "Scarecrow Face",
+      "description": "\"Draw, strawman!\"",
+      "textureId": 14721752,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14812981,
+      "name": "D:",
+      "description": "The ultimate emoticon for indicating feelings of utter, soul-crushing despair. D:",
+      "textureId": 14812835,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14817393,
+      "name": "=)",
+      "description": "It's =). What more is there to say. =)",
+      "textureId": 14817231,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 14861743,
+      "name": ":P",
+      "description": "When you are feeling :P there's really no other way to describe it.",
+      "textureId": 14861556,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15013192,
+      "name": ":-O",
+      "description": "Deep inside, he's totally horrified. He's horrified on the outside, too.",
+      "textureId": 15013091,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15054426,
+      "name": "XD",
+      "description": "XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD ",
+      "textureId": 15054328,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15133453,
+      "name": ":'(",
+      "description": "A dignified kind of sorrow.  A single tear rolls down your face - you're sad, but not too sad.",
+      "textureId": 15133335,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15177601,
+      "name": ">:3",
+      "description": "Also known as the text-mode meanie face.",
+      "textureId": 15177471,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15324577,
+      "name": ">_<",
+      "description": "The face you use when you are trying to fathom how someone could be so dense.",
+      "textureId": 15324447,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15366173,
+      "name": "^_^",
+      "description": "For when your day is totally awesome! Which is pretty much everyday on ROBLOX.",
+      "textureId": 15365479,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15395327,
+      "name": "x_x",
+      "description": "DO resuscitate!",
+      "textureId": 15395252,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15432080,
+      "name": ":3",
+      "description": "Obey the :3",
+      "textureId": 15431991,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15470193,
+      "name": ":-[",
+      "description": "I am indifferent.",
+      "textureId": 15471076,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15470849,
+      "name": "Hut Hut Hike!",
+      "description": "Sweat + sacrifice = success!",
+      "textureId": 15470573,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15470861,
+      "name": "ILOVEFOOTBOLL!",
+      "description": "FOOTBOLL!",
+      "textureId": 629948559,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 15471035,
+      "name": ":/",
+      "description": "Slantly McSlantface",
+      "textureId": 15470952,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15637848,
+      "name": "-_-",
+      "description": "-_- Got that? If you continue to say inane things, I will -_- at you again. See if I won't. -_-",
+      "textureId": 15637705,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15858152,
+      "name": ":-?",
+      "description": "Simpleton!",
+      "textureId": 15858100,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 15885121,
+      "name": "Cutiemouse",
+      "description": "Cutiemouse is adorable. You love cutiemouse. Give cutiemouse all your guns...",
+      "textureId": 15885042,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 16101765,
+      "name": "Tango",
+      "description": "The tango has become part of the repertoire for great classical musicians. One of the first classical interpreters to do this \"cross over\" was the baritone Jorge Chaminé with his Tangos recording with bandoneonist Olivier Manoury. Since then, al Tango, Yo-Yo Ma, Martha Argerich, Daniel Barenboim, Gidon Kremer, Plácido Domingo and Marcelo Alvarez have performed and recorded Tangos.",
+      "textureId": 16101613,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 16132514,
+      "name": ":D",
+      "description": "Times when the :D is appropriate: 1) it's a snow day! 2) free ice cream! 3) you found this really cool online game where you can build stuff and then blow it up!",
+      "textureId": 16132434,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 16179646,
+      "name": "Semi Colon Open Paren",
+      "description": ";)",
+      "textureId": 16179600,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 16357383,
+      "name": "NetHack Addict",
+      "description": "Must... find... amulet... OF YENDOR!",
+      "textureId": 16357318,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 16387711,
+      "name": ">_>",
+      "description": "Glare!",
+      "textureId": 16387598,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 16413496,
+      "name": "zOMG Hat Selling!",
+      "description": "Yeah... we know you're excited.",
+      "textureId": 16413448,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 16652251,
+      "name": "Red Tango",
+      "description": "\"Red Tango\" is actually a code name, and you are actually a spy for Her Majesty's Secret Service. Your cover is that you are an amazing Tango dancer.",
+      "textureId": 629930519,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 16678138,
+      "name": "Jungle Commando",
+      "description": "Hey kid, I'm a computer. Stop all da downloadin'!",
+      "textureId": 16678109,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 16722419,
+      "name": "Red Fang",
+      "description": "It's cranberry juice. Trust me.",
+      "textureId": 16722374,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 16723481,
+      "name": "Sapphire Drool",
+      "description": "Like the tears of an angel.",
+      "textureId": 16723441,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 16723499,
+      "name": "Ochre Ogre",
+      "description": "\"Ochre\" is a fancy word for \"yellowish brown\" and \"Ogre\" is a fancy word for \"someone with poor temperment and dental hygiene\".",
+      "textureId": 16723395,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 17138027,
+      "name": "D=",
+      "description": "Oh noes!  You are not happy.  Maybe you've just been rickrolled or shot with a super powerful laser beam.  I don't know what happened, but this face clearly shows that you are not pleased.",
+      "textureId": 17137977,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 17999992,
+      "name": "Eyes of Azurewrath",
+      "description": "What terrible secrets hide behind those eyes?",
+      "textureId": 629947734,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 18151826,
+      "name": ":]",
+      "description": "He's so happy!",
+      "textureId": 18151722,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19264845,
+      "name": "Bubble Trouble",
+      "description": "It's a bad idea to run and chew gum at the same time, unless you enjoy having gum stuck in your esophagus and being unable to breathe.",
+      "textureId": 19264782,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19366445,
+      "name": "Friendly Pirate",
+      "description": "His smile says he's friendly.  His scar says he's tough.",
+      "textureId": 19366214,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19381787,
+      "name": "Pieface Jellyfreckles",
+      "description": "Give a man a pie, he eats for a day. Teach a man to make pies and his house smells delicious forever!",
+      "textureId": 19382647,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19396123,
+      "name": "Jack Frost Face",
+      "description": "He likes to bite fingers. Careful.",
+      "textureId": 19396122,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19396550,
+      "name": "Snowman Face",
+      "description": "Now all you need is a magic top hat.",
+      "textureId": 19396549,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19397594,
+      "name": "Rudolph",
+      "description": "He likes to pull heavy sleighs.",
+      "textureId": 19397593,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 19398554,
+      "name": "Grr!",
+      "description": "Help me bite crime!",
+      "textureId": 19398553,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 19399752,
+      "name": "Toothless",
+      "description": "Mom, can I play football again tomorrow?",
+      "textureId": 19627641,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 19959140,
+      "name": "Starry Eyed",
+      "description": "I'm seeing stars.",
+      "textureId": 19958885,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 20010377,
+      "name": "Yawn",
+      "description": "You do not amuse me.",
+      "textureId": 20010294,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 20052135,
+      "name": "Prankster",
+      "description": "You didn't believe your mom when she said your face would freeze like that.  Oops!",
+      "textureId": 20052028,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20298988,
+      "name": "Puck",
+      "description": "Captain of our fairy band, /\r\nHelena is here at hand, /\r\nAnd the youth, mistook by me, /\r\nPleading for a lover's fee. /\r\nShall we their fond pageant see? /\r\nLord, what fools these mortals be!",
+      "textureId": 20298933,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20337343,
+      "name": "Disbelief",
+      "description": "No Way!",
+      "textureId": 20337265,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20418658,
+      "name": "Err...",
+      "description": "What's with this guy?",
+      "textureId": 20418518,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20418682,
+      "name": "Bandage",
+      "description": "Snitches get stitches!",
+      "textureId": 20418584,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20612949,
+      "name": "Secret Service",
+      "description": "Copy that.  Operation Freedom Hawk begins in 5 minutes.",
+      "textureId": 20612916,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20644021,
+      "name": "Xtreme Happy",
+      "description": "ZOMG I GOT A JOB AT ROBLOX",
+      "textureId": 20643951,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20722130,
+      "name": "Shiny Teeth",
+      "description": "I brush my teeth 9 times a day to keep them extra sparkly!",
+      "textureId": 20722053,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 20909103,
+      "name": "Sweat It Out",
+      "description": "Yes, sometimes it is as bad as it looks.",
+      "textureId": 20909031,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21024661,
+      "name": "Optimist",
+      "description": "Hey it's better than we thought! There's actually three glasses!",
+      "textureId": 21024598,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 21272995,
+      "name": "Embarrassed",
+      "description": "Heh heh. Did you guys see me shoot myself with that rockets? Heh heh. No? Good, because it didn't happen.",
+      "textureId": 21272940,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21311601,
+      "name": "Sigmund",
+      "description": "\"Tell me more about your parents\"",
+      "textureId": 21311520,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21352013,
+      "name": "Downcast",
+      "description": "\"It's snowing still,\" said Eeyore gloomily.\r\n\"So it is.\"\r\n\"And freezing.\"\r\n\"Is it?\"\r\n\"Yes,\" said Eeyore. \"However,\" he said, brightening up a little, \"we haven't had an earthquake lately.\"",
+      "textureId": 21351916,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21392863,
+      "name": "Clown School Dropout",
+      "description": "\"You guys have held me back long enough, I'm going to clown school!\"",
+      "textureId": 21392803,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21439665,
+      "name": "Toughguy",
+      "description": "Hey, look at the toughguy!",
+      "textureId": 21439548,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 21635565,
+      "name": "Heeeeeey...",
+      "description": "Watch me jump this shark!",
+      "textureId": 21635489,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21635583,
+      "name": "You ated my caik!",
+      "description": "oh noes!",
+      "textureId": 21638407,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21755022,
+      "name": "Woebegone",
+      "description": "I haz a sad.",
+      "textureId": 21754586,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 21802396,
+      "name": "Glory on the Gridiron",
+      "description": "He's prepared to make football history.",
+      "textureId": 21796275,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22023062,
+      "name": "Timmy McPwnage",
+      "description": "This guy hates people who pronounce \"pwn\" like \"pawn\". It's p'OWN, rhyming with \"moan\", not \"gown\".",
+      "textureId": 22023001,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22070623,
+      "name": "The First Time I Ever Played ROBLOX...",
+      "description": "So when I joined ROBLOX in June 2006, we had just released multiplayer games. Back then we had 0 players. When a player logged in, the whole office would stop working to get in game to make sure (s)he had someone to play with. We even considered hiring a high school kid to play ROBLOX all summer as a job.",
+      "textureId": 22070531,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22119034,
+      "name": "Square Eyes",
+      "description": "eyes ^ sum((1/n^2), 1, inf+)",
+      "textureId": 22118943,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22432782,
+      "name": "Masque",
+      "description": "Masques >> Masks",
+      "textureId": 629920835,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 22500129,
+      "name": "The Friendly Eviscerator",
+      "description": "He just wants to be friends, and maybe eat you.",
+      "textureId": 22500052,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 22587828,
+      "name": "Winter",
+      "description": "A face for all seasons... actually just for one...",
+      "textureId": 22587827,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22587894,
+      "name": "Fast Car",
+      "description": "Dude. I think Matt Dusek just lapped you.",
+      "textureId": 22587893,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22587958,
+      "name": "Speaker of Lightning",
+      "description": "",
+      "textureId": 149486853,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 22588801,
+      "name": "Lightning Speaker",
+      "description": "Let's get crackin'!",
+      "textureId": 22588800,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22828351,
+      "name": "Wink-Blink",
+      "description": "Was he winking or just blinking?  Now I don't know if he was joking or not...",
+      "textureId": 22828283,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22877700,
+      "name": "Whistle",
+      "description": "Perfect for a corporate whistle blower or perhaps just a whistling enthusiast.",
+      "textureId": 22877631,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 22920501,
+      "name": "Troublemaker",
+      "description": "He's always up to no good. ",
+      "textureId": 22920500,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 22972723,
+      "name": "Eyes of Everfrost",
+      "description": "You know how in books, the hero is always described as having frosty blue eyes?",
+      "textureId": 22972635,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 23219981,
+      "name": "Nervous",
+      "description": "I'm not sure how that test went... but I'm thinking not good.",
+      "textureId": 23219775,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 23261769,
+      "name": "Surprise!",
+      "description": "Whoa! I did not see that coming.",
+      "textureId": 23261768,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 23264604,
+      "name": "Mick McCann",
+      "description": "From the banks of the Bann / Was the skipper on the Irish Rover",
+      "textureId": 23999943,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 23310997,
+      "name": "Paintball Enthusiast",
+      "description": "A sport that could only be invented in America...",
+      "textureId": 23310996,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 23311761,
+      "name": "Look At My Nose",
+      "description": "Actually where is my nose? Aaaaah!",
+      "textureId": 23311760,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 23644960,
+      "name": "Clown Face",
+      "description": "Scary or hilarious?  You be the judge.",
+      "textureId": 23644832,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 23932048,
+      "name": "Awkward....",
+      "description": "Wow... that was awkward.",
+      "textureId": 23931977,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 24067718,
+      "name": "Drooling Noob",
+      "description": "Uh...what? Oh slobber.... u can clean?",
+      "textureId": 24067663,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 24126147,
+      "name": "Zip It!",
+      "description": "Zip it, shut it, lock it up and throw away the key!",
+      "textureId": 24125997,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 24441888,
+      "name": "Camoface",
+      "description": "Major Major reporting for duty Sir!",
+      "textureId": 24441824,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 24727929,
+      "name": "Butterfly",
+      "description": "Butterfly in the sky / I can go twice as high / Take a look / It's in a book",
+      "textureId": 24727888,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 24975496,
+      "name": "Where are the eggs?",
+      "description": "I've looked everywhere, but I can't find them.  Where are the eggs?",
+      "textureId": 24975243,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 25166274,
+      "name": "Squiggle Mouth",
+      "description": "You know what you want to say, but the right words don't come.  It's just like a comic strip.",
+      "textureId": 25165947,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 25267538,
+      "name": "Emperor",
+      "description": "You're the boss of everyone.",
+      "textureId": 629917700,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 25321961,
+      "name": "Friendly Grin",
+      "description": "He may not have all his teeth - but what he lacks in toothy-ness he makes up for in friendliness!",
+      "textureId": 25321744,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 25556219,
+      "name": "Freckled Cheeks",
+      "description": "A face without freckles is like a sky without stars.",
+      "textureId": 25555431,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 25930613,
+      "name": "Sophisticated Spectacles",
+      "description": "Stay classy, ROBLOX!",
+      "textureId": 25930455,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 25975243,
+      "name": "Bling",
+      "description": "The gold standard of faces.",
+      "textureId": 25975157,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 26019070,
+      "name": "Yum!",
+      "description": "That was delicious!",
+      "textureId": 26018945,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 26260927,
+      "name": "Scarecrow",
+      "description": "Scares away the Albino Bat Vampires, Knife-Haired Monsters and Birdmen.",
+      "textureId": 26260786,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 26343188,
+      "name": "Tattletale",
+      "description": "I'm telling!  Mom! Mom! Mom!",
+      "textureId": 26343132,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 26424808,
+      "name": "Know-It-All Grin",
+      "description": "He knows what's about to happen... and it's going to be funny.",
+      "textureId": 26424652,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 26619096,
+      "name": "Sick Day",
+      "description": "Uh...I'm not feeling too good.",
+      "textureId": 26619042,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 26674400,
+      "name": "It's so beautiful!",
+      "description": "I just can't take my eyes off of it!",
+      "textureId": 26674356,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 27003636,
+      "name": "Old Timer",
+      "description": "He's seen it all. Twice.",
+      "textureId": 27003564,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 27052537,
+      "name": "Raccoon",
+      "description": "Nature's bandit, complete with mask.",
+      "textureId": 27052496,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 27134344,
+      "name": "Goofball",
+      "description": "Everybody knows a goofball.  If you don't know one, there's a good chance that you're it.",
+      "textureId": 27134272,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 27412825,
+      "name": "Smith McCool",
+      "description": "Finn McCool's much cooler cousin.",
+      "textureId": 27412750,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 27599954,
+      "name": "Seeing Stars",
+      "description": "Been bloxxed one too many times.",
+      "textureId": 27599799,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 27725434,
+      "name": "Friendly Puppy",
+      "description": "How much is that doggie in the window? Ruff Ruff! I do hope that doggie's for sale!",
+      "textureId": 27725380,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 27861352,
+      "name": "Hilarious",
+      "description": "Somebody just told you a hilarious joke.  It definitely wasn't me.",
+      "textureId": 27861351,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 28119051,
+      "name": "Not Again!",
+      "description": "I can't believe my sister threw away my homework again! Grrr.....",
+      "textureId": 28118994,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 28281786,
+      "name": "Pwnda Face",
+      "description": "Pwning noobs with bamboo since 2010.",
+      "textureId": 28281785,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 28878297,
+      "name": "Adoration",
+      "description": "You just shook hands with your hero.  This is what your face looks like.",
+      "textureId": 28878210,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 28999228,
+      "name": "Joyous Surprise",
+      "description": "You didn't expect it, but you're happy it happened.",
+      "textureId": 28999175,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 29109681,
+      "name": "Trance",
+      "description": "You looked too deep into his eyes.  Now you're in an unbreakable trance!",
+      "textureId": 29109680,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 29296146,
+      "name": "Daydreaming",
+      "description": "Cheer up, Sleepy Jean /\r\nOh, what can it mean /\r\nTo a daydream believer /\r\nAnd a homecoming queen",
+      "textureId": 29296097,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 29348122,
+      "name": "Lady Lashes",
+      "description": "She's got long eyelashes.  Like world record long.",
+      "textureId": 29347988,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 29532363,
+      "name": "Vampire",
+      "description": "He can only go outside in daylight during a total eclipse.",
+      "textureId": 29532362,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 29716262,
+      "name": "Thinking",
+      "description": "Hang on a minute...I'm thinking",
+      "textureId": 29716203,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 30265169,
+      "name": "Robot Smile",
+      "description": "But I AM smiling.  Can't you tell!?!",
+      "textureId": 30265036,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 30394316,
+      "name": "Imagine",
+      "description": "Imagine all the people / Living life in peace",
+      "textureId": 30394315,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 30394438,
+      "name": "Friendly Cyclops",
+      "description": "He just wants to be your friend!",
+      "textureId": 30394437,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 30394484,
+      "name": "Braces",
+      "description": "Dude...gum is going to taste so good when I get these off!",
+      "textureId": 30394483,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 30394594,
+      "name": "Facepalm",
+      "description": "*palm*",
+      "textureId": 30394593,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 30394850,
+      "name": "Awesome Face",
+      "description": "The face you make when something is awesome.",
+      "textureId": 30394849,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 30395097,
+      "name": "=(",
+      "description": "Being sad costs extra.",
+      "textureId": 30395096,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 31117267,
+      "name": "Skeptic",
+      "description": "Hmmm... that doesn't seem accurate.",
+      "textureId": 31117192,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 31317701,
+      "name": "Alien",
+      "description": "Take me to your leader!",
+      "textureId": 31317607,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 31616411,
+      "name": "Mr. Bubbles",
+      "description": "Nothing is more fun than bubbles.  Nothing.  Except if you have other things like a ball or a pool or something.  All of those things are more fun than bubbles.",
+      "textureId": 31615924,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 32058239,
+      "name": "So Funny",
+      "description": "Okay...so maybe you had to be there.",
+      "textureId": 32058103,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 32723404,
+      "name": "I <3 New Site Theme",
+      "description": "<3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3<3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3<3 <3 <3 <3 <3 <3<3 <3 <3",
+      "textureId": 32723156,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 32873408,
+      "name": "Starface",
+      "description": "You're gunna be a star!  Ok - maybe not...but you'll still have some on your face!",
+      "textureId": 32873288,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 33321848,
+      "name": "Cheerful Grin",
+      "description": "He's happy to see you!",
+      "textureId": 33321688,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 34186804,
+      "name": "Disbelief Face",
+      "description": "Dude...I can't believe that just happened!",
+      "textureId": 34186612,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 34673712,
+      "name": "Shutter Shades: The Face",
+      "description": "Now you can wear shutter shades while you wear shutter shades!",
+      "textureId": 34673639,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 34764447,
+      "name": "The Dog Whisperer",
+      "description": "Puppies love you!",
+      "textureId": 34764373,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 34871168,
+      "name": "Magical Dragon",
+      "description": "Lives by the sea.  Interests include frolicking in the the autumn mist, strings, sealing wax, and other fancy stuff.",
+      "textureId": 34871107,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 35168581,
+      "name": "Exclamation Face",
+      "description": "That's how I feel right now!",
+      "textureId": 35168482,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 35397243,
+      "name": "Gigglypuff",
+      "description": "John made me call it this.  Blame him if you don't like it.",
+      "textureId": 35397044,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 42070576,
+      "name": "Epic Face",
+      "description": "ZOMG SO EPIK! SO FAIC! BUT IS IT OVAR 9000?",
+      "textureId": 42070872,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 45084008,
+      "name": "Angelic",
+      "description": "He may have the face of an angel, but he can play the fiddle like the devil himself.",
+      "textureId": 45083898,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 45514606,
+      "name": "Crimson Laser Vision",
+      "description": "Don't even think about looking him in the eye.  It never ends well.  Despite the smile.",
+      "textureId": 45514494,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 45515121,
+      "name": "Crazy Happy",
+      "description": "He's happy.... crazy happy!",
+      "textureId": 45515545,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 49045351,
+      "name": "Monster Face",
+      "description": "He's in your house, readin' your monster manual.  Wait.. why do you have a monster manual in your house?",
+      "textureId": 49045252,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 49493376,
+      "name": "Eyes of Crimsonwrath",
+      "description": "In this house, young lady, we obey the Second Law of Thermodynamics!",
+      "textureId": 49493144,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 51241171,
+      "name": "Sunny Fun",
+      "description": "Such a beautiful sunny day - such a beautiful sunny face!",
+      "textureId": 51241170,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 51241480,
+      "name": "Grandma's Lipstick",
+      "description": "What's worse - the lipstick stain or spit when she wipes it off?",
+      "textureId": 51241479,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 51241522,
+      "name": "Country Morning",
+      "description": "Finished feeding the chickens. Now it's time to take it easy!",
+      "textureId": 51241521,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 51241537,
+      "name": "Obvious Wink",
+      "description": "Obvious wink is obvious.",
+      "textureId": 51241536,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 51241862,
+      "name": "NOWAI!",
+      "description": "OWAI!",
+      "textureId": 51241861,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66319941,
+      "name": "Golden Shiny Teeth",
+      "description": "He must brush his teeth a lot.  He's got a smile so bright, it gleams!",
+      "textureId": 66319713,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 66330060,
+      "name": "Emerald Ambassador",
+      "description": "\"You're from a whole other world / A different dimension / You open my eyes / I'm ready to go lead me into the light\"",
+      "textureId": 66329462,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330106,
+      "name": "Bored",
+      "description": "If you're bored, you're boring.",
+      "textureId": 66329524,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330120,
+      "name": "Derp Face",
+      "description": "",
+      "textureId": 508486545,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330144,
+      "name": "Green-eyed Awesome Face",
+      "description": "The face you make when something is awesome and you have green eyes.",
+      "textureId": 66329597,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330165,
+      "name": "Emerald Laser Vision",
+      "description": "Because Crimson Laser Vision is so last year.",
+      "textureId": 66329642,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330204,
+      "name": "Not So Friendly Eviscerator",
+      "description": "He's hungry....and it's not for a turkey dinner!",
+      "textureId": 66329683,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 66330231,
+      "name": "Golden Lightning Speaker",
+      "description": "Get ready for a lightnin' storm!  Of words.  Because his mouth is a lightning bolt.",
+      "textureId": 66329737,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330265,
+      "name": "O_o ",
+      "description": "I don't get it?",
+      "textureId": 66329844,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330295,
+      "name": "Red RAWR",
+      "description": "Like RAWR but a bit more intense. Okay... way more intense.",
+      "textureId": 66329788,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 66330310,
+      "name": "Singing",
+      "description": "\"I woke up with this song in my head this morning. / I woke up with this song in my head this morning. / It made my headache. It was that great / but now it's gone and life is wonderful.\"",
+      "textureId": 66329905,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330339,
+      "name": "Buddy Face",
+      "description": "",
+      "textureId": 83025169,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 66330360,
+      "name": "Disapproving Unibrow",
+      "description": "Disapproving unibrow disapproves.",
+      "textureId": 66329994,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 76382978,
+      "name": "Dr. Smyth Face",
+      "description": "Gotta luv dah cutie face c:",
+      "textureId": 83016614,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 76383151,
+      "name": "Manlier Face",
+      "description": "",
+      "textureId": 83017053,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 76383635,
+      "name": "Kate Face",
+      "description": "c:",
+      "textureId": 83021209,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 76385104,
+      "name": "Honey Face",
+      "description": "",
+      "textureId": 83022608,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 86485370,
+      "name": "Max Face",
+      "description": "",
+      "textureId": 83015508,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86485779,
+      "name": "Missy Face",
+      "description": "",
+      "textureId": 83321898,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86485810,
+      "name": "Pal Face",
+      "description": "",
+      "textureId": 83025982,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 86485842,
+      "name": "Sarge Face",
+      "description": "",
+      "textureId": 82837707,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86485881,
+      "name": "Sarge Extreme Face",
+      "description": "",
+      "textureId": 81615913,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86485922,
+      "name": "Sarge Sad Face",
+      "description": "",
+      "textureId": 82824027,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 86487660,
+      "name": "Dr. Smyth Face",
+      "description": "",
+      "textureId": 83016614,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86487700,
+      "name": "Man Face",
+      "description": "",
+      "textureId": 83017053,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86487722,
+      "name": "Kate Face",
+      "description": "",
+      "textureId": 83021209,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 86487766,
+      "name": "Woman Face",
+      "description": "",
+      "textureId": 83022608,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 100290429,
+      "name": "iFace",
+      "description": "ROBLOX's first iOS exclusive face.  Get it soon - only available through our mobile app. Get more details here - https://itunes.apple.com/us/app/roblox-mobile/id431946152?mt=8",
+      "textureId": 97717261,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 110207437,
+      "name": "Spring Bunny ",
+      "description": "Put a spring in your step with this cheery face!",
+      "textureId": 108209955,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 110207471,
+      "name": "Egg on your Face",
+      "description": "That yolk wasn't funny.",
+      "textureId": 108213708,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 110288809,
+      "name": "Daring Beard",
+      "description": "The toughest guy on ROBLOX just walked up to you.  He's got a beard.  What are you going to do about it?",
+      "textureId": 110287880,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 110288865,
+      "name": "Evil Skeptic Face",
+      "description": "He's not so sure he believes you.  That's okay, you don't believe him either.",
+      "textureId": 110287983,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 110336757,
+      "name": "Evil Skeptic ",
+      "description": "He's not so sure he believes you.  That's okay, you don't believe him either.",
+      "textureId": 110287983,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 116042990,
+      "name": "I Didn't Eat That Cookie",
+      "description": "The crumbs on your face suggest that you did...",
+      "textureId": 115978221,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 116043052,
+      "name": "Rosey Smile ",
+      "description": "I make this face when I think about pizza.",
+      "textureId": 658751484,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 117522793,
+      "name": "Sadfaic",
+      "description": "Aww... you made me sad... and I'm an ugly crier.",
+      "textureId": 629925029,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 119812659,
+      "name": "Punk Face",
+      "description": "\"They're forming in a straight line / \r\nThey're going through a tight wind / \r\nThe kids are losing their minds\"",
+      "textureId": 119768621,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 119812715,
+      "name": "Blue Starface ",
+      "description": "\"I like the night. Without the dark, we'd never see the stars.\"",
+      "textureId": 119772974,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 119812738,
+      "name": "Green Starface ",
+      "description": "\"One may understand the cosmos, but never the ego; the self is more distant than any star.\"",
+      "textureId": 119773049,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 119812765,
+      "name": "Purple Starface ",
+      "description": "\"It is not in the stars to hold our destiny but in ourselves.\"",
+      "textureId": 119773113,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 121947053,
+      "name": "Bombo Face",
+      "description": "Part of the iOS exclusive Bombo package.  http://www.roblox.com/Bombo-item?id=121946939",
+      "textureId": 121946959,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 128992838,
+      "name": "Beast Mode",
+      "description": "Beast Mode- Activated!",
+      "textureId": 127959433,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 130213380,
+      "name": "ROBLOX Madness Face",
+      "description": "I'm just mad about ROBLOX!  This face will only be available during Virtual BLOXcon.",
+      "textureId": 129900258,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 133360789,
+      "name": "Zombie Face",
+      "description": "They walk among us....",
+      "textureId": 133360891,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 134522901,
+      "name": "Fawkes Face",
+      "description": "What does the Fawkes say?",
+      "textureId": 133867453,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 141728790,
+      "name": "Tired Face",
+      "description": "I'm so tired...can I go to bed now?",
+      "textureId": 141728515,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 141728899,
+      "name": "Drill Sergeant",
+      "description": "What was that? Drop and give me 20!",
+      "textureId": 657217430,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 142464206,
+      "name": "Hockey Face",
+      "description": "\"You're not really a hockey player until you've  lost a few teeth.\"",
+      "textureId": 142888113,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 144075659,
+      "name": "Smile",
+      "description": "",
+      "textureId": 144080495,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 147144644,
+      "name": "Shocked",
+      "description": "I'm shocked and appalled, sir.",
+      "textureId": 147144198,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 147144673,
+      "name": "Bluffing",
+      "description": "Everybody thinks he's bluffing, but they'll never know whether he is or not.",
+      "textureId": 147144273,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 150182378,
+      "name": "Awkward Eyeroll",
+      "description": "Uhh....",
+      "textureId": 150070631,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 150182466,
+      "name": "Huh?",
+      "description": "Can't tell if serious or trolling.",
+      "textureId": 150070505,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 150182501,
+      "name": "Awkward Grin",
+      "description": "Wow this is awkward...maybe if I just smile it'll be less awkward.",
+      "textureId": 150070305,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 159199178,
+      "name": "Classic Alien Face",
+      "description": "Bring back life form. Priority One. All other priorities rescinded.",
+      "textureId": 158017769,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 162068415,
+      "name": "YAAAWWN.",
+      "description": "So sleepy.....",
+      "textureId": 161124757,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 162200633,
+      "name": "Crimson Starface",
+      "description": "“I have walked a stair of swords,\r\nI have worn a coat of scars.\r\nI have vowed with hollow words,\r\nI have lied my way to the stars\"",
+      "textureId": 162185411,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 162200666,
+      "name": "Orange Starface",
+      "description": "“When he shall die, / Take him and cut him out in little stars, /And he will make the face of heaven so fine / That all the world will be in love with night / And pay no worship to the garish sun.”",
+      "textureId": 162185335,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 162200696,
+      "name": "Yellow Starface",
+      "description": "“Moonlight drowns out all but the brightest stars.”",
+      "textureId": 162185210,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 173789114,
+      "name": "Angry Zombie",
+      "description": "Zombie mad! Mad!",
+      "textureId": 168332015,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 173789324,
+      "name": "Not sure if...",
+      "description": "Not sure if serious or just trolling.",
+      "textureId": 168332209,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 173789498,
+      "name": "Grumpy Blox",
+      "description": "I wouldn't be so grumpy if people weren't so stupid.",
+      "textureId": 478720454,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 180660043,
+      "name": "Red Glowing Eyes",
+      "description": "You're watching Amazon Prime videos- just chillin' on a typical Friday night. You hear a sound. You look out the window. You see these red glowing eyes and nothing else.  You go out side to inspect the situation. You approach the figure. It is your best friend. He bought this face just to mess with you. Friends are weird.",
+      "textureId": 179693472,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 181651981,
+      "name": "Epic Vampire Face",
+      "description": "I've never seen a vampire so filled with joy!  This item came out of the Epic Gift of the Undead Fiend on October 10th, 2014.",
+      "textureId": 181661839,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 209994074,
+      "name": "Sapphire Laser Vision",
+      "description": "Because Emerald Laser Vision is so three years ago.",
+      "textureId": 508487599,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 209994270,
+      "name": "Sharpnine's Face of Disappointment",
+      "description": "He's not mad... just disappointed.",
+      "textureId": 209712916,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 209994352,
+      "name": "Eyes of Emeraldwrath",
+      "description": "Jealous eyes that cannot hide.",
+      "textureId": 508398801,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 209994783,
+      "name": "Raig Face",
+      "description": "You don't want to see him when he's really angry!",
+      "textureId": 209714802,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 209994875,
+      "name": "Smiling Girl",
+      "description": "Got nothing to do today but smile!",
+      "textureId": 209713952,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 209994929,
+      "name": "Suspicious",
+      "description": "Hmmm. That story doesn't sound quite right...",
+      "textureId": 209715003,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 209995252,
+      "name": "Blizzard Beast Mode",
+      "description": "Blizzard Beast Mode- Activated!",
+      "textureId": 209712379,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 209995366,
+      "name": "Joyful Smile",
+      "description": "It's a great day! Let's build something.",
+      "textureId": 209713384,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 226217449,
+      "name": "Laughing Fun",
+      "description": "Let's laugh out loud!",
+      "textureId": 226216895,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 233616117,
+      "name": "Egg Crazed",
+      "description": "Eggs be runnin' wild.",
+      "textureId": 233240646,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 236399287,
+      "name": "Happy Wink",
+      "description": "Just kidding.",
+      "textureId": 236455674,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 238983270,
+      "name": "Purple Butterfly Smile",
+      "description": "I'm pretty sure a butterfly landing on you means good luck! Purple butterfly is extra good luck!",
+      "textureId": 240961696,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 238983378,
+      "name": "Sly Guy Face",
+      "description": "He's getting away with something... you just don't know what yet.",
+      "textureId": 238984437,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 244160766,
+      "name": "Just Trouble",
+      "description": "You're not going to get anything but trouble from that guy!",
+      "textureId": 243755928,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 244160970,
+      "name": "Blue Trance",
+      "description": "Man, I love creamsicles.  I just ate a lot of them. I'm feeling a bit strange actually.  Do you see that? It's magical. Like all the good things about the universe morphed into a giant creamsicle of joy.",
+      "textureId": 260296642,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 250654457,
+      "name": "Sad Clown",
+      "description": "No one likes a clown who reminds them of why they hate ice-cream-truck music.",
+      "textureId": 629934434,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 255827175,
+      "name": "Serious Scar Face",
+      "description": "He's seen things you can only imagine. Dangerous things.",
+      "textureId": 255828374,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 258198928,
+      "name": "Tiger Chase Fear Face",
+      "description": "AHHHH! Tigers!",
+      "textureId": 258192246,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 260303894,
+      "name": "Green Trance",
+      "description": "Man, I love creamsicles.  I just ate a lot of them. I'm feeling a bit strange actually.",
+      "textureId": 260296789,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 260303960,
+      "name": "Orange Trance",
+      "description": "Man, I love creamsicles.",
+      "textureId": 260296899,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 260304187,
+      "name": "Purple Trance",
+      "description": "Man, I love creamsicles.  I just ate a lot of them. I'm feeling a bit strange actually.  Do you see that? It's magical. Like all the good things about the universe morphed into a giant creamsicle of joy. This is pretty much the best day of my life.",
+      "textureId": 629935400,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 268603331,
+      "name": "Bad News Face",
+      "description": "So... I have to tell you something. I don't think you are going to be happy.",
+      "textureId": 629929484,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 274338458,
+      "name": "Whuut?",
+      "description": "I am mildly surprised and also chewing things. Some of the things have fallen out of my mouth. This probably happened when I opened my mouth to express my surprise. Can't you see my quizzical eyebrow lift? I'm going to pick those crumbs off the floor later and eat them though.  No judgment. How can you judge me after the mildly surprising thing you just told me?  Be cool, man.",
+      "textureId": 273874617,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 277950647,
+      "name": "Furious George ",
+      "description": "“Now run along and play, but don't get into trouble.' George promised to be good. But it is easy for little monkeys to forget.”",
+      "textureId": 277939506,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 280988393,
+      "name": "Mildly Irritated Face",
+      "description": "Oh no, you don't want to see him when he gets mad.  Imagine this times 1000.  His eyes turn red. Note - eyes are super large and may not work with some other ROBLOX items.",
+      "textureId": 280987977,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 280988698,
+      "name": "Super Happy Joy",
+      "description": "I have never known a greater joy. Can't you see it in my eyes!?!  Note - eyes are super large and may not work with some other ROBLOX items.",
+      "textureId": 280987381,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 293226229,
+      "name": "Happy Girl Face",
+      "description": "",
+      "textureId": 287062870,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 293236669,
+      "name": "RBX-90 Face",
+      "description": "",
+      "textureId": 293229488,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 293302465,
+      "name": "Amelia Face",
+      "description": "",
+      "textureId": 292668540,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 293303927,
+      "name": "Ezebel Face",
+      "description": "",
+      "textureId": 286947469,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 293309580,
+      "name": "Krezak - Face",
+      "description": "",
+      "textureId": 286951068,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 295492723,
+      "name": "Furious Finn Face",
+      "description": "",
+      "textureId": 295491745,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 295763789,
+      "name": "Too Much Candy",
+      "description": "Ok you guys - we've got to skate to the park. Then we'll go on the swings. Then we'll play lava monster, but I'm not the monster. You're the monster. Then I'll grow wings and fly to Disneyland and then I'll run into Selena Gomez and she'll ask me to star in her next movie and we'll be best friends forever! Oh wait..I think I have a stomach ache...",
+      "textureId": 295421997,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 301826803,
+      "name": "Lin's Face",
+      "description": "Part of the Lin Package available exclusively on Xbox One.",
+      "textureId": 292668540,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 301826957,
+      "name": "Serena’s Face",
+      "description": "Part of the Serena Package available exclusively on Xbox One.",
+      "textureId": 287062870,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 301827089,
+      "name": "Claire's Face",
+      "description": "Part of the Claire Package available exclusively on Xbox One.",
+      "textureId": 287062870,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 301827157,
+      "name": "Casey's Face",
+      "description": "Part of the Casey Package available exclusively on Xbox One.",
+      "textureId": 286951068,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 301827199,
+      "name": "John's Face",
+      "description": "Part of the John Package available exclusively on Xbox One.",
+      "textureId": 321741599,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 301827237,
+      "name": "Oakley's Face",
+      "description": "Part of the Oakley Package available exclusively on Xbox One.",
+      "textureId": 286951068,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 313549781,
+      "name": "Pumpkin Face",
+      "description": "Happy Pumpkins everywhere!",
+      "textureId": 313548987,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 323191430,
+      "name": "Daring Blonde Beard Face",
+      "description": "The toughest guy on ROBLOX just walked up to you.  He's got a blonde beard.",
+      "textureId": 324190505,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 323191596,
+      "name": "Green Super Happy Joy",
+      "description": "Happiness is yours for the taking!",
+      "textureId": 324189860,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 323191683,
+      "name": "Desert Commando",
+      "description": "Operation \"Have an awesome face so it looks like you're ready for anything, even though you might not actually be, but you probably are because you spent some time preparing for this exact situation\" is complete.",
+      "textureId": 323188972,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 323191787,
+      "name": "Green Whatchoo Talkin' Bout",
+      "description": "But seriously... what are you talking about?",
+      "textureId": 629936597,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 323191979,
+      "name": "Blue Eyeroll",
+      "description": "You're crazy.",
+      "textureId": 324191500,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 323192138,
+      "name": "Pink Shades McCool",
+      "description": "Anybody can wear shades... you gotta be especially McCool to wear pink shades.",
+      "textureId": 324191930,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 323192193,
+      "name": "Purple Alien",
+      "description": "I know they're out there...",
+      "textureId": 324192486,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 330296924,
+      "name": "Blue Bubble Trouble",
+      "description": "Why is raspberry gum blue? IDK... but I love it.",
+      "textureId": 330393309,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 334656210,
+      "name": "Miss Scarlet",
+      "description": "Frankly my dear, you look ready for anything.",
+      "textureId": 334655813,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 334656353,
+      "name": "Sneaky Green-Eyed Snake",
+      "description": "Sneaky snake, silly prank.",
+      "textureId": 334655587,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 334656546,
+      "name": "Teal Rock Star Smile",
+      "description": "\"So you wanna be a rock superstar? /\r\nAnd live large, a big house, 5 cars, you're in charge\"",
+      "textureId": 334655293,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 343619993,
+      "name": "Don't Wake Me Up",
+      "description": "Can't you see I'm trying to sleep!?!",
+      "textureId": 343187883,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 362051405,
+      "name": "True Love Smile",
+      "description": "\"If you had a twin, I would still choose you\"",
+      "textureId": 362047893,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 362051644,
+      "name": "Cheerful Hello",
+      "description": "I'm the friend that's always happy to see you!",
+      "textureId": 362050947,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 362051773,
+      "name": "Eyes of Everflame",
+      "description": "The flames of 1000 years burn in his eyes.",
+      "textureId": 362046854,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 362051899,
+      "name": "Violet Fang",
+      "description": "\"Treachery is noble when aimed at tyranny.\"",
+      "textureId": 362047042,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 362051999,
+      "name": "Purple Bubble Trouble",
+      "description": "Grape gum for the win!",
+      "textureId": 362047189,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 376809691,
+      "name": "Red Rock Star Smile",
+      "description": "\"He said me haffi / Work, work, work, work, work, work!\"",
+      "textureId": 508489686,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 376812736,
+      "name": "Really Embarrassed",
+      "description": "YOLO is a good motto... but sometimes it doesn't pan out.",
+      "textureId": 376785624,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 376812961,
+      "name": "Purple Super Happy Joy",
+      "description": "The joy you feel when you ride the miniature train at Zilker Park and it's free breakfast taco day. I didn't even know there was a thing called free breakfast taco day!",
+      "textureId": 376786318,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 376813144,
+      "name": "Chill McCool",
+      "description": "Finn McCool's chiller cousin.",
+      "textureId": 376788359,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 380754227,
+      "name": "Green Bubble Trouble",
+      "description": "They say everyone is Irish on St. Patrick's Day. I guess that is also true for gum.",
+      "textureId": 380753459,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 383607653,
+      "name": "Monarch Butterfly Smile ",
+      "description": "I can't stop smiling!",
+      "textureId": 383607989,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 385889916,
+      "name": "Tix Vision",
+      "description": "I got my eyes on my Tix and my Tix on my eyes.",
+      "textureId": 620870415,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 386188363,
+      "name": "Blue-eyed Awesome Face",
+      "description": "The face you make when something is awesome and you have blue eyes. This item came out of the Faces of Awesome Basket on March 24th, 2016.",
+      "textureId": 386188071,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 387256603,
+      "name": "Silver Punk Face",
+      "description": "Silver is very punk. Like classic, \"I pierced my own tongue in an alley with this staple\", kind of punk. Obviously you should not do this in real life.",
+      "textureId": 387256104,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 391495894,
+      "name": "Ogre Face",
+      "description": "He's not ogre it.",
+      "textureId": 629922352,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 391496123,
+      "name": "Super Crazy Face",
+      "description": "You'll be crazy for this crazy face!",
+      "textureId": 508488410,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 391496223,
+      "name": "Big Sad Eyes",
+      "description": "When you're trying to elicit sympathy, you need your eyes to grow to twice their normal size!  This is super effective for getting what you want.  All kids know this.",
+      "textureId": 629933140,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 398675764,
+      "name": "Nouveau George",
+      "description": "He's back and he's still furious...",
+      "textureId": 398670843,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 398675917,
+      "name": "Monster Smile",
+      "description": "Pretty much the least friendly smile I've ever seen!",
+      "textureId": 398671601,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 398676450,
+      "name": "Green Glowing Eyes",
+      "description": "You're watching Netflix videos- just chillin' on a typical Friday night. You hear a sound. You look out the window. You see these green glowing eyes and nothing else.  You go outside to inspect the situation. You approach the figure. It is your best friend. He bought this face just to mess with you. Friends are weird.",
+      "textureId": 398676207,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 399021751,
+      "name": "Bacon Face",
+      "description": "I'm bacon you to cut these puns out.\r\n",
+      "textureId": 645438093,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 402304145,
+      "name": "Friendly Trusting Smile",
+      "description": "Not evil and not skeptic... still creepy though...",
+      "textureId": 402301113,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 406000421,
+      "name": "Red Serious Scar Face",
+      "description": "He's seen things you couldn't even imagine. Recently. You know that 'cause the scar is still red.",
+      "textureId": 405704912,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 406000562,
+      "name": "Gritty Bombo",
+      "description": "Bombo doesn't mind a mess.",
+      "textureId": 405704563,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 406000730,
+      "name": "Happy :D",
+      "description": "Times when the :D is appropriate: 1) It's a summer day! 2) Free popsicles! 3) You found this really cool place to build stuff and hang out with your friends!",
+      "textureId": 406035320,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 406000958,
+      "name": "¬_¬ 2.0",
+      "description": "Seriously...",
+      "textureId": 405705854,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 406001052,
+      "name": "XD 2.0",
+      "description": "XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD XD",
+      "textureId": 405706156,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 406001167,
+      "name": "ROAR!!!",
+      "description": "ANGRY SOUNDS!",
+      "textureId": 405704879,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 406001308,
+      "name": "Smug",
+      "description": "When you're right, you're right.",
+      "textureId": 405706038,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 406001532,
+      "name": "Green Drool Angry Zombie",
+      "description": "Zombie still mad! Still mad!",
+      "textureId": 629946036,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 406002032,
+      "name": "Sharpnine's Face of Joy",
+      "description": "The team just wrote 4000 selenium tests and now we have full coverage! Yay!",
+      "textureId": 405706600,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 416846000,
+      "name": "Yellow Glowing Eyes",
+      "description": "You're watching Hulu- just chillin' on a typical Friday night. You hear a sound. You look out the window. You see these yellow glowing eyes and nothing else. You go outside to inspect the situation. You approach the figure. It is your best friend. He bought this face just to mess with you. Friends are weird.",
+      "textureId": 416830979,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 416846143,
+      "name": "Stink Eye",
+      "description": "Oh no you didn't!",
+      "textureId": 416829404,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 416846300,
+      "name": "Anime Surprise",
+      "description": "Surprise, surprise, anime surprise, how many heroes are still alive!?  There could be three, or four, or five!",
+      "textureId": 416829065,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 419752096,
+      "name": "Unbelievable",
+      "description": "\"Don't know what's gonna happen next / It's unbelievable\"",
+      "textureId": 419749791,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 440738448,
+      "name": "Pink Galaxy Gaze",
+      "description": "\"Ev'ry man, has a flaming star / A flaming star, over his shoulder\"",
+      "textureId": 440737960,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 440739240,
+      "name": "Purple Galaxy Gaze",
+      "description": "\"Flaming star, don't shine on me\"",
+      "textureId": 440738083,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 440739518,
+      "name": "Blue Galaxy Gaze",
+      "description": "\"Flaming star, keep behind me, flaming star\"",
+      "textureId": 440737549,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 440739783,
+      "name": "Green Galaxy Gaze",
+      "description": "\"Give me time to make a few dreams come true / Flaming star\"",
+      "textureId": 440737812,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 445117183,
+      "name": "Red White and Starface",
+      "description": "The red and white and starry blue / Is freedom's shield and hope.",
+      "textureId": 445110839,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 494291269,
+      "name": "Super Super Happy Face",
+      "description": "I am not sure I have ever been this happy.",
+      "textureId": 494290547,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 494299198,
+      "name": "Serious Red Eye Scar",
+      "description": "The world is a dangerous place for your face.",
+      "textureId": 494290010,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 554650579,
+      "name": "Crazybot 10000",
+      "description": "10011100010000",
+      "textureId": 554651972,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 554658475,
+      "name": "Madbot 10000",
+      "description": "10011100010000",
+      "textureId": 554654683,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 554663025,
+      "name": "Cuckookrazybot 10000",
+      "description": "10011100010000",
+      "textureId": 554655304,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 554663566,
+      "name": "Manicbot 10000",
+      "description": "10011100010000 10011100010000 10011100010000 10011100010000 10011100010000",
+      "textureId": 554654979,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 583721561,
+      "name": "Blue Wistful Wink",
+      "description": "Blue like the clear blue skies ahead!",
+      "textureId": 583712942,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 583721990,
+      "name": "Pink Wistful Wink",
+      "description": "Pink because everything's looking so rosy!",
+      "textureId": 583713318,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 583722710,
+      "name": "Purple Wistful Wink",
+      "description": "Purple like space, because the sky is the limit!",
+      "textureId": 583713594,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 583722932,
+      "name": "Green Wistful Wink",
+      "description": "Green like a clover, because I'm feeling so lucky!",
+      "textureId": 583713423,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 599913343,
+      "name": "Jacob: The Storm Breaker Face",
+      "description": "",
+      "textureId": 599921920,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 616380929,
+      "name": "The Winning Smile",
+      "description": "A winning smile captivates any audience.\r\n",
+      "textureId": 616395480,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 616381207,
+      "name": "Friendly Smile",
+      "description": "Everything is more fun with a friend!",
+      "textureId": 616394568,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 667681953,
+      "name": "DDotty Smile",
+      "description": "Exclusively for DDotty.",
+      "textureId": 667683410,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 743690770,
+      "name": "BiteyMcFace",
+      "description": "Everyone focuses on the fangs, but the depth is in the eyes. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 904124085,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 807335973,
+      "name": "Dex's Face",
+      "description": "",
+      "textureId": 286951068,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 807339121,
+      "name": "Zoey Face",
+      "description": "",
+      "textureId": 287062870,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 823012694,
+      "name": "Sneaky Steve",
+      "description": "Sneaky Steve always have something up his sleeve.",
+      "textureId": 823018334,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 835094544,
+      "name": "Green Amazeface",
+      "description": "Amazing Face! / How sweet the sound",
+      "textureId": 835059826,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 835095003,
+      "name": "Blue Amazeface",
+      "description": "\"I once was lost but now am found / Was blind but now I see\"",
+      "textureId": 835057164,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 835095306,
+      "name": "Lavender Amazeface",
+      "description": "\"When we've been there ten thousand years / Bright shining as the sun\"",
+      "textureId": 835060246,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 835095880,
+      "name": "Rose Amazeface",
+      "description": "\"'Tis Grace has brought me safe thus far / And Grace will lead me home\"",
+      "textureId": 835060009,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 878940145,
+      "name": "Pink Moonstruck",
+      "description": "\"And the moon kept on rising\"\r\n",
+      "textureId": 878945106,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 878941449,
+      "name": "Blue Moonstruck",
+      "description": "\"But I felt nothing at all\"\r\n",
+      "textureId": 878947374,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 878942257,
+      "name": "Purple Moonstruck",
+      "description": "\"She comes when the empire falls\"\r\n",
+      "textureId": 878944494,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 880469676,
+      "name": "Winning Smile",
+      "description": "You're happy, you're friendly, or you're just up to something. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...\r\n",
+      "textureId": 1315936169,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 880471415,
+      "name": "Death's Grin",
+      "description": "The Grim Reaper must go to the dentist, 'cause he's got a nice set of pearly white choppers. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...\r\n",
+      "textureId": 1315935475,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 880473016,
+      "name": "Sapphire Gaze",
+      "description": "Get the look. Own the attitude. Strike a pose. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 1315942144,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 880474146,
+      "name": "Squinty Assassin Face",
+      "description": "Dangerous because this is an assassin's face. Squinty to let you know it's serious. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...\r\n",
+      "textureId": 1315942662,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1016184756,
+      "name": "Crimson Evil Eye",
+      "description": "Iris I was as clever as you guys.",
+      "textureId": 1016178220,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1016184964,
+      "name": "Sapphire Evil Eye",
+      "description": "Lens not overdo the eye puns.",
+      "textureId": 1016178981,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1016185535,
+      "name": "Emerald Evil Eye",
+      "description": "Cyclops are always fighting each other, because they can't see eye to eye.",
+      "textureId": 1016179764,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 1016185809,
+      "name": "Golden Evil Eye",
+      "description": "Don't make a spectacle of yourself.",
+      "textureId": 1016180707,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1016186364,
+      "name": "Up To Something",
+      "description": "Me? What am I doing? Oh...you'll see.",
+      "textureId": 1016181246,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1191125008,
+      "name": "Red Goof ",
+      "description": "What a goof!",
+      "textureId": 1191121968,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 1191136166,
+      "name": "Golden Bling Braces",
+      "description": "Don't think of them as braces, think of them as dental accessories. ",
+      "textureId": 1191124133,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1191162013,
+      "name": "Blue Goof",
+      "description": "What a goof!",
+      "textureId": 1191123763,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 1191162539,
+      "name": "Green Goof ",
+      "description": "What a goof.",
+      "textureId": 1191123237,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1213472762,
+      "name": "Catching Snowflakes",
+      "description": "There is no greater joy than catching fresh snowflakes on your tongue!",
+      "textureId": 1213444061,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1384270693,
+      "name": "Tohru: The Phantom Claw's Face",
+      "description": "Part of the Tohru: The Phantom Claw package ",
+      "textureId": 1384268303,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 1428409936,
+      "name": "Blue Rock Star Smile",
+      "description": "“No one knows what it's like / To be the tough guy / To be the wise guy / Behind blue eyes.”",
+      "textureId": 1428314296,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1428416217,
+      "name": "Overjoyed Smile",
+      "description": "I’m just really, really happy right now!",
+      "textureId": 1428312511,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1428417334,
+      "name": "Teal Mermaid Queen",
+      "description": "I have seen them riding seaward on the waves.",
+      "textureId": 1428397734,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1428418448,
+      "name": "Pink Mermaid Princess",
+      "description": "I have heard the mermaids singing, each to each. ",
+      "textureId": 1428315155,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 1428424821,
+      "name": "Purple Mermaid Princess",
+      "description": "I do not think they will sing to me.",
+      "textureId": 1428396343,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1665511048,
+      "name": "Rogueish Good Looks",
+      "description": "These aren’t just regular good looks. These good looks belong to a rogue. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...\r\n",
+      "textureId": 1868539477,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1665629400,
+      "name": "Rainbow Barf Face",
+      "description": "At least it’s not double rainbow barf. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...\r\n",
+      "textureId": 1868469550,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1665638148,
+      "name": "Otakufaic",
+      "description": "The look you give your mom when she tells you to stop gaming. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...\r\n",
+      "textureId": 2176326858,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1772529256,
+      "name": "Blue Ultimate Dragon Face",
+      "description": "The ultimate face...for ultimate courage.",
+      "textureId": 1772533846,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1772530315,
+      "name": "Red Ultimate Dragon Face",
+      "description": "The ultimate face...for ultimate strength.",
+      "textureId": 1772543614,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 1772531407,
+      "name": "Green Ultimate Dragon Face",
+      "description": "The ultimate face...for ultimate intimidation.",
+      "textureId": 1772542456,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 1772578399,
+      "name": "Upside Down Face",
+      "description": "I’m not upside down. I’m just down side up!",
+      "textureId": 1772583132,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2222771916,
+      "name": "Hold It In",
+      "description": "Never let em see you down.",
+      "textureId": 2222767231,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2222774106,
+      "name": "Green Starry Sight",
+      "description": "\"Oh, everybody's starry-eyed/\r\nAnd everybody glows.\"",
+      "textureId": 2222769550,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2222775067,
+      "name": "Blue Starry Sight",
+      "description": "\"Starry, starry night/\r\nPaint your pallet blue and grey.\"",
+      "textureId": 2222768690,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2222775930,
+      "name": "Violet Starry Sight",
+      "description": "\"Starry, starry night /\r\nFlaming flowers that brightly blaze /\r\nSwirling clouds in violet haze.\"",
+      "textureId": 2222770385,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2225761296,
+      "name": "Radioactive Beast Mode",
+      "description": "Radioactive Beast Mode- Activated!",
+      "textureId": 2225757922,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2274754557,
+      "name": "Pop Queen Smilestar Spectacusmile",
+      "description": "What a spectacular smile you have. It’s spectacusmile. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 2565825723,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2274764091,
+      "name": "Fashion Face",
+      "description": "Those brows, that shadow, those lips – so high fashion! Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 2565818601,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2409285794,
+      "name": "Playful Vampire",
+      "description": "But first, let me take a skellfie, because I look so good it's scary.",
+      "textureId": 2409281591,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2490662812,
+      "name": "City Life Man - Face",
+      "description": "",
+      "textureId": 2490055992,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2492678267,
+      "name": "City Life Woman - Face",
+      "description": "",
+      "textureId": 2492475038,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2493587489,
+      "name": "Knights of Redcliff: Paladin - Face",
+      "description": "",
+      "textureId": 2492950480,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2493717709,
+      "name": "The High Seas: Beatrix The Pirate Queen - Face",
+      "description": "",
+      "textureId": 2493660907,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2499652255,
+      "name": "Squad Ghouls: Drop Dead Tedd - Zombie Face",
+      "description": "",
+      "textureId": 2499282434,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2499710871,
+      "name": "Rogue Era Magus - Face",
+      "description": "",
+      "textureId": 2499475232,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2506403983,
+      "name": "Sunstar - Face",
+      "description": "",
+      "textureId": 2502420356,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2506426052,
+      "name": "Wanted Desperado - Face",
+      "description": "",
+      "textureId": 2502512164,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2506466407,
+      "name": "Barb the Barbarian - Face",
+      "description": "",
+      "textureId": 2502295804,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2506721000,
+      "name": "Knight of Splintered Skies Ascendant - Face",
+      "description": "",
+      "textureId": 2506453417,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2506787960,
+      "name": "Police Officer Nash - Face",
+      "description": "",
+      "textureId": 2506729946,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2510119972,
+      "name": "Dark Age Apprentice - Face",
+      "description": "",
+      "textureId": 2506788845,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2510140104,
+      "name": "Dr. Lauren, Artifact Excavator - Face",
+      "description": "",
+      "textureId": 2506968954,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2510299324,
+      "name": "Knight of Chivalry - Face",
+      "description": "",
+      "textureId": 2507424923,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2510329394,
+      "name": "Elf Guardian of the Northern Border - Face",
+      "description": "",
+      "textureId": 2507497762,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2517100778,
+      "name": "Squad Ghouls: Zoe Saberhagen - Face",
+      "description": "Zoe might not fit in with the popular ghouls, but she'll really put a spell on you.",
+      "textureId": 2514352026,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2517188619,
+      "name": "Rock Star Singer - Face",
+      "description": "The rock you bring won't mean a thing unless you sing, sing, sing, sing, sing!",
+      "textureId": 2342052677,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2517242922,
+      "name": "Wyldfire Fairy - Face",
+      "description": "She is the keeper of the eternal flame.",
+      "textureId": 2514414752,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2517364030,
+      "name": "Fearless Ocean Diver - Face",
+      "description": "The sea is full of sunken wonders, and I aim to find them all!",
+      "textureId": 2515271103,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2517386054,
+      "name": "Baroness Callidora - Face",
+      "description": "The worst part of being a vampire? Trying to get blood stains off a 300 year old fainting couch.",
+      "textureId": 2514388837,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2517411290,
+      "name": "DIY Cardboard Knight - Face",
+      "description": "If you want something made right, you've got to make it yourself.",
+      "textureId": 2514392290,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2528319611,
+      "name": "Arachnid Queen",
+      "description": "The power of my beauty is only surpassed by the power of my sharp little teeth injecting venom into your ankle. Ouch. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 2565828727,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2535415411,
+      "name": "C.Y.N.D.I - Face",
+      "description": "Login successful. Welcome, Player 230. Initiating directory listing.",
+      "textureId": 2514403812,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2535457291,
+      "name": "Knights of Redcliff: General - Face",
+      "description": "The Redcliff General commands with respect and strength.",
+      "textureId": 2313826098,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2535487974,
+      "name": "Samantha - Face",
+      "description": "She's ready to hit the city in style!",
+      "textureId": 2514418247,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2535711033,
+      "name": "Knight of Courage - Face",
+      "description": "",
+      "textureId": 2530798909,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2535843445,
+      "name": "The Harbinger - Face",
+      "description": "",
+      "textureId": 2514587317,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2553407112,
+      "name": "Beekeeper - Face",
+      "description": "Not only is he their keeper, but he is also a friend to the bees!",
+      "textureId": 2551694054,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2553655919,
+      "name": "Alexandra Ninniflip - Face",
+      "description": "Malfunctioning flight contraption got you grounded? Don't worry - Alex will get you back in the air!",
+      "textureId": 2551758057,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2568799765,
+      "name": "8-Bit Heart Face",
+      "description": "Roses are #ff0000, violets are #0000ff...",
+      "textureId": 2568569786,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2568801198,
+      "name": "So Super Excited - Pink",
+      "description": "Im really really stoked!",
+      "textureId": 2568608091,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2568804274,
+      "name": "So Super Excited - Purple",
+      "description": "Im just so jazzed!",
+      "textureId": 2568605832,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2569001052,
+      "name": "So Super Excited - Blue",
+      "description": "Im just really excited!",
+      "textureId": 2568609094,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2569005011,
+      "name": "Snow Queen Smile",
+      "description": "The frozen visage of ice cold beauty...",
+      "textureId": 2568579815,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2571733048,
+      "name": "Satyr Face",
+      "description": "",
+      "textureId": 2571723000,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2571850406,
+      "name": "Ballerina Face",
+      "description": "",
+      "textureId": 2571725090,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2571975661,
+      "name": "Billionaire Heiress' Face",
+      "description": "",
+      "textureId": 2571727019,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2573899789,
+      "name": "Gamin the Scaled Sorcerer - Face",
+      "description": "",
+      "textureId": 2573833907,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2573925976,
+      "name": "Terrain Assault Specialist  - Face",
+      "description": "",
+      "textureId": 2573923862,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2585562096,
+      "name": "InsectZoids: Dr. Mantis_Face",
+      "description": "",
+      "textureId": 2583147905,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2585828360,
+      "name": "Icicle Fairy_Face",
+      "description": "",
+      "textureId": 2514416175,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2606177838,
+      "name": "Poisonous Beast Mode",
+      "description": "Poison Beast Mode - Activate!\r\n",
+      "textureId": 2606174048,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2608277633,
+      "name": "Specter Informant - Face",
+      "description": "A specter always completes the mission, even in the toughest terrains.",
+      "textureId": 2514568836,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2608317303,
+      "name": "Minerva Bright - Face",
+      "description": "Her fight against evil is never over; she'll never surrender to the dark!",
+      "textureId": 2341561567,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2608325060,
+      "name": "Rach - Face",
+      "description": "Rach is always up to date with the latest trends.",
+      "textureId": 2514445602,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2610492664,
+      "name": "Lynn - Face",
+      "description": "",
+      "textureId": 2610489111,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2614552625,
+      "name": "Rock Star Guitarist - Face",
+      "description": "",
+      "textureId": 2514396066,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2620506085,
+      "name": "Absolutely Shocked",
+      "description": "ZM0G!\r\n",
+      "textureId": 2620488318,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2620506513,
+      "name": "Crybaby",
+      "description": "It’s my face and I’ll cry if I want to.\r\n",
+      "textureId": 2620487058,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2620507161,
+      "name": "Sparkle Time Sparkle Eyes",
+      "description": "Glimmer and shine!\r\n",
+      "textureId": 2620489144,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2627730985,
+      "name": "Astral Isle Clan: Windsor the Blue - Face",
+      "description": "",
+      "textureId": 2623056236,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2627741912,
+      "name": "High Seas: Pirate King Xerxes - Face",
+      "description": "",
+      "textureId": 2623052853,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2628025496,
+      "name": "The Phantom Phalanx: Cygnus-34 - Face",
+      "description": "",
+      "textureId": 2514345793,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2628039027,
+      "name": "Genni the Snail Knight-Errant - Face",
+      "description": "",
+      "textureId": 2623058805,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2646380181,
+      "name": "Yeti Hunter Face",
+      "description": "That yeti wont escape me this time! Part of the Yeti Hunter bundle.",
+      "textureId": 2646087114,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2648884861,
+      "name": "Chester Finkleton - Face",
+      "description": "Chester is a master toy maker, captain of the Jingle Bowler's bowling league, and occasionally likes to knit in his spare time. He's what you'd call an \"Elf of all Trades\".",
+      "textureId": 2639364063,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2648912542,
+      "name": "Pepper Krinklesnaps - Face",
+      "description": "You can always expect Pepper to crank out the most toys made every year. Her competitive nature makes her a little spicy, but her Christmas cheer keeps her sweet.",
+      "textureId": 2639366656,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2648932224,
+      "name": "Supreme Claus - Face",
+      "description": "Your powers of omniscience, time travel, shrinking, and being immortal grants you the capability to deliver toys to every single child in the world on the night of Christmas Eve.",
+      "textureId": 2625379390,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2667060123,
+      "name": "Knights of Redcliff: Elite Dragoon - Face",
+      "description": "",
+      "textureId": 2658471215,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2739787309,
+      "name": "Skater Gurl - Face",
+      "description": "",
+      "textureId": 2739777922,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2739812348,
+      "name": "Skater Boi - Face",
+      "description": "",
+      "textureId": 2739778788,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2761348544,
+      "name": "Sheriff Buffington - Face",
+      "description": "This here is his town, so you better keep your nose clean!",
+      "textureId": 2756332108,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2761366151,
+      "name": "Overseer: Assassin - Face",
+      "description": "An Assassin has complete lack of fear, abandoning their emotions to fulfill their master’s bidding, thus becoming a lethal warrior for the Overseer.",
+      "textureId": 2756347310,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2761426133,
+      "name": "Knights of Redcliff: Warrior - Face",
+      "description": "Warriors are the most courageous and fiercest protectors of the weak. Their loyalty lies with their people and comrades.",
+      "textureId": 2756343123,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2773409880,
+      "name": "Football Player - Face",
+      "description": "",
+      "textureId": 2772513986,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2803750633,
+      "name": "Aztec Warrior Face",
+      "description": "",
+      "textureId": 2803576899,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2803774919,
+      "name": "Royal Eye of Horus Face",
+      "description": "",
+      "textureId": 2803654708,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2807183388,
+      "name": "Lady Darkshade - Face",
+      "description": "The darkness is strong and unpredictable. Only those that master the dark can truly wield its power and Lady Darkshade is one of the few.",
+      "textureId": 2794747554,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2807218396,
+      "name": "Dr. Bunton Madmind - Face",
+      "description": "Being an evil genius can get expensive, but with all the times Dr. Madmind gets to scream \"IT'S ALIVE!\" it's probably worth it. ",
+      "textureId": 2797313154,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2830493868,
+      "name": "Torque the Red Orc",
+      "description": "What's the difference between a unicorn and a cowardly orc? Unicorns exist.",
+      "textureId": 2830472766,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2830496106,
+      "name": "Torque the Blue Orc",
+      "description": "Some of these puns are making me feel sort of orcward...",
+      "textureId": 2830474424,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2830497827,
+      "name": "Torque the Green Orc",
+      "description": "These are beginning to feel a bit fORCed.",
+      "textureId": 2830473786,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2830499980,
+      "name": "Emerald Archfey Visage",
+      "description": "She's got a lot of elf-confidence.",
+      "textureId": 2830481956,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2830502330,
+      "name": "Sapphire Archfey Visage",
+      "description": "Always remember to be your-elf.",
+      "textureId": 2830481528,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2830505884,
+      "name": "Ruby Archfey Visage",
+      "description": "Smiling from ear to pointed ear.",
+      "textureId": 2830482465,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2830646491,
+      "name": "Slithering Smile",
+      "description": "Sssssomething ssssseems sssslightly off...",
+      "textureId": 2830640563,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2833509821,
+      "name": "William \"Big Bill\" Conner - Face",
+      "description": "",
+      "textureId": 2827303145,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2845812591,
+      "name": "Pizza Face",
+      "description": "I don’t need a napkin, I’m saving it for later. \r\n Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 3065052750,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2845815452,
+      "name": "Cyanskeleface",
+      "description": "Blue like the good side of the River Styx. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 3065051594,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2845990750,
+      "name": "THE SOUP IS DRY",
+      "description": "It's dryer than the Sahara desert. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 3065049688,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2859518465,
+      "name": "Star-Mist Fairy - Face",
+      "description": "From the depths of the galaxy, a fairy named Misty appeared. Her Crystal Clear Constellation wings hold the secrets of the universe, and her Starry eyes and Stardust dress shine on, into the night.",
+      "textureId": 2849462122,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2859557339,
+      "name": "Gwen \"Axe Angel\" Rosewood - Face",
+      "description": "You'll see plenty of stumps in Tupperview Woods, but when you come across a clearing with stumps that are clean and smooth, that'll be the work of the Axe Angel.",
+      "textureId": 2849500812,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2884418268,
+      "name": "The Birdcaller - Face",
+      "description": "",
+      "textureId": 2874300109,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2907632781,
+      "name": "Valkyrie of the Splintered Skies - Face",
+      "description": "",
+      "textureId": 2903490495,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2907641479,
+      "name": "Fanciful Leprechaun Face",
+      "description": "Who you callin' short? This face is part of the Fanciful Leprechaun bundle.",
+      "textureId": 2907636680,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2907703457,
+      "name": "Tenko the Nine-Tailed Fox - Face",
+      "description": "",
+      "textureId": 2900211650,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2907754927,
+      "name": "Sammy \"Slick\" Witter - Face",
+      "description": "",
+      "textureId": 2874324913,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2936946480,
+      "name": "Digital Artist - Face",
+      "description": "",
+      "textureId": 2924060633,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2962660233,
+      "name": "Jester Equinox - Face",
+      "description": "",
+      "textureId": 2953700072,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 2979331491,
+      "name": "Oli Zigzag - Face",
+      "description": "",
+      "textureId": 2957259729,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2979689790,
+      "name": "Kroma Blitz - Face",
+      "description": "",
+      "textureId": 2959503199,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2979703241,
+      "name": "Aurora Spark - Face",
+      "description": "",
+      "textureId": 2956959047,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 2986536321,
+      "name": "Octavia, The Ivory Spider Girl - Face",
+      "description": "",
+      "textureId": 2975222716,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3013806177,
+      "name": "Futureglam Bounty Hunter Face",
+      "description": "Sure, a bounty hunter is expensive. But they're worth every penny. Part of the Futureglam Bounty Hunter bundle.",
+      "textureId": 3008636268,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3016138770,
+      "name": "WWE - Seth Rollins Face",
+      "description": "",
+      "textureId": 3016152826,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3016462488,
+      "name": "WWE - Xavier Woods Face",
+      "description": "",
+      "textureId": 3016289446,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3016485270,
+      "name": "WWE - Becky Lynch Face",
+      "description": "",
+      "textureId": 3016321351,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3016640981,
+      "name": "WWE - Roman Reigns Face",
+      "description": "",
+      "textureId": 3016622929,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3039539480,
+      "name": "Ellie Face",
+      "description": "",
+      "textureId": 3027117721,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3040295279,
+      "name": "Chivalrous Knight of the Silver Kingdom Face",
+      "description": "",
+      "textureId": 2976066765,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3040321462,
+      "name": "Overseer: Prophet Face",
+      "description": "",
+      "textureId": 3030235136,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3091071034,
+      "name": "DJ Databaze - Face",
+      "description": "",
+      "textureId": 3076877056,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3091078801,
+      "name": "DJ E-Mosion - Face",
+      "description": "",
+      "textureId": 3076875377,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3116216863,
+      "name": "Battle Ready Kenji Face",
+      "description": "",
+      "textureId": 3116344124,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3131093524,
+      "name": "Druid of the Stag Face",
+      "description": "Part of the Druid of the Stag bundle.",
+      "textureId": 3115551219,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3141356565,
+      "name": "Erisyphia - Face",
+      "description": "You definitely have to be an early riser if you're the sun goddess. ",
+      "textureId": 3134826009,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3210252000,
+      "name": "Eita the Envious Youkai Face",
+      "description": "Wipe that smirk off your face...",
+      "textureId": 3210093672,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3210252812,
+      "name": "Chichiri the Wise Youkai Face",
+      "description": "\"We are not meant to live apart from eachother. No man is perfect, so we need one another.\"",
+      "textureId": 3210092741,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3210253450,
+      "name": "Noriko the Gentle Youkai Face",
+      "description": "Sometimes... things that appear one way... are not as they seem...",
+      "textureId": 3210091014,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3210506233,
+      "name": "Tycoon Summoner Face",
+      "description": "Part of the Tycoon Summoner bundle.",
+      "textureId": 3210504690,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3241170900,
+      "name": "Lobster Warrior Grimace",
+      "description": "Part of theLobster Warrior bundle.",
+      "textureId": 3237756144,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3241221587,
+      "name": "Atlantean Warrior Face",
+      "description": "Part of the Atlantean Warrior bundle.",
+      "textureId": 3237758757,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3258530517,
+      "name": "Fairly Faerie - Face",
+      "description": "No description available.",
+      "textureId": 3064754707,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3258552764,
+      "name": "Red Sparkle Time Lobster Person - Face",
+      "description": "No description available.",
+      "textureId": 4018465122,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3258567315,
+      "name": "Sharkbait - Face",
+      "description": "No description available.",
+      "textureId": 3064754707,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3258576172,
+      "name": "Valorous Knight - Face",
+      "description": "No description available.",
+      "textureId": 3254218159,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3267564334,
+      "name": "Prideful Smile",
+      "description": "The very best thing to be is always yourself!",
+      "textureId": 3267472315,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3267567501,
+      "name": "Beaming with Pride",
+      "description": "Baby you're a firework!",
+      "textureId": 3267470325,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 3381167752,
+      "name": "Champion Of The Tide Face",
+      "description": "",
+      "textureId": 3234016124,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3410486318,
+      "name": "Dr. Fia Tyfoid - Face",
+      "description": "",
+      "textureId": 3493258178,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3690515434,
+      "name": "Sorority Star Face",
+      "description": "Hi, sisters! I’ve got my face on and I’m ready to go. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 4019292650,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 3993282075,
+      "name": "Wicked Webbed Berserker Face",
+      "description": "",
+      "textureId": 3808073644,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4018617474,
+      "name": "Classic Male - Face",
+      "description": "",
+      "textureId": 3994344171,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4018627046,
+      "name": "Classic Female - Face",
+      "description": "",
+      "textureId": 3994345447,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4026732747,
+      "name": "Digital Shock Artist - Face",
+      "description": "",
+      "textureId": 2924060633,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 4416933495,
+      "name": "Mr. Toilet - Face",
+      "description": "",
+      "textureId": 4086501806,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4464987905,
+      "name": "Snow Samurai - Face",
+      "description": "",
+      "textureId": 4417209075,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4637166178,
+      "name": "NeoClassic Female v2 - Face",
+      "description": "",
+      "textureId": 4588499007,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4637244809,
+      "name": "Classic Male v2 - Face",
+      "description": "",
+      "textureId": 4637450017,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 4637266368,
+      "name": "Classic Female v2 - Face",
+      "description": "",
+      "textureId": 4586610741,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4637291815,
+      "name": "Neoclassic Male v2 - Face",
+      "description": "",
+      "textureId": 4588498182,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4643439782,
+      "name": "Renegade Bounty Hunter Face",
+      "description": "",
+      "textureId": 4426576622,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 4645952767,
+      "name": "Tsundere Expression",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out www.roblox.com/toys to learn more...",
+      "textureId": 4895360333,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4645966393,
+      "name": "Mixologist's Smile",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out www.roblox.com/toys to learn more...",
+      "textureId": 4895362922,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4895403676,
+      "name": "Cheerful Barista Face",
+      "description": "",
+      "textureId": 4584117070,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 4895423807,
+      "name": "Paramedic's Face",
+      "description": "",
+      "textureId": 4584973204,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 4916129740,
+      "name": "Elegant Evening Dress - Face",
+      "description": "",
+      "textureId": 4582519378,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 4927805902,
+      "name": "Biohazard First Responder - Face",
+      "description": "",
+      "textureId": 4508029059,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 4932405134,
+      "name": "Frozen Pirate King Xerxes - Face",
+      "description": ".",
+      "textureId": 2623052853,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5122245866,
+      "name": "Gold Mermaid Visage",
+      "description": "Present the beautiful face of a mermaid, but keep your legs. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 5849008243,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5122309127,
+      "name": "Tears of Sorrow",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...",
+      "textureId": 6028824880,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5122343618,
+      "name": "Performing Mime",
+      "description": "For this adorable mime face, no words are needed. (Invisible wall not included.) Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 5848997920,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5122355742,
+      "name": "Zed Face",
+      "description": "People know you mean business with those those markings because they don't wash off. Get this exclusive item when you redeem a code from a Roblox toy!\r\n\r\nCheck out roblox.com/toys to learn more...",
+      "textureId": 5849006088,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 5238862364,
+      "name": "Glided Diver - Face",
+      "description": "",
+      "textureId": 2515271103,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5579656306,
+      "name": "Irian the Legendary Sorcerer - Face",
+      "description": "",
+      "textureId": 5579496275,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 5702468594,
+      "name": "Bubbly Reviewer - Face",
+      "description": "",
+      "textureId": 6873584508,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5754177103,
+      "name": "Cat Mascot - Face",
+      "description": "",
+      "textureId": 5754100966,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 5762596362,
+      "name": "Steampunk Inventor - Face",
+      "description": "",
+      "textureId": 5759199436,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5830113805,
+      "name": "Lumber Joe - Face",
+      "description": "",
+      "textureId": 2827303145,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5832658029,
+      "name": "Lumber Jessie - Face",
+      "description": "",
+      "textureId": 2849500812,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 5885801791,
+      "name": "Crank and Zap Mech - Face",
+      "description": "",
+      "textureId": 5885708899,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5893869335,
+      "name": "Vans Checkerboard Brown Eyes",
+      "description": "Show off your Off The Wall style",
+      "textureId": 8246559242,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5917448278,
+      "name": "Rodeo Vampire - Lil Nas X (LNX)",
+      "description": "Oh here we go, please let me know.",
+      "textureId": 5924592609,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5917459717,
+      "name": "Smil Nas X - Lil Nas X (LNX)",
+      "description": "Wearing that Lil Nas Xpression.",
+      "textureId": 5924588534,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5964967476,
+      "name": "Holiday Cheer Toshi - Face",
+      "description": "",
+      "textureId": 5964850347,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 5965158933,
+      "name": "Festive Beekeeper - Face",
+      "description": "",
+      "textureId": 5965061327,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6029816756,
+      "name": "Wonder Woman's Golden Armor - Face",
+      "description": "",
+      "textureId": 6029531141,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6531983163,
+      "name": "Award-Winning Smile",
+      "description": "Check out those famous good looks. Awarded to anyone who visited the Hall of Fame in the 8th Annual Bloxy Awards experience.",
+      "textureId": 6531805594,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6532619915,
+      "name": "Sparkling's Friendly Wink",
+      "description": "Rumors say if you wink three times, sparkles will appear... Just trust me. Art by Mugalo. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...",
+      "textureId": 6714123250,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6590371677,
+      "name": "Super Pink Heart Makeup",
+      "description": "No one will ever have to guess your favorite color. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more... ",
+      "textureId": 6714740652,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6590375198,
+      "name": "Princess Alexis",
+      "description": "Make friends with all the deer, rabbits, and songbirds. Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 6714756103,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6652985701,
+      "name": "Merciless Ninja - Face",
+      "description": "",
+      "textureId": 6652963861,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6653133806,
+      "name": "Domino Deckard - Face",
+      "description": "",
+      "textureId": 6653115585,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 6711224332,
+      "name": "The Engineer - Face",
+      "description": "",
+      "textureId": 6710820473,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7243836687,
+      "name": "Bakonette",
+      "description": "The more you stare, the scarier it gets. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...",
+      "textureId": 7369467011,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7243865988,
+      "name": "Persephone's Girl Glam",
+      "description": "Cat eye for life. Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...\r\n\r\nFace artwork created by @DopeSir",
+      "textureId": 6792755141,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7243903012,
+      "name": "Starry Eyes Sparkling",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 7370410419,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7243924005,
+      "name": "Monster Grumpy Face",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 7737933327,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7243931574,
+      "name": "Mon Cheri Face",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 7737952495,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7243933492,
+      "name": "Isabella",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 7737963900,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7389910081,
+      "name": "Sai-eye Tyler Joseph - Twenty One Pilots",
+      "description": "This face gives major sai-eye.",
+      "textureId": 7389895884,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7389923463,
+      "name": "Warpaint Josh Dun - Twenty One Pilots",
+      "description": "Bringing back that Blurryface-era warpaint.",
+      "textureId": 7389918425,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7657627637,
+      "name": "Diamond Grill - Lil Nas X (LNX)",
+      "description": "Diamonds are a grill's best friend.",
+      "textureId": 7657592485,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7657646351,
+      "name": "Butterfly Wink - Lil Nas X (LNX)",
+      "description": "Change your appearance in the wing of an eye.",
+      "textureId": 7657640018,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 7657657626,
+      "name": "Devil Nas X - Lil Nas X (LNX)",
+      "description": "It's in the details.",
+      "textureId": 7657648582,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7893468574,
+      "name": "Heart Gaze - Zara Larsson",
+      "description": "This face has its hearts in the right place. ",
+      "textureId": 7893441222,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 7987201392,
+      "name": "Sunrise Eyes - Tai Verdes",
+      "description": "Wake up the neighborhood in a blink of the eye.",
+      "textureId": 7987150722,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8247356154,
+      "name": "Vans Checkerboard Blue Eyes",
+      "description": "Show off your Off The Wall style",
+      "textureId": 8246562466,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8664096393,
+      "name": "Mermaid Mystique",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out roblox.com/toys to learn more...",
+      "textureId": 8664088085,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8666744565,
+      "name": "Rainbow Spirit Face",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 8666737055,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 8666865667,
+      "name": "Kandi's Sprinkle Face",
+      "description": "Get this exclusive item when you redeem a code from a Roblox toy! Check out www.roblox.com/toys to learn more...",
+      "textureId": 8666858645,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9062620353,
+      "name": "McLaren Smile",
+      "description": "A big smile like you've just got pole position.",
+      "textureId": 9062608001,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9062637857,
+      "name": "McLaren Big Grin ",
+      "description": "A big grin like you've just done a shoey.",
+      "textureId": 9062612645,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9156266858,
+      "name": "24kGoldn Face",
+      "description": "24kGoldn's signature golden smile.",
+      "textureId": 9156233764,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9156271739,
+      "name": "Devilish Smile - 24kGoldn",
+      "description": "What's the price of fame? 'Cause I can taste it.",
+      "textureId": 9156244686,
+      "verifiedOfficial": false
+    },
+    {
+      "id": 9156275069,
+      "name": "Golden Eyes - 24kGoldn",
+      "description": "Dreamy golden eyes always in my head.",
+      "textureId": 9156248239,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 9650713776,
+      "name": "Red Lip - Tate McRae",
+      "description": "Face the day with this bold shade of red.",
+      "textureId": 9650705589,
+      "verifiedOfficial": true
+    },
+    {
+      "id": 76233968067050,
+      "name": "Snowflake Eyes",
+      "description": "A look that’s as cold as ice. ",
+      "textureId": 84263778542721,
+      "verifiedOfficial": true
+    }
+  ],
+  "bundles": {
+    "133278756597407": 7074595,
+    "197800285127249": 7074661,
+    "266585": 7074729,
+    "962": 7074764,
+    "968": 7074786,
+    "8628016035220": 7074814,
+    "230895873223032": 7074836,
+    "1208": 7074864,
+    "1153": 7074893,
+    "251532623491350": 7074944,
+    "174008407179427": 7074991,
+    "162159688476743": 7075089,
+    "100112644245026": 7075142,
+    "160120222188724": 7075434,
+    "1328": 7075469,
+    "225850": 7075502,
+    "160955997296047": 7076076,
+    "210492525969270": 7076110,
+    "145705398454911": 7076159,
+    "136336263506838": 7076224,
+    "226468835551396": 7131361,
+    "176231244106220": 7131541,
+    "259549085099378": 7131886,
+    "10772390057471": 7132035,
+    "1209": 7317765,
+    "227884262166614": 7317769,
+    "1334": 7317773,
+    "304785": 7317793,
+    "59860816383017": 7506135,
+    "123251172663514": 7506136,
+    "1213": 7506141,
+    "16921718203871": 7506144,
+    "299652": 7699174,
+    "35246167588341": 7699177,
+    "218937005992794": 7699183,
+    "138527676498219": 7699193,
+    "1212": 8329679,
+    "74021587715067": 8329682,
+    "1315": 8329686,
+    "202195029328904": 8329690,
+    "1163": 8560971,
+    "162521342338014": 8560975,
+    "38982800041809": 8560980,
+    "81333698258584": 8560985,
+    "214033738867806": 9250633,
+    "238167147457654": 9250643,
+    "186391967264391": 9250654,
+    "37210631385325": 9250660,
+    "226263101434232": 10527010,
+    "12356633750648": 10678407,
+    "263270779483185": 10678414,
+    "205757247237562": 10678418,
+    "202170917206190": 10678423,
+    "171561435605311": 10678427,
+    "10849744308786": 10770395,
+    "112275462226217": 10770432,
+    "21556678902057": 10770436,
+    "4267585708463": 10831390,
+    "269806961654345": 10831438,
+    "248022568534766": 10831454,
+    "97641067180200": 10831558,
+    "21948073933907": 10860384,
+    "245278143120873": 10860391,
+    "81980898847649": 10860397,
+    "142829958960688": 10907529,
+    "249744135554981": 10907531,
+    "186968568631483": 10907532,
+    "191826963849074": 10907534,
+    "24142253744180": 10907536,
+    "26779851357731": 10907541,
+    "24226108845392": 10907545,
+    "270901502213658": 10907546,
+    "161407520029163": 10907547,
+    "1168": 10907549,
+    "1157": 10907551,
+    "251114516937612": 11123805,
+    "83479444117341": 11123827,
+    "133707558943423": 11389372,
+    "79609430964313": 11389441,
+    "7858780065884": 11453609,
+    "19252064465840": 11611321,
+    "149919299623760": 11647296,
+    "115884494063096": 11647324,
+    "37658278284334": 11913668,
+    "179130791382759": 11913700,
+    "232845983397870": 11913734,
+    "73309798762252": 11956548,
+    "281332951812734": 12145328,
+    "964": 12145366,
+    "253854583101327": 12188176,
+    "1324": 12467159,
+    "174436203684461": 12732366,
+    "87065980933997": 12777646,
+    "213854746906758": 12908359,
+    "179941961626298": 13038375,
+    "8590951911680": 13038397,
+    "103269699416016": 13335647,
+    "67394665244466": 13478124,
+    "104690469545588": 13656095,
+    "1326": 14030577,
+    "44701237381917": 14083380,
+    "261236242940701": 14127171,
+    "82764495477775": 14127194,
+    "150003971694836": 14405720,
+    "1325": 14516578,
+    "74689866522039": 14721869,
+    "252506896149543": 14812981,
+    "147800102413486": 14817393,
+    "1254": 14861743,
+    "14649281761888": 15013192,
+    "238027769288574": 15054426,
+    "177263596192956": 15133453,
+    "143107550212924": 15177601,
+    "1318": 15324577,
+    "1329": 15366173,
+    "76525505177274": 15395327,
+    "1227": 15432080,
+    "152061008147286": 15470193,
+    "1162": 15470849,
+    "245721313897328": 15470861,
+    "232097829048381": 15471035,
+    "1312": 15637848,
+    "115125095205873": 15858152,
+    "1214": 15885121,
+    "269387477570844": 16101765,
+    "280174731169024": 16132514,
+    "180586812739893": 16179646,
+    "278276384589220": 16357383,
+    "225848898340477": 16387711,
+    "226843609127037": 16413496,
+    "146513564678819": 16652251,
+    "96596866597045": 16678138,
+    "99193092665680": 16722419,
+    "272960980182996": 16723481,
+    "266432584931765": 16723499,
+    "153024748396560": 17138027,
+    "28384435221791": 17999992,
+    "1036": 18151826,
+    "33018729707266": 19264845,
+    "206613604437790": 19366445,
+    "53224881762118": 19381787,
+    "244882520518756": 19396123,
+    "74870047635131": 19396550,
+    "275136962053799": 19397594,
+    "1166": 19398554,
+    "251110463171631": 19399752,
+    "7571549368106": 19959140,
+    "254542631126082": 20010377,
+    "216046683490600": 20052135,
+    "1167": 20298988,
+    "1211": 20337343,
+    "967": 20418658,
+    "208228537986130": 20418682,
+    "127295186560407": 20612949,
+    "95522548383160": 20644021,
+    "265345": 20722130,
+    "55745631084395": 20909103,
+    "185544715561823": 21024661,
+    "19197126863437": 21272995,
+    "262259186157871": 21311601,
+    "100477055534939": 21352013,
+    "52371470726081": 21392863,
+    "247277220615566": 21439665,
+    "1160": 21635565,
+    "240277183139860": 21635583,
+    "147299093288345": 21755022,
+    "93162799225327": 21802396,
+    "91112723044320": 22023062,
+    "273052457652316": 22070623,
+    "264960297966767": 22119034,
+    "3399096675451": 22432782,
+    "252825345924513": 22500129,
+    "42106140877509": 22587828,
+    "254871682988259": 22587894,
+    "156010336318083": 22588801,
+    "124418132178949": 22828351,
+    "1043": 22877700,
+    "232651140533287": 22920501,
+    "240333974842718": 22972723,
+    "226348370467680": 23219981,
+    "213281809960366": 23261769,
+    "521892262170": 23264604,
+    "57371610389576": 23310997,
+    "29084335984807": 23311761,
+    "164640067601390": 23644960,
+    "227220": 23932048,
+    "116132452808787": 24067718,
+    "265775141751850": 24126147,
+    "269930814512025": 24441888,
+    "175104452081044": 24727929,
+    "219471697535958": 24975496,
+    "966": 25166274,
+    "48026449559322": 25267538,
+    "3999895": 25321961,
+    "220132395519215": 25556219,
+    "21742152397504": 25930613,
+    "73640369907322": 25975243,
+    "26858190729610": 26019070,
+    "227050": 26260927,
+    "120902739971435": 26343188,
+    "1038": 26424808,
+    "186870933133700": 26619096,
+    "247775558574701": 26674400,
+    "111711586085287": 27003636,
+    "4652704206148": 27052537,
+    "267342750085135": 27134344,
+    "123831162647204": 27412825,
+    "252312045307473": 27599954,
+    "77172547655786": 27725434,
+    "166678535253092": 27861352,
+    "27558355772136": 28119051,
+    "122320746985619": 28281786,
+    "275787691713497": 28878297,
+    "1313": 28999228,
+    "187642752530058": 29109681,
+    "205074363145575": 29296146,
+    "226584305090174": 29348122,
+    "1159": 29532363,
+    "123501696292873": 29716262,
+    "50118044760283": 30265169,
+    "218617118319820": 30394316,
+    "216826028479332": 30394438,
+    "1039": 30394484,
+    "149994849385567": 30394594,
+    "266740": 30394850,
+    "8033554206207": 30395097,
+    "1215": 31117267,
+    "969887966747": 31317701,
+    "170618058474638": 31616411,
+    "1307": 32058239,
+    "1317": 32723404,
+    "6662375922263": 32873408,
+    "261876403208363": 33321848,
+    "227726252728939": 34186804,
+    "90617600479454": 34673712,
+    "160001924154932": 34764447,
+    "241885742978232": 34871168,
+    "153219727664095": 35168581,
+    "267081374353421": 35397243,
+    "141898357473651": 42070576,
+    "85169621046505": 45084008,
+    "149674966579055": 45514606,
+    "230768261288558": 45515121,
+    "1333": 49045351,
+    "233554193728826": 49493376,
+    "93331992478693": 51241171,
+    "56317575428263": 51241480,
+    "10871578761844": 51241522,
+    "65928853107128": 51241537,
+    "280735916237013": 51241862,
+    "183648550594196": 66319941,
+    "231032145992486": 66330060,
+    "103407783382617": 66330106,
+    "262424818371862": 66330144,
+    "172341811454256": 66330165,
+    "142631669390734": 66330204,
+    "221848328784513": 66330231,
+    "119419790090149": 66330265,
+    "161618639135157": 66330295,
+    "280295387964360": 66330310,
+    "3731047384354": 66330360,
+    "949": 76383151,
+    "45816961130231": 100290429,
+    "270831654991342": 110207437,
+    "8125815716847": 110207471,
+    "115583138212916": 110288809,
+    "237277579906692": 110336757,
+    "12293858043677": 116042990,
+    "117446023364800": 116043052,
+    "13718356750340": 117522793,
+    "73311057925154": 119812659,
+    "241144177708507": 119812715,
+    "46277925137514": 119812738,
+    "176341714008675": 119812765,
+    "161442420541976": 128992838,
+    "187619642691885": 130213380,
+    "48108254826353": 133360789,
+    "236385495807573": 134522901,
+    "255535022429711": 141728790,
+    "224703196756527": 141728899,
+    "41561555182967": 142464206,
+    "946": 144075659,
+    "111115989581357": 147144644,
+    "199530822582052": 147144673,
+    "133612591589659": 150182378,
+    "1314": 150182466,
+    "178138757474440": 150182501,
+    "210879420742319": 159199178,
+    "1040": 162068415,
+    "210413213860781": 162200633,
+    "504989506044": 162200666,
+    "225334475670861": 162200696,
+    "107770861134701": 173789114,
+    "1309": 173789324,
+    "276576781306608": 173789498,
+    "137733902163768": 180660043,
+    "77274464703219": 181651981,
+    "196108949920441": 209994074,
+    "254298230555758": 209994270,
+    "72389557944696": 209994352,
+    "255034016081183": 209994783,
+    "1000": 209994875,
+    "1164": 209994929,
+    "170591579555886": 209995252,
+    "1042": 209995366,
+    "1037": 226217449,
+    "235235605129375": 233616117,
+    "302616": 236399287,
+    "265331263388097": 238983270,
+    "114357694516233": 238983378,
+    "17514044722240": 244160766,
+    "227552743137786": 244160970,
+    "176059672658048": 250654457,
+    "147551965983540": 255827175,
+    "31578532485749": 258198928,
+    "200603329999709": 260303894,
+    "32470572529889": 260303960,
+    "239822084490708": 260304187,
+    "15144069558320": 268603331,
+    "91039368349": 274338458,
+    "48847223322759": 277950647,
+    "213959782500994": 280988393,
+    "66814952078056": 280988698,
+    "281081702933386": 295763789,
+    "130": 301826803,
+    "227365324714642": 313549781,
+    "157682378774406": 323191430,
+    "57524613823815": 323191596,
+    "49142176654239": 323191683,
+    "37722358446451": 323191787,
+    "171572375967582": 323191979,
+    "149363664010741": 323192138,
+    "103196750164703": 323192193,
+    "168371516984921": 330296924,
+    "142815600916961": 334656210,
+    "151374120070634": 334656353,
+    "59584787864279": 334656546,
+    "88324574762348": 343619993,
+    "126001261708663": 362051405,
+    "277478511976376": 362051644,
+    "39285032833922": 362051773,
+    "188816309913888": 362051899,
+    "31281416357406": 362051999,
+    "142690107235068": 376809691,
+    "206412926711700": 376812736,
+    "196625578789242": 376812961,
+    "262512959009207": 376813144,
+    "123621683179706": 380754227,
+    "124949164676470": 383607653,
+    "7127308072223": 385889916,
+    "92702149058830": 386188363,
+    "27697993551041": 387256603,
+    "238797332044649": 391495894,
+    "121682965113322": 391496123,
+    "1327": 391496223,
+    "180287289558092": 398675764,
+    "56011151247922": 398675917,
+    "225229941504360": 398676450,
+    "182287144489277": 399021751,
+    "273132539401053": 402304145,
+    "61303896649684": 406000421,
+    "175353425783426": 406000562,
+    "1156": 406000730,
+    "156967982605702": 406000958,
+    "3955712127782": 406001052,
+    "1311": 406001167,
+    "171354436203665": 406001308,
+    "133968423526059": 406001532,
+    "67480288336058": 406002032,
+    "211693358929906": 416846000,
+    "2120756442178": 416846143,
+    "1176": 416846300,
+    "192290675629497": 419752096,
+    "151293515880748": 440738448,
+    "246874410156439": 440739240,
+    "6386515563933": 440739518,
+    "217726554907562": 440739783,
+    "7566693845115": 445117183,
+    "158380697314856": 494291269,
+    "82092837886536": 494299198,
+    "167622074133769": 554650579,
+    "3404964728936": 554658475,
+    "277968943057663": 554663025,
+    "159439763893780": 554663566,
+    "76831638855316": 583721561,
+    "89660054867384": 583721990,
+    "43169053104201": 583722710,
+    "142855532815206": 583722932,
+    "1165": 616381207,
+    "204911917889633": 667681953,
+    "85447028459231": 743690770,
+    "243796054669331": 823012694,
+    "237353242205754": 835094544,
+    "148231230019774": 835095003,
+    "29526768190915": 835095306,
+    "163046677043335": 835095880,
+    "133240642594009": 878940145,
+    "5560839727715": 878941449,
+    "110535957325340": 878942257,
+    "238361098256956": 880469676,
+    "236505766815550": 880471415,
+    "267967095342473": 880473016,
+    "212827518918016": 880474146,
+    "143090179339167": 1016184756,
+    "260003104040405": 1016184964,
+    "86416810295528": 1016185535,
+    "205962437217019": 1016185809,
+    "151538167697000": 1016186364,
+    "50309297008292": 1191125008,
+    "123673229695616": 1191136166,
+    "141680612726107": 1191162013,
+    "248386134630261": 1191162539,
+    "213249000290945": 1213472762,
+    "37386908552638": 1428409936,
+    "190495073244369": 1428416217,
+    "86233108879893": 1428417334,
+    "207362786996620": 1428418448,
+    "190261537103587": 1428424821,
+    "256489050307382": 1665511048,
+    "265647914163640": 1665629400,
+    "8018746108582": 1665638148,
+    "136024737007504": 1772529256,
+    "244872167329033": 1772530315,
+    "57693769529735": 1772531407,
+    "102426182557000": 1772578399,
+    "1154": 2222771916,
+    "44090604577424": 2222774106,
+    "67824030495196": 2222775067,
+    "203349976064280": 2222775930,
+    "207033123750918": 2225761296,
+    "170869884227769": 2274754557,
+    "219457703862121": 2274764091,
+    "105919952545574": 2409285794,
+    "337": 2492678267,
+    "158140611211589": 2528319611,
+    "192291009827331": 2568799765,
+    "159143520773591": 2568801198,
+    "18284277335696": 2568804274,
+    "160162750034810": 2569001052,
+    "161273774968765": 2569005011,
+    "275540696534395": 2606177838,
+    "180840496952935": 2620506085,
+    "7095994872181": 2620506513,
+    "247094355836740": 2620507161,
+    "74319168976379": 2830493868,
+    "246995774989589": 2830496106,
+    "173524334798906": 2830497827,
+    "245200235428267": 2830499980,
+    "100782277801192": 2830502330,
+    "99329503948189": 2830505884,
+    "251190514336548": 2830646491,
+    "217769865759901": 2845812591,
+    "178439986628356": 2845815452,
+    "256211251591358": 2845990750,
+    "168028200310031": 3210252000,
+    "182738110292259": 3210252812,
+    "8214064464799": 3210253450,
+    "69940871211264": 3267564334,
+    "175251902419539": 3267567501,
+    "109463333415310": 3690515434,
+    "606": 4637166178,
+    "605": 4637244809,
+    "607": 4637266368,
+    "608": 4637291815,
+    "75876026796757": 4645952767,
+    "276855530643919": 4645966393,
+    "113644876216303": 5122245866,
+    "139422266951588": 5122309127,
+    "79530808022161": 5122343618,
+    "114212370537084": 5122355742,
+    "163724155929667": 5893869335,
+    "187068483822177": 5917448278,
+    "1161": 5917459717,
+    "1158": 6531983163,
+    "35882630539088": 6532619915,
+    "100047893828741": 6590371677,
+    "223474516738240": 6590375198,
+    "231815768782070": 7243836687,
+    "248757541497705": 7243865988,
+    "129128777823562": 7243903012,
+    "273766419212932": 7243924005,
+    "59867771375975": 7243931574,
+    "34461343274488": 7243933492,
+    "279188004120886": 7389910081,
+    "241315745368447": 7389923463,
+    "263399563546964": 7657627637,
+    "1185": 7657646351,
+    "278605468934032": 7657657626,
+    "66093949009701": 7893468574,
+    "11228645158166": 7987201392,
+    "173567900345504": 8247356154,
+    "153824084724343": 8664096393,
+    "149571064780752": 8666744565,
+    "118939654035134": 8666865667,
+    "10343169653074": 9062620353,
+    "55062024665200": 9062637857,
+    "120807487414959": 9156266858,
+    "42492741082413": 9156271739,
+    "1155": 9156275069,
+    "1316": 9650713776,
+    "259144677693420": 76233968067050
+  }
+}

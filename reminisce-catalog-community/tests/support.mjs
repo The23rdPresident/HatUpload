@@ -3,6 +3,10 @@ import { DatabaseSync } from "node:sqlite";
 import { readFileSync, readdirSync } from "node:fs";
 
 import { createHash } from "node:crypto";
+import classicData from "../data/classic-faces.json" with { type: "json" };
+
+const classicFaces = new Map(classicData.faces.map(face => [face.id, face]));
+const classicTextures = new Set(classicData.faces.map(face => face.textureId));
 
 export const ownerKey = "K".repeat(43);
 
@@ -152,14 +156,15 @@ export function upstream() {
         202: 4,
         203: 13,
         204: 1,
-        205: 79
-      }[id];
+        205: 79,
+        15938951781: 79
+      }[id] || (classicFaces.has(id) ? 18 : classicTextures.has(id) ? 1 : 0);
       if (!assetType) return new Response("missing", {
         status: 404
       });
       return reply({
         AssetId: id,
-        Name: id === 100 ? "Classic Hat" : id === 15093053680 || id === 134082579 ? "Headless Head" : "Item " + id,
+        Name: id === 100 ? "Classic Hat" : id === 15093053680 || id === 134082579 ? "Headless Head" : id === 15938951781 ? "Silly Fun - Head" : classicFaces.get(id)?.name || "Item " + id,
         Description: "An official catalog description.",
         AssetTypeId: assetType,
         Creator: {
@@ -188,6 +193,7 @@ export function upstream() {
     }
     if (url.hostname === "catalog.roblox.com" && /\/bundles\/\d+\/details/.test(url.pathname)) {
       const id = Number(url.pathname.split("/")[3]);
+      if (id === 299652) return reply({ id, name: "Silly Fun", bundleType: "DynamicHead", creator: { id: 1, type: "User", name: "Roblox" }, items: [{ id: 15938951781, name: "Silly Fun - Head", type: "Asset", assetType: 79 }] });
       return reply({ id, name: "Bundle " + id, description: "A body package.", bundleType: "BodyParts", creator: { id: id === 301 ? 2 : 1, type: "User", name: "Roblox" } });
     }
     if (url.hostname === "catalog.roblox.com") return reply({
@@ -207,7 +213,8 @@ export function upstream() {
           Location: "https://evil.test/private"
         }
       });
-      return new Response('<roblox><Item><Properties><Content name="Texture"><url>http://www.roblox.com/asset/?id=200</url></Content></Properties></Item></roblox>');
+      const texture = classicFaces.get(Number(url.searchParams.get("id")))?.textureId || 200;
+      return new Response('<roblox><Item class="Decal"><Properties><Content name="Texture"><url>http://www.roblox.com/asset/?id=' + texture + '</url></Content></Properties></Item></roblox>');
     }
     throw new Error("Unexpected upstream: " + url.href);
   };

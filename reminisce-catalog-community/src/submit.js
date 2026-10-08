@@ -84,6 +84,7 @@
     }
     $("custom-texture").checked = kind === "reskin";
     $("custom-texture").disabled = true;
+    if (kind === "official" && $("item-type").value === "Face" && selected?.textureId) $("asset-id").value = String(selected.textureId);
     $("item-type").disabled = false;
     $("texture-check-field").hidden = true;
     ui.sync();
@@ -92,7 +93,7 @@
   }
   for (const type of [ "official", "reskin" ]) $("kind-" + type).addEventListener("click", () => setKind(type));
   async function choose(id, query = null, assetKind = "Asset", category = searchCategory(), version = lookupVersion) {
-    const {item: item} = await api("/asset/" + id + "?kind=" + assetKind);
+    const {item: item} = await api((category === "faces" ? "/face/" : "/asset/") + id + "?kind=" + assetKind);
     if (query !== null && query !== $("search-input").value.trim()) return;
     if (version !== lookupVersion || category !== searchCategory()) return;
     ui.applyAsset(item, kind === "reskin");
@@ -101,7 +102,7 @@
     $("kind-reskin").disabled = !supportsReskin;
     if (!supportsReskin) kind = "official";
     setKind(kind);
-    notice("lookup-status", "Verified catalog item · " + item.name + (item.assetType === 18 ? ". Enter its classic face texture ID below." : ""));
+    notice("lookup-status", item.assetType === 18 ? item.faceTextureRequired ? "Face detected · " + item.name + " · Enter its classic face image ID under Item details." : "Classic face found · " + item.name + " · Texture ID " + item.textureId : item.assetType === 79 ? item.headShape === "unavailable" ? "Head loaded · " + item.name + " · Roblox did not provide readable mesh data. If this is a face, paste its classic face link." : "Head detected · " + item.name + " · Keeps its head shape." : "Verified catalog item · " + item.name);
     $("search-results").replaceChildren();
   }
   function results(items, append) {
@@ -130,7 +131,7 @@
     if (busy) return;
     busy = true;
     $("search-button").disabled = true;
-    notice("lookup-status", "Searching Roblox…");
+    notice("lookup-status", searchCategory() === "faces" ? "Finding the classic face…" : "Searching Roblox…");
     try {
       const query = append ? searchQuery : $("search-input").value.trim(), parsed = core.parseAssetQuery(query), category = searchCategory(), version = lookupVersion;
       if (lookupMode === "link" && !parsed) throw new Error("Paste a Roblox catalog or bundle link, or enter an item ID.");
@@ -145,7 +146,7 @@
         searchQuery = query;
         cursor = data.nextCursor;
         results(data.items, append);
-        notice("lookup-status", data.items.length ? "Choose a result to copy its details." : "No eligible catalog items matched. Try another name, Item type, or item link.");
+        notice("lookup-status", data.message || (data.items.length ? "Choose a result to copy its details. Dynamic entries are checked when selected." : "No eligible catalog items matched. Try another name, Item type, or item link."));
         if (!append && data.exactMatchId) await choose(data.exactMatchId, query, category === "bundles" ? "Bundle" : "Asset", category, version);
       }
       $("more-results").hidden = !cursor;
@@ -172,11 +173,14 @@
   $("item-type").addEventListener("change", () => {
     selected = null;
     clearResults();
+    const draft = ui.readDraft();
+    ui.fillDraft({ ...draft, assetId: "", texture: "" });
+    ui.showAsset(null);
     const supportsReskin = core.isAccessory($("item-type").value) || $("item-type").value === "Face";
     $("kind-reskin").disabled = !supportsReskin;
     if (!supportsReskin) kind = "official";
     setKind(kind);
-    notice("lookup-status", "Search for this item type or paste its link. Heads may be made by any creator; other types must be made by Roblox.");
+    notice("lookup-status", "Search for this item type or paste its link. Heads and faces may be made by any creator; other types must be made by Roblox.");
   });
   for (const mode of [ "name", "link" ]) $("lookup-" + mode).addEventListener("click", () => {
     lookupMode = mode;
@@ -217,7 +221,7 @@
     try {
       let draft = ui.readDraft();
       const assetKind = draft.itemType === "BodyPackage" ? "Bundle" : "Asset";
-      if (draft.itemType === "Face" && !selected) throw new Error("First find the Roblox face by name or paste its item link. Then enter its classic texture ID in Item details.");
+      if (draft.itemType === "Face" && !selected) throw new Error("Find a face by name or paste its Roblox link to fill its classic texture ID.");
       if (!selected || String(selected.id) !== draft.assetId || selected.kind !== assetKind) {
         const {item: item} = await api("/asset/" + encodeURIComponent(draft.assetId) + "?kind=" + assetKind);
         selected = item;
@@ -228,18 +232,18 @@
           accessoryKind: core.isAccessory(mapping.itemType) ? draft.accessoryKind || mapping.accessoryKind : "",
           name: draft.name || item.name,
           description: draft.description || item.description,
-          texture: mapping.itemType === "Face" ? "" : draft.texture
+          texture: mapping.itemType === "Face" ? "rbxassetid://" + item.textureId : draft.texture
         };
         ui.fillDraft(draft);
         ui.showAsset(item);
         setKind(kind);
-        if (mapping.itemType === "Face") {
-          $("asset-id").focus();
-          throw new Error("Roblox details copied. Enter the classic face texture ID in Item details.");
-        }
       }
       draft = ui.validDraft();
       draft.customTexture = kind === "reskin";
+      if (draft.itemType === "Face" && kind === "official" && selected.textureId) {
+        draft.texture = "rbxassetid://" + selected.textureId;
+        ui.fillDraft(draft);
+      }
       if (kind === "reskin" && !(core.isAccessory(draft.itemType) || draft.itemType === "Face")) throw new Error("Choose an accessory or classic face for a reskin.");
       if (kind === "reskin" || draft.itemType === "Face") {
         const {item: item} = await api("/texture/" + core.assetContent(draft.texture).split("//")[1]);
